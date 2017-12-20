@@ -1,1 +1,1 @@
-web: gunicorn EdForeign.wsgi 
+web: gunicorn EdForeign.wsgi

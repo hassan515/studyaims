@@ -1,0 +1,1004 @@
+<!doctype html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0; maximum-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+<title>Educational Template</title>
+<!-- Reset CSS -->
+<link href=" {% static 'css/fonts.css' %}" rel="stylesheet" type="text/css">
+<!-- Bootstrap -->
+
+<!-- Select2 -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link href="{% static 'css/fonts.css' %}" rel="stylesheet" type="text/css">
+<!-- Bootstrap
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- Font Awesome -->
+<link href="{% static 'css/fonts/font-awesome.min.css'%}" rel="stylesheet" type="text/css" >
+<!-- Iconmoon -->
+<link href=" {% static 'css/iconmoon.css' %}" rel="stylesheet" type="text/css">
+<!-- Custom Style -->
+<link href="{% static 'css/custom.css' %}" rel="stylesheet" type="text/css">
+
+<link href="{% static "css/reset.css" %}" rel="stylesheet" type="text/css">
+<!-- Custom Fonts -->
+<link href="{% static "css/fonts.css" %}" rel="stylesheet" type="text/css">
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="fill-bg">
+<!-- Start Preloader -->
+<div id="loading">
+  <div class="element">
+    <div class="sk-folding-cube">
+      <div class="sk-cube1 sk-cube"></div>
+      <div class="sk-cube2 sk-cube"></div>
+      <div class="sk-cube4 sk-cube"></div>
+      <div class="sk-cube3 sk-cube"></div>
+    </div>
+  </div>
+</div>
+<!-- End Preloader -->
+
+
+<section class="login-wrapper register">
+  <div class="inner">
+    <div class="regiter-inner">
+      <div class="login-logo"> <a href="index.html"><img src="images/login-logo.png" class="img-responsive" alt=""></a> </div>
+      <ul id="progressbar1">
+    <li class="active">Comapany Information</li>
+    <li class="active">Registratoin Details</li>
+    <li class="active">Services Offered</li>
+    <li>Profile Picture</li>
+  </ul>
+      <div class="head-block">
+        <h1>Expertise</h1>
+      </div>
+      <div class="cnt-block">
+        <form action="#" method="post" class="form-outer"> {% csrf_token %}
+          
+          <div class="row">
+            <div class="col-sm-6">
+              {{form.visa_ratio}}
+            </div>
+            <div class="col-sm-6">
+              {{form.experience}}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-4">
+              {{form.regional_office}}
+            </div>
+            <div class="col-sm-4">
+              {{form.branches}}
+            </div>
+            <div class="col-sm-4">
+              {{form.number_of_counselors}}
+            </div>
+          </div>
+
+          {{ form.errors }}
+          <div class="button-outer">
+
+            <div class="row">
+              <div class="col-sm-6">
+                <button class="btn" type="button" name="button">Back</button></div>
+
+
+              <div class="col-sm-6">
+              <button class="btn" type="submit" name="button">Next</button>
+              </div>
+            </div>
+
+          </div>
+<!---------------Personal Information --------->
+<!------------------------ Company Registeration Details
+
+<div class="row" style="margin-bottom:10px;">
+  <div class="col-sm-6">
+    <select class="mySelect" name="">
+      <option selected disabled style="display:none">VISA SUCCESS RATIO</option>
+
+      <option value="">10%-25%</option>
+      <option value="">25%-50%</option>
+      <option value="">50%-75%</option>
+      <option value="">75%-100%</option>
+    </select>
+  </div>
+  <div class="col-sm-6">
+    <select class="mySelect" name="">
+      <option selected disabled style="display:none">EXPERIENCE (YEARS)</option>
+
+      <option value="1">1-5 Years</option>
+            <option value="1">5-10 Years</option>
+                  <option value="1">10-15 Years</option>
+                        <option value="1">15-20 Years</option>
+                        <option value="">More than 20 Years</option>
+    </select>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4">
+    <select class="mySelect" name="">
+      <option selected disabled style="display:none">REGIONAL OFFICES</option>
+
+      <option value="">Yes</option>
+      <option value="">No</option>
+    </select>
+</div>
+<div class="col-sm-4">
+  <div class="serv_select">
+      <div class="serv_box" onclick="branches()">
+        <select class="mySelect">
+          <option class="hida">Branches</option>
+          <p class="multiSel"></p>
+        </select>
+        <div class="overSelect"></div>
+      </div>
+      <div id="branch_div" style="display:none">
+        <label for="">
+        <input type="checkbox" name="" value="">Islamabad</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Lahore</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Karachi</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Peshawar</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Rawalpindi</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Faisalabad</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Multan</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Gujranwala</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Sialkot</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Quetta</label><br>
+        <label for="">
+        -------------------------------</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Abbottabad</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Adezai</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Ahmed Nager Chatha</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Ahmedpur East</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Ali Bandar</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Ali Pur</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Arifwala</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Astor</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Attock</label><br>
+           <label for="">
+        <input type="checkbox" name="" value="">Ayubia</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Baden</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Bagh</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Bahawalnagar</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Bahawalpur</label><br>
+           <label for="">
+        <input type="checkbox" name="" value="">Bajaur</label><br>
+            <label for="">
+        <input type="checkbox" name="" value="">Banda Daud Shah</label><br>
+              <label for="">
+        <input type="checkbox" name="" value="">Bannu</label><br>
+               <label for="">
+        <input type="checkbox" name="" value="">Baramula</label><br>
+                <label for="">
+        <input type="checkbox" name="" value="">Basti Malook</label><br>
+                 <label for="">
+        <input type="checkbox" name="" value="">Batagram</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Bazdar</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Bela</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Bellpat</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Bhagalchur</label><br>
+           <label for="">
+        <input type="checkbox" name="" value="">Bhaipheru</label><br>
+           <label for="">
+        <input type="checkbox" name="" value="">Bhakkar</label><br>
+             <label for="">
+        <input type="checkbox" name="" value="">Bhalwal</label><br>
+              <label for="">
+        <input type="checkbox" name="" value="">Bhimber</label><br>
+               <label for="">
+        <input type="checkbox" name="" value="">Birote</label><br>
+                <label for="">
+        <input type="checkbox" name="" value="">Buner</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Burewala</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Burj</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Chachro</label><br>
+           <label for="">
+        <input type="checkbox" name="" value="">Chagai</label><br>
+            <label for="">
+        <input type="checkbox" name="" value="">Chah Sandan</label><br>
+             <label for="">
+        <input type="checkbox" name="" value="">Chailianwala</label><br>
+             <label for="">
+        <input type="checkbox" name="" value="">Chakdara</label><br>
+              <label for="">
+        <input type="checkbox" name="" value="">Chakku</label><br>
+               <label for="">
+        <input type="checkbox" name="" value="">Chakwal</label><br>
+                <label for="">
+        <input type="checkbox" name="" value="">Chaman</label><br>
+                 <label for="">
+        <input type="checkbox" name="" value="">Charsadda</label><br>
+                 <label for="">
+        <input type="checkbox" name="" value="">Chhatr</label><br>
+                   <label for="">
+        <input type="checkbox" name="" value="">Chichawatni</label><br>
+                    <label for="">
+        <input type="checkbox" name="" value="">Chiniot</label><br>
+                      <label for="">
+        <input type="checkbox" name="" value="">Chitral</label><br>
+                       <label for="">
+        <input type="checkbox" name="" value="">Chowk Azam</label><br>
+                        <label for="">
+        <input type="checkbox" name="" value="">Chowk Sarwar Shaheed</label><br>
+                          <label for="">
+        <input type="checkbox" name="" value="">Dadu</label><br>
+                           <label for="">
+        <input type="checkbox" name="" value="">Dalbandin</label><br>
+                            <label for="">
+        <input type="checkbox" name="" value="">Dargai</label><br>
+                              <label for="">
+        <input type="checkbox" name="" value="">Darya Khan</label><br>
+                               <label for="">
+        <input type="checkbox" name="" value="">Daska</label><br>
+                                <label for="">
+        <input type="checkbox" name="" value="">Dera Bugti</label><br>
+                                 <label for="">
+        <input type="checkbox" name="" value="">Dera Ghazi Khan</label><br>
+                                  <label for="">
+        <input type="checkbox" name="" value="">Dera Ismail Khan</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Derawar Fort</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Dhana Sar</label><br>
+            <label for="">
+        <input type="checkbox" name="" value="">Dhaular</label><br>
+             <label for="">
+        <input type="checkbox" name="" value="">Digri</label><br>
+              <label for="">
+        <input type="checkbox" name="" value="">Dina City</label><br>
+                <label for="">
+        <input type="checkbox" name="" value="">Dinga</label><br>
+                 <label for="">
+        <input type="checkbox" name="" value="">Dipalpur</label><br>
+                 <label for="">
+        <input type="checkbox" name="" value="">Diplo</label><br>
+                 <label for="">
+        <input type="checkbox" name="" value="">Diwana</label><br>
+                  <label for="">
+        <input type="checkbox" name="" value="">Dokri</label><br>
+                   <label for="">
+        <input type="checkbox" name="" value="">Drasan</label><br>
+                    <label for="">
+        <input type="checkbox" name="" value="">Drosh</label><br>
+                     <label for="">
+        <input type="checkbox" name="" value="">Duki</label><br>
+                      <label for="">
+        <input type="checkbox" name="" value="">Dushi</label><br>
+                       <label for="">
+        <input type="checkbox" name="" value="">Duzab</label><br>
+                        <label for="">
+        <input type="checkbox" name="" value="">Faisalabad</label><br>
+                         <label for="">
+        <input type="checkbox" name="" value="">Fateh Jang</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Gadar</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Gadra</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Gajar</label><br>
+            <label for="">
+        <input type="checkbox" name="" value="">Gandava</label><br>
+             <label for="">
+        <input type="checkbox" name="" value="">Garhi Khairo</label><br>
+              <label for="">
+        <input type="checkbox" name="" value="">Garruck</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Ghakhar Mandi</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Ghanian</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Ghauspur</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Ghazluna</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Ghotki</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Gilgit</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Girdan</ption>
+        <label for="">
+        <input type="checkbox" name="" value="">Gujar Khan</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Gujranwala</ption>
+        <label for="">
+        <input type="checkbox" name="" value="">Gujrat</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Gulistan</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Gwadar</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Gwash</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Hab Chauki</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Hafizabad</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Hala</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Hameedabad</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Hangu</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Haripur</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Harnai</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Haroonabad</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Hasilpur</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Haveli Lakha</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Hinglaj</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Hoshab</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Hunza</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Hyderabad</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Islamkot</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Ispikan</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Jacobabad</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Jahania</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Jalla Araain</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Jamesabad</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Jampur</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Jamshoro</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Janghar</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Jati (Mughalbhin)</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Jauharabad</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Jhal Jhao</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Jhang</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Jhatpat</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Jhelum</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Jhudo</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Jiwani</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Jungshahi</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Kalabagh</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Kalam</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Kalandi</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Kalat</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Kamalia</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Kamararod</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Kamokey</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Kanak</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Kandi</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Kandiaro</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Kanpur</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Kapip</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Kappar</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Karachi</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Karak</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Karodi</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Karor Lal Esan</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Kashmor</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Kasur</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Katuri</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Keti Bandar</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Khairpur</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Khanaspur</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Khanewal</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Khanpur</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Kharan</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Kharian</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Khokhropur</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Khora</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">khuiratta</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Khushab</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Khuzdar</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Khyber</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Kikki</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Klupro</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Kohan</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Kohat</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Kohistan</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Kohlu</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Korak</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Korangi</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Kot Addu</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Kot Sarae</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Kotli</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Kotri</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Kurram</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Laar</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Lahore</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Lahri</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Lakki Marwat</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Lalamusa</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Larkana</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Lasbela</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Latamber</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Layyah</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Liari</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Lodhran</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Loralai</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Lower Dir</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Lund</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Mach</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Madyan</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Mailsi</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Makhdoom Aali</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Malakand</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Mamoori</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Mand</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Mandi Bahauddin</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Mandi Warburton</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Mangla</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Manguchar</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Mansehra</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Mardan</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Mashki Chah</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Maslti</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Mastuj</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Mastung</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Mathi</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Matiari</label><br>
+        <label for="">
+
+        <input type="checkbox" name="" value="">Mehar</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Mekhtar</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Merui</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Mian Channu</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Mianez</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Mianwali</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Minawala</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Miram Shah</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Mirpur</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Mirpur Batoro</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Mirpur Khas</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Mirpur Sakro</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Mithani</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Mithi</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Mohmand</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Mongora</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Moro</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Multan</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Murgha Kibzai/</label><br>
+
+          <label for="">
+        <input type="checkbox" name="" value="">Muridke</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Murree</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Musa Khel Bazar</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Muzaffarabad</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Nagar</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Nagar Parkar</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Nagha Kalat</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Nal</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Naokot</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Narowal</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Naseerabad</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Naudero</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Nauroz Kalat</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Naushara</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Nawabshah</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Nazimabad</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">North Waziristan</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Noushero Feroz</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Nowshera</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Nur Gamma</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Nushki</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Nuttal</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Okara</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Ormara</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Paharpur</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Pak Pattan</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Palantuk</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Panjgur</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Pasni</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Pattoki</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Pendoo</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Peshawar</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Piharak</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Pirmahal</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Pishin</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Plandri</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Pokran</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Punch</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Qambar</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Qamruddin Karez</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Qazi Ahmad</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Qila Abdullah</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Qila Didar Singh</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Qila Ladgasht</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Qila Safed</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Qila Saifullah</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Quetta</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Rabwah</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Rahim Yar Khan</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Raiwind</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Rajan Pur</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Rakhni</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Ranipur</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Ratodero</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Rawalakot</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Rawalpindi</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Renala Khurd</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Robat Thana</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Rodkhan</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Rohri</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Sadiqabad</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Safdar Abad – (Dhaban Singh)</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Sahiwal</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Saidu Sharif</label><br>
+            <label for="">
+        <input type="checkbox" name="" value="">Saindak</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Sakesar</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Samberial</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Sanghar</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Sangla Hill</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Sanjawi</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Sarai Alamgir</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Sargodha</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Saruna</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Shabaz Kalat</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Shadadkhot</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Shafqat Shaheed Chowk</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Shahbandar</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Shahdadpur</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Shahpur</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Shahpur Chakar</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Shakargarh</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Shandur</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Shangla</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Shangrila</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Sharam Jogizai</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Sheikhupura</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Shikarpur</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Shingar</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Shorap</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Sialkot</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Sibi</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Skardu</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Sohawa</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Sonmiani</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Sooianwala</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">South Waziristan</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Spezand</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Spintangi</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Sui</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Sujawal</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Sukkur</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Sundar (city)</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Suntsar</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Surab</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Swabi</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Swat</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Takhtbai</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Talagang</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Tando Adam</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Tando Allahyar</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Tando Bago</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Tangi</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Tank</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Tar Ahamd Rind</ption>
+         <label for="">
+        <input type="checkbox" name="" value="">Tarbela</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Taxila</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Thall</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Thalo</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Thatta</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Toba Tek Singh</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Tordher</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Tujal</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Tump</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Turbat</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Umarao</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Umarkot</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Upper Dir</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Uthal</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Vehari</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Veirwaro</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Vitakri</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Wadh</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Wah Cantonment</label><br>
+          <label for="">
+        <input type="checkbox" name="" value="">Wana</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Warah</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Washap</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Wasjuk</label><br>
+         <label for="">
+        <input type="checkbox" name="" value="">Wazirabad</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Yakmach</label><br>
+        <label for="">
+        <input type="checkbox" name="" value="">Zhob</label><br>
+
+
+</div></div></div>
+    <div class="col-sm-4">
+      <select class="mySelect" name="">
+        <option selected disabled style="display:none">NUMBER OF COUNSELORS</option>
+        <option value="">1-5</option>
+        <option value="">5-10</option>
+        <option value="0">10-20</option>
+        <option value="0">20-30</option>
+        <option value="0">30-40</option>
+        <option value="0">40-50</option>
+        <option value="0">50-75</option>
+        <option value="0">75-100</option>
+        <option value="">More Than 100</option>
+
+
+
+
+      </select>
+    </div>
+    </div>
+
+<div class="row">
+  <div class="col-sm-6">
+
+
+
+<a href="agent-fee.html"><button type="button" class="button" name="button"> <span class="icon-prev-icon"> Back</span></button></a>
+</div>
+
+<div class="col-sm-6">
+<a href="update_pic_agent.html"><button type="button" class="button" name="button">Next<span class="icon-next-icon"></span></button></a>
+<!--  <button class="button" onclick="window.location.href='http://UpdateAgent3.html';">Next<span class="icon-more-icon"></span></button>
+-->  </div>
+
+</div>
+</div>
+</div>
+
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- End Register -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+/*
+var expanded = false;
+
+function branches() {
+  var checkboxes = document.getElementById("branch_div");
+  if (!expanded) {
+    checkboxes.style.display = "block";
+    expanded = true;
+  } else {
+    checkboxes.style.display = "none";
+    expanded = false;
+  }
+}
+$(document).mouseup(function (e) {
+           var container = new Array();
+           container.push($('#msel'));
+           $.each(container, function (key, value) {
+               if (!$(value).is(e.target) && $(value).has(e.target).length === 0) {
+                   ///--need to have better code from yourside..
+                   var checkboxes = document.getElementById("branch_div");
+                   checkboxes.style.display = "none";
+                   ///--need to have better code from yourside..
+               }
+           });
+       });
+function yesnoCheck() {
+    if (document.getElementById('sel').value.click='1') {
+        document.getElementById('ro').style.display = 'block';
+    }
+    else document.getElementById('ro').style.display = 'none';
+  } */
+</script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Bootsrap JS -->
+
+<!-- Select2 JS -->
+<script type="text/javascript" src="{% static "assets/select2/js/select2.min.js" %}"></script>
+<!-- Match Height JS -->
+<script type="text/javascript" src="{% static "assets/matchHeight/js/matchHeight-min.js" %}"></script>
+<!-- Bxslider JS -->
+<script type="text/javascript" src="{% static "assets/bxslider/js/bxslider.min.js" %}"></script>
+<!-- Waypoints JS -->
+<script type="text/javascript" src="{% static "assets/waypoints/js/waypoints.min.js" %}"></script>
+<!-- Counter Up JS -->
+<script type="text/javascript" src="{% static "assets/counterup/js/counterup.min.js" %}"></script>
+<!-- Magnific Popup JS -->
+<script type="text/javascript" src="{% static "assets/magnific-popup/js/magnific-popup.min.js" %}"></script>
+<!-- Owl Carousal JS -->
+<script type="text/javascript" src="{% static "assets/owl-carousel/js/owl.carousel.min.js" %}"></script>
+<!-- Modernizr JS -->
+<script type="text/javascript" src="{% static "js/modernizr.custom.js" %}js/modernizr.custom.js"></script>
+<!-- Custom JS -->
+<script type="text/javascript" src="{% static "js/custom.js" %}"></script></body>
+</html>

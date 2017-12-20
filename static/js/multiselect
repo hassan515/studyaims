@@ -1,0 +1,27 @@
+<input type="checkbox" class="searchPercentages" name="" value="">30%-35%</label>
+<label for="">
+<input type="checkbox" class="searchPercentages" name="" value="">35%-40%</label>
+<label for="one">
+  <input type="checkbox" class="searchPercentages" id="one" />40%-45%</label>
+  <label for="one">
+    <input type="checkbox" class="searchPercentages" id="one" />45%-50%</label>
+<label for="two">
+  <input type="checkbox" class="searchPercentages" id="two" />50%-55%</label>
+<label for="three">
+  <input type="checkbox" class="searchPercentages" id="three" />55%-60%</label>
+  <label for="three">
+    <input type="checkbox" class="searchPercentages" id="three" />60%-65%</label>
+    <label for="three">
+      <input type="checkbox" class="searchPercentages" id="three" />65%-70%</label>
+      <label for="three">
+        <input type="checkbox" class="searchPercentages" id="three" />70%-75%</label>
+        <label for="three">
+          <input type="checkbox" class="searchPercentages" id="three" />75%-80%</label>
+          <label for="three">
+            <input type="checkbox" class="searchPercentages" id="three" />80%-85%</label>
+            <label for="three">
+              <input type="checkbox" class="searchPercentages" id="three" />85%-90%</label>
+              <label for="three">
+                <input type="checkbox" class="searchPercentages" id="three" />90%-95%</label>
+                <label for="three">
+                  <input type="checkbox" class="searchPercentages" id="three" />95%-100%</label>

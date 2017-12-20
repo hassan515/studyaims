@@ -1,0 +1,356 @@
+<!doctype html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0; maximum-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+<title>Educational Template</title>
+<!-- Reset CSS -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link href="{% static 'css/fonts.css' %}" rel="stylesheet" type="text/css">
+<!-- Bootstrap
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- Font Awesome -->
+<link href="{% static 'css/fonts/font-awesome.min.css'%}" rel="stylesheet" type="text/css" >
+<!-- Iconmoon -->
+<link href=" {% static 'css/iconmoon.css' %}" rel="stylesheet" type="text/css">
+<!-- Custom Style -->
+<link href="{% static 'css/custom.css' %}" rel="stylesheet" type="text/css">
+
+<link href="{% static "css/reset.css" %}" rel="stylesheet" type="text/css">
+<!-- Custom Fonts -->
+<link href="{% static "css/fonts.css" %}" rel="stylesheet" type="text/css">
+<!-- Bootstrap -->
+
+<!-- Select2 -->
+<link href="assets/select2/css/select2.min.css" rel="stylesheet" type="text/css">
+<!-- Font Awesome -->
+<link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!-- Magnific Popup -->
+<link href="assets/magnific-popup/css/magnific-popup.css" rel="stylesheet" type="text/css">
+<!-- Iconmoon -->
+<link href="assets/iconmoon/css/iconmoon.css" rel="stylesheet" type="text/css">
+<!-- Owl Carousel -->
+<link href="{% static "assets/owl-carousel/css/owl.carousel.min.css" %}" rel="stylesheet" type="text/css">
+<!-- Animate -->
+<link href="{% static "css/animate.css" %}" rel="stylesheet" type="text/css">
+<!-- Custom Style -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"><!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="fill-bg">
+<!-- Start Preloader -->
+<div id="loading">
+  <div class="element">
+    <div class="sk-folding-cube">
+      <div class="sk-cube1 sk-cube"></div>
+      <div class="sk-cube2 sk-cube"></div>
+      <div class="sk-cube4 sk-cube"></div>
+      <div class="sk-cube3 sk-cube"></div>
+    </div>
+  </div>
+</div>
+<!-- End Preloader -->
+
+
+<section class="login-wrapper register">
+  <div class="inner">
+    <div class="regiter-inner">
+      <div class="login-logo"> <a href="index.html"><img src="images/login-logo.png" class="img-responsive" alt=""></a> </div>
+      <ul id="progressbar">
+    <li class="active">Personal Information</li>
+    <li class="active">Qaulifications</li>
+    <li class="active">Language Skills</li>
+    <li>Future Plans</li>
+    <li>Profile Picture</li>
+  </ul>
+      <div class="head-block">
+        <h1>Language Skills</h1>
+      </div>
+      <div class="cnt-block">
+        <form action="#" method="post" class="form-outer">
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-sm-6">
+              {{ form.english_language }}
+            </div>
+            <div class="col-sm-6">
+              {{ form.english_language_score }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              {{ form.other_Language }}
+            </div>
+            <div class="col-sm-6">
+              {{ form.Other_Language_score }}
+            </div>
+          </div>
+
+          {{ form.errors }}
+
+               <div class="row">
+                 <div class="col-sm-6">
+                   <button type="button" class="btn" name="button">Back</button>
+                 </div>
+                 <div class="col-sm-6">
+                   <button type="submit" class="btn" name="button">Next</button>
+                 </div>
+               </div>
+<!---------------Personal Information --------->
+<!--
+<div class="row">
+  <div class="col-sm-12">
+    <h3 class="headings"></h3>
+
+
+</div>
+
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <select class="mySelect" name="english-skills" onchange='CheckEnglish(this.value);'>
+<option selected disabled style="display:none">ENGLISH LANGUAGE</option>
+        <option value="">Not Any Test</option>
+        <option value="Ielts">IELTS</option>
+        <option value="toefl">TOEFL</option>
+        <option value="pte">PTE</option>
+        <option value="">Other</option>
+  </select>
+  </div>
+  <div class="col-sm-6">
+    <select class="mySelect" name="" onchange='CheckOther(this.value);'>
+      <option selected disabled style="display:none">OTHER LANGUAGE</option>
+      <option value="">No Language</option>
+      <option value="german">German</option>
+      <option value="chinese">Chinese</option>
+      <option value="japan">Japanese</option>
+      <option value="">Spanish</option>
+      <option value="french">French</option>
+      <option value="italian">Italian</option>
+      <option value="turkish">Turkish</option>
+      <option value="portoguese">Portuguese</option>
+
+      <option value="Korian">Korean</option>
+      <option value="">Other</option>
+
+      </select>
+  </div>
+
+</div>
+<div class="row">
+  <div class="col-sm-6" >
+    <input type="text" name="" value="" placeholder="Score?" onfocus="this.placeholder=""" onblur="this.placeholder="Score?"" style="display:none" id="english-skills">
+  </div>
+
+  <div class="col-sm-6">
+
+  </div>
+  <div class="col-sm-6" >
+    <input type="text" name="" value="" placeholder="Level?" onfocus="this.placeholder=""" onblur="this.placeholder="Level?"" style="display:none" id="other-lang-skills">
+  </div>
+</div>
+
+
+
+<!-- English Check -->
+<!-- Other Language -->
+
+<!--
+
+<div class="row">
+  <div class="col-sm-6">
+    <a href="UpdateStudent2.html"><button type="button" class="button" name="button"><span class="icon-prev-icon"></span> Back</button></a>
+
+  <!--  <button class="button" onclick="location.href='file:///E:/Offiice%20Stuff/Edited/main-file/Update_Pro_student_2.html';">back<span class="icon-more-icon"></span></button>
+-->
+
+<!--</div>
+  <div class="col-sm-6">
+    <a href="UpdateStudent4.html"><button type="button" class="button" name="button">Next <span class="icon-next-icon"></span></button></a>
+
+
+  </div>
+</div> -->
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<script type="text/javascript">
+/*
+
+function yesnoCheck() {
+    if (document.getElementById('y-option').checked) {
+        document.getElementById('study_gap').style.display = 'block';
+    }
+    else document.getElementById('study_gap').style.display = 'none';
+}
+
+function ach_Check() {
+    if (document.getElementById('ach_Y-option').checked) {
+        document.getElementById('Achievements').style.display = 'block';
+    }
+    else document.getElementById('Achievements').style.display = 'none';
+}
+
+function eng_check() {
+    if (document.getElementById('eng-option').checked) {
+        document.getElementById('english').style.display = 'block';
+        document.getElementById('others').style.display = 'block';
+    }
+    else document.getElementById('english').style.display = 'none';
+    document.getElementById('others').style.display = 'none';
+}
+
+function ielts_check() {
+    if (document.getElementById('ielts').checked) {
+        document.getElementById('ielts_score').style.display = 'block';
+
+    }
+    else document.getElementById('ielts_score').style.display = 'none';
+
+}
+
+function german_check() {
+    if (document.getElementById('german_click').checked) {
+        document.getElementById('german').style.display = 'block';
+
+    }
+    else document.getElementById('german').style.display = 'none';
+
+}
+function french_check() {
+    if (document.getElementById('french_click').checked) {
+        document.getElementById('french').style.display = 'block';
+
+    }
+    else document.getElementById('china').style.display = 'none';
+
+}
+
+function spanish_check() {
+    if (document.getElementById('spanish_click').checked) {
+        document.getElementById('spanish').style.display = 'block';
+
+    }
+    else document.getElementById('spanish').style.display = 'none';
+
+}
+function russian_check() {
+    if (document.getElementById('russian_click').checked) {
+        document.getElementById('russian').style.display = 'block';
+
+    }
+    else document.getElementById('russian').style.display = 'none';
+
+}
+function porto_check() {
+    if (document.getElementById('porto_click').checked) {
+        document.getElementById('portoguese').style.display = 'block';
+
+    }
+    else document.getElementById('portoguese').style.display = 'none';
+
+}
+
+function china_check() {
+    if (document.getElementById('china_click').checked) {
+        document.getElementById('china').style.display = 'block';
+
+    }
+    else document.getElementById('china').style.display = 'none';
+
+}
+function japan_check() {
+    if (document.getElementById('japan_click').checked) {
+        document.getElementById('japan').style.display = 'block';
+
+    }
+    else document.getElementById('japan').style.display = 'none';
+
+}
+function koria_check() {
+    if (document.getElementById('koria_click').checked) {
+        document.getElementById('koria').style.display = 'block';
+
+    }
+    else document.getElementById('koria').style.display = 'none';
+
+}
+
+function toefl_check() {
+    if (document.getElementById('toefl').checked) {
+        document.getElementById('toefl_score').style.display = 'block';
+
+    }
+    else document.getElementById('toefl_score').style.display = 'none';
+
+}
+
+function pte_check() {
+    if (document.getElementById('pte').checked) {
+        document.getElementById('pte_score').style.display = 'block';
+
+    }
+    else document.getElementById('pte_score').style.display = 'none';
+
+}
+
+function other_check() {
+    if (document.getElementById('other_lan').checked) {
+        document.getElementById('other_score').style.display = 'block';
+
+    }
+    else document.getElementById('other_score').style.display = 'none';
+
+}
+
+
+function job_exp_Check() {
+    if (document.getElementById('jy-option').checked) {
+        document.getElementById('job_exp').style.display = 'block';
+    }
+    else document.getElementById('job_exp').style.display = 'none';
+}
+*/
+</script>
+<!-- End Register -->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Bootsrap JS -->
+
+<!-- Select2 JS -->
+<script type="text/javascript" src="{% static "assets/select2/js/select2.min.js" %}"></script>
+<!-- Match Height JS -->
+<script type="text/javascript" src="{% static "assets/matchHeight/js/matchHeight-min.js" %}"></script>
+<!-- Bxslider JS -->
+<script type="text/javascript" src="{% static "assets/bxslider/js/bxslider.min.js" %}"></script>
+<!-- Waypoints JS -->
+<script type="text/javascript" src="{% static "assets/waypoints/js/waypoints.min.js" %}"></script>
+<!-- Counter Up JS -->
+<script type="text/javascript" src="{% static "assets/counterup/js/counterup.min.js" %}"></script>
+<!-- Magnific Popup JS -->
+<script type="text/javascript" src="{% static "assets/magnific-popup/js/magnific-popup.min.js" %}"></script>
+<!-- Owl Carousal JS -->
+<script type="text/javascript" src="{% static "assets/owl-carousel/js/owl.carousel.min.js" %}"></script>
+<!-- Modernizr JS -->
+<script type="text/javascript" src="{% static "js/modernizr.custom.js" %}js/modernizr.custom.js"></script>
+<!-- Custom JS -->
+<script type="text/javascript" src="{% static "js/custom.js" %}"></script>
+</body>
+</html>

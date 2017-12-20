@@ -1,0 +1,281 @@
+<!doctype html>
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0; maximum-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+<title>Educational Template</title>
+<!-- Reset CSS -->
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<link href="style.css" rel="stylesheet" type="text/css">
+<!-- Custom Fonts -->
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+<link href="{% static 'css/fonts.css' %}" rel="stylesheet" type="text/css">
+<!-- Bootstrap -->
+<link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<!-- Font Awesome -->
+<link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!-- Iconmoon -->
+<link href="assets/iconmoon/css/iconmoon.css" rel="stylesheet" type="text/css">
+<!-- Custom Style -->
+<link href="{% static 'css/custom.css' %}" rel="stylesheet" type="text/css">
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="fill-bg">
+<!-- Start Preloader -->
+<!--
+<div id="loading">
+  <div class="element">
+    <div class="sk-folding-cube">
+      <div class="sk-cube1 sk-cube"></div>
+      <div class="sk-cube2 sk-cube"></div>
+      <div class="sk-cube4 sk-cube"></div>
+      <div class="sk-cube3 sk-cube"></div>
+    </div>
+  </div>
+</div> -->
+<!-- End Preloader -->
+
+
+<section class="login-wrapper register">
+  <div class="inner">
+    <div class="regiter-inner">
+
+      <div class="login-logo"> <a href="index.html"><img src="images/login-logo.png" class="img-responsive" alt=""></a> </div>
+    <!--  <ul id="progressbar">
+    <li class="active">Personal Information</li>
+    <li>Qaulifications</li>
+    <li>Language Skills</li>
+    <li>Future Plans</li>
+    <li>Profile Picture</li>
+  </ul> -->
+
+      <div class="head-block">
+        <h1>Update profile</h1>
+      </div>
+      <div class="cnt-block">
+        <form action="#" method="post" class="form-outer">
+<!---------------Personal Information --------->
+{% csrf_token %}
+
+  <h1>Personal Information</h1>
+  {{  profile_form.as_p  }}
+  <h1>Qualification Information</h1>
+
+
+
+</div>
+</div>
+
+
+
+
+
+     <!--	<input type='date' class="datepicker" data-date-inline-picker="true" placeholder="Date of birth"></input>
+                 <span class="icon-calander-icon"></span> </div>
+
+
+                       <
+                   </div>
+
+   </div>
+	<!-	<label for='picture'>
+    <img src="https://plus.google.com/photos/114809861514342788109/album/6306090224289882481/6306090221856483314?authkey=CJPV_OKHvczjSw">
+</label>
+		<input type="file" name="pic" accept=".gif,.jpg,.png,.tif|image/*" id='picture'>
+		</div>
+
+
+
+          <!--
+            <div class="col-sm-12">
+              <input name="Address" type="text" placeholder="Address">
+            </div>
+-->
+
+
+
+
+<!--------Qualification--------->
+
+
+
+
+      <div class="row">
+        <div class="col-sm-12">
+
+
+          <div class="button-outer">
+            <a href="UpdateStudent2.html"><button type="button" class="btn" name="button">Next <span class="icon-next-icon"></span></button></a>
+
+
+          </div>  </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<script type="text/javascript">
+
+
+function yesnoCheck() {
+    if (document.getElementById('y-option').checked) {
+        document.getElementById('study_gap').style.display = 'block';
+    }
+    else document.getElementById('study_gap').style.display = 'none';
+}
+
+function ach_Check() {
+    if (document.getElementById('ach_Y-option').checked) {
+        document.getElementById('Achievements').style.display = 'block';
+    }
+    else document.getElementById('Achievements').style.display = 'none';
+}
+
+function eng_check() {
+    if (document.getElementById('eng-option').checked) {
+        document.getElementById('english').style.display = 'block';
+        document.getElementById('others').style.display = 'block';
+    }
+    else document.getElementById('english').style.display = 'none';
+    document.getElementById('others').style.display = 'none';
+}
+
+function ielts_check() {
+    if (document.getElementById('ielts').checked) {
+        document.getElementById('ielts_score').style.display = 'block';
+
+    }
+    else document.getElementById('ielts_score').style.display = 'none';
+
+}
+
+function german_check() {
+    if (document.getElementById('german_click').checked) {
+        document.getElementById('german').style.display = 'block';
+
+    }
+    else document.getElementById('german').style.display = 'none';
+
+}
+function french_check() {
+    if (document.getElementById('french_click').checked) {
+        document.getElementById('french').style.display = 'block';
+
+    }
+    else document.getElementById('china').style.display = 'none';
+
+}
+
+function spanish_check() {
+    if (document.getElementById('spanish_click').checked) {
+        document.getElementById('spanish').style.display = 'block';
+
+    }
+    else document.getElementById('spanish').style.display = 'none';
+
+}
+function russian_check() {
+    if (document.getElementById('russian_click').checked) {
+        document.getElementById('russian').style.display = 'block';
+
+    }
+    else document.getElementById('russian').style.display = 'none';
+
+}
+function porto_check() {
+    if (document.getElementById('porto_click').checked) {
+        document.getElementById('portoguese').style.display = 'block';
+
+    }
+    else document.getElementById('portoguese').style.display = 'none';
+
+}
+
+function china_check() {
+    if (document.getElementById('china_click').checked) {
+        document.getElementById('china').style.display = 'block';
+
+    }
+    else document.getElementById('china').style.display = 'none';
+
+}
+function japan_check() {
+    if (document.getElementById('japan_click').checked) {
+        document.getElementById('japan').style.display = 'block';
+
+    }
+    else document.getElementById('japan').style.display = 'none';
+
+}
+function koria_check() {
+    if (document.getElementById('koria_click').checked) {
+        document.getElementById('koria').style.display = 'block';
+
+    }
+    else document.getElementById('koria').style.display = 'none';
+
+}
+
+function toefl_check() {
+    if (document.getElementById('toefl').checked) {
+        document.getElementById('toefl_score').style.display = 'block';
+
+    }
+    else document.getElementById('toefl_score').style.display = 'none';
+
+}
+
+function pte_check() {
+    if (document.getElementById('pte').checked) {
+        document.getElementById('pte_score').style.display = 'block';
+
+    }
+    else document.getElementById('pte_score').style.display = 'none';
+
+}
+
+function other_check() {
+    if (document.getElementById('other_lan').checked) {
+        document.getElementById('other_score').style.display = 'block';
+
+    }
+    else document.getElementById('other_score').style.display = 'none';
+
+}
+
+
+function job_exp_Check() {
+    if (document.getElementById('jy-option').checked) {
+        document.getElementById('job_exp').style.display = 'block';
+    }
+    else document.getElementById('job_exp').style.display = 'none';
+}
+
+
+</script>
+<!-- End Register -->
+<script src='js/customSelect.jquery.js'></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<!-- Bootsrap JS -->
+<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+<!-- Select2 JS -->
+<script type="text/javascript" src="assets/select2/js/select2.min.js"></script>
+<!-- Date Picker JS -->
+<script type="text/javascript" src="assets/datepicker/js/datepicker.js"></script>
+<!-- Custom JS -->
+<script type="text/javascript" src="js/custom.js"></script>
+</body>
+</html>

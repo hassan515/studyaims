@@ -1,0 +1,1113 @@
+<!doctype html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0; maximum-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+<title>Educational Template</title>
+<!-- Reset CSS -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link href="{% static 'css/fonts.css' %}" rel="stylesheet" type="text/css">
+<!-- Bootstrap
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- Font Awesome -->
+<link href="{% static 'css/fonts/font-awesome.min.css'%}" rel="stylesheet" type="text/css" >
+<!-- Iconmoon -->
+<link href=" {% static 'css/iconmoon.css' %}" rel="stylesheet" type="text/css">
+<!-- Custom Style -->
+<link href="{% static 'css/custom.css' %}" rel="stylesheet" type="text/css">
+
+<link href="{% static "css/reset.css" %}" rel="stylesheet" type="text/css">
+<!-- Custom Fonts -->
+<link href="{% static "css/fonts.css" %}" rel="stylesheet" type="text/css">
+<!-- Bootstrap -->
+
+<!-- Select2 -->
+<link href="assets/select2/css/select2.min.css" rel="stylesheet" type="text/css">
+<!-- Font Awesome -->
+<link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!-- Magnific Popup -->
+<link href="assets/magnific-popup/css/magnific-popup.css" rel="stylesheet" type="text/css">
+<!-- Iconmoon -->
+<link href="assets/iconmoon/css/iconmoon.css" rel="stylesheet" type="text/css">
+<!-- Owl Carousel -->
+<link href="{% static "assets/owl-carousel/css/owl.carousel.min.css" %}" rel="stylesheet" type="text/css">
+<!-- Animate -->
+<link href="{% static "css/animate.css" %}" rel="stylesheet" type="text/css">
+<!-- Custom Style -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="fill-bg">
+<!-- Start Preloader -->
+<div id="loading">
+  <div class="element">
+    <div class="sk-folding-cube">
+      <div class="sk-cube1 sk-cube"></div>
+      <div class="sk-cube2 sk-cube"></div>
+      <div class="sk-cube4 sk-cube"></div>
+      <div class="sk-cube3 sk-cube"></div>
+    </div>
+  </div>
+</div>
+<!-- End Preloader -->
+
+
+<section class="login-wrapper register">
+  <div class="inner">
+    <div class="regiter-inner">
+      <div class="login-logo"> <a href="index.html"><img src="images/login-logo.png" class="img-responsive" alt=""></a> </div>
+      <ul id="progressbar1">
+    <li class="active">Comapany Information</li>
+    <li class="active">Registratoin Details</li>
+    <li class="active">Services Offered</li>
+    <li>Profile Picture</li>
+  </ul>
+      <div class="head-block">
+        <h1>Services Offerd</h1>
+      </div>
+      <div class="cnt-block">
+        <form action="#" method="post" class="form-outer"> {% csrf_token %}
+
+     <div class="row">
+       <div class="col-sm-4">
+         {{ form.countries_Dealing }}
+       </div>
+       <div class="col-sm-4">
+         {{ form.service_type }}
+       </div>
+       <div class="col-sm-4">
+         {{ form.language_classes }}
+       </div>
+
+     </div>
+     <div class="row">
+       <div class="col-sm-4">
+         {{ form.program_specialist }}
+       </div>
+       <div class="col-sm-4">
+         {{ form.refusal_appeals }}
+       </div>
+       <div class="col-sm-4">
+         {{ form.scholarships_offered}}
+       </div>
+
+     </div>
+
+     <div class="row">
+       <div class="col-sm-4">
+         {{ form.interview_preparation }}
+       </div>
+       <div class="col-sm-4">
+         {{ form.travel_and_health }}
+       </div>
+       <div class="col-sm-4">
+         {{ form.travel_arrangements }}
+       </div>
+
+     </div>
+
+{{ form.errors }}
+<div class="button-outer">
+
+  <div class="row">
+    <div class="col-sm-6">
+      <button class="btn" type="button" name="button">Back</button></div>
+
+
+    <div class="col-sm-6">
+    <button class="btn" type="submit" name="button">Next</button>
+    </div>
+  </div>
+
+</div>
+
+<!---------------Personal Information --------->
+<!------------------------ Company Registeration Details --------------->
+
+<!--<div class="row">
+
+      <!--
+
+      <div class="col-sm-9">
+
+
+        <div class="col-sm-5">
+      <h2>Are you Education consultant?</h2></div>
+      <div class="col-sm-2">
+        <ul class="select-opt clearfix">
+          <li>
+            <input type="radio" onclick="javascript:consult_details();" id="ach_Y-option" name="selector">
+            <label for="ach_Y-option">Yes</label>
+            <div class="check"></div> </li></ul>
+      </div>
+      <div class="col-sm-2">
+        <ul class="select-opt clearfix"> <li>
+              <input type="radio" onclick="javascript:consult_details();" id="ach_N-option" name="selector">
+              <label for="ach_N-option">No</label>
+              <div class="check"></div>
+          </li> </ul>
+
+      </div></div>
+
+</div> -->
+
+<!--
+<div class="" id="consultant" >
+
+
+<div class="row" id="service">
+          <div class="col-sm-4">
+            <div class="serv_select">
+                <div class="serv_box" onclick="offered_Serv()">
+                  <select class="mySelect">
+                    <option class="hida">Countries Dealing</option>
+                    <p class="multiSel"></p>
+                  </select>
+                  <div class="overSelect"></div>
+                </div>
+                <div id="services" style="display:none">
+                  <p>Popular Destinations</p>
+                  <label for="">
+                  <input type="checkbox" name="" id="allCountry" value="">All</label><br>
+                  <label for="one">
+                    <input type="checkbox" class="selectAllCountry" id="first" />Australia</label><br>
+                    <label for="">
+                    <input type="checkbox" class="selectAllCountry" name="" value="">USA</label><br>
+
+                    <label for="one">
+                      <input type="checkbox" class="selectAllCountry" id="first" />Canada</label><br>
+                      <label for="">
+                      <input type="checkbox" class="selectAllCountry" name="" value="">UK</label><br>
+                      <label for="">
+                      <input type="checkbox" class="selectAllCountry" name="" value="">Ireland</label><br>
+                      <label for="">
+                      <input type="checkbox" class="selectAllCountry" name="" value="">New Zealand</label><br>
+                      <label for="">
+                      <input type="checkbox" class="selectAllCountry" name="" value="">Germany</label><br>
+                      <label for="">
+                      <input type="checkbox" class="selectAllCountry" name="" value="">Sweden</label><br>
+                    <p>-------------------------------------------</p>
+                    <label for="">
+                    <input type="checkbox" class="selectAllCountry" name="" value="">All</label><br>
+                  <label for="one">
+                    <input type="checkbox" class="selectAllCountry" id="first" />Afghanistan</label><br>
+                  <label for="two">
+                    <input type="checkbox" class="selectAllCountry" id="second" />Albania</label><br>
+                  <label for="three">
+                    <input type="checkbox" class="selectAllCountry" id="third" />Algeria</label><br>
+                    <label for="one">
+                      <input type="checkbox" class="selectAllCountry" id="first" />Andorra</label><br>
+                    <label for="two">
+                      <input type="checkbox" class="selectAllCountry" id="second" />Angola</label><br>
+                    <label for="three">
+                      <input type="checkbox" class="selectAllCountry" id="third" />Anguilla</label><br>
+                      <label for="one">
+                        <input type="checkbox" class="selectAllCountry" id="first" />Antigua & Barbuda</label><br>
+                      <label for="two">
+                        <input type="checkbox" class="selectAllCountry" id="second" />Argentina</label><br>
+                      <label for="three">
+                        <input type="checkbox" class="selectAllCountry" id="third" />Armenia</label><br>
+
+                        <label for="two">
+                          <input type="checkbox" class="selectAllCountry" id="second" />Austria</label><br>
+                        <label for="three">
+                          <input type="checkbox" class="selectAllCountry" id="third" />Azerbaijan</label><br>
+
+                          <label for="one">
+                            <input type="checkbox" class="selectAllCountry" id="first" />Bahamas</label><br>
+                          <label for="two">
+                            <input type="checkbox" class="selectAllCountry" id="second" />Bahrain</label><br>
+                          <label for="three">
+                            <input type="checkbox" class="selectAllCountry" id="third" />Bangladesh</label><br>
+                            <label for="one">
+                              <input type="checkbox" class="selectAllCountry" id="first" />Barbados</label><br>
+                            <label for="two">
+                              <input type="checkbox" class="selectAllCountry" id="second" />Belarus</label><br>
+                            <label for="three">
+                              <input type="checkbox" class="selectAllCountry" id="third" />Belgium</label><br>
+                              <label for="one">
+                                <input type="checkbox" class="selectAllCountry" id="first" />Belize</label><br>
+                              <label for="two">
+                                <input type="checkbox" class="selectAllCountry" id="second" />Benin</label><br>
+                              <label for="three">
+                                <input type="checkbox" class="selectAllCountry" id="third" />Bermuda</label><br>
+                                <label for="one">
+                                  <input type="checkbox" class="selectAllCountry" id="first" />Bhutan</label><br>
+                                <label for="two">
+                                  <input type="checkbox" class="selectAllCountry" id="second" />Bolivia</label><br>
+                                <label for="three">
+                                  <input type="checkbox" class="selectAllCountry" id="third" />Bosnia & Herzegovina</label><br>
+
+                                  <label for="one">
+                                    <input type="checkbox" class="selectAllCountry" id="first" />Botswana</label><br>
+                                  <label for="two">
+                                    <input type="checkbox" class="selectAllCountry" id="second" />Brazil</label><br>
+                                  <label for="three">
+                                    <input type="checkbox" class="selectAllCountry" id="third" />Brunei Darussalam</label><br>
+                                    <label for="one">
+                                      <input type="checkbox" class="selectAllCountry" id="first" />Bulgaria</label><br>
+                                    <label for="two">
+                                      <input type="checkbox" class="selectAllCountry" id="second" />Burkina Faso</label><br>
+                                    <label for="three">
+                                      <input type="checkbox" class="selectAllCountry" id="third" />Myanmar/Burma</label><br>
+                                      <label for="one">
+                                        <input type="checkbox" class="selectAllCountry" id="first" />Burundi</label><br>
+                                      <label for="two">
+                                        <input type="checkbox" class="selectAllCountry" id="second" />Cambodia</label><br>
+                                      <label for="three">
+                                        <input type="checkbox" class="selectAllCountry" id="third" />Cameroon</label><br>
+
+                                        <label for="two">
+                                          <input type="checkbox" class="selectAllCountry" id="second" />Cape Verde</label><br>
+                                        <label for="three">
+                                          <input type="checkbox" class="selectAllCountry" id="third" />Cayman Islands</label><br>
+
+                                          <label for="one">
+                                            <input type="checkbox" class="selectAllCountry" id="first" />Central African </label><br>
+                                          <label for="two">
+                                            <input type="checkbox" class="selectAllCountry" id="second" />Chad Republic</label><br>
+                                          <label for="three">
+                                            <input type="checkbox" class="selectAllCountry" id="third" />Chile</label><br>
+                                            <label for="one">
+                                              <input type="checkbox" class="selectAllCountry" id="first" />China</label><br>
+                                            <label for="two">
+                                              <input type="checkbox" class="selectAllCountry" id="second" />Colombia</label><br>
+                                            <label for="three">
+                                              <input type="checkbox" class="selectAllCountry" id="third" />Comoros</label><br>
+                                              <label for="one">
+                                                <input type="checkbox" class="selectAllCountry" id="first" />Congo</label><br>
+                                              <label for="two">
+                                                <input type="checkbox" class="selectAllCountry" id="second" />Costa Rica</label><br>
+                                              <label for="three">
+                                                <input type="checkbox" class="selectAllCountry" id="third" />Croatia</label><br>
+                                                <label for="one">
+                                                  <input type="checkbox" class="selectAllCountry" id="first" />Cuba</label><br>
+                                                <label for="two">
+                                                  <input type="checkbox" class="selectAllCountry" id="second" />Cyprus</label><br>
+                                                <label for="three">
+                                                  <input type="checkbox" class="selectAllCountry" id="third" />Czech Republic</label><br>
+                                                  <label for="one">
+                                                    <input type="checkbox" class="selectAllCountry" id="first" />Democratic Republic of the Congo</label><br>
+                                                  <label for="two">
+                                                    <input type="checkbox" class="selectAllCountry" id="second" />Denmark</label><br>
+                                                  <label for="three">
+                                                    <input type="checkbox" class="selectAllCountry" id="third" />Djibouti</label><br>
+                                                    <label for="one">
+                                                      <input type="checkbox" class="selectAllCountry" id="first" />Dominican Republic</label><br>
+                                                    <label for="two">
+                                                      <input type="checkbox" class="selectAllCountry" id="second" />Dominica</label><br>
+                                                    <label for="three">
+                                                      <input type="checkbox" class="selectAllCountry" id="third" />Ecuador</label><br>
+                                                      <label for="one">
+                                                        <input type="checkbox" class="selectAllCountry" id="first" />Egypt</label><br>
+                                                      <label for="two">
+                                                        <input type="checkbox" class="selectAllCountry" id="second" />El Salvador</label><br>
+                                                      <label for="three">
+                                                        <input type="checkbox" class="selectAllCountry" id="third" />Equatorial Guinea</label><br>
+                                                        <label for="one">
+                                                          <input type="checkbox" class="selectAllCountry" id="first" />Eritrea</label><br>
+                                                        <label for="two">
+                                                          <input type="checkbox" class="selectAllCountry" id="second" />Estonia</label><br>
+                                                        <label for="three">
+                                                          <input type="checkbox" class="selectAllCountry" id="third" />Ethiopia</label><br>
+
+                                                          <label for="one">
+                                                            <input type="checkbox" class="selectAllCountry" id="first" />Fiji</label><br>
+                                                          <label for="two">
+                                                            <input type="checkbox" class="selectAllCountry" id="second" />Finland</label><br>
+                                                          <label for="three">
+                                                            <input type="checkbox" class="selectAllCountry" id="third" />France</label><br>
+                                                            <label for="one">
+                                                              <input type="checkbox" class="selectAllCountry" id="first" />French Guiana</label><br>
+                                                            <label for="two">
+                                                              <input type="checkbox" class="selectAllCountry" id="second" />Gabon</label><br>
+                                                            <label for="three">
+                                                              <input type="checkbox" class="selectAllCountry" id="third" />Gambia</label><br>
+                                                              <label for="one">
+                                                                <input type="checkbox" class="selectAllCountry" id="first" />Georgia</label><br>
+
+                                                              <label for="three">
+                                                                <input type="checkbox" class="selectAllCountry" id="third" />Ghana</label><br>
+                                                                <label for="one">
+                                                                  <input type="checkbox" class="selectAllCountry" id="first" />Great Britain</label><br>
+                                                                <label for="two">
+                                                                  <input type="checkbox" class="selectAllCountry" id="second" />Greece</label><br>
+                                                                <label for="three">
+                                                                  <input type="checkbox" class="selectAllCountry" id="third" />Grenada</label><br>
+
+                                                                  <label for="two">
+                                                                    <input type="checkbox" class="selectAllCountry" id="second" />Guadeloupe</label><br>
+                                                                  <label for="three">
+                                                                    <input type="checkbox" class="selectAllCountry" id="third" />Guatemala</label><br>
+
+                                                                    <label for="one">
+                                                                      <input type="checkbox" class="selectAllCountry" id="first" />Guinea</label><br>
+                                                                    <label for="two">
+                                                                      <input type="checkbox" class="selectAllCountry" id="second" />Guinea-Bissau</label><br>
+                                                                    <label for="three">
+                                                                      <input type="checkbox" class="selectAllCountry" id="third" />Guyana</label><br>
+                                                                      <label for="one">
+                                                                        <input type="checkbox" class="selectAllCountry" id="first" />Haiti</label><br>
+                                                                      <label for="two">
+                                                                        <input type="checkbox" class="selectAllCountry" id="second" />Honduras</label><br>
+                                                                      <label for="three">
+                                                                        <input type="checkbox" class="selectAllCountry" id="third" />Hungary</label><br>
+                                                                        <label for="one">
+                                                                          <input type="checkbox" class="selectAllCountry" id="first" />Iceland</label><br>
+                                                                        <label for="two">
+                                                                          <input type="checkbox" class="selectAllCountry" id="second" />India</label><br>
+                                                                        <label for="three">
+                                                                          <input type="checkbox" class="selectAllCountry" id="third" />Indonesia</label><br>
+                                                                          <label for="one">
+                                                                            <input type="checkbox" class="selectAllCountry" id="first" />Iran</label><br>
+                                                                          <label for="two">
+                                                                            <input type="checkbox" class="selectAllCountry" id="second" />Iraq</label><br>
+                                                                          <label for="three">
+                                                                            <input type="checkbox" class="selectAllCountry" id="third" />Israel and the Occupied Territories</label><br>
+                                                                            <label for="one">
+                                                                              <input type="checkbox" class="selectAllCountry" id="first" />Italy</label><br>
+                                                                            <label for="two">
+                                                                              <input type="checkbox" class="selectAllCountry" id="second" />Ivory Coast (Cote d'Ivoire)</label><br>
+                                                                            <label for="three">
+                                                                              <input type="checkbox" class="selectAllCountry" id="third" />Jamaica</label><br>
+                                                                              <label for="one">
+                                                                                <input type="checkbox" class="selectAllCountry" id="first" />Japan</label><br>
+                                                                              <label for="two">
+                                                                                <input type="checkbox" class="selectAllCountry" id="second" />Jordan
+                  </label><br>
+                                                                              <label for="three">
+                                                                                <input type="checkbox" class="selectAllCountry" id="third" />Kazakhstan</label><br>
+                                                                                <label for="one">
+                                                                                  <input type="checkbox" class="selectAllCountry" id="first" />Kenya</label><br>
+                                                                                <label for="two">
+                                                                                  <input type="checkbox" class="selectAllCountry" id="second" />Kosovo</label><br>
+                                                                                <label for="three">
+                                                                                  <input type="checkbox" class="selectAllCountry" id="third" />Kuwait</label><br>
+                                                                                  <label for="one">
+                                                                                    <input type="checkbox" class="selectAllCountry" id="first" />Kyrgyz Republic (Kyrgyzstan)</label><br>
+                                                                                  <label for="two">
+                                                                                    <input type="checkbox" class="selectAllCountry" id="second" />Laos</label><br>
+                                                                                  <label for="three">
+                                                                                    <input type="checkbox" class="selectAllCountry" id="third" />Latvia</label><br>
+
+                                                                                    <label for="one">
+                                                                                      <input type="checkbox" class="selectAllCountry" id="first" />Lebanon</label><br>
+                                                                                    <label for="two">
+                                                                                      <input type="checkbox" class="selectAllCountry" id="second" />Lesotho</label><br>
+                                                                                    <label for="three">
+                                                                                      <input type="checkbox" class="selectAllCountry" id="third" />Liberia</label><br>
+                                                                                      <label for="one">
+                                                                                        <input type="checkbox" class="selectAllCountry" id="first" />Libya</label><br>
+                                                                                      <label for="two">
+                                                                                        <input type="checkbox" class="selectAllCountry" id="second" />Liechtenstein</label><br>
+                                                                                      <label for="three">
+                                                                                        <input type="checkbox" class="selectAllCountry" id="third" />Lithuania</label><br>
+                                                                                        <label for="one">
+                                                                                          <input type="checkbox" class="selectAllCountry" id="first" />Luxembourg</label><br>
+                                                                                        <label for="two">
+                                                                                          <input type="checkbox" class="selectAllCountry" id="second" />Republic of Macedonia</label><br>
+                                                                                        <label for="three">
+                                                                                          <input type="checkbox" class="selectAllCountry" id="third" />Madagascar</label><br>
+                                                                                          <label for="one">
+                                                                                            <input type="checkbox" class="selectAllCountry" id="first" />Malawi</label><br>
+                                                                                          <label for="two">
+                                                                                            <input type="checkbox" class="selectAllCountry" id="second" />Malaysia</label><br>
+                                                                                          <label for="three">
+                                                                                            <input type="checkbox" class="selectAllCountry" id="third" />Maldives</label><br>
+
+                                                                                            <label for="three">
+                                                                                              <input type="checkbox" class="selectAllCountry" id="third" />Mali</label><br>
+                                                                                              <label for="one">
+                                                                                                <input type="checkbox" class="selectAllCountry" id="first" />Malta</label><br>
+                                                                                              <label for="two">
+                                                                                                <input type="checkbox" class="selectAllCountry" id="second" />Martinique</label><br>
+                                                                                              <label for="three">
+                                                                                                <input type="checkbox" class="selectAllCountry" id="third" />Mauritania</label><br>
+                                                                                                <label for="one">
+                                                                                                  <input type="checkbox" class="selectAllCountry" id="first" />Mauritius</label><br>
+                                                                                                <label for="two">
+                                                                                                  <input type="checkbox" class="selectAllCountry" id="second" />Mayotte</label><br>
+                                                                                                <label for="three">
+                                                                                                  <input type="checkbox" class="selectAllCountry" id="third" />Mexico</label><br>
+                                                                                                  <label for="one">
+                                                                                                    <input type="checkbox" class="selectAllCountry" id="first" />Moldova</label><br>
+                                                                                                  <label for="two">
+                                                                                                    <input type="checkbox" class="selectAllCountry" id="second" />Mongolia</label><br>
+                                                                                                  <label for="three">
+                                                                                                    <input type="checkbox" class="selectAllCountry" id="third" />Montenegro</label><br>
+                                                                                                    <label for="three">
+                                                                                                      <input type="checkbox" class="selectAllCountry" id="third" />Montserrat</label><br>
+                                                                                                      <label for="one">
+                                                                                                        <input type="checkbox" class="selectAllCountry" id="first" />Morocco</label><br>
+                                                                                                      <label for="two">
+                                                                                                        <input type="checkbox" class="selectAllCountry" id="second" />Mozambique</label><br>
+                                                                                                      <label for="three">
+                                                                                                        <input type="checkbox" class="selectAllCountry" id="third" />Namibia</label><br>
+                                                                                                        <label for="one">
+                                                                                                          <input type="checkbox" class="selectAllCountry" id="first" />Nepal</label><br>
+                                                                                                        <label for="two">
+                                                                                                          <input type="checkbox" class="selectAllCountry" id="second" />Netherlands</label><br>
+                                                                                                        <label for="three">
+                                                                                                          <input type="checkbox" class="selectAllCountry" id="third" />New Zealand</label><br>
+                                                                                                          <label for="one">
+                                                                                                            <input type="checkbox" class="selectAllCountry" id="first" />Nicaragua</label><br>
+                                                                                                          <label for="two">
+                                                                                                            <input type="checkbox" class="selectAllCountry" id="second" />Niger</label><br>
+                                                                                                          <label for="three">
+                                                                                                            <input type="checkbox" class="selectAllCountry" id="third" />Nigeria</label><br>
+                                                                                                            <label for="three">
+                                                                                                              <input type="checkbox" class="selectAllCountry" id="third" />Korea</label><br>
+                                                                                                              <label for="one">
+                                                                                                                <input type="checkbox" class="selectAllCountry" id="first" />Norway</label><br>
+                                                                                                              <label for="two">
+                                                                                                                <input type="checkbox" class="selectAllCountry" id="second" />Oman</label><br>
+                                                                                                              <label for="three">
+                                                                                                                <input type="checkbox" class="selectAllCountry" id="third" />Pacific Islands</label><br>
+                                                                                                                <label for="one">
+                                                                                                                  <input type="checkbox" class="selectAllCountry" id="first" />Pakistan</label><br>
+                                                                                                                <label for="two">
+                                                                                                                  <input type="checkbox" class="selectAllCountry" id="second" />Panama</label><br>
+                                                                                                                <label for="three">
+                                                                                                                  <input type="checkbox" class="selectAllCountry" id="third" />Papua New Guinea</label><br>
+                                                                                                                  <label for="one">
+                                                                                                                    <input type="checkbox" class="selectAllCountry" id="first" />Paraguay</label><br>
+                                                                                                                  <label for="two">
+                                                                                                                    <input type="checkbox" class="selectAllCountry" id="second" />Peru</label><br>
+                                                                                                                  <label for="three">
+                                                                                                                    <input type="checkbox" class="selectAllCountry" id="third" />Philippines</label><br>
+                                                                                                                    <label for="three">
+                                                                                                                      <input type="checkbox" class="selectAllCountry" id="third" />Poland</label><br>
+                                                                                                                      <label for="one">
+                                                                                                                        <input type="checkbox" class="selectAllCountry" id="first" />Portugal</label><br>
+                                                                                                                      <label for="two">
+                                                                                                                        <input type="checkbox" class="selectAllCountry" id="second" />Puerto Rico</label><br>
+                                                                                                                      <label for="three">
+                                                                                                                        <input type="checkbox" class="selectAllCountry" id="third" />Qatar</label><br>
+                                                                                                                        <label for="one">
+                                                                                                                          <input type="checkbox" class="selectAllCountry" id="first" />Reunion</label><br>
+                                                                                                                        <label for="two">
+                                                                                                                          <input type="checkbox" class="selectAllCountry" id="second" />Romania</label><br>
+                                                                                                                        <label for="three">
+                                                                                                                          <input type="checkbox" class="selectAllCountry" id="third" />Russian Federation</label><br>
+                                                                                                                          <label for="one">
+                                                                                                                            <input type="checkbox" class="selectAllCountry" id="first" />Rwanda</label><br>
+                                                                                                                          <label for="two">
+                                                                                                                            <input type="checkbox" class="selectAllCountry" id="second" />Saint Kitts and Nevis</label><br>
+                                                                                                                          <label for="three">
+                                                                                                                            <input type="checkbox" class="selectAllCountry" id="third" />Saint Lucia</label><br>
+                                                                                                                            <label for="three">
+                                                                                                                              <input type="checkbox" class="selectAllCountry" id="third" />Saint Vincent's & Grenadines</label><br>
+                                                                                                                              <label for="one">
+                                                                                                                                <input type="checkbox" class="selectAllCountry" id="first" />Samoa</label><br>
+                                                                                                                              <label for="two">
+                                                                                                                                <input type="checkbox" class="selectAllCountry" id="second" />Sao Tome and Principe</label><br>
+                                                                                                                              <label for="three">
+                                                                                                                                <input type="checkbox" class="selectAllCountry" id="third" />Saudi Arabia</label><br>
+                                                                                                                                <label for="one">
+                                                                                                                                  <input type="checkbox" class="selectAllCountry" id="first" />Senegal</label><br>
+                                                                                                                                <label for="two">
+                                                                                                                                  <input type="checkbox" class="selectAllCountry" id="second" />Serbia</label><br>
+                                                                                                                                <label for="three">
+                                                                                                                                  <input type="checkbox" class="selectAllCountry" id="third" />Seychelles</label><br>
+                                                                                                                                  <label for="one">
+                                                                                                                                    <input type="checkbox" class="selectAllCountry" id="first" />Sierra Leone</label><br>
+                                                                                                                                  <label for="two">
+                                                                                                                                    <input type="checkbox" class="selectAllCountry" id="second" />Singapore</label><br>
+                                                                                                                                  <label for="three">
+                                                                                                                                    <input type="checkbox" class="selectAllCountry" id="third" />Slovak Republic </label><br>
+                                                                                                                                    <label for="three">
+                                                                                                                                      <input type="checkbox" class="selectAllCountry" id="third" />Slovenia</label><br>
+                                                                                                                                      <label for="one">
+                                                                                                                                        <input type="checkbox" class="selectAllCountry" id="first" />Solomon Islands</label><br>
+                                                                                                                                      <label for="two">
+                                                                                                                                        <input type="checkbox" class="selectAllCountry" id="second" />Somalia</label><br>
+                                                                                                                                      <label for="three">
+                                                                                                                                        <input type="checkbox" class="selectAllCountry" id="third" />South Africa</label><br>
+                                                                                                                                        <label for="one">
+                                                                                                                                          <input type="checkbox" class="selectAllCountry" id="first" />Korea, Republic of (South Korea)</label><br>
+                                                                                                                                        <label for="two">
+                                                                                                                                          <input type="checkbox" class="selectAllCountry" id="second" />South Sudan</label><br>
+                                                                                                                                        <label for="three">
+                                                                                                                                          <input type="checkbox" class="selectAllCountry" id="third" />Spain</label><br>
+                                                                                                                                          <label for="one">
+                                                                                                                                            <input type="checkbox" class="selectAllCountry" id="first" />Sri Lanka</label><br>
+                                                                                                                                          <label for="two">
+                                                                                                                                            <input type="checkbox" class="selectAllCountry" id="second" />Sudan</label><br>
+                                                                                                                                          <label for="three">
+                                                                                                                                            <input type="checkbox" class="selectAllCountry" id="third" />Suriname</label><br>
+                                                                                                                                            <label for="three">
+                                                                                                                                              <input type="checkbox" class="selectAllCountry" id="third" />Swaziland</label><br>
+
+                                                                                                                                              <label for="two">
+                                                                                                                                                <input type="checkbox" class="selectAllCountry" id="second" />Switzerland</label><br>
+                                                                                                                                              <label for="three">
+                                                                                                                                                <input type="checkbox" class="selectAllCountry" id="third" />Syria</label><br>
+                                                                                                                                                <label for="one">
+                                                                                                                                                  <input type="checkbox" class="selectAllCountry" id="first" />Tajikistan</label><br>
+                                                                                                                                                <label for="two">
+                                                                                                                                                  <input type="checkbox" class="selectAllCountry" id="second" />Tanzania</label><br>
+                                                                                                                                                <label for="three">
+                                                                                                                                                  <input type="checkbox" class="selectAllCountry" id="third" />Thailand</label><br>
+                                                                                                                                                  <label for="one">
+                                                                                                                                                    <input type="checkbox" class="selectAllCountry" id="first" />Timor Leste</label><br>
+                                                                                                                                                  <label for="two">
+                                                                                                                                                    <input type="checkbox" class="selectAllCountry" id="second" />Togo</label><br>
+                                                                                                                                                  <label for="three">
+                                                                                                                                                    <input type="checkbox" class="selectAllCountry" id="third" />Trinidad & Tobago</label><br>
+                                                                                                                                                    <label for="three">
+                                                                                                                                                      <input type="checkbox" class="selectAllCountry" id="third" />Turkey</label><br>
+                                                                                                                                                      <label for="one">
+                                                                                                                                                        <input type="checkbox" class="selectAllCountry" id="first" />Turkmenistan</label><br>
+                                                                                                                                                      <label for="two">
+                                                                                                                                                        <input type="checkbox" class="selectAllCountry" id="second" />Turks & Caicos </label><br>
+                                                                                                                                                      <label for="three">
+                                                                                                                                                        <input type="checkbox" class="selectAllCountry" id="third" />Islands</label><br>
+                                                                                                                                                        <label for="one">
+                                                                                                                                                          <input type="checkbox" class="selectAllCountry" id="first" />Uganda</label><br>
+                                                                                                                                                        <label for="two">
+                                                                                                                                                          <input type="checkbox" class="selectAllCountry" id="second" />Ukraine</label><br>
+                                                                                                                                                        <label for="three">
+                                                                                                                                                          <input type="checkbox" class="selectAllCountry" id="third" />United Arab Emirates</label><br>
+
+                                                                                                                                                            <label for="one">
+                                                                                                                                                              <input type="checkbox" class="selectAllCountry" id="first" />Uruguay</label><br>
+                                                                                                                                                            <label for="two">
+                                                                                                                                                              <input type="checkbox" class="selectAllCountry" id="second" />Uzbekistan</label><br>
+                                                                                                                                                            <label for="three">
+                                                                                                                                                              <input type="checkbox" class="selectAllCountry" id="third" />Venezuela</label><br>
+                                                                                                                                                              <label for="one">
+                                                                                                                                                                <input type="checkbox" class="selectAllCountry" id="first" />Vietnam</label><br>
+                                                                                                                                                              <label for="two">
+                                                                                                                                                                <input type="checkbox" class="selectAllCountry" id="second" />Virgin Islands (UK)</label><br>
+                                                                                                                                                              <label for="three">
+                                                                                                                                                                <input type="checkbox" class="selectAllCountry" id="third" />Virgin Islands (US)</label><br>
+                                                                                                                                                                <label for="one">
+                                                                                                                                                                  <input type="checkbox" class="selectAllCountry" id="first" />Yemen</label><br>
+                                                                                                                                                                <label for="two">
+                                                                                                                                                                  <input type="checkbox" class="selectAllCountry" id="second" />Zambia</label><br>
+                                                                                                                                                                <label for="three">
+                                                                                                                                                                  <input type="checkbox" class="selectAllCountry" id="third" />Zimbabwe</label><br>
+
+
+
+                </div>
+              </div> -->
+      <!--
+          </div>
+          <div class="col-sm-4">
+            <div class="serv_select">
+                <div class="serv_box" onclick="serv_types()">
+                  <select class="mySelect">
+                    <option class="hida">Types Of Services</option>
+                    <p class="multiSel"></p>
+                  </select>
+                  <div class="overSelect"></div>
+                </div>
+                <div id="serv_type" style="display:none">
+                  <label for="">
+                  <input type="checkbox" id="selectAllServices" name="" value="">All</label><br>
+                  <label for="">
+                  <input type="checkbox" class="allServices" name="" value="">Admissions & Visa Processing</label>
+                  <label for="one">
+                  <input type="checkbox" class="allServices" name="" id="one" value="">Language Classes</label><br>
+
+                  <label for="two">
+                  <input type="checkbox" class="allServices" name="" id="two" value="">Program Specialists</label><br>
+
+                  <label for="one">
+                  <input type="checkbox" class="allServices" name="" id="one" value="">Refusal Appeals</label><br>
+
+                  <label for="two">
+                  <input type="checkbox" class="allServices" name="" id="two" value="">Scholarships</label><br>
+                  <label for="one">
+                  <input type="checkbox" class="allServices" name="" id="one" value="">Interview Preparation</label><br>
+
+                  <label for="two">
+                  <input type="checkbox" class="allServices" name="" id="two" value="">Travel & Health Insurance</label><br>
+                  <label for="two">
+                  <input type="checkbox" class="allServices" name="" id="two" value="">Travel Arrangements</label><br>
+                  <label for="other_gap">
+                  <input type="checkbox" class="allServices" id="other_gap" />Other</label><br>
+                  <input type="text" id="oth-gap"  name="" value="" style="display:none" placeholder="Enter Gap">
+
+                </div>
+              </div></div>
+
+              <div class="col-sm-4">
+                <div class="serv_select">
+                    <div class="serv_box" onclick="lang_class_serv()">
+                      <select class="mySelect">
+                        <option class="hida">Language Classes</option>
+                        <p class="multiSel"></p>
+                      </select>
+                      <div class="overSelect"></div>
+                    </div>
+                    <div id="lang-serv" style="display:none">
+                      <label for="">
+                      <input type="checkbox" name="" id="AllLanguage" value="">All</label><br>
+                      <label for="">
+                      <input type="checkbox" class="selectLangCountry" name="" value="">IELTS</label><br>
+                      <label for="">
+                      <input type="checkbox" class="selectLangCountry" name="" value="">TOEFL</label><br>
+                      <label for="one">
+                        <input type="checkbox" class="selectLangCountry" id="one" />PTE</label><br>
+                        <label for="one">
+                          <input type="checkbox" class="selectLangCountry" id="one" />German</label><br>
+                        <label for="">
+                        <input type="checkbox" class="selectLangCountry" name="" value="">Chinese</label><br>
+                        <label for="">
+                        <input type="checkbox" class="selectLangCountry" name="" value="">Japanese</label><br>
+                        <label for="">
+                        <input type="checkbox" class="selectLangCountry" name="" value="">Spanish</label><br>
+                        <label for="">
+                        <input type="checkbox" class="selectLangCountry" name="" value="">French</label><br>
+                        <label for="">
+                        <input type="checkbox" class="selectLangCountry" name="" value="">Italian</label><br>
+                          <label for="">
+                          <input type="checkbox" class="selectLangCountry" name="" value="">Turkish</label><br>
+                          <label for="porto">
+                            <input type="checkbox" class="selectLangCountry" id="porto" />Portuguese</label><br>
+                            <label for="lang_class">
+                            <input type="checkbox" id="lang_class">Other</label><br>
+                            <input type="text" id="other-l"  name="" value="" style="display:none" placeholder="Enter Gap">
+
+                    </div>
+                  </div></div>
+
+            </div>
+            <div class="row" id="service">
+              <div class="col-sm-4">
+                <div class="serv_select">
+                    <div class="serv_box" onclick="prg_spc()">
+                      <select class="mySelect">
+                        <option class="hida">Program specialists</option>
+                        <p class="multiSel"></p>
+                      </select>
+                      <div class="overSelect"></div>
+                    </div>
+                    <div id="prg" style="display:none">
+                      <label for="">
+                      <input type="checkbox" name="" id="allPrograms" value="">All</label><br>
+                      <label for="">
+                      <input type="checkbox" class="DegreeProgram" name="" value="">Certificate</label><br>
+                      <label for="">
+                      <input type="checkbox" class="DegreeProgram" name="" value="">Diploma</label><br>
+                      <label for="">
+                      <input type="checkbox" class="DegreeProgram" name="" value="">O-level</label><br>
+                      <label for="">
+                      <input type="checkbox" class="DegreeProgram" name="" value="">A-level</label><br>
+                      <label for="">
+                      <input type="checkbox" class="DegreeProgram" name="" value="">Int. Baccalaureate (IB)</label><br>
+                      <label for="">
+                      <input type="checkbox" class="DegreeProgram" name="" value="">Foundation</label><br>
+                      <label for="">
+                      <input type="checkbox" class="DegreeProgram" name="" value="">Associate Degree</label><br>
+
+                          <label for="three">
+                            <input type="checkbox" class="DegreeProgram" id="three" />Bachelors(2-Years)</label><br>
+                            <label for="three">
+                              <input type="checkbox" class="DegreeProgram" id="three" />Bachelors(3-Years)</label><br>
+                              <label for="three">
+                                <input type="checkbox" class="DegreeProgram" id="three" />Bachelors(4-Years)</label><br>
+                                <label for="three">
+                                  <input type="checkbox" class="DegreeProgram" id="three" />Bachelors(5-Years)</label><br>
+                                  <label for="three">
+                                    <input type="checkbox" class="DegreeProgram" id="three" />Bachelors(6-Years)</label><br>
+                                    <label for="three">
+                                    <input type="checkbox" class="DegreeProgram" id="three" />Masters(6-months)</label><br>
+                                    <label for="three">
+                                      <input type="checkbox" class="DegreeProgram" id="three" />Masters(1-Year)</label><br>
+                                      <label for="three">
+                                        <input type="checkbox" class="DegreeProgram" id="three" />Masters(1.5-Year)</label><br>
+                                        <label for="three">
+                                          <input type="checkbox" class="DegreeProgram" id="three" />Masters(2-Years)</label><br>
+                                          <label for="three">
+                                            <input type="checkbox" class="DegreeProgram" id="three" />Masters(2.5-Years)</label><br>
+                                            <label for="three">
+                                      <input type="checkbox" class="DegreeProgram" id="three" />MPhil / Masters(Res)</label><br>
+                                      <label for="three">
+                                        <input type="checkbox" class="DegreeProgram" id="three" />Phd / Doctoral</label><br>
+                                        <label for="">
+                                        <input type="checkbox" class="DegreeProgram" name="" value="">Professional</label><br>
+                                        <label for="other-desired">
+                                        <input type="checkbox" name="" id="other-desired" value="">Other</label><br>
+                                        <input type="text" name="" id="oth-des" value="" placeholder="Degree Name" style="display:none">
+
+
+                    </div>
+                  </div></div>
+                  <div class="col-sm-4">
+                    <select class="mySelect" name="">
+                      <option selected disabled style="display:none">REFUSAL APPEALS</option>
+
+                      <option value="">Yes</option>
+                      <option value="">No</option>
+                    </select>
+                      </div>
+                    <div class="col-sm-4">
+                      <select class="mySelect" name="">
+                        <option selected disabled style="display:none">SCHOLARSHIPS</option>
+
+                        <option value="1">1% - 10%</option>
+                        <option value="2">10% - 20%</option>
+                        <option value="1">20% - 30%</option>
+                        <option value="2">30% - 40%</option>
+                        <option value="1">40% - 50%</option>
+                        <option value="2">50% - 75%</option>
+                        <option value="2">75% - 100%</option>
+                      </select>
+                    </div>
+
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <select class="mySelect" name="">
+                  <option selected disabled style="display:none">INTERVIEW PREPARATION</option>
+
+                  <option value="">Yes</option>
+                  <option value="">No</option>
+                </select>
+              </div>
+              <div class="col-sm-4">
+                <select class="mySelect" name="">
+                  <option selected disabled style="display:none">TRAVEL & HEALTH INSURANCE</option>
+
+                  <option value="">Yes</option>
+                  <option value="">No</option>
+                </select>
+              </div>
+              <div class="col-sm-4">
+                <select class="mySelect" name="">
+                  <option selected disabled style="display:none">TRAVEL ARRANGEMENTS</option>
+                  <option value="">Yes</option>
+                  <option value="">No</option>
+                </select>
+              </div>
+            </div>
+
+
+    <!-- <div class="row">
+                    <div class="col-sm-4">
+                      <select class="mySelect" name="processing_fee">
+                        <option value="0">Processing Fee</option>
+                        <option value="0">1000-5000</option>
+
+                          <option value="0">5000-10,000</option>
+
+                          <option value="">10,000-15000</option>
+
+                            <option value="0">15000-20,000</option>
+
+                              <option value="0">20,000-25000</option>
+
+                                <option value="0">25000-30,000</option>
+
+                                  <option value="0">35000-40,000</option>
+
+                                    <option value="0">40,000-45000</option>
+
+                                      <option value="0">45000-50,000</option>
+
+                                      <option value="0">50,000-75000</option>
+
+                                        <option value="0">75000-100,000</option>
+                      </select>
+
+                    </div>
+                    <div class="col-sm-4">
+                      <select class="mySelect" name="">
+                        <option value="0">IELTS/ Other language Fee</option>
+                        <option value="0">1000-5000</option>
+
+                          <option value="0">5000-10,000</option>
+
+                          <option value="">10,000-15000</option>
+
+                            <option value="0">15000-20,000</option>
+
+                              <option value="0">20,000-25000</option>
+
+                                <option value="0">25000-30,000</option>
+
+                                  <option value="0">35000-40,000</option>
+
+                                    <option value="0">40,000-45000</option>
+
+                                      <option value="0">45000-50,000</option>
+                      </select>
+                    </div>
+                    <div class="col-sm-4">
+                      <select class="mySelect" name="">
+                        <option value="0">Refusal Appeal Fee</option>
+                        <option value="0">1000-5000</option>
+
+                          <option value="0">5000-10,000</option>
+
+                          <option value="">10,000-15000</option>
+
+                            <option value="0">15000-20,000</option>
+
+                              <option value="0">20,000-25000</option>
+
+                                <option value="0">25000-30,000</option>
+
+                                  <option value="0">35000-40,000</option>
+
+                                    <option value="0">40,000-45000</option>
+
+                                      <option value="0">45000-50,000</option>
+                                      <option value="0">50,000-75000</option>
+
+                                        <option value="0">75000-100,000</option>
+                      </select>
+                    </div>
+
+                  </div>
+                    <div class="row">
+
+
+                  <div class="col-sm-6">
+
+                  <input type="text" name="" value="" placeholder="Overall Visa Granted" onfocus="this.placeholder=''" onblur="this.placeholder='Number of visa granted'"/>
+                  </div>
+                      </div>
+
+
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <select class="mySelect" name="">
+                            <option value="0">Visa Success Ratio</option>
+
+                          </select>
+                        </div>
+                        <div class="col-sm-6">
+                          <select class="mySelect" name="">
+                            <option value="0">regional/branch office</option>
+
+                          </select>
+                        </div></div>
+
+                        </div>
+                          <div class="row">
+                            <div class="col-sm-6">
+
+
+
+                          <a href="UpdateAgent2.html"><button type="button" class="button" name="button"> <span class="icon-prev-icon"> Back</span></button></a>
+  </div>
+
+                        <div class="col-sm-6">
+                          <a href="agent-fee.html"><button type="button" class="button" name="button">Next<span class="icon-next-icon"></span></button></a>
+                        <!--  <button class="button" onclick="window.location.href='http://UpdateAgent3.html';">Next<span class="icon-more-icon"></span></button>
+                        </div>
+
+                      </div>-->
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- End Register -->
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<script type="text/javascript">
+/*var expanded = false;
+
+function offered_Serv() {
+  var checkboxes = document.getElementById("services");
+  if (!expanded) {
+    checkboxes.style.display = "block";
+    expanded = true;
+  } else {
+    checkboxes.style.display = "none";
+    expanded = false;
+  }
+}
+$(document).mouseup(function (e) {
+           var container = new Array();
+           container.push($('#msel'));
+           $.each(container, function (key, value) {
+               if (!$(value).is(e.target) && $(value).has(e.target).length === 0) {
+                   ///--need to have better code from yourside..
+                   var checkboxes = document.getElementById("services");
+                   checkboxes.style.display = "none";
+                   ///--need to have better code from yourside..
+               }
+           });
+       });
+
+       var expanded = false;
+
+       function serv_types() {
+         var checkboxes = document.getElementById("serv_type");
+         if (!expanded) {
+           checkboxes.style.display = "block";
+           expanded = true;
+         } else {
+           checkboxes.style.display = "none";
+           expanded = false;
+         }
+       }
+       $(document).mouseup(function (e) {
+                  var container = new Array();
+                  container.push($('#msel'));
+                  $.each(container, function (key, value) {
+                      if (!$(value).is(e.target) && $(value).has(e.target).length === 0) {
+                          ///--need to have better code from yourside..
+                          var checkboxes = document.getElementById("serv_type");
+                          checkboxes.style.display = "none";
+                          ///--need to have better code from yourside..
+                      }
+                  });
+              });
+
+              var expanded = false;
+
+              function lang_class_serv() {
+                var checkboxes = document.getElementById("lang-serv");
+                if (!expanded) {
+                  checkboxes.style.display = "block";
+                  expanded = true;
+                } else {
+                  checkboxes.style.display = "none";
+                  expanded = false;
+                }
+              }
+
+              $(document).mouseup(function (e) {
+                         var container = new Array();
+                         container.push($('#msel'));
+                         $.each(container, function (key, value) {
+                             if (!$(value).is(e.target) && $(value).has(e.target).length === 0) {
+                                 ///--need to have better code from yourside..
+                                 var checkboxes = document.getElementById("lang-serv");
+                                 checkboxes.style.display = "none";
+                                 ///--need to have better code from yourside..
+                             }
+                         });
+                     });
+
+                     var expanded = false;
+
+                     function prg_spc() {
+                       var checkboxes = document.getElementById("prg");
+                       if (!expanded) {
+                         checkboxes.style.display = "block";
+                         expanded = true;
+                       } else {
+                         checkboxes.style.display = "none";
+                         expanded = false;
+                       }
+                     }
+                     $(document).mouseup(function (e) {
+                                var container = new Array();
+                                container.push($('#msel'));
+                                $.each(container, function (key, value) {
+                                    if (!$(value).is(e.target) && $(value).has(e.target).length === 0) {
+                                        ///--need to have better code from yourside..
+                                        var checkboxes = document.getElementById("prg");
+                                        checkboxes.style.display = "none";
+                                        ///--need to have better code from yourside..
+                                    }
+                                });
+                            });
+
+
+$(function () {
+        $("#allPrograms").change(function () {
+            $('.DegreeProgram').prop('checked', this.checked);
+        });
+        $(".DegreeProgram").change(function () {
+            if ($(".DegreeProgram").length == $(".allPrograms:checked").length) {
+                $('#allPrograms').prop('checked', this.checked);
+            } else {
+                $('#allPrograms').prop('checked', false);
+            }
+        });
+    });
+
+
+$(function () {
+        $("#selectAllServices").change(function () {
+            $('.allServices').prop('checked', this.checked);
+        });
+        $(".allServices").change(function () {
+            if ($(".allServices").length == $(".allServices:checked").length) {
+                $('#selectAllServices').prop('checked', this.checked);
+            } else {
+                $('#selectAllServices').prop('checked', false);
+            }
+        });
+    });
+
+    $(function () {
+            $("#AllLanguage").change(function () {
+                $('.selectLangCountry').prop('checked', this.checked);
+            });
+            $(".selectLangCountry").change(function () {
+                if ($(".selectLangCountry").length == $(".selectLangCountry:checked").length) {
+                    $('#AllLanguage').prop('checked', this.checked);
+                } else {
+                    $('#AllLanguage').prop('checked', false);
+                }
+            });
+        });
+
+    $(function () {
+            $("#allCountry").change(function () {
+                $('.selectAllCountry').prop('checked', this.checked);
+            });
+            $(".selectAllCountry").change(function () {
+                if ($(".selectAllCountry").length == $(".selectAllCountry").length) {
+                    $('#allCountry').prop('checked', this.checked);
+                } else {
+                    $('#allCountry').prop('checked', false);
+                }
+            });
+        }); */
+</script>
+
+<script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Bootsrap JS -->
+
+<!-- Select2 JS -->
+<script type="text/javascript" src="{% static "assets/select2/js/select2.min.js" %}"></script>
+<!-- Match Height JS -->
+<script type="text/javascript" src="{% static "assets/matchHeight/js/matchHeight-min.js" %}"></script>
+<!-- Bxslider JS -->
+<script type="text/javascript" src="{% static "assets/bxslider/js/bxslider.min.js" %}"></script>
+<!-- Waypoints JS -->
+<script type="text/javascript" src="{% static "assets/waypoints/js/waypoints.min.js" %}"></script>
+<!-- Counter Up JS -->
+<script type="text/javascript" src="{% static "assets/counterup/js/counterup.min.js" %}"></script>
+<!-- Magnific Popup JS -->
+<script type="text/javascript" src="{% static "assets/magnific-popup/js/magnific-popup.min.js" %}"></script>
+<!-- Owl Carousal JS -->
+<script type="text/javascript" src="{% static "assets/owl-carousel/js/owl.carousel.min.js" %}"></script>
+<!-- Modernizr JS -->
+<script type="text/javascript" src="{% static "js/modernizr.custom.js" %}js/modernizr.custom.js"></script>
+<!-- Custom JS -->
+<script type="text/javascript" src="{% static "js/custom.js" %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,2744 @@
+
+  $(document).ready(function () {
+    $('#check_dip_zoo').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#dip_zoo').show();
+      } else {
+        $('#dip_zoo').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_ass_zoo').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#ass_zoo').show();
+      } else {
+        $('#ass_zoo').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_found_zoo').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#found_zoo').show();
+      } else {
+        $('#found_zoo').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_pre_bach_zoo').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_bach_zoo').show();
+      } else {
+        $('#pre_bach_zoo').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_bach_zoo').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#bach_zoo').show();
+      } else {
+        $('#bach_zoo').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_pre_mas_zoo').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_mas_zoo').show();
+      } else {
+        $('#pre_mas_zoo').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_zoo').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_zoo').show();
+      } else {
+        $('#mas_zoo').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_res_zoo').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_res_zoo').show();
+      } else {
+        $('#mas_res_zoo').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_phd_zoo').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#phd_zoo').show();
+      } else {
+        $('#phd_zoo').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_dip_sports').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#dip_sports').show();
+      } else {
+        $('#dip_sports').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_ass_sports').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#ass_sports').show();
+      } else {
+        $('#ass_sports').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_found_sports').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#found_sports').show();
+      } else {
+        $('#found_sports').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_pre_bach_sports').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_bach_sports').show();
+      } else {
+        $('#pre_bach_sports').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_bach_sports').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#bach_sports').show();
+      } else {
+        $('#bach_sports').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_pre_mas_sports').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_mas_sports').show();
+      } else {
+        $('#pre_mas_sports').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_sports').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_sports').show();
+      } else {
+        $('#mas_sports').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_res_sports').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_res_sports').show();
+      } else {
+        $('#mas_res_sports').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_phd_sports').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#phd_sports').show();
+      } else {
+        $('#phd_sports').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_dip_pol').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#dip_pol').show();
+      } else {
+        $('#dip_pol').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_ass_pol').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#ass_pol').show();
+      } else {
+        $('#ass_pol').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_found_pol').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#found_pol').show();
+      } else {
+        $('#found_pol').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_pre_bach_pol').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_bach_pol').show();
+      } else {
+        $('#pre_bach_pol').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_bach_pol').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#bach_pol').show();
+      } else {
+        $('#bach_pol').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_pre_mas_pol').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_mas_pol').show();
+      } else {
+        $('#pre_mas_pol').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_pol').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_pol').show();
+      } else {
+        $('#mas_pol').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_res_pol').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_res_pol').show();
+      } else {
+        $('#mas_res_pol').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_phd_pol').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#phd_pol').show();
+      } else {
+        $('#phd_pol').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_dip_phil').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#dip_phil').show();
+      } else {
+        $('#dip_phil').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_ass_phil').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#ass_phil').show();
+      } else {
+        $('#ass_phil').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_found_phil').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#found_phil').show();
+      } else {
+        $('#found_phil').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_pre_bach_phil').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_bach_phil').show();
+      } else {
+        $('#pre_bach_phil').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_bach_phil').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#bach_phil').show();
+      } else {
+        $('#bach_phil').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_pre_mas_phil').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_mas_phil').show();
+      } else {
+        $('#pre_mas_phil').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_phil').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_phil').show();
+      } else {
+        $('#mas_phil').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_res_phil').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_res_phil').show();
+      } else {
+        $('#mas_res_phil').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_phd_phil').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#phd_phil').show();
+      } else {
+        $('#phd_phil').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_dip_med').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#dip_med').show();
+      } else {
+        $('#dip_med').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_ass_med').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#ass_med').show();
+      } else {
+        $('#ass_med').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_found_med').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#found_med').show();
+      } else {
+        $('#found_med').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_pre_bach_med').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_bach_med').show();
+      } else {
+        $('#pre_bach_med').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_bach_med').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#bach_med').show();
+      } else {
+        $('#bach_med').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_pre_mas_med').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_mas_med').show();
+      } else {
+        $('#pre_mas_med').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_med').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_med').show();
+      } else {
+        $('#mas_med').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_res_med').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_res_med').show();
+      } else {
+        $('#mas_res_med').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_phd_med').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#phd_med').show();
+      } else {
+        $('#phd_med').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_dip_mark').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#dip_mark').show();
+      } else {
+        $('#dip_mark').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_ass_mark').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#ass_mark').show();
+      } else {
+        $('#ass_mark').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_found_mark').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#found_mark').show();
+      } else {
+        $('#found_mark').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_pre_bach_mark').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_bach_mark').show();
+      } else {
+        $('#pre_bach_mark').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_bach_mark').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#bach_mark').show();
+      } else {
+        $('#bach_mark').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_pre_mas_mark').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_mas_mark').show();
+      } else {
+        $('#pre_mas_mark').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_mark').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_mark').show();
+      } else {
+        $('#mas_mark').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_res_mark').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_res_mark').show();
+      } else {
+        $('#mas_res_mark').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_phd_mark').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#phd_mark').show();
+      } else {
+        $('#phd_mark').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_dip_law').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#dip_law').show();
+      } else {
+        $('#dip_law').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_ass_law').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#ass_law').show();
+      } else {
+        $('#ass_law').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_found_law').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#found_law').show();
+      } else {
+        $('#found_law').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_pre_bach_law').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_bach_law').show();
+      } else {
+        $('#pre_bach_law').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_bach_law').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#bach_law').show();
+      } else {
+        $('#bach_law').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_pre_mas_law').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_mas_law').show();
+      } else {
+        $('#pre_mas_law').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_law').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_law').show();
+      } else {
+        $('#mas_law').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_res_law').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_res_law').show();
+      } else {
+        $('#mas_res_law').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_phd_law').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#phd_law').show();
+      } else {
+        $('#phd_law').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_dip_lan').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#dip_lan').show();
+      } else {
+        $('#dip_lan').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_ass_lan').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#ass_lan').show();
+      } else {
+        $('#ass_lan').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_found_lan').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#found_lan').show();
+      } else {
+        $('#found_lan').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_pre_bach_lan').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_bach_lan').show();
+      } else {
+        $('#pre_bach_lan').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_bach_lan').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#bach_lan').show();
+      } else {
+        $('#bach_lan').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_pre_mas_lan').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_mas_lan').show();
+      } else {
+        $('#pre_mas_lan').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_lan').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_lan').show();
+      } else {
+        $('#mas_lan').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_res_lan').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_res_lan').show();
+      } else {
+        $('#mas_res_lan').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_phd_lan').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#phd_lan').show();
+      } else {
+        $('#phd_lan').hide();
+      }
+    });
+    });
+
+
+  $(document).ready(function () {
+    $('#check_dip_jour').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#dip_jour').show();
+      } else {
+        $('#dip_jour').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_ass_jour').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#ass_jour').show();
+      } else {
+        $('#ass_jour').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_found_jour').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#found_jour').show();
+      } else {
+        $('#found_jour').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_pre_bach_jour').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_bach_jour').show();
+      } else {
+        $('#pre_bach_jour').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_bach_jour').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#bach_jour').show();
+      } else {
+        $('#bach_jour').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_pre_mas_jour').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_mas_jour').show();
+      } else {
+        $('#pre_mas_jour').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_jour').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_jour').show();
+      } else {
+        $('#mas_jour').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_res_jour').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_res_jour').show();
+      } else {
+        $('#mas_res_jour').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_phd_jour').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#phd_jour').show();
+      } else {
+        $('#phd_jour').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_dip_IT').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#dip_IT').show();
+      } else {
+        $('#dip_IT').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_ass_IT').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#ass_IT').show();
+      } else {
+        $('#ass_IT').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_found_IT').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#found_IT').show();
+      } else {
+        $('#found_IT').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_pre_bach_IT').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_bach_IT').show();
+      } else {
+        $('#pre_bach_IT').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_bach_IT').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#bach_IT').show();
+      } else {
+        $('#bach_IT').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_pre_mas_IT').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_mas_IT').show();
+      } else {
+        $('#pre_mas_IT').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_IT').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_IT').show();
+      } else {
+        $('#mas_IT').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_res_IT').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_res_IT').show();
+      } else {
+        $('#mas_res_IT').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_phd_IT').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#phd_IT').show();
+      } else {
+        $('#phd_IT').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_dip_hos').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#dip_hos').show();
+      } else {
+        $('#dip_hos').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_ass_hos').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#ass_hos').show();
+      } else {
+        $('#ass_hos').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_found_hos').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#found_hos').show();
+      } else {
+        $('#found_hos').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_pre_bach_hos').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_bach_hos').show();
+      } else {
+        $('#pre_bach_hos').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_bach_hos').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#bach_hos').show();
+      } else {
+        $('#bach_hos').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_pre_mas_hos').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_mas_hos').show();
+      } else {
+        $('#pre_mas_hos').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_hos').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_hos').show();
+      } else {
+        $('#mas_hos').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_res_hos').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_res_hos').show();
+      } else {
+        $('#mas_res_hos').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_phd_hos').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#phd_hos').show();
+      } else {
+        $('#phd_hos').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_dip_history').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#dip_history').show();
+      } else {
+        $('#dip_history').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_ass_history').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#ass_history').show();
+      } else {
+        $('#ass_history').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_found_history').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#found_history').show();
+      } else {
+        $('#found_history').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_pre_bach_history').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_bach_history').show();
+      } else {
+        $('#pre_bach_history').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_bach_history').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#bach_history').show();
+      } else {
+        $('#bach_history').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_pre_mas_history').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_mas_history').show();
+      } else {
+        $('#pre_mas_history').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_history').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_history').show();
+      } else {
+        $('#mas_history').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_res_history').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_res_history').show();
+      } else {
+        $('#mas_res_history').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_phd_history').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#phd_history').show();
+      } else {
+        $('#phd_history').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_dip_graphics').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#dip_graphics').show();
+      } else {
+        $('#dip_graphics').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_ass_graphics').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#ass_graphics').show();
+      } else {
+        $('#ass_graphics').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_found_graphics').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#found_graphics').show();
+      } else {
+        $('#found_graphics').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_pre_bach_graphics').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_bach_graphics').show();
+      } else {
+        $('#pre_bach_graphics').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_bach_graphics').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#bach_graphics').show();
+      } else {
+        $('#bach_graphics').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_pre_mas_graphics').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_mas_graphics').show();
+      } else {
+        $('#pre_mas_graphics').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_graphics').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_graphics').show();
+      } else {
+        $('#mas_graphics').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_res_graphics').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_res_graphics').show();
+      } else {
+        $('#mas_res_graphics').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_phd_graphics').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#phd_graphics').show();
+      } else {
+        $('#phd_graphics').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_dip_food').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#dip_food').show();
+      } else {
+        $('#dip_food').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_ass_food').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#ass_food').show();
+      } else {
+        $('#ass_food').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_found_food').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#found_food').show();
+      } else {
+        $('#found_food').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_pre_bach_food').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_bach_food').show();
+      } else {
+        $('#pre_bach_food').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_bach_food').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#bach_food').show();
+      } else {
+        $('#bach_food').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_pre_mas_food').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_mas_food').show();
+      } else {
+        $('#pre_mas_food').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_food').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_food').show();
+      } else {
+        $('#mas_food').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_res_food').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_res_food').show();
+      } else {
+        $('#mas_res_food').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_phd_food').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#phd_food').show();
+      } else {
+        $('#phd_food').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_dip_film').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#dip_film').show();
+      } else {
+        $('#dip_film').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_ass_film').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#ass_film').show();
+      } else {
+        $('#ass_film').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_found_film').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#found_film').show();
+      } else {
+        $('#found_film').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_pre_bach_film').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_bach_film').show();
+      } else {
+        $('#pre_bach_film').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_bach_film').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#bach_film').show();
+      } else {
+        $('#bach_film').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_pre_mas_film').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_mas_film').show();
+      } else {
+        $('#pre_mas_film').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_film').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_film').show();
+      } else {
+        $('#mas_film').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_res_film').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_res_film').show();
+      } else {
+        $('#mas_res_film').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_phd_film').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#phd_film').show();
+      } else {
+        $('#phd_film').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_dip_eng').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#dip_eng').show();
+      } else {
+        $('#dip_eng').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_ass_eng').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#ass_eng').show();
+      } else {
+        $('#ass_eng').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_found_eng').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#found_eng').show();
+      } else {
+        $('#found_eng').hide();
+      }
+    });
+    });
+  $(document).ready(function () {
+    $('#check_pre_bach_eng').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_bach_eng').show();
+      } else {
+        $('#pre_bach_eng').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_bach_eng').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#bach_eng').show();
+      } else {
+        $('#bach_eng').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_pre_mas_eng').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#pre_mas_eng').show();
+      } else {
+        $('#pre_mas_eng').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_eng').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_eng').show();
+      } else {
+        $('#mas_eng').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_mas_res_eng').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#mas_res_eng').show();
+      } else {
+        $('#mas_res_eng').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+    $('#check_phd_eng').change(function() {
+      if ($(this).is(':checked')) {
+
+        $('#phd_eng').show();
+      } else {
+        $('#phd_eng').hide();
+      }
+    });
+    });
+
+  $(document).ready(function () {
+		$('#check_dip_edu').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#dip_edu').show();
+			} else {
+				$('#dip_edu').hide();
+			}
+		});
+    });
+
+$(document).ready(function () {
+		$('#check_ass_edu').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#ass_edu').show();
+			} else {
+				$('#ass_edu').hide();
+			}
+		});
+    });
+$(document).ready(function () {
+		$('#check_found_edu').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#found_edu').show();
+			} else {
+				$('#found_edu').hide();
+			}
+		});
+    });
+$(document).ready(function () {
+		$('#check_pre_bach_edu').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#pre_bach_edu').show();
+			} else {
+				$('#pre_bach_edu').hide();
+			}
+		});
+    });
+
+$(document).ready(function () {
+		$('#check_bach_edu').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#bach_edu').show();
+			} else {
+				$('#bach_edu').hide();
+			}
+		});
+    });
+
+$(document).ready(function () {
+		$('#check_pre_mas_edu').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#pre_mas_edu').show();
+			} else {
+				$('#pre_mas_edu').hide();
+			}
+		});
+    });
+
+$(document).ready(function () {
+		$('#check_mas_edu').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#mas_edu').show();
+			} else {
+				$('#mas_edu').hide();
+			}
+		});
+    });
+
+$(document).ready(function () {
+		$('#check_mas_res_edu').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#mas_res_edu').show();
+			} else {
+				$('#mas_res_edu').hide();
+			}
+		});
+    });
+
+$(document).ready(function () {
+		$('#check_phd_edu').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#phd_edu').show();
+			} else {
+				$('#phd_edu').hide();
+			}
+		});
+    });
+  $(document).ready(function () {
+  $('#check_dip_ear').change(function() {
+    if ($(this).is(':checked')) {
+
+      $('#dip_ear').show();
+    } else {
+      $('#dip_ear').hide();
+    }
+  });
+  });
+
+$(document).ready(function () {
+  $('#check_ass_ear').change(function() {
+    if ($(this).is(':checked')) {
+
+      $('#ass_ear').show();
+    } else {
+      $('#ass_ear').hide();
+    }
+  });
+  });
+$(document).ready(function () {
+  $('#check_found_ear').change(function() {
+    if ($(this).is(':checked')) {
+
+      $('#found_ear').show();
+    } else {
+      $('#found_ear').hide();
+    }
+  });
+  });
+$(document).ready(function () {
+  $('#check_pre_bach_ear').change(function() {
+    if ($(this).is(':checked')) {
+
+      $('#pre_bach_ear').show();
+    } else {
+      $('#pre_bach_ear').hide();
+    }
+  });
+  });
+
+$(document).ready(function () {
+  $('#check_bach_ear').change(function() {
+    if ($(this).is(':checked')) {
+
+      $('#bach_ear').show();
+    } else {
+      $('#bach_ear').hide();
+    }
+  });
+  });
+
+$(document).ready(function () {
+  $('#check_pre_mas_ear').change(function() {
+    if ($(this).is(':checked')) {
+
+      $('#pre_mas_ear').show();
+    } else {
+      $('#pre_mas_ear').hide();
+    }
+  });
+  });
+
+$(document).ready(function () {
+  $('#check_mas_ear').change(function() {
+    if ($(this).is(':checked')) {
+
+      $('#mas_ear').show();
+    } else {
+      $('#mas_ear').hide();
+    }
+  });
+  });
+
+$(document).ready(function () {
+  $('#check_mas_res_ear').change(function() {
+    if ($(this).is(':checked')) {
+
+      $('#mas_res_ear').show();
+    } else {
+      $('#mas_res_ear').hide();
+    }
+  });
+  });
+
+$(document).ready(function () {
+  $('#check_phd_ear').change(function() {
+    if ($(this).is(':checked')) {
+
+      $('#phd_ear').show();
+    } else {
+      $('#phd_ear').hide();
+    }
+  });
+  });
+  $(document).ready(function () {
+		$('#check_dip_des').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#dip_des').show();
+			} else {
+				$('#dip_des').hide();
+			}
+		});
+    });
+
+$(document).ready(function () {
+		$('#check_ass_des').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#ass_des').show();
+			} else {
+				$('#ass_des').hide();
+			}
+		});
+    });
+$(document).ready(function () {
+		$('#check_found_des').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#found_des').show();
+			} else {
+				$('#found_des').hide();
+			}
+		});
+    });
+$(document).ready(function () {
+		$('#check_pre_bach_des').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#pre_bach_des').show();
+			} else {
+				$('#pre_bach_des').hide();
+			}
+		});
+    });
+
+$(document).ready(function () {
+		$('#check_bach_des').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#bach_des').show();
+			} else {
+				$('#bach_des').hide();
+			}
+		});
+    });
+
+$(document).ready(function () {
+		$('#check_pre_mas_des').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#pre_mas_des').show();
+			} else {
+				$('#pre_mas_des').hide();
+			}
+		});
+    });
+
+$(document).ready(function () {
+		$('#check_mas_des').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#mas_des').show();
+			} else {
+				$('#mas_des').hide();
+			}
+		});
+    });
+
+$(document).ready(function () {
+		$('#check_mas_res_des').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#mas_res_des').show();
+			} else {
+				$('#mas_res_des').hide();
+			}
+		});
+    });
+
+$(document).ready(function () {
+		$('#check_phd_des').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#phd_des').show();
+			} else {
+				$('#phd_des').hide();
+			}
+		});
+    });
+  $(document).ready(function () {
+  $('#check_dip_bus').change(function() {
+    if ($(this).is(':checked')) {
+
+      $('#dip_bus').show();
+    } else {
+      $('#dip_bus').hide();
+    }
+  });
+  });
+
+$(document).ready(function () {
+  $('#check_ass_bus').change(function() {
+    if ($(this).is(':checked')) {
+
+      $('#ass_bus').show();
+    } else {
+      $('#ass_bus').hide();
+    }
+  });
+  });
+$(document).ready(function () {
+  $('#check_found_bus').change(function() {
+    if ($(this).is(':checked')) {
+
+      $('#found_bus').show();
+    } else {
+      $('#found_bus').hide();
+    }
+  });
+  });
+$(document).ready(function () {
+  $('#check_pre_bach_bus').change(function() {
+    if ($(this).is(':checked')) {
+
+      $('#pre_bach_bus').show();
+    } else {
+      $('#pre_bach_bus').hide();
+    }
+  });
+  });
+
+$(document).ready(function () {
+  $('#check_bach_bus').change(function() {
+    if ($(this).is(':checked')) {
+
+      $('#bach_bus').show();
+    } else {
+      $('#bach_bus').hide();
+    }
+  });
+  });
+
+$(document).ready(function () {
+  $('#check_pre_mas_bus').change(function() {
+    if ($(this).is(':checked')) {
+
+      $('#pre_mas_bus').show();
+    } else {
+      $('#pre_mas_bus').hide();
+    }
+  });
+  });
+
+$(document).ready(function () {
+  $('#check_mas_bus').change(function() {
+    if ($(this).is(':checked')) {
+
+      $('#mas_bus').show();
+    } else {
+      $('#mas_bus').hide();
+    }
+  });
+  });
+
+$(document).ready(function () {
+  $('#check_mas_res_bus').change(function() {
+    if ($(this).is(':checked')) {
+
+      $('#mas_res_bus').show();
+    } else {
+      $('#mas_res_bus').hide();
+    }
+  });
+  });
+
+$(document).ready(function () {
+  $('#check_phd_bus').change(function() {
+    if ($(this).is(':checked')) {
+
+      $('#phd_bus').show();
+    } else {
+      $('#phd_bus').hide();
+    }
+  });
+  });
+  $(document).ready(function () {
+		$('#check_dip_bio').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#dip_bio').show();
+			} else {
+				$('#dip_bio').hide();
+			}
+		});
+    });
+
+$(document).ready(function () {
+		$('#check_ass_bio').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#ass_bio').show();
+			} else {
+				$('#ass_bio').hide();
+			}
+		});
+    });
+$(document).ready(function () {
+		$('#check_found_bio').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#found_bio').show();
+			} else {
+				$('#found_bio').hide();
+			}
+		});
+    });
+$(document).ready(function () {
+		$('#check_pre_bach_bio').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#pre_bach_bio').show();
+			} else {
+				$('#pre_bach_bio').hide();
+			}
+		});
+    });
+
+$(document).ready(function () {
+		$('#check_bach_bio').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#bach_bio').show();
+			} else {
+				$('#bach_bio').hide();
+			}
+		});
+    });
+
+$(document).ready(function () {
+		$('#check_pre_mas_bio').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#pre_mas_bio').show();
+			} else {
+				$('#pre_mas_bio').hide();
+			}
+		});
+    });
+
+$(document).ready(function () {
+		$('#check_mas_io').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#mas_bio').show();
+			} else {
+				$('#mas_bio').hide();
+			}
+		});
+    });
+
+$(document).ready(function () {
+		$('#check_mas_res_bio').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#mas_res_bio').show();
+			} else {
+				$('#mas_res_bio').hide();
+			}
+		});
+    });
+
+$(document).ready(function () {
+		$('#check_phd_bio').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#phd_bio').show();
+			} else {
+				$('#phd_bio').hide();
+			}
+		});
+    });
+  
+
+
+
+
+
+
+
+
+    $(document).ready(function () {
+		$('#check_ass_arts').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#ass_arts').show();
+			} else {
+				$('#ass_arts').hide();
+			}
+		});
+    });
+    $(document).ready(function () {
+		$('#check_found_arts').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#found_arts').show();
+			} else {
+				$('#found_arts').hide();
+			}
+		});
+    });
+    $(document).ready(function () {
+		$('#check_pre_bach_arts').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#pre_bach_arts').show();
+			} else {
+				$('#pre_bach_arts').hide();
+			}
+		});
+    });
+
+$(document).ready(function () {
+		$('#check_bach_arts').change(function() {
+			if ($(this).is(':checked')) {
+
+				$('#bach_arts').show();
+			} else {
+				$('#bach_arts').hide();
+			}
+		});
+    });
+
+    $(document).ready(function () {
+    		$('#check_pre_mas_arts').change(function() {
+    			if ($(this).is(':checked')) {
+
+    				$('#pre_mas_arts').show();
+    			} else {
+    				$('#pre_mas_arts').hide();
+    			}
+    		});
+        });
+        $(document).ready(function () {
+    		$('#check_mas_arts').change(function() {
+    			if ($(this).is(':checked')) {
+
+    				$('#mas_arts').show();
+    			} else {
+    				$('#mas_arts').hide();
+    			}
+    		});
+        });
+        $(document).ready(function () {
+        		$('#check_phd_arts').change(function() {
+        			if ($(this).is(':checked')) {
+
+        				$('#phd_arts').show();
+        			} else {
+        				$('#phd_arts').hide();
+        			}
+        		});
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   $(document).ready(function () {
+		$('#ear_check').change(function() {
+			if ($(this).is(':checked')) {
+				$('#earth').show();
+				$('#design').hide();
+				$('#business').hide();
+				$('#beauty').hide();
+				$('#bio').hide();
+				$('#automobiles').hide();
+				$('#arts').hide();
+				$('#agri').hide();
+				$('#diploma').hide();
+			} else {
+				$('#earth').hide();
+			}
+		});
+    });
+
+    $(document).ready(function () {
+		$('#edu_check').change(function() {
+			if ($(this).is(':checked')) {
+				$('#education').show();
+				$('#earth').hide();
+				$('#design').hide();
+				$('#business').hide();
+				$('#beauty').hide();
+				$('#bio').hide();
+				$('#automobiles').hide();
+				$('#arts').hide();
+				$('#agri').hide();
+				$('#diploma').hide();
+			} else {
+				$('#education').hide();
+			}
+		});
+    });
+   $(document).ready(function () {
+		$('#des_check').change(function() {
+			if ($(this).is(':checked')) {
+				$('#design').show();
+				$('#business').hide();
+				$('#beauty').hide();
+				$('#bio').hide();
+				$('#automobiles').hide();
+				$('#arts').hide();
+				$('#agri').hide();
+				$('#diploma').hide();
+			} else {
+				$('#design').hide();
+			}
+		});
+    });
+   $(document).ready(function () {
+   		$('#bus_check').change(function() {
+   			if ($(this).is(':checked')) {
+   				$('#business').show();
+   				$('#beauty').hide();
+   				$('#bio').hide();
+   				$('#automobiles').hide();
+   				$('#arts').hide();
+   				$('#agri').hide();
+   				$('#diploma').hide();
+   			} else {
+   				$('#business').hide();
+   			}
+   		});
+       });
+   $(document).ready(function () {
+		$('#bio_check').change(function() {
+			if ($(this).is(':checked')) {
+				$('#bio').show();
+				$('#beauty').hide();
+				$('#automobiles').hide();
+				$('#arts').hide();
+				$('#agri').hide();
+				$('#diploma').hide();
+			} else {
+				$('#bio').hide();
+			}
+		});
+    });
+   $(document).ready(function () {
+   		$('#beauty_check').change(function() {
+   			if ($(this).is(':checked')) {
+   				$('#beauty').show();
+   				$('#automobiles').hide();
+   				$('#arts').hide();
+   				$('#agri').hide();
+   				$('#diploma').hide();
+   			} else {
+   				$('#beauty').hide();
+   			}
+   		});
+       });
+
+       $(document).ready(function () {
+     		$('#check_dip_beauty').change(function() {
+     			if ($(this).is(':checked')) {
+
+     				$('#dip_beauty').show();
+     			} else {
+     				$('#dip_beauty').hide();
+     			}
+     		});
+         });
+
+     $(document).ready(function () {
+     		$('#check_ass_beauty').change(function() {
+     			if ($(this).is(':checked')) {
+
+     				$('#ass_beauty').show();
+     			} else {
+     				$('#ass_beauty').hide();
+     			}
+     		});
+         });
+     $(document).ready(function () {
+     		$('#check_found_beauty').change(function() {
+     			if ($(this).is(':checked')) {
+
+     				$('#found_beauty').show();
+     			} else {
+     				$('#found_beauty').hide();
+     			}
+     		});
+         });
+     $(document).ready(function () {
+     		$('#check_pre_bach_beauty').change(function() {
+     			if ($(this).is(':checked')) {
+
+     				$('#pre_bach_beauty').show();
+     			} else {
+     				$('#pre_bach_beauty').hide();
+     			}
+     		});
+         });
+
+     $(document).ready(function () {
+     		$('#check_bach_beauty').change(function() {
+     			if ($(this).is(':checked')) {
+
+     				$('#bach_beauty').show();
+     			} else {
+     				$('#bach_beauty').hide();
+     			}
+     		});
+         });
+
+     $(document).ready(function () {
+     		$('#check_pre_mas_beauty').change(function() {
+     			if ($(this).is(':checked')) {
+
+     				$('#pre_mas_beauty').show();
+     			} else {
+     				$('#pre_mas_beauty').hide();
+     			}
+     		});
+         });
+
+     $(document).ready(function () {
+     		$('#check_mas_beauty').change(function() {
+     			if ($(this).is(':checked')) {
+
+     				$('#mas_beauty').show();
+     			} else {
+     				$('#mas_beauty').hide();
+     			}
+     		});
+         });
+
+     $(document).ready(function () {
+     		$('#check_mas_res_beauty').change(function() {
+     			if ($(this).is(':checked')) {
+
+     				$('#mas_res_beauty').show();
+     			} else {
+     				$('#mas_res_beauty').hide();
+     			}
+     		});
+         });
+
+     $(document).ready(function () {
+     		$('#check_phd_beauty').change(function() {
+     			if ($(this).is(':checked')) {
+
+     				$('#phd_beauty').show();
+     			} else {
+     				$('#phd_beauty').hide();
+     			}
+     		});
+         });
+
+
+
+
+
+
+
+
+
+
+    $(document).ready(function () {
+       $('#eng_check').change(function() {
+         if ($(this).is(':checked')) {
+           $('#eng').show();
+           $('#business').hide();
+           $('#beauty').hide();
+           $('#bio').hide();
+           $('#automobiles').hide();
+           $('#arts').hide();
+           $('#agri').hide();
+           $('#diploma').hide();
+         } else {
+           $('#eng').hide();
+         }
+       });
+        });
+        $(document).ready(function () {
+           $('#film_check').change(function() {
+             if ($(this).is(':checked')) {
+               $('#film').show();
+               $('#eng').hide();
+               $('#business').hide();
+               $('#beauty').hide();
+               $('#bio').hide();
+               $('#automobiles').hide();
+               $('#arts').hide();
+               $('#agri').hide();
+               $('#diploma').hide();
+             } else {
+               $('#film').hide();
+             }
+           });
+            });
+
+            $(document).ready(function () {
+               $('#food_check').change(function() {
+                 if ($(this).is(':checked')) {
+                   $('#food').show();
+                   $('#eng').hide();
+                   $('#film').hide();
+                   $('#business').hide();
+                   $('#beauty').hide();
+                   $('#bio').hide();
+                   $('#automobiles').hide();
+                   $('#arts').hide();
+                   $('#agri').hide();
+                   $('#diploma').hide();
+                 } else {
+                   $('#food').hide();
+                 }
+               });
+                });
+
+                        $(document).ready(function () {
+                           $('#graphic_check').change(function() {
+                             if ($(this).is(':checked')) {
+                               $('#graphic').show();
+                               $('#food').hide();
+                               $('#eng').hide();
+                               $('#film').hide();
+                               $('#business').hide();
+                               $('#beauty').hide();
+                               $('#bio').hide();
+                               $('#automobiles').hide();
+                               $('#arts').hide();
+                               $('#agri').hide();
+                               $('#diploma').hide();
+                             } else {
+                               $('#graphic').hide();
+                             }
+                           });
+                            });
+
+
+
+
+
+                            $(document).ready(function () {
+                               $('#history_check').change(function() {
+                                 if ($(this).is(':checked')) {
+                                   $('#history').show();
+                                    $('#graphic').hide();
+                                   $('#food').hide();
+                                   $('#eng').hide();
+                                   $('#film').hide();
+                                   $('#business').hide();
+                                   $('#beauty').hide();
+                                   $('#bio').hide();
+                                   $('#automobiles').hide();
+                                   $('#arts').hide();
+                                   $('#agri').hide();
+                                   $('#diploma').hide();
+                                 } else {
+                                   $('#history').hide();
+                                 }
+                               });
+                                });
+
+                                                        $(document).ready(function () {
+                                                           $('#hos_check').change(function() {
+                                                             if ($(this).is(':checked')) {
+                                                               $('#hos').show();
+                                                               $('#history').hide();
+                                                                $('#graphic').hide();
+                                                               $('#food').hide();
+                                                               $('#eng').hide();
+                                                               $('#film').hide();
+                                                               $('#business').hide();
+                                                               $('#beauty').hide();
+                                                               $('#bio').hide();
+                                                               $('#automobiles').hide();
+                                                               $('#arts').hide();
+                                                               $('#agri').hide();
+                                                               $('#diploma').hide();
+                                                             } else {
+                                                               $('#hos').hide();
+                                                             }
+                                                           });
+
+
+                                                            });
+                                                            $(document).ready(function () {
+                                                               $('#IT_check').change(function() {
+                                                                 if ($(this).is(':checked')) {
+                                                                   $('#IT').show();
+                                                                   $('#hos').hide();
+                                                                   $('#history').hide();
+                                                                    $('#graphic').hide();
+                                                                   $('#food').hide();
+                                                                   $('#eng').hide();
+                                                                   $('#film').hide();
+                                                                   $('#business').hide();
+                                                                   $('#beauty').hide();
+                                                                   $('#bio').hide();
+                                                                   $('#automobiles').hide();
+                                                                   $('#arts').hide();
+                                                                   $('#agri').hide();
+                                                                   $('#diploma').hide();
+                                                                 } else {
+                                                                   $('#IT').hide();
+                                                                 }
+                                                               });
+
+
+                                                                });
+                                                                });
+                                                                $(document).ready(function () {
+                                                                   $('#jour_check').change(function() {
+                                                                     if ($(this).is(':checked')) {
+                                                                       $('#jour').show();
+                                                                        $('#IT').hide();
+                                                                       $('#hos').hide();
+                                                                       $('#history').hide();
+                                                                        $('#graphic').hide();
+                                                                       $('#food').hide();
+                                                                       $('#eng').hide();
+                                                                       $('#film').hide();
+                                                                       $('#business').hide();
+                                                                       $('#beauty').hide();
+                                                                       $('#bio').hide();
+                                                                       $('#automobiles').hide();
+                                                                       $('#arts').hide();
+                                                                       $('#agri').hide();
+                                                                       $('#diploma').hide();
+                                                                     } else {
+                                                                       $('#jour').hide();
+                                                                     }
+                                                                   });
+
+
+                                                                    });
+
+
+                                                                    $(document).ready(function () {
+                                                                       $('#lan_check').change(function() {
+                                                                         if ($(this).is(':checked')) {
+                                                                           $('#lan').show();
+                                                                           $('#jour').hide();
+                                                                            $('#IT').hide();
+                                                                           $('#hos').hide();
+                                                                           $('#history').hide();
+                                                                            $('#graphic').hide();
+                                                                           $('#food').hide();
+                                                                           $('#eng').hide();
+                                                                           $('#film').hide();
+                                                                           $('#business').hide();
+                                                                           $('#beauty').hide();
+                                                                           $('#bio').hide();
+                                                                           $('#automobiles').hide();
+                                                                           $('#arts').hide();
+                                                                           $('#agri').hide();
+                                                                           $('#diploma').hide();
+                                                                         } else {
+                                                                           $('#lan').hide();
+                                                                         }
+                                                                       });
+
+
+                                                                        });
+
+                                                                        $(document).ready(function () {
+                                                                           $('#law_check').change(function() {
+                                                                             if ($(this).is(':checked')) {
+                                                                               $('#law').show();
+                                                                               $('#lan').hide();
+                                                                               $('#jour').hide();
+                                                                                $('#IT').hide();
+                                                                               $('#hos').hide();
+                                                                               $('#history').hide();
+                                                                                $('#graphic').hide();
+                                                                               $('#food').hide();
+                                                                               $('#eng').hide();
+                                                                               $('#film').hide();
+                                                                               $('#business').hide();
+                                                                               $('#beauty').hide();
+                                                                               $('#bio').hide();
+                                                                               $('#automobiles').hide();
+                                                                               $('#arts').hide();
+                                                                               $('#agri').hide();
+                                                                               $('#diploma').hide();
+                                                                             } else {
+                                                                               $('#law').hide();
+                                                                             }
+                                                                           });
+
+
+                                                                            });
+                                                                            $(document).ready(function () {
+                                                                               $('#mark_check').change(function() {
+                                                                                 if ($(this).is(':checked')) {
+                                                                                   $('#mark').show();
+                                                                                    $('#law').hide();
+                                                                                   $('#lan').hide();
+                                                                                   $('#jour').hide();
+                                                                                    $('#IT').hide();
+                                                                                   $('#hos').hide();
+                                                                                   $('#history').hide();
+                                                                                    $('#graphic').hide();
+                                                                                   $('#food').hide();
+                                                                                   $('#eng').hide();
+                                                                                   $('#film').hide();
+                                                                                   $('#business').hide();
+                                                                                   $('#beauty').hide();
+                                                                                   $('#bio').hide();
+                                                                                   $('#automobiles').hide();
+                                                                                   $('#arts').hide();
+                                                                                   $('#agri').hide();
+                                                                                   $('#diploma').hide();
+                                                                                 } else {
+                                                                                   $('#mark').hide();
+                                                                                 }
+                                                                               });
+
+
+                                                                                });
+                                                                                $(document).ready(function () {
+                                                                                   $('#med_check').change(function() {
+                                                                                     if ($(this).is(':checked')) {
+                                                                                       $('#med').show();
+                                                                                       $('#mark').hide();
+                                                                                        $('#law').hide();
+                                                                                       $('#lan').hide();
+                                                                                       $('#jour').hide();
+                                                                                        $('#IT').hide();
+                                                                                       $('#hos').hide();
+                                                                                       $('#history').hide();
+                                                                                        $('#graphic').hide();
+                                                                                       $('#food').hide();
+                                                                                       $('#eng').hide();
+                                                                                       $('#film').hide();
+                                                                                       $('#business').hide();
+                                                                                       $('#beauty').hide();
+                                                                                       $('#bio').hide();
+                                                                                       $('#automobiles').hide();
+                                                                                       $('#arts').hide();
+                                                                                       $('#agri').hide();
+                                                                                       $('#diploma').hide();
+                                                                                     } else {
+                                                                                       $('#med').hide();
+                                                                                     }
+                                                                                   });
+
+
+                                                                                    });
+                                                                                    $(document).ready(function () {
+                                                                                       $('#phil_check').change(function() {
+                                                                                         if ($(this).is(':checked')) {
+                                                                                           $('#phil').show();
+                                                                                           $('#med').hide();
+                                                                                           $('#mark').hide();
+                                                                                            $('#law').hide();
+                                                                                           $('#lan').hide();
+                                                                                           $('#jour').hide();
+                                                                                            $('#IT').hide();
+                                                                                           $('#hos').hide();
+                                                                                           $('#history').hide();
+                                                                                            $('#graphic').hide();
+                                                                                           $('#food').hide();
+                                                                                           $('#eng').hide();
+                                                                                           $('#film').hide();
+                                                                                           $('#business').hide();
+                                                                                           $('#beauty').hide();
+                                                                                           $('#bio').hide();
+                                                                                           $('#automobiles').hide();
+                                                                                           $('#arts').hide();
+                                                                                           $('#agri').hide();
+                                                                                           $('#diploma').hide();
+                                                                                         } else {
+                                                                                           $('#phil').hide();
+                                                                                         }
+                                                                                       });
+
+
+                                                                                        });
+
+                                                                                        $(document).ready(function () {
+                                                                                           $('#pol_check').change(function() {
+                                                                                             if ($(this).is(':checked')) {
+                                                                                               $('#pol').show();
+                                                                                               $('#phil').hide();
+                                                                                               $('#med').hide();
+                                                                                               $('#mark').hide();
+                                                                                                $('#law').hide();
+                                                                                               $('#lan').hide();
+                                                                                               $('#jour').hide();
+                                                                                                $('#IT').hide();
+                                                                                               $('#hos').hide();
+                                                                                               $('#history').hide();
+                                                                                                $('#graphic').hide();
+                                                                                               $('#food').hide();
+                                                                                               $('#eng').hide();
+                                                                                               $('#film').hide();
+                                                                                               $('#business').hide();
+                                                                                               $('#beauty').hide();
+                                                                                               $('#bio').hide();
+                                                                                               $('#automobiles').hide();
+                                                                                               $('#arts').hide();
+                                                                                               $('#agri').hide();
+                                                                                               $('#diploma').hide();
+                                                                                             } else {
+                                                                                               $('#pol').hide();
+                                                                                             }
+                                                                                           });
+
+
+                                                                                            });
+
+                                                                                            $(document).ready(function () {
+                                                                                               $('#sport_check').change(function() {
+                                                                                                 if ($(this).is(':checked')) {
+                                                                                                   $('#sport').show();
+                                                                                                   $('#pol').hide();
+                                                                                                   $('#phil').hide();
+                                                                                                   $('#med').hide();
+                                                                                                   $('#mark').hide();
+                                                                                                    $('#law').hide();
+                                                                                                   $('#lan').hide();
+                                                                                                   $('#jour').hide();
+                                                                                                    $('#IT').hide();
+                                                                                                   $('#hos').hide();
+                                                                                                   $('#history').hide();
+                                                                                                    $('#graphic').hide();
+                                                                                                   $('#food').hide();
+                                                                                                   $('#eng').hide();
+                                                                                                   $('#film').hide();
+                                                                                                   $('#business').hide();
+                                                                                                   $('#beauty').hide();
+                                                                                                   $('#bio').hide();
+                                                                                                   $('#automobiles').hide();
+                                                                                                   $('#arts').hide();
+                                                                                                   $('#agri').hide();
+                                                                                                   $('#diploma').hide();
+                                                                                                 } else {
+                                                                                                   $('#sport').hide();
+                                                                                                 }
+                                                                                               });
+
+
+                                                                                                });
+                                                                                                $(document).ready(function () {
+                                                                                                   $('#zoo_check').change(function() {
+                                                                                                     if ($(this).is(':checked')) {
+                                                                                                       $('#zoo').show();
+                                                                                                        $('#sport').hide();
+                                                                                                       $('#pol').hide();
+                                                                                                       $('#phil').hide();
+                                                                                                       $('#med').hide();
+                                                                                                       $('#mark').hide();
+                                                                                                        $('#law').hide();
+                                                                                                       $('#lan').hide();
+                                                                                                       $('#jour').hide();
+                                                                                                        $('#IT').hide();
+                                                                                                       $('#hos').hide();
+                                                                                                       $('#history').hide();
+                                                                                                        $('#graphic').hide();
+                                                                                                       $('#food').hide();
+                                                                                                       $('#eng').hide();
+                                                                                                       $('#film').hide();
+                                                                                                       $('#business').hide();
+                                                                                                       $('#beauty').hide();
+                                                                                                       $('#bio').hide();
+                                                                                                       $('#automobiles').hide();
+                                                                                                       $('#arts').hide();
+                                                                                                       $('#agri').hide();
+                                                                                                       $('#diploma').hide();
+                                                                                                     } else {
+                                                                                                       $('#zoo').hide();
+                                                                                                     }
+                                                                                                   });
+
+
+                                                                                                 });

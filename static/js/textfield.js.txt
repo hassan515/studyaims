@@ -1,0 +1,6 @@
+function yesnoCheck() {
+    if (document.getElementById('f-option').checked) {
+        document.getElementById('name').style.visibility = 'block';
+    } else {
+        document.getElementById('name').style.visibility = 'hidden';
+    }

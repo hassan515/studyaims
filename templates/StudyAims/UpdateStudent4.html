@@ -1,0 +1,1363 @@
+<!doctype html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0; maximum-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+<title>Educational Template</title>
+<!-- Reset CSS -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link href="{% static 'css/fonts.css' %}" rel="stylesheet" type="text/css">
+<!-- Bootstrap
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- Font Awesome -->
+<link href="{% static 'css/fonts/font-awesome.min.css'%}" rel="stylesheet" type="text/css" >
+<!-- Iconmoon -->
+<link href=" {% static 'css/iconmoon.css' %}" rel="stylesheet" type="text/css">
+<!-- Custom Style -->
+<link href="{% static 'css/custom.css' %}" rel="stylesheet" type="text/css">
+
+<link href="{% static "css/reset.css" %}" rel="stylesheet" type="text/css">
+<!-- Custom Fonts -->
+<link href="{% static "css/fonts.css" %}" rel="stylesheet" type="text/css">
+<!-- Bootstrap -->
+
+<!-- Select2 -->
+<link href="assets/select2/css/select2.min.css" rel="stylesheet" type="text/css">
+<!-- Font Awesome -->
+<link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!-- Magnific Popup -->
+<link href="assets/magnific-popup/css/magnific-popup.css" rel="stylesheet" type="text/css">
+<!-- Iconmoon -->
+<link href="assets/iconmoon/css/iconmoon.css" rel="stylesheet" type="text/css">
+<!-- Owl Carousel -->
+<link href="{% static "assets/owl-carousel/css/owl.carousel.min.css" %}" rel="stylesheet" type="text/css">
+<!-- Animate -->
+<link href="{% static "css/animate.css" %}" rel="stylesheet" type="text/css">
+<!-- Custom Style -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="fill-bg">
+<!-- Start Preloader -->
+<div id="loading">
+  <div class="element">
+    <div class="sk-folding-cube">
+      <div class="sk-cube1 sk-cube"></div>
+      <div class="sk-cube2 sk-cube"></div>
+      <div class="sk-cube4 sk-cube"></div>
+      <div class="sk-cube3 sk-cube"></div>
+    </div>
+  </div>
+</div>
+<!-- End Preloader -->
+
+
+<section class="login-wrapper register">
+  <div class="inner">
+    <div class="regiter-inner">
+
+      <div class="login-logo"> <a href="index.html"><img src="images/login-logo.png" class="img-responsive" alt=""></a> </div>
+      <ul id="progressbar">
+      <li class="active">Personal Information</li>
+      <li class="active">Qaulifications</li>
+      <li class="active">Language Skills</li>
+      <li class="active">Future Plans</li>
+      <li>Profile Picture</li>
+      </ul>
+      <div class="head-block">
+        <h1>Future Plans</h1>
+      </div>
+      <div class="cnt-block">
+        <form action="#" method="post" class="form-outer">
+          {% csrf_token %}
+
+
+          <div class="row">
+            <div class="col-sm-4">
+{{ form.desired_degree }}
+            </div>
+            <div class="col-sm-4">
+{{ form.desired_subject }}
+            </div>
+            <div class="col-sm-4">
+{{ form.program_duration }}
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-sm-4">
+{{ form.desired_country }}
+            </div>
+            <div class="col-sm-4">
+{{ form.scholarships }}
+            </div>
+            <div class="col-sm-4">
+{{ form.budget }}
+            </div>
+          </div>
+
+
+          {{ form.errors }}
+
+               <div class="row">
+                 <div class="col-sm-6">
+                   <button type="button" class="btn" name="button">Back</button>
+                 </div>
+                 <div class="col-sm-6">
+                   <button type="submit" class="btn" name="button">Next</button>
+                 </div>
+               </div>
+<!---------------Personal Information --------->
+<!--
+	<div class="row">
+            <div class="col-sm-12">
+              <h3 class="headings"> Future Plans</h3>
+            </div> </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <select class="mySelect" name="">
+                  <option selected disabled style="display:none">DESIRED DEGREE</option>
+
+                  <option value="">Certificate</option>
+
+                  <option value="">Diploma</option>
+
+                  <option value="">O-level</option>
+
+                  <option value="">A-level</option>
+                  <option value="">Int. Baccalaureate (IB)</option>
+
+                  <option value="">Foundation</option>
+
+                  <option value="">Associate Degree</option>
+
+
+                        <option value="">Bachelors(2-Years)</option>
+
+                          <option value="">Bachelors(3-Years)</option>
+
+                            <option value="">Bachelors(4-Years)</option>
+
+                              <option value="">Bachelors(5-Years)</option>
+
+                                <option value="">Bachelors(6-Years)</option>
+
+                                <option value="">Masters(6-months)</option>
+
+                                  <option value="">Masters(1-Year)</option>
+
+                                    <option value="">Masters(1.5-Year)</option>
+
+                                      <option value="">Masters(2-Years)</option>
+
+                                        <option value="">Masters(2.5-Years)</option>
+
+                                  <option value="">MPhil / Masters(Res)</option>
+
+                                    <option value="">Phd / Doctoral</option>
+                                    <option value="">Professional</option>
+
+                </select>
+
+                          </div>
+<div class="col-sm-6">
+  <select class="mySelect" name="">
+    <option selected disabled style="display:none">DESIRED SUBJECT</option>
+
+
+
+    <option value="">Accounting</option>
+
+      <option value="">Adult Education</option>
+
+        <option value="">Advertising</option>
+
+          <option value="">Aerospace Engineering</option>
+
+            <option value="">Agribusiness</option>
+
+              <option value="">Agriculture</option>
+
+              <option value="">Agriculture & Forestry</option>
+
+                <option value="">American Studies</option>
+
+                  <option value="">Ancient History</option>
+
+                    <option value="">Animal Sciences</option>
+
+                      <option value="">Anthropology</option>
+
+                <option value="">Applied Arts</option>
+
+                  <option value="">Applied Mathematics</option>
+
+                  <option value="">Applied Sciences & Professions</option>
+
+                    <option value="">Aquaculture & Fisheries)</option>
+
+                      <option value="">Arabic</option>
+
+                        <option value="">Archaeology</option>
+
+                          <option value="">Architecture</option>
+
+                            <option value="">Area & Cultural Studies</option>
+
+                            <option value="">Art History</option>
+
+                              <option value="">Arts </option>
+
+                                <option value="">Arts &, Design</option>
+
+                                  <option value="">Astronomy</option>
+
+                                    <option value="">Audio</option>
+
+                              <option value="">Auditing</option>
+
+                                <option value="">Automotive</option>
+
+                                <option value="">Automotive Engineering </option>
+
+                                  <option value="">Aviation</option>
+
+                                    <option value="">Banking</option>
+
+                                      <option value="">Basic Medical Sciences</option>
+
+                                        <option value="">Beauty</option>
+
+                                          <option value="">Bio & Biomedical Engineering</option>
+
+                                          <option value="">Biodiversity & Conservation</option>
+
+                                            <option value="">Biology</option>
+
+                                              <option value="">Biomedicine</option>
+
+                                                <option value="">Biotechnology</option>
+
+                                                  <option value="">Business</option>
+
+                                            <option value="">Business & Management</option>
+
+                                              <option value="">Business Administration</option>
+
+                                              <option value="">Business Information Systems</option>
+
+                                                <option value="">Business Intelligence & Analytics</option>
+
+                                                  <option value="">Business Law</option>
+
+                                                    <option value="">Business Math</option>
+
+                                                      <option value="">Chemical Engineering</option>
+
+                                                        <option value="">Chemistry</option>
+
+                                                        <option value="">Child Development And Family Life</option>
+
+                                                          <option value="">Christian Studies</option>
+
+                                                            <option value="">Civics</option>
+
+                                                              <option value="">Civics For Non Muslim</option>
+
+                                                                <option value="">Civil & Private Law</option>
+
+                                                          <option value="">Civil Engineering & Construction</option>
+
+                                                            <option value="">Climate Studies & Meteorology</option>
+
+                                                            <option value="">Clinical Pathology & Serology</option>
+
+                                                              <option value="">Clothing & Textile</option>
+
+                                                                <option value="">Coaching</option>
+
+                                                                  <option value="">Cognitive Sciences</option>
+
+                                                                    <option value="">Commerce</option>
+
+                                                                      <option value="">Commercial Geography</option>
+
+                                                                      <option value="">Commercial Practice</option>
+
+                                                                        <option value="">Communication Sciences</option>
+
+                                                                          <option value="">Communications</option>
+
+                                                                            <option value="">Complementary & Alternative Medicine</option>
+
+                                                                              <option value="">Computer Science</option>
+
+                                                                        <option value="">Computer Science & IT</option>
+
+                                                                          <option value="">Computing</option>
+
+                                                                          <option value="">Cookery</option>
+
+                                                                            <option value="">Corporate Communication</option>
+
+                                                                              <option value="">Corporate Social Responsibility</option>
+
+                                                                                <option value="">Cosmetics</option>
+
+                                                                                  <option value="">Counselling</option>
+
+                                                                                    <option value="">Creative Writing</option>
+
+                                                                                    <option value="">Criminal Law</option>
+
+                                                                                      <option value="">Criminology</option>
+
+                                                                                        <option value="">Culinary Arts</option>
+
+                                                                                          <option value="">Data Science & Big Data</option>
+
+                                                                                            <option value="">Dental Hygiene</option>
+
+                                                                                      <option value="">Dentistry</option>
+
+                                                                                        <option value="">Design</option>
+
+                                                                                        <option value="">Digital</option>
+
+                                                                                          <option value="">Earth</option>
+
+                                                                                            <option value="">Earth Sciences </option>
+
+                                                                                              <option value="">Ecology</option>
+
+                                                                                                <option value="">Econometrics </option>
+
+                                                                                                  <option value="">Economics of War</option>
+
+                                                                                                  <option value="">Economics </option>
+
+                                                                                                    <option value="">Education</option>
+
+                                                                                                      <option value="">Education & Training </option>
+
+                                                                                                        <option value="">Educational Psychology</option>
+
+                                                                                                          <option value="">Educational Research</option>
+
+                                                                                                    <option value="">Electrical Engineering</option>
+
+                                                                                                      <option value="">Electronics</option>
+
+                                                                                                      <option value="">Electronics & Embedded Technology</option>
+
+                                                                                                        <option value="">Elementary Anatomy & Microtech.</option>
+
+                                                                                                          <option value="">Elementary Chemistry & Chemical</option>
+
+                                                                                                            <option value="">Emergency & Disaster Management</option>
+
+                                                                                                              <option value="">Energy & Power Engineering</option>
+
+                                                                                                                <option value="">Engineering </option>
+
+                                                                                                                <option value="">English</option>
+
+                                                                                                                  <option value="">English Elective</option>
+
+                                                                                                                    <option value="">Entrepreneurship</option>
+
+                                                                                                                      <option value="">Environmental Sciences</option>
+
+                                                                                                                        <option value="">Environmental Economics & Policy</option>
+
+                                                                                                                  <option value="">Environmental Engineering</option>
+
+                                                                                                                    <option value="">Environmental Management</option>
+
+                                                                                                                    <option value="">Ethnic Studies</option>
+
+                                                                                                                      <option value="">European Law</option>
+
+                                                                                                                        <option value="">European Studies</option>
+
+                                                                                                                          <option value="">Event Management</option>
+
+                                                                                                                            <option value="">Executive MBA</option>
+
+                                                                                                                              <option value="">Family & Consumer Science</option>
+
+                                                                                                                              <option value="">Fashion</option>
+
+                                                                                                                                <option value="">Fashion, Textiles And Luxury Goods</option>
+
+                                                                                                                                  <option value="">Film, Photography & Media</option>
+
+                                                                                                                                    <option value="">Finance</option>
+
+                                                                                                                                      <option value="">Financial Mathematics</option>
+
+                                                                                                                                <option value="">Fine Art</option>
+
+                                                                                                                                  <option value="">Food & Nutrition</option>
+
+                                                                                                                                  <option value="">Food Sciences</option>
+
+                                                                                                                                    <option value="">Forensic Accounting</option>
+
+                                                                                                                                      <option value="">Forensic Science</option>
+
+                                                                                                                                        <option value="">Forestry</option>
+
+                                                                                                                                          <option value="">French</option>
+
+                                                                                                                                            <option value="">General Engineering & Technology</option>
+
+                                                                                                                                            <option value="">General Studies & Classics</option>
+
+                                                                                                                                              <option value="">Geographical Information Systems</option>
+
+                                                                                                                                                <option value="">Geography</option>
+
+                                                                                                                                                  <option value="">Geology</option>
+
+                                                                                                                                                    <option value="">German</option>
+
+                                                                                                                                              <option value="">Graphic Design</option>
+
+                                                                                                                                                <option value="">Hairdressing</option>
+
+                                                                                                                                                <option value="">Health & Physical Education</option>
+
+                                                                                                                                                  <option value="">Health Informatics</option>
+
+                                                                                                                                                    <option value="">Health Management</option>
+
+                                                                                                                                                      <option value="">Health Sciences</option>
+
+                                                                                                                                                        <option value="">Hematology & Blood Banking</option>
+
+                                                                                                                                                          <option value="">History</option>
+
+                                                                                                                                                          <option value="">History Of Modern World</option>
+
+                                                                                                                                                            <option value="">Home Management</option>
+
+                                                                                                                                                              <option value="">Horticulture</option>
+
+                                                                                                                                                                <option value="">Hospitality Management</option>
+
+                                                                                                                                                                  <option value="">Hospitality, Leisure & Sports</option>
+
+                                                                                                                                                            <option value="">Hotel Management</option>
+
+                                                                                                                                                              <option value="">Human Medicine </option>
+
+                                                                                                                                                                <option value="">Human Resource Management</option>
+
+                                                                                                                                                                  <option value="">Humanities</option>
+
+                                                                                                                                                                    <option value="">Hydrology & Water Management</option>
+
+                                                                                                                                                                      <option value="">Industrial & Systems Engineering</option>
+
+                                                                                                                                                                      <option value="">Industrial Design</option>
+
+                                                                                                                                                                        <option value="">Informatics & Information Sciences</option>
+
+                                                                                                                                                                          <option value="">Information Technology</option>
+
+                                                                                                                                                                            <option value="">Innovation Management</option>
+
+                                                                                                                                                                              <option value="">Interior</option>
+
+                                                                                                                                                                        <option value="">Interior Design</option>
+
+                                                                                                                                                                          <option value="">International Business</option>
+
+                                                                                                                                                                          <option value="">International Development</option>
+
+                                                                                                                                                                            <option value="">International Law</option>
+
+                                                                                                                                                                              <option value="">International Relations</option>
+
+                                                                                                                                                                                <option value="">Interpreting</option>
+
+                                                                                                                                                                                  <option value="">Islamic Education</option>
+
+                                                                                                                                                                                    <option value="">Islamic History & Culture</option>
+
+                                                                                                                                                                                    <option value="">Islamic Studies</option>
+
+                                                                                                                                                                                      <option value="">IT Security</option>
+
+                                                                                                                                                                                        <option value="">Journalism & Media</option>
+
+                                                                                                                                                                                          <option value="">Landscape Architecture </option>
+
+                                                                                                                                                                                            <option value="">Language Studies</option>
+
+                                                                                                                                                                                      <option value="">Law</option>
+
+                                                                                                                                                                                        <option value="">Legal Studies</option>
+
+                                                                                                                                                                                        <option value="">Liberal Arts</option>
+
+                                                                                                                                                                                          <option value="">Library Science</option>
+
+                                                                                                                                                                                            <option value="">Literature </option>
+
+                                                                                                                                                                                              <option value="">Management, Organisation & Leadership</option>
+
+                                                                                                                                                                                                <option value="">Manufacturing</option>
+
+                                                                                                                                                                                                  <option value="">Marine Engineering</option>
+
+                                                                                                                                                                                                  <option value="">Maritime</option>
+
+                                                                                                                                                                                                    <option value="">Marketing</option>
+
+                                                                                                                                                                                                      <option value="">Materials Science & Engineering </option>
+
+                                                                                                                                                                                                        <option value="">Mathematics</option>
+
+                                                                                                                                                                                                          <option value="">Mechanical Engineering </option>
+
+                                                                                                                                                                                                    <option value="">Mechatronics</option>
+
+                                                                                                                                                                                                      <option value="">Media Studies & Mass Media </option>
+
+                                                                                                                                                                                                      <option value="">Medical </option>
+
+                                                                                                                                                                                                        <option value="">Medicine & Health</option>
+
+                                                                                                                                                                                                          <option value="">Microbiology</option>
+
+                                                                                                                                                                                                            <option value="">Midwifery</option>
+
+                                                                                                                                                                                                              <option value="">Military Geography</option>
+
+                                                                                                                                                                                                                <option value="">Military Geography</option>
+
+                                                                                                                                                                                                                <option value="">Military Science</option>
+
+                                                                                                                                                                                                                  <option value="">Mining</option>
+
+                                                                                                                                                                                                                    <option value="">Modern History</option>
+
+                                                                                                                                                                                                                      <option value="">Molecular Sciences</option>
+
+                                                                                                                                                                                                                        <option value="">Museum Studies </option>
+
+                                                                                                                                                                                                                  <option value="">Music</option>
+
+                                                                                                                                                                                                                    <option value="">Music History</option>
+
+                                                                                                                                                                                                                    <option value="">Natural Resource Management</option>
+
+                                                                                                                                                                                                                      <option value="">Natural Sciences & Mathematics</option>
+
+                                                                                                                                                                                                                        <option value="">Natural Sciences </option>
+
+                                                                                                                                                                                                                          <option value="">Neuroscience </option>
+
+                                                                                                                                                                                                                            <option value="">Nursing</option>
+
+                                                                                                                                                                                                                              <option value="">Nutrition</option>
+
+                                                                                                                                                                                                                              <option value="">Nutrition & Dietetics</option>
+
+                                                                                                                                                                                                                                <option value="">Oil & Gas</option>
+
+                                                                                                                                                                                                                                  <option value="">Organisational Behaviour</option>
+
+                                                                                                                                                                                                                                    <option value="">Pakistan Studies</option>
+
+                                                                                                                                                                                                                                      <option value="">Pakistani Culture</option>
+
+                                                                                                                                                                                                                                <option value="">Patent & Intellectual Property Law </option>
+
+                                                                                                                                                                                                                                  <option value="">Pedagogy</option>
+
+                                                                                                                                                                                                                                    <option value="">Performing</option>
+
+                                                                                                                                                                                                                                      <option value="">Persian</option>
+
+                                                                                                                                                                                                                                        <option value="">Pharmaceutical</option>
+
+                                                                                                                                                                                                                                  <option value="">Pharmacy </option>
+
+                                                                                                                                                                                                                                    <option value="">Philosophy</option>
+
+
+                                                                                                                                                                                                                                      <option value="">Philosophy & Ethics</option>
+
+                                                                                                                                                                                                                                        <option value="">Photography</option>
+
+                                                                                                                                                                                                                                          <option value="">Physics</option>
+
+                                                                                                                                                                                                                                    <option value="">Physiotherapy </option>
+
+                                                                                                                                                                                                                                      <option value="">Plant & Crop Sciences </option>
+
+                                                                                                                                                                                                                                        <option value="">Political Science </option>
+
+                                                                                                                                                                                                                                          <option value="">Project Management </option>
+
+
+
+                                                                                                                                                                                                                                      <option value="">Public Administration</option>
+
+                                                                                                                                                                                                                                        <option value="">Public Health </option>
+
+                                                                                                                                                                                                                                          <option value="">Public Law </option>
+
+                                                                                                                                                                                                                                            <option value="">Public Policy</option>
+
+                                                                                                                                                                                                                                              <option value="">Public Relations </option>
+
+                                                                                                                                                                                                                                        <option value="">Real Estate & Property Management</option>
+
+                                                                                                                                                                                                                                          <option value="">Recreation</option>
+
+                                                                                                                                                                                                                                            <option value="">Religious Studies & Theology</option>
+
+                                                                                                                                                                                                                                              <option value="">Retail Management</option>
+
+                                                                                                                                                                                                                                                <option value="">Risk Management</option>
+
+                                                                                                                                                                                                                                          <option value="">Robotics</option>
+
+                                                                                                                                                                                                                                            <option value="">Social Sciences</option>
+
+                                                                                                                                                                                                                                              <option value="">Social Welfare</option>
+
+                                                                                                                                                                                                                                                <option value="">Sociology</option>
+
+                                                                                                                                                                                                                                                  <option value="">Soil Science</option>
+
+                                                                                                                                                                                                                                                    <option value="">Psychology</option>
+
+                                                                                                                                                                                                                                              <option value="">Space</option>
+                                                                                                                                                                                                                                              <option value="">Special Education </option>
+
+                                                                                                                                                                                                                                                <option value="">Special Military Studies</option>
+
+                                                                                                                                                                                                                                                  <option value="">Sport & Recreation</option>
+
+                                                                                                                                                                                                                                                    <option value="">Statistics</option>
+
+                                                                                                                                                                                                                                              <option value="">Supply Chain Management & Logistics</option>
+
+                                                                                                                                                                                                                                                <option value="">Sustainable Development</option>
+
+                                                                                                                                                                                                                                                  <option value="">Sustainable Energy</option>
+
+                                                                                                                                                                                                                                                    <option value="">Taxation</option>
+
+                                                                                                                                                                                                                                                      <option value="">Teaching</option>
+
+                                                                                                                                                                                                                                                <option value="">Technology Management </option>
+
+                                                                                                                                                                                                                                                  <option value="">Television</option>
+
+                                                                                                                                                                                                                                                    <option value="">Terrorism & Security</option>
+
+                                                                                                                                                                                                                                                      <option value="">Textiles</option>
+
+                                                                                                                                                                                                                                                        <option value="">Theatre & Dance</option>
+
+                                                                                                                                                                                                                                                  <option value="">Theology</option>
+
+                                                                                                                                                                                                                                                    <option value="">Tourism </option>
+
+                                                                                                                                                                                                                                                      <option value="">Tourism & Leisure</option>
+
+                                                                                                                                                                                                                                                        <option value="">Toxicology</option>
+
+                                                                                                                                                                                                                                                          <option value="">Training</option>
+
+                                                                                                                                                                                                                                                    <option value="">Translation</option>
+
+                                                                                                                                                                                                                                                      <option value="">Translation & Interpreting</option>
+
+                                                                                                                                                                                                                                                        <option value="">Transport Management</option>
+
+                                                                                                                                                                                                                                                          <option value="">Transportation Engineering</option>
+
+                                                                                                                                                                                                                                                            <option value="">Typing</option>
+
+                                                                                                                                                                                                                                                      <option value="">Veterinary</option>
+
+                                                                                                                                                                                                                                                        <option value="">Veterinary Medicine </option>
+
+
+                                                                                                                                                                                                                                                          <option value="">Video Games & Multimedia</option>
+
+                                                                                                                                                                                                                                                            <option value="">Visual Arts</option>
+
+                                                                                                                                                                                                                                                              <option value="">War</option>
+
+                                                                                                                                                                                                                                                        <option value="">Web Technologies & Cloud Computing</option>
+
+                                                                                                                                                                                                                                                          <option value="">Zoology</option>
+
+
+  </select>
+
+</div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <select class="mySelect" name="">
+                <option selected disabled style="display:none">DESIRED COUNTRY</option>
+
+
+                  <option value="">Australia</option>
+
+                    <option value="">USA</option>
+
+
+                    <option value="">Canada</option>
+
+                      <option value="">UK</option>
+
+                      <option value="">Ireland</option>
+
+                      <option value="">New Zealand</option>
+
+                      <option value="">Germany</option>
+
+                      <option value="">Sweden</option>
+                  <option value="">-----------------------------</option>
+
+                  <option value="">Afghanistan</option>
+
+                  <option value="">Albania</option>
+                  <option value="">Algeria</option>
+
+                    <option value="">Andorra</option>
+
+                    <option value="">Angola</option>
+
+                    <option value="">Anguilla</option>
+
+                      <option value="">Antigua & Barbuda</option>
+
+                      <option value="">Argentina</option>
+
+                      <option value="">Armenia</option>
+
+
+                        <option value="">Austria</option>
+
+                        <option value="">Azerbaijan</option>
+
+
+                          <option value="">Bahamas</option>
+
+                          <option value="">Bahrain</option>
+
+                          <option value="">Bangladesh</option>
+
+                            <option value="">Barbados</option>
+
+                            <option value="">Belarus</option>
+
+                            <option value="">Belgium</option>
+
+                              <option value="">Belize</option>
+
+                              <option value="">Benin</option>
+
+                              <option value="">Bermuda</option>
+
+                                <option value="">Bhutan</option>
+
+                                <option value="">Bolivia</option>
+
+                                <option value="">Bosnia & Herzegovina</option>
+
+
+                                  <option value="">Botswana</option>
+
+                                  <option value="">Brazil</option>
+
+                                  <option value="">Brunei Darussalam</option>
+
+                                    <option value="">Bulgaria</option>
+
+                                    <option value="">Burkina Faso</option>
+
+                                    <option value="">Myanmar/Burma</option>
+
+                                      <option value="">Burundi</option>
+
+                                      <option value="">Cambodia</option>
+
+                                      <option value="">Cameroon</option>
+
+
+                                        <option value="">Cape Verde</option>
+
+                                        <option value="">Cayman Islands</option>
+
+
+                                          <option value="">Central African </option>
+
+                                          <option value="">Chad Republic</option>
+
+                                          <option value="">Chile</option>
+
+                                            <option value="">China</option>
+
+                                            <option value="">Colombia</option>
+
+                                            <option value="">Comoros</option>
+
+                                              <option value="">Congo</option>
+
+                                              <option value="">Costa Rica</option>
+
+                                              <option value="">Croatia</option>
+
+                                                <option value="">Cuba</option>
+
+                                                <option value="">Cyprus</option>
+
+                                                <option value="">Czech Republic</option>
+
+                                                  <option value="">Democratic Republic of the Congo</option>
+
+                                                  <option value="">Denmark</option>
+
+                                                  <option value="">Djibouti</option>
+
+                                                    <option value="">Dominican Republic</option>
+
+                                                    <option value="">Dominica</option>
+
+                                                    <option value="">Ecuador</option>
+
+                                                      <option value="">Egypt</option>
+
+                                                      <option value="">El Salvador</option>
+
+                                                      <option value="">Equatorial Guinea</option>
+
+                                                        <option value="">Eritrea</option>
+
+                                                        <option value="">Estonia</option>
+
+                                                        <option value="">Ethiopia</option>
+
+
+                                                          <option value="">Fiji</option>
+
+                                                          <option value="">Finland</option>
+
+                                                          <option value="">France</option>
+
+                                                            <option value="">French Guiana</option>
+
+                                                            <option value="">Gabon</option>
+
+                                                            <option value="">Gambia</option>
+
+                                                              <option value="">Georgia</option>
+
+
+                                                              <option value="">Ghana</option>
+
+                                                                <option value="">Great Britain</option>
+
+                                                                <option value="">Greece</option>
+
+                                                                <option value="">Grenada</option>
+
+
+                                                                  <option value="">Guadeloupe</option>
+
+                                                                  <option value="">Guatemala</option>
+
+
+                                                                    <option value="">Guinea</option>
+
+                                                                    <option value="">Guinea-Bissau</option>
+
+                                                                    <option value="">Guyana</option>
+
+                                                                      <option value="">Haiti</option>
+
+                                                                      <option value="">Honduras</option>
+
+                                                                      <option value="">Hungary</option>
+
+                                                                        <option value="">Iceland</option>
+
+                                                                        <option value="">India</option>
+
+                                                                        <option value="">Indonesia</option>
+
+                                                                          <option value="">Iran</option>
+
+                                                                          <option value="">Iraq</option>
+
+                                                                          <option value="">Israel and the Occupied Territories</option>
+
+                                                                            <option value="">Italy</option>
+
+                                                                            <option value="">Ivory Coast (Cote d'Ivoire)</option>
+
+                                                                            <option value="">Jamaica</option>
+
+                                                                              <option value="">Japan</option>
+
+                                                                              <option value="">Jordan</option>
+
+                                                                              <option value="">Kazakhstan</option>
+
+                                                                                <option value="">Kenya</option>
+
+                                                                                <option value="">Kosovo</option>
+
+                                                                                <option value="">Kuwait</option>
+
+                                                                                  <option value="">Kyrgyz Republic (Kyrgyzstan)</option>
+
+                                                                                  <option value="">Laos</option>
+
+                                                                                  <option value="">Latvia</option>
+
+
+                                                                                    <option value="">Lebanon</option>
+
+                                                                                    <option value="">Lesotho</option>
+
+                                                                                    <option value="">Liberia</option>
+
+                                                                                      <option value="">Libya</option>
+
+                                                                                      <option value="">Liechtenstein</option>
+
+                                                                                      <option value="">Lithuania</option>
+
+                                                                                        <option value="">Luxembourg</option>
+
+                                                                                        <option value="">Republic of Macedonia</option>
+
+                                                                                        <option value="">Madagascar</option>
+
+                                                                                          <option value="">Malawi</option>
+
+                                                                                          <option value="">Malaysia</option>
+
+                                                                                          <option value="">Maldives</option>
+
+
+                                                                                            <option value="">Mali</option>
+
+                                                                                              <option value="">Malta</option>
+
+                                                                                              <option value="">Martinique</option>
+
+                                                                                              <option value="">Mauritania</option>
+
+                                                                                                <option value="">Mauritius</option>
+
+                                                                                                <option value="">Mayotte</option>
+
+                                                                                                <option value="">Mexico</option>
+
+                                                                                                  <option value="">Moldova</option>
+
+                                                                                                  <option value="">Mongolia</option>
+
+                                                                                                  <option value="">Montenegro</option>
+
+                                                                                                    <option value="">Montserrat</option>
+
+                                                                                                      <option value="">Morocco</option>
+
+                                                                                                      <option value="">Mozambique</option>
+
+                                                                                                      <option value="">Namibia</option>
+
+                                                                                                        <option value="">Nepal</option>
+
+                                                                                                        <option value="">Netherlands</option>
+
+                                                                                                        <option value="">New Zealand</option>
+
+                                                                                                          <option value="">Nicaragua</option>
+
+                                                                                                          <option value="">Niger</option>
+
+                                                                                                          <option value="">Nigeria</option>
+
+                                                                                                            <option value="">Korea</option>
+
+                                                                                                              <option value="">Norway</option>
+
+                                                                                                              <option value="">Oman</option>
+
+                                                                                                              <option value="">Pacific Islands</option>
+
+                                                                                                                <option value="">Pakistan</option>
+
+                                                                                                                <option value="">Panama</option>
+
+                                                                                                                <option value="">Papua New Guinea</option>
+
+                                                                                                                  <option value="">Paraguay</option>
+
+                                                                                                                  <option value="">Peru</option>
+
+                                                                                                                  <option value="">Philippines</option>
+
+                                                                                                                    <option value="">Poland</option>
+
+                                                                                                                      <option value="">Portugal</option>
+
+                                                                                                                      <option value="">Puerto Rico</option>
+
+                                                                                                                      <option value="">Qatar</option>
+
+                                                                                                                        <option value="">Reunion</option>
+
+                                                                                                                        <option value="">Romania</option>
+
+                                                                                                                        <option value="">Russian Federation</option>
+
+                                                                                                                          <option value="">Rwanda</option>
+
+                                                                                                                          <option value="">Saint Kitts and Nevis</option>
+
+                                                                                                                          <option value="">Saint Lucia</option>
+
+                                                                                                                            <option value="">Saint Vincent's & Grenadines</option>
+
+                                                                                                                              <option value="">Samoa</option>
+
+                                                                                                                              <option value="">Sao Tome and Principe</option>
+
+                                                                                                                              <option value="">Saudi Arabia</option>
+
+                                                                                                                                <option value="">Senegal</option>
+
+                                                                                                                                <option value="">Serbia</option>
+
+                                                                                                                                <option value="">Seychelles</option>
+
+                                                                                                                                  <option value="">Sierra Leone</option>
+
+                                                                                                                                  <option value="">Singapore</option>
+
+                                                                                                                                  <option value="">Slovak Republic </option>
+
+                                                                                                                                    <option value="">Slovenia</option>
+
+                                                                                                                                      <option value="">Solomon Islands</option>
+
+                                                                                                                                      <option value="">Somalia</option>
+
+                                                                                                                                      <option value="">South Africa</option>
+
+                                                                                                                                        <option value="">Korea, Republic of (South Korea)</option>
+
+                                                                                                                                        <option value="">South Sudan</option>
+
+                                                                                                                                        <option value="">Spain</option>
+
+                                                                                                                                          <option value="">Sri Lanka</option>
+
+                                                                                                                                          <option value="">Sudan</option>
+
+                                                                                                                                          <option value="">Suriname</option>
+
+                                                                                                                                            <option value="">Swaziland</option>
+
+
+                                                                                                                                              <option value="">Switzerland</option>
+
+                                                                                                                                              <option value="">Syria</option>
+
+                                                                                                                                                <option value="">Tajikistan</option>
+
+                                                                                                                                                <option value="">Tanzania</option>
+
+                                                                                                                                                <option value="">Thailand</option>
+
+                                                                                                                                                  <option value="">Timor Leste</option>
+
+                                                                                                                                                  <option value="">Togo</option>
+
+                                                                                                                                                  <option value="">Trinidad & Tobago</option>
+
+                                                                                                                                                    <option value="">Turkey</option>
+
+                                                                                                                                                      <option value="">Turkmenistan</option>
+
+                                                                                                                                                      <option value="">Turks & Caicos </option>
+
+                                                                                                                                                      <option value="">Islands</option>
+
+                                                                                                                                                        <option value="">Uganda</option>
+
+                                                                                                                                                        <option value="">Ukraine</option>
+
+                                                                                                                                                        <option value="">United Arab Emirates</option>
+
+
+                                                                                                                                                            <option value="">Uruguay</option>
+
+                                                                                                                                                            <option value="">Uzbekistan</option>
+
+                                                                                                                                                            <option value="">Venezuela</option>
+
+                                                                                                                                                              <option value="">Vietnam</option>
+
+                                                                                                                                                              <option value="">Virgin Islands (UK)</option>
+
+                                                                                                                                                              <option value="">Virgin Islands (US)</option>
+
+                                                                                                                                                                <option value="">Yemen</option>
+
+                                                                                                                                                                <option value="">Zambia</option>
+
+                                                                                                                                                                <option value="">Zimbabwe</option>
+
+              </select>
+
+            </div>
+            <div class="col-sm-4">
+              <select class="mySelect" name="">
+                <option selected disabled style="display:none">SCHOLARSHIPS</option>
+
+                <option value="1">Yes</option>
+                <option value="1">No</option>
+              </select>
+
+            </div>
+            <div class="col-sm-4">
+
+              <select class="mySelect" name="">
+                  <option selected disabled style="display:none">Affordable Budget $USD</option>
+                  <option value="">Any</option>
+                  <option value="">Less than $1000</option>
+                  <option value="">$1000-$2000</option>
+                  <option value="">$2000-$4000</option>
+                  <option value="">$4000-$6000</option>
+                  <option value="">$6000-$8000</option>
+                  <option value="">$8000-$10000</option>
+                  <option value="">$10,000-$12000</option>
+                  <option value="">$12,000-$14000</option>
+                  <option value="">$14000-$16000</option>
+                  <option value="">$16000-$18000</option>
+                  <option value="">$18000-$20000</option>
+                  <option value="">$20000-$22000</option>
+                  <option value="">$22000-$24000</option>
+                  <option value="">$24000-$26000</option>
+                  <option value="">$26000-$28000</option>
+                  <option value="">$28000-$30000</option>
+                  <option value="">Above $30000</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-7">
+              <a href="UpdateStudent3.html"><button type="button" class="button" name="button"><span class="icon-prev-icon"></span> BACK</button></a>
+            </div>
+          <div class="col-sm-5">
+              <a href="update_pic.html"><button type="button" class="button" name="button">NEXT <span class="icon-next-icon"></button></a>
+            </div>
+          </div>
+                 </div>
+
+          </div> -->
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <script type="text/javascript">
+
+/*
+function yesnoCheck() {
+    if (document.getElementById('y-option').checked) {
+        document.getElementById('study_gap').style.display = 'block';
+    }
+    else document.getElementById('study_gap').style.display = 'none';
+}
+
+function ach_Check() {
+    if (document.getElementById('ach_Y-option').checked) {
+        document.getElementById('Achievements').style.display = 'block';
+    }
+    else document.getElementById('Achievements').style.display = 'none';
+}
+
+function eng_check() {
+    if (document.getElementById('eng-option').checked) {
+        document.getElementById('english').style.display = 'block';
+        document.getElementById('others').style.display = 'block';
+    }
+    else document.getElementById('english').style.display = 'none';
+    document.getElementById('others').style.display = 'none';
+}
+
+function ielts_check() {
+    if (document.getElementById('ielts').checked) {
+        document.getElementById('ielts_score').style.display = 'block';
+
+    }
+    else document.getElementById('ielts_score').style.display = 'none';
+
+}
+
+function german_check() {
+    if (document.getElementById('german_click').checked) {
+        document.getElementById('german').style.display = 'block';
+
+    }
+    else document.getElementById('german').style.display = 'none';
+
+}
+function french_check() {
+    if (document.getElementById('french_click').checked) {
+        document.getElementById('french').style.display = 'block';
+
+    }
+    else document.getElementById('china').style.display = 'none';
+
+}
+
+function spanish_check() {
+    if (document.getElementById('spanish_click').checked) {
+        document.getElementById('spanish').style.display = 'block';
+
+    }
+    else document.getElementById('spanish').style.display = 'none';
+
+}
+function russian_check() {
+    if (document.getElementById('russian_click').checked) {
+        document.getElementById('russian').style.display = 'block';
+
+    }
+    else document.getElementById('russian').style.display = 'none';
+
+}
+function porto_check() {
+    if (document.getElementById('porto_click').checked) {
+        document.getElementById('portoguese').style.display = 'block';
+
+    }
+    else document.getElementById('portoguese').style.display = 'none';
+
+}
+
+function china_check() {
+    if (document.getElementById('china_click').checked) {
+        document.getElementById('china').style.display = 'block';
+
+    }
+    else document.getElementById('china').style.display = 'none';
+
+}
+function japan_check() {
+    if (document.getElementById('japan_click').checked) {
+        document.getElementById('japan').style.display = 'block';
+
+    }
+    else document.getElementById('japan').style.display = 'none';
+
+}
+function koria_check() {
+    if (document.getElementById('koria_click').checked) {
+        document.getElementById('koria').style.display = 'block';
+
+    }
+    else document.getElementById('koria').style.display = 'none';
+
+}
+
+function toefl_check() {
+    if (document.getElementById('toefl').checked) {
+        document.getElementById('toefl_score').style.display = 'block';
+
+    }
+    else document.getElementById('toefl_score').style.display = 'none';
+
+}
+
+function pte_check() {
+    if (document.getElementById('pte').checked) {
+        document.getElementById('pte_score').style.display = 'block';
+
+    }
+    else document.getElementById('pte_score').style.display = 'none';
+
+}
+
+function other_check() {
+    if (document.getElementById('other_lan').checked) {
+        document.getElementById('other_score').style.display = 'block';
+
+    }
+    else document.getElementById('other_score').style.display = 'none';
+
+}
+
+
+function job_exp_Check() {
+    if (document.getElementById('jy-option').checked) {
+        document.getElementById('job_exp').style.display = 'block';
+    }
+    else document.getElementById('job_exp').style.display = 'none';
+}
+*/
+</script> -->
+<!-- End Register -->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Bootsrap JS -->
+
+<!-- Select2 JS -->
+<script type="text/javascript" src="{% static "assets/select2/js/select2.min.js" %}"></script>
+<!-- Match Height JS -->
+<script type="text/javascript" src="{% static "assets/matchHeight/js/matchHeight-min.js" %}"></script>
+<!-- Bxslider JS -->
+<script type="text/javascript" src="{% static "assets/bxslider/js/bxslider.min.js" %}"></script>
+<!-- Waypoints JS -->
+<script type="text/javascript" src="{% static "assets/waypoints/js/waypoints.min.js" %}"></script>
+<!-- Counter Up JS -->
+<script type="text/javascript" src="{% static "assets/counterup/js/counterup.min.js" %}"></script>
+<!-- Magnific Popup JS -->
+<script type="text/javascript" src="{% static "assets/magnific-popup/js/magnific-popup.min.js" %}"></script>
+<!-- Owl Carousal JS -->
+<script type="text/javascript" src="{% static "assets/owl-carousel/js/owl.carousel.min.js" %}"></script>
+<!-- Modernizr JS -->
+<script type="text/javascript" src="{% static "js/modernizr.custom.js" %}js/modernizr.custom.js"></script>
+<!-- Custom JS -->
+<script type="text/javascript" src="{% static "js/custom.js" %}"></script>
+</body>
+</html>

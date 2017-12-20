@@ -10,7 +10,7 @@ from django.utils.safestring import mark_safe
 
 
 
-class HorizRadioRenderer(forms.RadioSelect.renderer):
+class HorizRadioRenderer(forms.RadioSelect):
     """ this overrides widget method to put radio buttons horizontally
         instead of vertically.
     """

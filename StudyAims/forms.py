@@ -29,7 +29,7 @@ class RegisterStudentForm(forms.ModelForm):
     #             widget=forms.forms.RadioSelect(attrs={
     #    'display': 'inline-block'
     #})
-    user_perm = forms.ChoiceField(widget=forms.RadioSelect(render=HorizRadioRenderer),choices=User_CHOICES , label='')
+    user_perm = forms.ChoiceField(widget=forms.RadioSelect(),choices=User_CHOICES , label='')
     first_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Full Name'}),
                   max_length=50, label='')
 

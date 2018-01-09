@@ -27,6 +27,7 @@
 <link href="{% static "css/reset.css" %}" rel="stylesheet" type="text/css">
 <!-- Custom Fonts -->
 <link href="{% static "css/fonts.css" %}" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Arbutus+Slab" rel="stylesheet">
 <!-- Bootstrap -->
 
 <!-- Select2 -->
@@ -75,12 +76,17 @@
     <li>Profile Picture</li>
   </ul>
       <div class="head-block">
-        <h1>Comapany Information</h1>
+        <h1>Update Profile</h1>
       </div>
       <div class="cnt-block">
         <form action="#" method="post" class="form-outer">{% csrf_token %}
+          <div id="companyInfo">
 
-
+<br>
+<div class="row">
+  <h1>Company Information</h1>
+</div>
+<br>
 
 
           <div class="row">
@@ -143,20 +149,266 @@
               {{ form.nationality }}
             </div>
           </div>
-{{ form.errors }}
+
           <div class="button-outer">
 
             <div class="row">
-              <div class="col-sm-6">
-                <button class="btn" type="button" name="button">Back</button></div>
+              <div class="col-sm-12">
+                <button class="btn"  name="button" id="up_to_registrations" onclick="regisration()">Next</button></div>
 
 
-              <div class="col-sm-6">
-              <button class="btn" type="submit" name="button">Next</button>
-              </div>
+
             </div>
 
           </div>
+          </div>
+
+          <div id="registerationInfo" style="display:None">
+            <br>
+            <div class="row">
+              <h1>Company Registration Information</h1>
+            </div>
+            <br>
+            <div class="row">
+
+
+                  <div class="col-sm-9">
+
+
+                    <div class="col-sm-3">
+                  <h2>Are you Registered?</h2></div>
+                  <div class="col-sm-2">
+                    <ul class="select-opt clearfix">
+                      <li>
+                        <input type="radio" onclick="javascript:reg_details();" id="reg-option" name="selector">
+                        <label for="reg-option">Yes</label>
+                        <div class="check"></div> </li></ul>
+                  </div>
+                  <div class="col-sm-2">
+                    <ul class="select-opt clearfix"> <li>
+                          <input type="radio" onclick="javascript:reg_details();" id="ach_N-option" name="selector">
+                          <label for="ach_N-option">No</label>
+                          <div class="check"></div>
+                      </li> </ul>
+
+                  </div></div></div>
+                  <div class="" id="reg_pak" style="display:none">
+                  <h2>Pakistan Registration Bodies</h2>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      {{ form.pak_registeration_body1 }}
+                    </div>
+                    <div class="col-sm-6">
+                      {{ form.pak_registeration_body2 }}
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      {{ form.pak_registeration_body3 }}
+                    </div>
+                    <div class="col-sm-6">
+                      {{ form.pak_registeration_body4 }}
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      {{ form.pak_registeration_body5 }}
+                    </div>
+                    <div class="col-sm-6">
+                      {{ form.pak_registeration_body6 }}
+                    </div>
+                  </div>
+                  <h2>International Registration Bodies</h2>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      {{ form.Internatiol_registeration_body1 }}
+                    </div>
+                    <div class="col-sm-6">
+                      {{ form.Internatiol_registeration_body2 }}
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      {{ form.Internatiol_registeration_body3 }}
+                    </div>
+                    <div class="col-sm-6">
+                      {{ form.Internatiol_registeration_body4 }}
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      {{ form.Internatiol_registeration_body5 }}
+                    </div>
+                    <div class="col-sm-6">
+                      {{ form.Internatiol_registeration_body6 }}
+                    </div>
+                  </div>
+                </div>
+
+
+            <div class="button-outer">
+
+              <div class="row">
+
+
+                <div class="col-sm-12">
+                <button class="btn"  name="button" id="up_to_services" onclick="services_info()">Next</button>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+<div id="agent" style="display:None">
+<br>
+    <div class="row">
+      <h1>Serivces Information</h1>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-4">
+        {{ form.countries_Dealing }}
+      </div>
+      <div class="col-sm-4">
+        {{ form.service_type }}
+      </div>
+      <div class="col-sm-4">
+        {{ form.language_classes }}
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        {{ form.program_specialist }}
+      </div>
+      <div class="col-sm-4">
+        {{ form.refusal_appeals }}
+      </div>
+      <div class="col-sm-4">
+        {{ form.scholarships_offered }}
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4">
+        {{ form.interview_preparation }}
+      </div>
+      <div class="col-sm-4">
+        {{ form.travel_and_health }}
+      </div>
+      <div class="col-sm-4">
+        {{ form.travel_arrangements }}
+      </div>
+
+    </div>
+
+
+  <div class="button-outer">
+
+  <div class="row">
+
+
+   <div class="col-sm-12">
+   <button class="btn"  name="button" id="up_to_fee" onclick="showfees()" >Next</button>
+   </div>
+  </div>
+
+  </div>
+
+</div>
+
+<div id="agentfee" style="display:None">
+<br>
+    <div class="row">
+      <h1>Fee Information</h1>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-4">
+        {{ form.processing_fee }}
+      </div>
+      <div class="col-sm-4">
+        {{ form.language_fee }}
+      </div>
+      <div class="col-sm-4">
+        {{ form.refusal_fee }}
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        {{ form.Interview_fee }}
+      </div>
+      <div class="col-sm-6">
+        {{ form.scholarshipfee }}
+      </div>
+
+
+    </div>
+
+
+
+
+  <div class="button-outer">
+
+  <div class="row">
+
+
+   <div class="col-sm-12">
+   <button class="btn"  name="button" id="up_to_success" onclick="showSuccess()" >Next</button>
+   </div>
+  </div>
+
+  </div>
+
+</div>
+
+<div class="" id="success_stories" style="display:None">
+  <br>
+  <div class="row">
+    <h1>Success Stories</h1>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-6">
+      {{form.visa_ratio}}
+    </div>
+    <div class="col-sm-6">
+      {{form.experience}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+      {{form.regional_office}}
+    </div>
+    <div class="col-sm-4">
+      {{form.branches}}
+    </div>
+    <div class="col-sm-4">
+      {{form.number_of_counselors}}
+    </div>
+  </div>
+
+  {{ form.errors }}
+  <div class="button-outer">
+
+    <div class="row">
+
+
+      <div class="col-sm-12">
+      <button class="btn" type="submit" name="button">Update</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
 <!---------------Personal Information --------->
 <!--<div class="col-sm-12">
   <h3 class="headings"> Company Information</h3>
@@ -1088,65 +1340,39 @@
 <!--------Qualification
 
   <div class="button-outer">
-          <a href="UpdateAgent2.html"><button class="btn" type="button" name="button">Next<span class="icon-next-icon"></span></button></a>
+          <a href="UpdateAgent2.html"><button class="btn" type="button" name="button">Next<span class="icon-next-icon"></span></button></a> -->
 
-          </div>
+        </div>
+      </div></div>
         </form>
       </div>
-    </div>
-  </div>
+
 </section>
--->
+
 <!-- End Register -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
-/*var expanded = false;
-
-function serv_types() {
-  var checkboxes = document.getElementById("serv_type");
-  if (!expanded) {
-    checkboxes.style.display = "block";
-    expanded = true;
-  } else {
-    checkboxes.style.display = "none";
-    expanded = false;
-  }
+function regisration() {
+   document.getElementById('registerationInfo').style.display = "block";
+   document.getElementById('up_to_registrations').style.display = "None";
 }
-$(document).mouseup(function (e) {
-           var container = new Array();
-           container.push($('#msel'));
-           $.each(container, function (key, value) {
-               if (!$(value).is(e.target) && $(value).has(e.target).length === 0) {
-                   ///--need to have better code from yourside..
-                   var checkboxes = document.getElementById("serv_type");
-                   checkboxes.style.display = "none";
-                   ///--need to have better code from yourside..
-               }
-           });
-       });
-function yesnoCheck() {
-    if (document.getElementById('sel').value.click='1') {
-        document.getElementById('ro').style.display = 'block';
-    }
-    else document.getElementById('ro').style.display = 'none';
-  }
-  $(function () {
-          $("#allTypeService").change(function () {
-              $('.allServiceTypes').prop('checked', this.checked);
-          });
-          $(".allServiceTypes").change(function () {
-              if ($(".allServiceTypes").length == $(".allServiceTypes").length) {
-                  $('#allTypeService').prop('checked', this.checked);
-              } else {
-                  $('#allTypeService').prop('checked', false);
-              }
-          });
-      });
 
+function services_info() {
+   document.getElementById('agent').style.display = "block";
+   document.getElementById('up_to_services').style.display = "None";
+}
 
-*/
-
+function showSuccess() {
+   document.getElementById('success_stories').style.display = "block";
+   document.getElementById('up_to_success').style.display = "None";
+}
+function showfees() {
+   document.getElementById('agentfee').style.display = "block";
+   document.getElementById('up_to_fee').style.display = "None";
+}
 </script>
+
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

@@ -1,5 +1,39 @@
 
+
+
+
+
+
+
 /* optional dropdown */
+
+var expanded = false;
+
+function desired_degree() {
+  var checkboxes = document.getElementById("desired_deg");
+  if (!expanded) {
+    desired_deg.style.display = "block";
+    expanded = true;
+  } else {
+    desired_deg.style.display = "none";
+    expanded = false;
+  }
+}
+
+$(document).mouseup(function (e) {
+           var container = new Array();
+           container.push($('#msel'));
+           $.each(container, function (key, value) {
+               if (!$(value).is(e.target) && $(value).has(e.target).length === 0) {
+                   ///--need to have better code from yourside..
+                   var checkboxes = document.getElementById("desired_deg");
+                   checkboxes.style.display = "none";
+                   ///--need to have better code from yourside..
+               }
+           });
+       });
+
+
 
 var expanded = false;
 
@@ -943,6 +977,10 @@ $(document).bind('click', function(e) {
                          }
                        });
                        });
+/**    forms      *****/
+
+
+
                        $(document).ready(function () {
                          $('#chinese').change(function() {
                            if ($(this).is(':checked')) {

@@ -70,6 +70,21 @@ Cutom SelectBox
 .dashboard{
   margin-top: 20px;
   display: flex;
+  font-family: 'Sarala', sans-serif;
+
+
+
+}
+
+#infoSec{
+  background: #eee;
+  font-family: 'Sarala', sans-serif;
+  font-size: 16px;
+  color: #59585c;
+  font-weight: 500;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 
 
 }
@@ -80,16 +95,22 @@ Cutom SelectBox
   text-transform: uppercase;
 }
 .dashboard .head-block{
-
+  font-family: 'Sarala', sans-serif;
   border-top:  1px solid #919e9e;
   border-bottom:  1px solid #919e9e;
   background: #eee;
   padding-top: 5px;
   padding-bottom: 5px;
   text-align: center;
+  font-weight: 600;
+
+
+
+  padding-left: 5px;
 }
 .left-bl{
   width: 30%;
+  font-family: 'Sarala', sans-serif;
   border-left: 1px solid #919e9e;
   border-right: 1px solid #919e9e;
 
@@ -159,6 +180,11 @@ Cutom SelectBox
   border-bottom:  1px solid #919e9e;
   border-right: 1px solid #919e9e;
 
+}
+.right-bl .row{
+  border: 1px solid #eee;
+  padding-bottom: 2px;
+  padding-top: 5px;
 }
 .dashboard label{
   margin-top: 15px;
@@ -617,7 +643,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	padding: 0px;
 	margin: 0px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	text-transform: uppercase;
 	color: #24353b;
 }
@@ -922,7 +948,7 @@ input:focus, textarea:focus, select:focus {
 	padding: 0 30px;
 	border-right: 1px #dedddd solid;
 	float: left;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 18px;
 	color: #4f4a4a;
 	line-height: 18px;
@@ -1001,7 +1027,7 @@ input:focus, textarea:focus, select:focus {
 	border: none;
 }
 .navbar-inverse .navbar-nav > li > a {
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 16px;
 	color: #fff;
 }
@@ -1126,7 +1152,7 @@ input:focus, textarea:focus, select:focus {
 .banner-outer .content h1 {
 	display: block;
 	padding-bottom: 20px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 32px;
 	color: #24343a;
 	line-height: 50px;
@@ -1175,7 +1201,7 @@ input:focus, textarea:focus, select:focus {
 
 	border-radius: 4px;
 	background: #ff9600;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 14px;
 	color: #fff;
 	margin-top: 10px;
@@ -1210,7 +1236,7 @@ input:focus, textarea:focus, select:focus {
 	border-radius: 4px;
 	border: 0px;
 	background: #ff9600;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 14px;
 	color: #fff;
 	text-transform: uppercase;
@@ -1339,7 +1365,7 @@ input:focus, textarea:focus, select:focus {
 .about ul.our-links li .detail h3 {
 	display: block;
 	padding-bottom: 10px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 24px;
 	color: #fff;
 	text-transform: uppercase;
@@ -1375,7 +1401,7 @@ input:focus, textarea:focus, select:focus {
 }
 .about .sm-head {
 	display: block;
-	font-family: 'texgyreadventorregular';
+	font-family: 'Sarala', sans-serif;
 	font-size: 14px;
 	color: #7d7c7c;
 	line-height: 18px;
@@ -1442,7 +1468,7 @@ input:focus, textarea:focus, select:focus {
 	padding-right: 24px;
 	position: relative;
 	z-index: 2;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 14px;
 	color: #645847;
 	text-transform: uppercase;
@@ -1470,14 +1496,14 @@ input:focus, textarea:focus, select:focus {
 .our-cources h2, .how-study h2, .why-choose h2, .news-events h2, .campus-tour h2, .testimonial h2, .about h2, .browse-teacher h2, .how-apply h2, .have-question h2 {
 	display: block;
 	padding-bottom: 44px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 36px;
 	text-transform: uppercase;
 	text-align: center;
 }
 .our-cources h2 span, .how-study h2 span, .why-choose h2 span, .news-events h2 span, .campus-tour h2 span, .browse-teacher h2 span, .how-apply h2 span {
 	display: block;
-	font-family: 'texgyreadventorregular';
+	font-family: 'Sarala', sans-serif;
 	font-size: 14px;
 	opacity: 0.8;
 }
@@ -1543,7 +1569,7 @@ input:focus, textarea:focus, select:focus {
 .our-cources ul.course-list li h3 {
 	display: block;
 	padding-bottom: 10px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 18px;
 	text-transform: uppercase;
 	line-height: 22px;
@@ -1572,7 +1598,7 @@ input:focus, textarea:focus, select:focus {
 	text-transform: uppercase;
 }
 .our-cources ul.course-list li .fess-box span {
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 16px;
 }
 .our-cources ul.course-list li .bottom-txt {
@@ -1588,7 +1614,7 @@ input:focus, textarea:focus, select:focus {
 }
 .our-cources ul.course-list li .duration h4 {
 	display: block;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 16px;
 	color: #fff;
 	text-transform: uppercase;
@@ -1666,7 +1692,7 @@ input:focus, textarea:focus, select:focus {
 .our-impotance ul li h3 {
 	display: block;
 	padding: 22px 0 12px 0;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 18px;
 	color: #284962;
 	text-transform: uppercase;
@@ -1723,7 +1749,7 @@ input:focus, textarea:focus, select:focus {
 .how-study ul li .cnt-block h3 {
 	display: block;
 	padding-bottom: 12px;
-	font-family: 'texgyreadventorregular';
+	font-family: 'Sarala', sans-serif;
 	font-size: 22px;
 	color: #fff;
 	line-height: 26px;
@@ -1822,7 +1848,7 @@ ul.our-strength li .icon span {
 }
 ul.our-strength li span {
 	padding-bottom: 12px;
-	font-family: 'texgyreadventorregular';
+	font-family: 'Sarala', sans-serif;
 	font-size: 48px;
 }
 ul.our-strength li .couter-outer {
@@ -1830,7 +1856,7 @@ ul.our-strength li .couter-outer {
 }
 ul.our-strength li .title {
 	display: block;
-	font-family: 'texgyreadventorregular';
+	font-family: 'Sarala', sans-serif;
 	font-size: 14px;
 	opacity: 0.8;
 	text-transform: uppercase;
@@ -1892,7 +1918,7 @@ ul.our-strength li .title {
 .news-events ul li .cnt-block h3 {
 	display: block;
 	padding-bottom: 36px;
-	font-family: 'texgyreadventorregular';
+	font-family: 'Sarala', sans-serif;
 	font-size: 22px;
 	color: #41484d;
 	line-height: 32px;
@@ -2000,7 +2026,7 @@ ul.our-strength li .title {
 	position: relative;
 	background: #f3f6f8;
 	z-index: 2;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 14px;
 	color: #645847;
 	text-transform: uppercase;
@@ -2064,7 +2090,7 @@ ul.our-strength li .title {
 .campus-tour ul.gallery li h3 {
 	display: block;
 	padding-bottom: 4px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 24px;
 	color: #fff;
 	text-transform: uppercase;
@@ -2166,7 +2192,7 @@ ul.our-strength li .title {
 	z-index: 2;
 }
 .testimonial h2 {
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	color: #fff;
 }
 .testimonial .wrapper {
@@ -2200,18 +2226,18 @@ ul.our-strength li .title {
 .testimonial ul li p {
 	display: block;
 	padding-bottom: 32px;
-	font-family: 'texgyreadventorregular';
+	font-family: 'Sarala', sans-serif;
 	font-size: 23px;
 	color: #b2d3ed;
 	line-height: 38px;
 }
 .testimonial ul li p a {
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 18px;
 	color: #fff;
 }
 .testimonial ul li span {
-	font-family: 'texgyreadventorregular';
+	font-family: 'Sarala', sans-serif;
 	font-size: 18px;
 	color: #fff;
 }
@@ -2273,7 +2299,7 @@ ul.our-strength li .title {
 .footer h3 {
 	display: block;
 	padding-bottom: 20px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 16px;
 	color: #fff;
 	text-transform: uppercase;
@@ -2489,7 +2515,7 @@ ul.our-strength.opt2 li .title {
 .about-video p {
 	display: table-cell;
 	vertical-align: middle;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 60px;
 	color: #d1d3d4;
 }
@@ -2547,7 +2573,7 @@ ul.our-strength.opt2 li .title {
 .inner-banner h1 {
 	display: block;
 	padding-bottom: 18px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 46px;
 	color: #24353b;
 	text-transform: uppercase;
@@ -2565,7 +2591,7 @@ ul.our-strength.opt2 li .title {
 	margin-bottom: 26px;
 	background: #ff9600;
 	text-transform: uppercase;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 18px;
 	color: #fff;
 	position: relative;
@@ -2612,7 +2638,7 @@ ul.our-strength.opt2 li .title {
 a.download-prospects {
 	display: block;
 	padding: 0 10px 10px 0;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 14px;
 	color: #43647d;
 	text-transform: uppercase;
@@ -2633,7 +2659,7 @@ a.download-prospects.brochure {
 }
 a.download-prospects .small {
 	display: block;
-	font-family: 'texgyreadventorregular';
+	font-family: 'Sarala', sans-serif;
 	font-size: 12px;
 	color: #8f9ba1;
 	line-height: 14px;
@@ -2712,7 +2738,7 @@ a.download-pros:hover, a.download-cert:hover {
 .select-course .select2-container--default .select2-selection--single .select2-selection__rendered {
 	padding-left: 20px;
 	line-height: 48px;
-	font-family: 'texgyreadventorregular';
+	font-family: 'Sarala', sans-serif;
 	color: #fff;
 
 	text-transform: uppercase;
@@ -2925,7 +2951,7 @@ a.download-pros:hover, a.download-cert:hover {
 	margin: 0px;
 }
 .pagination > li > a, .pagination > li > span {
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	color: #8faabe;
 	margin: 0 4px;
 	border: none;
@@ -3004,7 +3030,7 @@ ul.browse-teachers-list figure:before {
 	background: url(../images/teacher-overlay-bg-tab.png) no-repeat center top;
 }
 ul.browse-teachers-list h3 {
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 14px;
 	text-transform: uppercase;
 	color: #414a4f;
@@ -3071,7 +3097,7 @@ ul.teachers-follow li:nth-child(3) a {
 .enquire-now .inner h3 {
 	display: block;
 	padding-bottom: 26px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 24px;
 	color: #fff;
 	text-transform: none;
@@ -3113,7 +3139,7 @@ ul.teachers-follow li:nth-child(3) a {
 .enquire-now .enquire-btn {
 	width: 100%;
 	padding: 13px 15px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 16px;
 	text-transform: uppercase;
 	background: #ff9600;
@@ -3146,7 +3172,7 @@ ul.teachers-follow li:nth-child(3) a {
 	display: inline-block;
 	padding-right: 14px;
 	background: #fff;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 18px;
 	color: #211d1e;
 	z-index: 1;
@@ -3232,14 +3258,14 @@ ul.cert-list li span {
 	display: block;
 	padding: 10px 0 0 16px;
 	float: left;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 18px;
 	color: #4f4a4a;
 	line-height: 22px;
 }
 .course-detail .duration .detail span {
 	display: block;
-	font-family: 'texgyreadventorregular';
+	font-family: 'Sarala', sans-serif;
 	font-size: 14px;
 	color: #8f9ba1;
 	text-transform: uppercase;
@@ -3270,7 +3296,7 @@ ul.cert-list li span {
 }
 .course-tab > li > a {
 	padding: 0 0 26px 0;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 18px;
 	color: #909aa1;
 	text-transform: uppercase;
@@ -3325,7 +3351,7 @@ ul.cert-list li span {
 .details-tab .course-table > thead > tr > th {
 	padding: 11px 30px;
 	background: #e9f4fd;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	text-transform: uppercase;
 	font-size: 14px;
 	color: #4e5d52;
@@ -3361,7 +3387,7 @@ ul.cert-list li span {
 	width: 55%;
 }
 #schedule .fee-amt {
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 24px;
 	color: #585d60;
 }
@@ -3511,7 +3537,7 @@ ul.cert-list li span {
 	right: -20px;
 	top: 45px;
 	display: block;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 18px;
 	line-height: 44px;
 	color: #fff;
@@ -3527,7 +3553,7 @@ ul.cert-list li span {
 .how-apply ul li h3 {
 	display: block;
 	padding: 34px 0 25px 0;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 18px;
 	color: #211d1e;
 	text-transform: uppercase;
@@ -3567,7 +3593,7 @@ ul.cert-list li span {
 .comments-wrapper h2 {
 	display: block;
 	padding-bottom: 22px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 24px;
 	color: #606d87;
 	text-transform: uppercase;
@@ -3629,7 +3655,7 @@ ul.cert-list li span {
 .comments-wrapper ul.comments li .com-txt h3 {
 	display: block;
 	padding-bottom: 13px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 16px;
 	color: #4b5761;
 	text-transform: uppercase;
@@ -3672,7 +3698,7 @@ ul.cert-list li span {
 .leave-comment h4 {
 	display: block;
 	padding: 60px 0;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 20px;
 	color: #606d87;
 	text-transform: uppercase;
@@ -3826,7 +3852,7 @@ ul.cert-list li span {
 .contact-detail .inner a {
 	padding-bottom: 6px;
 	font-size: 18px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	color: #fff;
 }
 .contact-bottom {
@@ -3940,7 +3966,7 @@ ul.blog-listing > li {
 }
 ul.blog-listing > li h2 {
 	padding: 30px 0 20px 0;
-	font-family: 'texgyreadventorregular';
+	font-family: 'Sarala', sans-serif;
 	font-size: 24px;
 	color: #343a3c;
 	line-height: 36px;
@@ -3951,7 +3977,7 @@ ul.blog-listing > li p {
 	color: #8d8f8f;
 }
 ul.blog-listing > li .read-more {
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 14px;
 	color: #606d87;
 	text-transform: uppercase;
@@ -4104,7 +4130,7 @@ ul.post-detail li .label {
 }
 .recent-post ul li .detail h4 {
 	padding-bottom: 4px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 12px;
 	color: #5f6f77;
 	text-transform: uppercase;
@@ -4283,7 +4309,7 @@ ul.blog-listing.detail > li {
 }
 .not-found-wrapper p {
 	padding-bottom: 60px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 30px;
 	color: #bcbfc1;
 	text-transform: uppercase;
@@ -4471,7 +4497,7 @@ ul.faq-listing li h2 {
 
 	width: 16%;
 	display: inline-block;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 18px;
 	text-align: right;
 	color: #b7c1c4;
@@ -4490,7 +4516,7 @@ ul.faq-listing li h2 {
 .login-wrapper .remember {
 	display: block;
 	margin: 15px 0 0 0;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 12px;
 	text-transform: uppercase;
 	text-align: center;
@@ -4616,7 +4642,7 @@ ul.faq-listing li h2 {
 
 	border-radius: 4px;
 	background: #ff9600;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 14px;
 	color: #fff;
 	margin-top: 10px;
@@ -4737,7 +4763,7 @@ ul.gallery-filter {
 ul.gallery-filter li {
 	width: 19%;
 	display: inline-block;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 18px;
 	text-transform: uppercase;
 	position: relative;
@@ -4799,7 +4825,7 @@ ul.news-listing > li .cnt-block {
 }
 ul.news-listing > li h2 {
 	padding-bottom: 12px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 20px;
 	color: #4d5557;
 	line-height: 30px;
@@ -4810,7 +4836,7 @@ ul.news-listing > li p {
 	color: #8d8f8f;
 }
 ul.news-listing > li .read-more {
-	font-family: 'texgyreadventorbold';
+	font-family: 'Sarala', sans-serif;
 	font-size: 14px;
 	color: #606d87;
 	text-transform: uppercase;

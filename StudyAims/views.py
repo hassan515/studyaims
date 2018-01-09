@@ -6,14 +6,38 @@ from django.core.urlresolvers import reverse, reverse_lazy
 from django.template import RequestContext
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.context_processors import csrf
-from django.contrib.auth.models import Group
-from StudyAims.models import StdPersonalInfo, StudentQualifications, StudentLanguage, UserType
-from StudyAims.forms import  PersonalInfoForm, RegisterStudentForm, StdQualificationForm, StudentLanguageForm, StudentFutureForm, StudentImageForm,  AgentCompanyInfoForm, AgentCompanyRegisterationInfoForm, AgentExpertiseForm, AgentLogoForm , AgentServicesOfferedForm
-
+from django.contrib.auth.models import User, Group
+from django.db.models import Q
+from StudyAims.models import StdPersonalInfo,  StudentLanguage, UserType , StudentFuture, AgentCompanyInfo
+from StudyAims.forms import  PersonalInfoForm, RegisterStudentForm, StudentLanguageForm, StudentFutureForm, StudentImageForm,  AgentCompanyInfoForm, AgentCompanyRegisterationInfoForm, AgentExpertiseForm, AgentLogoForm , AgentServicesOfferedForm
+from StudyAims.filters import UserFilter, FilterAgents
 from django.contrib.auth.decorators import login_required
 def index(request):
 
     return render(request, "StudyAims/index.html")
+
+
+
+@login_required
+def search_students(request):
+    users = User.objects.all()
+    f = UserFilter(request.GET, queryset=StdPersonalInfo.objects.all())
+
+    #p = PersonalFilter(request.GET, queryset=StdPersonalInfo.objects.all())
+    #p = PersonalFilter(request.GET, queryset=StdPersonalInfo.objects.all())
+    #f = User.objects.all().select_related('stdpersonalinfo_set', 'studentqualifications_set')
+    return render(request, 'StudyAims/search-students.html', {'filter': f, 'user': users })
+
+@login_required
+def search_agents(request):
+    users = User.objects.all()
+    f = FilterAgents(request.GET, queryset=AgentCompanyInfo.objects.all())
+
+    #p = PersonalFilter(request.GET, queryset=StdPersonalInfo.objects.all())
+    #p = PersonalFilter(request.GET, queryset=StdPersonalInfo.objects.all())
+    #f = User.objects.all().select_related('stdpersonalinfo_set', 'studentqualifications_set')
+    return render(request, 'StudyAims/search-agents.html', {'filter': f, 'user': users })
+
 # Create your views here.
 def register(request):
     registered = False
@@ -94,13 +118,25 @@ def user_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-
+        student_type =  request.POST.get('student_type')
+        agent_type =  request.POST.get('agent_type')
         user = authenticate(username=username,password=password)
 
         if user:
             if user.is_active:
-                login(request,user)
-                return HttpResponseRedirect(reverse_lazy('StudyAims:update_personal'))
+                if student_type :
+                    login(request,user)
+                    if StdPersonalInfo.objects.filter(user= request.user).exists():
+                        return HttpResponseRedirect(reverse_lazy('StudyAims:dashboard'))
+                    else:
+                        return HttpResponseRedirect(reverse_lazy('StudyAims:update_personal'))
+                else:
+
+                    login(request,user)
+                    if AgentCompanyInfo.objects.filter(user= request.user).exists():
+                        return HttpResponseRedirect(reverse_lazy('StudyAims:agent_dashboard'))
+                    else:
+                        return HttpResponseRedirect(reverse_lazy('StudyAims:update_agent_company_info'))
                 #global user_variable
                 #user_variable = request.user
                 #print(user_variable)
@@ -135,7 +171,10 @@ def user_login(request):
 
 
 
-
+@login_required
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('index'))
 #@login_required
 #def update_personal_information(request):
     #user = request.user
@@ -189,32 +228,32 @@ def update_personal(request):
             #print(user_id)
             pro.save()
             #return redirect(reverse('index'))
-            return HttpResponseRedirect(reverse_lazy('StudyAims:update_qualification'))
+            return HttpResponseRedirect(reverse_lazy('StudyAims:dashboard'))
 
     else:
         form = PersonalInfoForm()
     return render(request,'StudyAims/UpdateStudent.html', {'form': form})
 
-@login_required
-def update_qualification(request):
-    user = request.user
-    form = StdQualificationForm(data = request.POST)
-    if request.method == 'POST':
-        form = StdQualificationForm(request.POST)
-        if form.is_valid():
-            pro = form.save(commit=False)
+#@login_required
+#def update_qualification(request):
+#    user = request.user
+#    form = StdQualificationForm(data = request.POST)
+#    if request.method == 'POST':
+#        form = StdQualificationForm(request.POST)
+#        if form.is_valid():
+#            pro = form.save(commit=False)
         #    user = request.user
         #    user_id = request.user.id
-            pro.user = user
+#            pro.user = user
             #StudyAims_studentqualifications.user_id = user_id
             #print(user_id)
-            pro.save()
+#            pro.save()
             #return redirect(reverse('index'))
-            return HttpResponseRedirect(reverse_lazy('StudyAims:update_language_skills'))
+#            return HttpResponseRedirect(reverse_lazy('StudyAims:update_language_skills'))
 
-    else:
-        form = StdQualificationForm()
-    return render(request,'StudyAims/UpdateStudent2.html', {'form': form})
+#    else:
+#        form = StdQualificationForm()
+#    return render(request,'StudyAims/UpdateStudent2.html', {'form': form})
 
 @login_required
 def update_language_skills(request):
@@ -275,7 +314,8 @@ def update_profile_pic(request):
     return render(request, 'StudyAims/update_pic.html', {'form': form})
     #return render(request, 'basic_app/update_pic.html')
 
-@login_required
+#@login_required
+
 def dashboard(request):
     current_user = request.user
     #dash_b = User.objects.filter(current_user.id)
@@ -300,11 +340,12 @@ def update_agent_company_info(request):
             future = form.save(commit=False)
             future.user = user
             future.save()
-            return HttpResponseRedirect(reverse_lazy('StudyAims:update_company_registration'))
+            return HttpResponseRedirect(reverse_lazy('StudyAims:agent_dashboard'))
             #return HttpResponseRedirect(reverse_lazy('basic_app:update_profile_pic'))
 
     else:
         form = AgentCompanyInfoForm
+        #print(form.errors)
     return render(request, 'StudyAims/UpdateAgent.html', {'form': form})
 
 @login_required
@@ -380,3 +421,30 @@ def agent_dashboard(request):
     #qual = StdQualification.objects.filter()
 
     return render(request, 'StudyAims/agent_dashboard.html',{'current_user':current_user})
+
+
+
+@login_required
+def student_search(request):
+    current_user = request.user
+
+    all_users = User.objects.all()
+    degree = request.POST.get('Degree')
+    print(degree)
+    Subject = request.POST.getlist('Subject')
+    Passing_Year = request.POST.getlist('Passing_Year')
+    percentage = request.POST.getlist('percentage')
+    eng_lang = request.POST.getlist('eng_lang')
+    language = request.POST.getlist('language')
+    Study_Gap = request.POST.getlist('Study_Gap')
+    Job_Experience = request.POST.getlist('Job_Experience')
+    desired_degree = request.POST.getlist('desired_degree')
+    desired_subject = request.POST.getlist('desired_subject')
+    desired_country = request.POST.getlist('desired_country')
+    desired_budget = request.POST.getlist('desired_budget')
+    desired_sch = request.POST.getlist('desired_sch')
+    qualification_filter = StudentQualifications.objects.filter(Q(highest_qualification=degree) & Q(subject=Subject) & Q(passing_year= Passing_Year) & Q(percentage=percentage) & Q(study_gap1=Study_Gap) & Q(experience1 = Job_Experience))
+    future_plan_filter = StudentFuture.objects.filter(Q(desired_degree=desired_degree) & Q(desired_subject=desired_subject ) & Q(desired_country=desired_country) & Q(scholarships=desired_sch) & Q(budget=desired_budget))
+    language_filter = StudentLanguage.objects.filter(Q(english_language= eng_lang) & Q(other_Language=language))
+
+    return render(request, "StudyAims/search-students.html", {'current_user': current_user, 'all_users':all_users, 'qualification_filter':qualification_filter, 'future_plan_filter':future_plan_filter,'language_filter':language_filter})

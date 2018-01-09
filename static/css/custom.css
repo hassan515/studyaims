@@ -67,10 +67,14 @@ Cutom SelectBox
 
 /* Chosen v1.5.1 | (c) 2011-2016 by Harvest | MIT License, https://gexithub.com/harvesthq/chosen/blob/master/LICENSE.md */
 /* dashboard */
+
 .dashboard{
   margin-top: 20px;
   display: flex;
 
+
+}
+body{
 
 }
 .dashboard .db{

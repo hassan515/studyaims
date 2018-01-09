@@ -12,7 +12,7 @@
 <title>Educational Template</title>
 <!-- Reset CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <link href="{% static 'css/fonts.css' %}" rel="stylesheet" type="text/css">
@@ -30,7 +30,7 @@
 <!-- Custom Fonts -->
 <link href="{% static "css/fonts.css" %}" rel="stylesheet" type="text/css">
 <!-- Bootstrap -->
-
+<link href="https://fonts.googleapis.com/css?family=Roboto|Sarala:400,700" rel="stylesheet">
 <!-- Select2 -->
 <link href="assets/select2/css/select2.min.css" rel="stylesheet" type="text/css">
 <!-- Font Awesome -->
@@ -94,7 +94,7 @@
   </ul>
 
       <div class="head-block">
-        <h1> Personal Information</h1>
+        <h1> Update Infomration</h1>
       </div>
       <div class="cnt-block">
       <form action="#" method="post" class="form-outer"> {% csrf_token %}
@@ -105,6 +105,8 @@
 
 
 
+<div class="" id="personal_information">
+<h1>Personal Information</h1>
 
 <div class="row">
   <div class="col-sm-2">
@@ -172,29 +174,228 @@
 
 </div>
 
-{{ form.errors }}
-
-
-
 
 
 
 <div class="button-outer">
 
   <div class="row">
-    <div class="col-sm-6">
-      <button class="btn" type="button" name="button">Back</button></div>
 
 
-    <div class="col-sm-6">
-    <button class="btn" type="submit" name="button">Next</button>
+    <div class="col-sm-12">
+
+  <button type="button" class="btn" name="button" id="personalInfo" onclick="showDiv()">Next</button>
     </div>
   </div>
 
 </div>
 
+</div>
 
 
+<div class="" id="qualification_fields" style="display:None">
+  <h1>Update Qualification</h1>
+  <br><br>
+  <div class="row">
+    <div class="col-sm-6">
+      {{ form.highest_qualification }}
+              </div>
+              <div class="col-sm-6">
+                {{ form.subject }}
+</div>
+</div>
+
+
+
+
+ <div class="row">
+   <div class="col-sm-6">
+     {{ form.program_duration }}
+   </div>
+   <div class="col-sm-6">
+     {{ form.Insititution }}
+   </div>
+ </div>
+ <div class="row">
+   <div class="col-sm-6">
+     {{ form.percentage }}
+   </div>
+   <div class="col-sm-6">
+     {{ form.from_country }}
+   </div>
+ </div>
+
+
+ <div class="row">
+   <div class="col-sm-6">
+     {{ form.passing_year}}
+   </div>
+   <div class="col-sm-6">
+     {{ form.from_country }}
+   </div>
+ </div>
+<div class="row">
+<h2>Any Study Gap?</h2>
+</div>
+ <div class="row">
+   <div class="col-sm-6">
+     {{ form.study_gap1}}
+   </div>
+   <div class="col-sm-6">
+     {{ form.study_gap2 }}
+   </div>
+ </div>
+ <div class="row">
+   <div class="col-sm-6">
+     {{ form.study_gap3}}
+   </div>
+   <div class="col-sm-6">
+     {{ form.study_gap4 }}
+   </div>
+ </div>
+ <div class="row">
+   <h2>Any Job Experience?</h2>
+ </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  {{ form.experience1}}
+                </div>
+                <div class="col-sm-6">
+                  {{ form.experience }}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  {{ form.experience3}}
+                </div>
+                <div class="col-sm-6">
+                  {{ form.experience4 }}
+                </div>
+              </div>
+
+
+ <div class="row study">
+ <div class="col-sm-8">
+   <div class="col-sm-3">
+ <h2>Any Achievements?</h2></div>
+ <div class="col-sm-2">
+   <ul class="select-opt clearfix">
+     <li>
+       <input type="radio" onclick="javascript:ach_Check();" id="ach_Y-option" name="selector">
+       <label for="ach_Y-option">Yes</label>
+       <div class="check"></div> </li></ul>
+ </div>
+ <div class="col-sm-2">
+   <ul class="select-opt clearfix"> <li>
+         <input type="radio" onclick="javascript:ach_Check();" id="ach_N-option" name="selector">
+         <label for="ach_N-option">No</label>
+         <div class="check"></div>
+     </li> </ul>
+
+ </div>
+
+ </div></div>
+
+
+<div class="row" id="Achievements" style="display:none" >
+<div class="col-sm-12">
+{{ form.achievements }}
+</div></div>
+
+
+
+<div class="button-outer">
+
+<div class="row">
+
+
+<div class="col-sm-12">
+<button class="btn" id="up_to_language" type="submit" onclick="showLanguages()" name="button">Next</button>
+</div>
+</div>
+
+</div>
+</div>
+<div class="" id="lanaguages" style="display:None">
+  <h1>Update Lnaguages</h1>
+  <br><br>
+  <div class="row">
+    <div class="col-sm-6">
+      {{ form.english_language }}
+    </div>
+    <div class="col-sm-6">
+      {{ form.english_language_score }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      {{ form.other_Language }}
+    </div>
+    <div class="col-sm-6">
+      {{ form.Other_Language_score }}
+    </div>
+  </div>
+
+
+
+  <div class="button-outer">
+
+    <div class="row">
+
+
+      <div class="col-sm-12">
+      <button class="btn" id="up_to_future" onclick="showfuturePlans()" name="button">Next</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="" id="future_plans" style="display:none">
+  <h1>Future Plans</h1>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-sm-4">
+{{ form.desired_degree }}
+    </div>
+    <div class="col-sm-4">
+{{ form.desired_subject }}
+    </div>
+    <div class="col-sm-4">
+{{ form.program_duration }}
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-4">
+{{ form.desired_country }}
+    </div>
+    <div class="col-sm-4">
+{{ form.scholarships }}
+    </div>
+    <div class="col-sm-4">
+{{ form.budget }}
+    </div>
+  </div>
+
+
+  {{ form.errors }}
+
+  <div class="button-outer">
+
+    <div class="row">
+
+
+      <div class="col-sm-12">
+      <button class="btn" type="submit" name="button">Update Information</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>
 </div>
 
 
@@ -1181,7 +1382,27 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <!-- Bootsrap JS -->
+<script type="text/javascript">
+function showDiv() {
+   document.getElementById('qualification_fields').style.display = "block";
+   document.getElementById('personalInfo').style.display = "None";
+}
 
+
+function showLanguages() {
+
+   document.getElementById('lanaguages').style.display = "block";
+   document.getElementById('up_to_language').style.display = "None";
+
+}
+
+function showfuturePlans() {
+
+   document.getElementById('future_plans').style.display = "block";
+   document.getElementById('up_to_future').style.display = "None";
+
+}
+</script>
 <!-- Select2 JS -->
 <script type="text/javascript" src="{% static "assets/select2/js/select2.min.js" %}"></script>
 <!-- Match Height JS -->

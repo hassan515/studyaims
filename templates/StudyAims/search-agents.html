@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% load staticfiles %}
+{% load widget_tweaks %}
 <html>
   <head>
     <meta charset="utf-8">
@@ -9,28 +11,26 @@
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <title>Educational Template</title>
     <!-- Reset CSS -->
-    <link href="css/reset.css" rel="stylesheet" type="text/css">
-    <!-- Custom Fonts -->
-    <link href="css/fonts.css" rel="stylesheet" type="text/css">
-    <!-- Bootstrap -->
-    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <!-- Select2 -->
-    <link href="assets/select2/css/select2.min.css" rel="stylesheet" type="text/css">
-    <!-- Font Awesome -->
-    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <!-- Magnific Popup -->
-    <link href="assets/magnific-popup/css/magnific-popup.css" rel="stylesheet" type="text/css">
-    <!-- Iconmoon -->
-    <link href="assets/iconmoon/css/iconmoon.css" rel="stylesheet" type="text/css">
-    <!-- Owl Carousel -->
-    <link href="assets/owl-carousel/css/owl.carousel.min.css" rel="stylesheet" type="text/css">
-    <!-- Animate -->
-    <link href="css/animate.css" rel="stylesheet" type="text/css">
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <link href="css/custom.css" rel="stylesheet" type="text/css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link href="{% static 'css/fonts.css' %}" rel="stylesheet" type="text/css">
+    <!-- Bootstrap
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link href="{% static 'css/fonts/font-awesome.min.css'%}" rel="stylesheet" type="text/css" >
+    <!-- Iconmoon -->
+    <link href=" {% static 'css/iconmoon.css' %}" rel="stylesheet" type="text/css">
+    <!-- Custom Style -->
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet" type="text/css">
+
+    <link href="{% static "css/reset.css" %}" rel="stylesheet" type="text/css">
+    <!-- Custom Fonts -->
+    <link href="{% static "css/fonts.css" %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+      <link href="http://cdn-na.infragistics.com/igniteui/2017.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet" />
+        <link href="http://cdn-na.infragistics.com/igniteui/2017.1/latest/css/structure/infragistics.css" rel="stylesheet" />
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
           <script src="js/html5shiv.min.js"></script>
@@ -243,6 +243,8 @@
       <br><br>by</h2>
   </div>
   <div class="filter_heads">
+<form class="" action="index.html" method="get">
+
 
     <h2 class="headings" >Featured agents</h2>
   </div>
@@ -262,6 +264,45 @@
               <h2 class="headings" >Offered Services for Admission & visa</h2>
             </div>
             <div class="row">
+              {{ filter.form.processing.label_tag }}
+              {% render_field filter.form.processing  %}
+            </div>
+            <div class="row">
+              {{ filter.form.countries_Dealing.label_tag }}
+              {% render_field filter.form.countries_Dealing  %}
+            </div>
+
+            <div class="row">
+              {{ filter.form.language_classes.label_tag }}
+              {% render_field filter.form.language_classes  %}
+            </div>
+            <div class="row">
+              {{ filter.form.program_specialist.label_tag }}
+              {% render_field filter.form.program_specialist  %}
+            </div>
+
+            <div class="row">
+              {{ filter.form.refusal_appeals.label_tag }}
+              {% render_field filter.form.refusal_appeals  %}
+            </div>
+            <div class="row">
+              {{ filter.form.scholarships_offered.label_tag }}
+              {% render_field filter.form.scholarships_offered  %}
+            </div>
+            <div class="row">
+              {{ filter.form.interview_preparation.label_tag }}
+              {% render_field filter.form.interview_preparation  %}
+            </div>
+            <div class="row">
+              {{ filter.form.travel_and_health.label_tag }}
+              {% render_field filter.form.travel_and_health  %}
+            </div>
+            <div class="row">
+              {{ filter.form.travel_arrangements.label_tag }}
+              {% render_field filter.form.travel_arrangements  %}
+            </div>
+
+      <!--      <div class="row">
               <select class="agent" name="">
                 <option selected disabled style="display:none">Processing</option>
 
@@ -1010,11 +1051,59 @@
                             <option value="">Above 100,000</option>
           </select>
         </div>
+-->
+<div class="filter_heads">
+
+  <h2 class="headings" >Processing Fee(PKR)</h2>
+</div>
+
+
+<div class="row">
+  {{ filter.form.processing_fee.label_tag }}
+  {% render_field filter.form.processing_fee  %}
+</div>
+
+<div class="row">
+  {{ filter.form.language_fee.label_tag }}
+  {% render_field filter.form.language_fee  %}
+</div>
+<div class="row">
+  {{ filter.form.refusal_fee.label_tag }}
+  {% render_field filter.form.refusal_fee  %}
+</div>
+<div class="row">
+  {{ filter.form.Interview_fee.label_tag }}
+  {% render_field filter.form.Interview_fee %}
+</div>
+<div class="row">
+  {{ filter.form.scholarshipfee.label_tag }}
+  {% render_field filter.form.scholarshipfee %}
+</div>
 
         <div class="filter_heads">
 
           <h2 class="headings" >Success Stories</h2>
         </div>
+        <div class="row">
+          {{ filter.form.visa_ratio.label_tag }}
+          {% render_field filter.form.visa_ratio  %}
+        </div>
+
+
+
+        <div class="row">
+          {{ filter.form.experience.label_tag }}
+          {% render_field filter.form.experience  %}
+        </div>
+        <div class="row">
+          {{ filter.form.regional_office.label_tag }}
+          {% render_field filter.form.regional_office   %}
+        </div>
+        <div class="row">
+          {{ filter.form.branches.label_tag }}
+          {% render_field filter.form.branches   %}
+        </div>
+<!--
   <div class="row">
     <select class="agent" name="">
         <option selected disabled style="display:none">Visa Success Ratio</option>
@@ -1456,7 +1545,9 @@
 
     </select>
   </div>
-
+-->
+<input type="submit" name="Submit" value="Submit">
+</form>
 </div></div>
 
 
@@ -1496,7 +1587,7 @@
 
 
     </div>
-
+{% for filter in filter.qs  %}
     <div class="big-ads">
 
       <div class="st_name">
@@ -1513,7 +1604,7 @@
             <img src="images/profile.png" alt="" height="60" width="60">
       </div>
         <div class="col-sm-8">
-<h2 class="headings">Agent Name</h2><br>
+<h2 class="headings">{{filter.user.username}}</h2><br>
 <fieldset class="rating">
 <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
 <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
@@ -1581,7 +1672,7 @@
         <p>City </p>
       </div>
         <div class="col-sm-3">
-          <p class="info">Lahore</p>
+          <p class="info">{{ filter.user.agentcompanyinfo.agent_city }}</p>
         </div>
         <div class="col-sm-3">
           <p>Province </p>
@@ -1589,7 +1680,7 @@
         </div>
 
         <div class="col-sm-3">
-          <p class="info">Punjab</p>
+          <p class="info">{{ filter.user.agentcompanyinfo.agent_state }}</p>
 
         </div>
     </div>
@@ -1601,33 +1692,33 @@
           <div class="row">
 
             <div class="col-sm-3">
-              <p class="info">Australia</p>
+              <p class="info">{{ filter.user.agentcompanyinfo.countries_Dealing }}</p>
             </div>
             <div class="col-sm-3">
-              <p class="info">Canada</p>
+              <p class="info"></p>
             </div>
               <div class="col-sm-3">
-                <p class="info">Norway</p>
+                <p class="info"></p>
               </div>
               <div class="col-sm-3">
-                <p class="info">Sweden</p>
+                <p class="info"></p>
               </div>
             </div>
               <div class="row">
               <div class="col-sm-3">
-                <p class="info">USA</p>
+                <p class="info"></p>
 
               </div>
               <div class="col-sm-3">
-                <p class="info">UK</p>
+                <p class="info"></p>
               </div>
               <div class="col-sm-3">
-                <p class="info">Ireland
+                <p class="info">
                   </p>
 
               </div>
               <div class="col-sm-3">
-                <p class="info">Germany</p>
+                <p class="info"></p>
               </div>
           </div>
 
@@ -1640,13 +1731,13 @@
           <p>Visa & Processing</p>
         </div>
         <div class="col-sm-2">
-          <p class="info">Both</p>
+          <p class="info">{{ filter.user.agentcompanyinfo.processing }}</p>
         </div>
           <div class="col-sm-4">
             <p>Refusal Appeals</p>
           </div>
           <div class="col-sm-2">
-            <p class="info">Yes / No</p>
+            <p class="info">{{ filter.user.agentcompanyinfo.refusal_appeals }}</p>
           </div>
         </div>
           <div class="row">
@@ -1655,7 +1746,7 @@
             <p>Interview Preparation</p>
           </div>
           <div class="col-sm-2">
-            <p class="info">Yes / No</p>
+            <p class="info">{{ filter.user.agentcompanyinfo.interview_preparation }}</p>
           </div>
 
           <div class="col-sm-4">
@@ -1663,7 +1754,7 @@
 
           </div>
           <div class="col-sm-2">
-            <p class="info">Yes / No</p>
+            <p class="info">{{ filter.user.agentcompanyinfo.travel_and_health }}</p>
           </div>
 
          </div>
@@ -1675,7 +1766,7 @@
 
           </div>
           <div class="col-sm-2">
-            <p class="info">Yes / No</p>
+            <p class="info">{{ filter.user.agentcompanyinfo.travel_arrangements }}</p>
           </div>
 
           <div class="col-sm-4">
@@ -1683,7 +1774,7 @@
           </div>
 
           <div class="col-sm-2">
-            <p class="info">Yes / No</p>
+            <p class="info">{{ filter.user.agentcompanyinfo.scholarships_offered }}</p>
           </div>
       </div>
 
@@ -1692,16 +1783,16 @@
       </div>
       <div class="row">
               <div class="col-sm-3">
-              <p class="info">Diploma</p>
+              <p class="info">{{ filter.user.agentcompanyinfo.program_specialist }}</p>
             </div>
             <div class="col-sm-3">
-            <p class="info">Diploma</p>
+            <p class="info"></p>
           </div>
           <div class="col-sm-3">
-          <p class="info">Diploma</p>
+          <p class="info"></p>
         </div>
         <div class="col-sm-3">
-        <p class="info">Diploma</p>
+        <p class="info"></p>
       </div>
 
 
@@ -1712,16 +1803,16 @@
             </div>
             <div class="row">
               <div class="col-sm-3">
-                <p class="info">IELTS</p>
+                <p class="info">{{ filter.user.agentcompanyinfo.language_classes }}</p>
               </div>
               <div class="col-sm-3">
-                <p class="info">German</p>
+                <p class="info"></p>
               </div>
               <div class="col-sm-3">
-                <p class="info">Turkish</p>
+                <p class="info"></p>
               </div>
               <div class="col-sm-3">
-                <p class="info">Turkish</p>
+                <p class="info"></p>
               </div>
 
             </div>
@@ -1735,13 +1826,13 @@
                         <p>Processing Fee</p>
                       </div>
                       <div class="col-sm-3">
-                        <p class="info">50,000</p>
+                        <p class="info">{{ filter.user.agentcompanyinfo.processing_fee }}</p>
                       </div>
                         <div class="col-sm-3">
                           <p>IELTS/Other</p>
                         </div>
                         <div class="col-sm-3" >
-                          <p class="info">50,000</p>
+                          <p class="info">{{ filter.user.agentcompanyinfo.language_fee }}</p>
                         </div>
                       </div>
                         <div class="row">
@@ -1750,13 +1841,13 @@
 
                         </div>
                         <div class="col-sm-3">
-                          <p class="info">50,000</p>
+                          <p class="info">{{ filter.user.agentcompanyinfo.refusal_fee }}</p>
                         </div>
                         <div class="col-sm-3">
                           <p>Scholarships</p>
                         </div>
                         <div class="col-sm-3">
-                          <p class="info">50,000</p>
+                          <p class="info">{{ filter.user.agentcompanyinfo.scholarshipfee }}</p>
                         </div>
                        </div>
                         <div class="row">
@@ -1767,7 +1858,7 @@
 
                         </div>
                         <div class="col-sm-3">
-                          <p class="info">50,000</p>
+                          <p class="info">{{ filter.user.agentcompanyinfo.Interview_fee }}</p>
                         </div>
 
                     </div>
@@ -1780,13 +1871,13 @@
                         <p>Visa Success</p>
                       </div>
                       <div class="col-sm-3">
-                        <p class="info">80%</p>
+                        <p class="info">{{ filter.user.agentcompanyinfo.visa_ratio }}</p>
                       </div>
                       <div class="col-sm-3">
                         <p>Experience</p>
                       </div>
                       <div class="col-sm-3">
-                        <p class="info">10 Years</p>
+                        <p class="info">{{ filter.user.agentcompanyinfo.experience }}</p>
                       </div>
                     </div>
                     <div class="row">
@@ -1794,13 +1885,13 @@
                         <p>Regional Off.</p>
                       </div>
                       <div class="col-sm-3">
-                        <p class="info">Yes</p>
+                        <p class="info">{{ filter.user.agentcompanyinfo.regional_office }}</p>
                       </div>
                       <div class="col-sm-3">
                         <p>Counselors</p>
                       </div>
                       <div class="col-sm-3">
-                        <p class="info">100</p>
+                        <p class="info">{{ filter.user.agentcompanyinfo.number_of_counselors }}</p>
                       </div></div>
                       <div class="back">
                         <h2 class="adds_heads" >Branches</h2>
@@ -1808,660 +1899,28 @@
 
                       <div class="row">
                         <div class="col-sm-3">
-                          <p class="info">Karachi</p>
+                          <p class="info">{{ filter.user.agentcompanyinfo.branches }}</p>
                         </div>
                         <div class="col-sm-3">
-                          <p class="info">Lahore</p>
+                          <p class="info"></p>
                         </div>
                         <div class="col-sm-3">
-                          <p class="info">Islamabad</p>
+                          <p class="info"></p>
                         </div>
                         <div class="col-sm-3">
-                        <p class="info">Peshawar</p>
+                        <p class="info"></p>
                         </div>
                       </div>
     </div>
+{%  endfor %}
 
-    <div class="big-ads">
-
-      <div class="st_name">
-        <div class="row">
-          <div class="col-sm-9">
-
-          </div>
-          <div class="col-sm-3">
-            <p id="st-na">Contact Detail</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-3 pro_img">
-            <img src="images/profile.png" alt="" height="60" width="60">
-      </div>
-        <div class="col-sm-8">
-<h2 class="headings">Agent Name</h2><br>
-<fieldset class="rating">
-<input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-<input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-<input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-<input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-<input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-<input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-<input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-<input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-<input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-<input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-</fieldset>
-  </div>
-
-      </div>
-
-
-
-      </div>
-      <div id="contact-info" style="display:none" >
-
-
-      <div class="back">
-        <h2 class="adds_heads">Contact details</h2>
-      </div>
-      <div class="white-div">
-
-
-      <div class="row">
-        <div class="col-sm-4">
-          <p>Cell Number:</p><p class="info">03347584587</p>
-        </div>
-
-        <div class="col-sm-4">
-          <p>WhatsApp</p><p class="info">03347584587</p>
-        </div>
-        <div class="col-sm-4">
-          <p>Contact #</p><p class="info">042-3509984</p>
-        </div>
-
-      </div>
-      <div class="row">
-
-        <div class="col-sm-7">
-          <p>Email:</p>  <p class="info">hassan@accuretech.com</p>
-        </div>
-
-        <div class="col-sm-2">
-
-        </div>
-        <div class="col-sm-3">
-
-            <p><br></p><p class="profile">View Profile</p>
-
-        </div>
-      </div>  </div>
-
-        </div>
-      <div class="back">
-        <h2 class="adds_heads" >About</h2>
-      </div>
-    <div class="row">
-
-      <div class="col-sm-3">
-        <p>Gender </p> <p class="info">Male</p>
-      </div>
-        <div class="col-sm-2">
-          <p>Age </p><p class="info">25</p>
-        </div>
-        <div class="col-sm-4">
-          <p>Province </p><p class="info">Punjab</p>
-
-        </div>
-
-        <div class="col-sm-3">
-          <p>City </p><p class="info">Lahore</p>
-
-        </div>
-    </div>
-    <div class="back">
-      <h2 class="adds_heads" >Services</h2>
-    </div>
-
-      <div class="row">
-        <div class="col-sm-3">
-          <p>Visa Process</p>
-        </div>
-        <div class="col-sm-3">
-          <p class="info">Yes / No</p>
-        </div>
-          <div class="col-sm-3">
-            <p>Appeals</p>
-          </div>
-          <div class="col-sm-3" >
-            <p class="info">Yes / No</p>
-          </div>
-        </div>
-          <div class="row">
-          <div class="col-sm-3">
-            <p>Lang Classes</p>
-
-          </div>
-          <div class="col-sm-3">
-            <p class="info">IELTS</p>
-          </div>
-          <div class="col-sm-3">
-            <p>Interview Prep.</p>
-          </div>
-          <div class="col-sm-3">
-            <p class="info">Yes / No</p>
-          </div>
-         </div>
-          <div class="row">
-
-
-          <div class="col-sm-3">
-            <p>Insurance</p>
-
-          </div>
-          <div class="col-sm-3">
-            <p class="info">Yes / No</p>
-          </div>
-          <div class="col-sm-3">
-            <p>Trav. Arrangements</p>
-
-          </div>
-          <div class="col-sm-3">
-            <p class="info">Yes / No</p>
-          </div>
-
-      </div>
-      <div class="row">
-
-
-          <div class="col-sm-3">
-            <p>Scholarships </p>
-          </div>
-          <div class="col-sm-3">
-            <p class="info">Yes / No</p>
-          </div>
-          <div class="col-sm-3">
-            <p>Specialists</p></div>
-
-
-            <div class="col-sm-3">
-              <p class="info">Associate</p>
-            </div> </div>
-            <div class="row">
-
-
-                <div class="col-sm-3">
-                  <p class="info">Bachelor</p>
-                </div>
-                <div class="col-sm-3">
-                  <p class="info">Masters</p>
-                </div>
-                <div class="col-sm-3">
-                  <p class="info">MPhil</p></div>
-
-
-                  <div class="col-sm-3">
-                    <p class="info">PHD</p>
-                  </div> </div>
-<div class="back">
-<h2 class="adds_heads">Countries Dealing</h2>
-</div>
-
-
-      <div class="row">
-
-        <div class="col-sm-3">
-          <p class="info">Australia</p>
-        </div>
-        <div class="col-sm-3">
-          <p class="info">Canada</p>
-        </div>
-          <div class="col-sm-3">
-            <p class="info">Norway</p>
-          </div>
-          <div class="col-sm-3">
-            <p class="info">Sweden</p>
-          </div>
-        </div>
-          <div class="row">
-          <div class="col-sm-3">
-            <p class="info">USA</p>
-
-          </div>
-          <div class="col-sm-3">
-            <p class="info">UK</p>
-          </div>
-          <div class="col-sm-3">
-            <p class="info">Ireland
-              </p>
-
-          </div>
-          <div class="col-sm-3">
-            <p class="info">Germany</p>
-          </div>
-      </div>
-
-
-    </div>
-
-      <div class="big-ads1">
-        <p>Post Your Ads</p>
-        </div>
-        <div class="big-ads">
-          <div class="row st_name">
-
-
-          <div class="col-sm-3 pro_img">
-            <img src="images/profile.png" alt="" height="60" width="60">
-          </div>
-          <div class="col-sm-7 ">
-            <h2 class="headings">Student Name</h2>
-          </div>
-        </div>
-        <div class="row">
-
-          <div class="col-sm-3">
-            <p>Gender </p> <p class="info">Male</p>
-          </div>
-            <div class="col-sm-2">
-              <p>Age </p><p class="info">25</p>
-            </div>
-            <div class="col-sm-4">
-              <p>Province </p><p class="info">Punjab</p>
-
-            </div>
-
-            <div class="col-sm-3">
-              <p>City </p><p class="info">Lahore</p>
-
-            </div>
-        </div>
-        <div class="row back">
-          <h2 class="adds_heads" >Qualification</h2>
-        </div>
-
-          <div class="row">
-            <div class="col-sm-3">
-              <p>Qualification  </p>
-            </div>
-            <div class="col-sm-3">
-              <p class="info">Bachelors</p>
-            </div>
-              <div class="col-sm-3">
-                <p>Major Subject  </p>
-              </div>
-              <div class="col-sm-3" >
-                <p class="info">Sciences&MicroBiology</p>
-              </div>
-            </div>
-              <div class="row">
-              <div class="col-sm-3">
-                <p>Percentage </p>
-
-              </div>
-              <div class="col-sm-3">
-                <p class="info">65%</p>
-              </div>
-              <div class="col-sm-3">
-                <p>Passing Year</p>
-              </div>
-              <div class="col-sm-3">
-                <p class="info">2017</p>
-              </div>
-             </div>
-              <div class="row">
-
-
-              <div class="col-sm-3">
-                <p>Experience</p>
-
-              </div>
-              <div class="col-sm-3">
-                <p class="info">2 years</p>
-              </div>
-              <div class="col-sm-3">
-                <p>Gap</p>
-
-              </div>
-              <div class="col-sm-3">
-                <p class="info">3 years </p>
-              </div>
-
-          </div>
-          <div class="row">
-
-
-              <div class="col-sm-3">
-                <p>English Lang </p>
-              </div>
-              <div class="col-sm-3">
-                <p class="info">IELTS-6.5</p>
-              </div>
-              <div class="col-sm-3">
-                <p>Other Lang</p></div>
-
-
-                <div class="col-sm-3">
-                  <p class="info">German-B</p>
-                </div> </div>
-  <div class="row back">
-    <h2 class="adds_heads">Future plan</h2>
-  </div>
-
-
-          <div class="row">
-
-            <div class="col-sm-3">
-              <p>Qualification </p>
-            </div>
-            <div class="col-sm-3">
-              <p class="info">Masters</p>
-            </div>
-              <div class="col-sm-3">
-                <p>Subject</p>
-              </div>
-              <div class="col-sm-3">
-                <p class="info">Software Eng</p>
-              </div>
-            </div>
-              <div class="row">
-              <div class="col-sm-3">
-                <p>Country</p>
-
-              </div>
-              <div class="col-sm-3">
-                <p class="info">Australia</p>
-              </div>
-              <div class="col-sm-3">
-                <p>Budget
-                  </p>
-
-              </div>
-              <div class="col-sm-3">
-                <p class="info">9 lacs</p>
-              </div>
-          </div>
-
-
-        </div>
-        <div class="big-ads">
-          <div class="row st_name">
-
-
-          <div class="col-sm-3 pro_img">
-            <img src="images/profile.png" alt="" height="60" width="60">
-          </div>
-          <div class="col-sm-7 ">
-            <h2 class="headings">Student Name</h2>
-          </div>
-        </div>
-        <div class="row">
-
-          <div class="col-sm-3">
-            <p>Gender </p> <p class="info">Male</p>
-          </div>
-            <div class="col-sm-2">
-              <p>Age </p><p class="info">25</p>
-            </div>
-            <div class="col-sm-4">
-              <p>Province </p><p class="info">Punjab</p>
-
-            </div>
-
-            <div class="col-sm-3">
-              <p>City </p><p class="info">Lahore</p>
-
-            </div>
-        </div>
-        <div class="row back">
-          <h2 class="adds_heads" >Qualification</h2>
-        </div>
-
-          <div class="row">
-            <div class="col-sm-3">
-              <p>Qualification  </p>
-            </div>
-            <div class="col-sm-3">
-              <p class="info">Bachelors</p>
-            </div>
-              <div class="col-sm-3">
-                <p>Major Subject  </p>
-              </div>
-              <div class="col-sm-3" >
-                <p class="info">Sciences&MicroBiology</p>
-              </div>
-            </div>
-              <div class="row">
-              <div class="col-sm-3">
-                <p>Percentage </p>
-
-              </div>
-              <div class="col-sm-3">
-                <p class="info">65%</p>
-              </div>
-              <div class="col-sm-3">
-                <p>Passing Year</p>
-              </div>
-              <div class="col-sm-3">
-                <p class="info">2017</p>
-              </div>
-             </div>
-              <div class="row">
-
-
-              <div class="col-sm-3">
-                <p>Experience</p>
-
-              </div>
-              <div class="col-sm-3">
-                <p class="info">2 years</p>
-              </div>
-              <div class="col-sm-3">
-                <p>Gap</p>
-
-              </div>
-              <div class="col-sm-3">
-                <p class="info">3 years </p>
-              </div>
-
-          </div>
-          <div class="row">
-
-
-              <div class="col-sm-3">
-                <p>English Lang </p>
-              </div>
-              <div class="col-sm-3">
-                <p class="info">IELTS-6.5</p>
-              </div>
-              <div class="col-sm-3">
-                <p>Other Lang</p></div>
-
-
-                <div class="col-sm-3">
-                  <p class="info">German-B</p>
-                </div> </div>
-  <div class="row back">
-    <h2 class="adds_heads">Future plan</h2>
-  </div>
-
-
-          <div class="row">
-
-            <div class="col-sm-3">
-              <p>Qualification </p>
-            </div>
-            <div class="col-sm-3">
-              <p class="info">Masters</p>
-            </div>
-              <div class="col-sm-3">
-                <p>Subject</p>
-              </div>
-              <div class="col-sm-3">
-                <p class="info">Software Eng</p>
-              </div>
-            </div>
-              <div class="row">
-              <div class="col-sm-3">
-                <p>Country</p>
-
-              </div>
-              <div class="col-sm-3">
-                <p class="info">Australia</p>
-              </div>
-              <div class="col-sm-3">
-                <p>Budget
-                  </p>
-
-              </div>
-              <div class="col-sm-3">
-                <p class="info">9 lacs</p>
-              </div>
-          </div>
-
-
-        </div>      <div class="big-ads1">
+             <div class="big-ads1">
         <p>Post Your Ads</p>
         </div>
 
 
-        <div class="big-ads">
-          <div class="row">
 
 
-          <div class="col-sm-3 pro_img">
-            <img src="images/profile.png" alt="" height="60" width="60">
-          </div>
-          <div class="col-sm-7">
-            <h2 class="headings">Student Name</h2>
-          </div>
-        </div>
-        <div class="row">
-
-          <div class="col-sm-4">
-            <p>Gender:</p>
-          </div>
-            <div class="col-sm-4">
-              <p>Age:</p>
-            </div>
-            <div class="col-sm-4">
-              <p>Qualificaation:</p>
-
-            </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-4">
-            <p>Major Subject:</p>
-          </div>
-            <div class="col-sm-4">
-              <p>Passing Year:</p>
-            </div>
-            <div class="col-sm-4">
-              <p>City:</p>
-
-            </div>
-        </div>
-        <div class="row">
-
-          <div class="col-sm-4">
-            <p>Percentage/CGPA:</p>
-          </div>
-            <div class="col-sm-4">
-              <p>English Language:</p>
-            </div>
-            <div class="col-sm-4">
-              <p>Other Languages:</p>
-
-            </div>
-        </div>
-        <div class="row">
-
-          <div class="col-sm-3">
-            <p>Desired Degree:</p>
-          </div>
-            <div class="col-sm-3">
-              <p>Desired Subject:</p>
-            </div>
-            <div class="col-sm-3">
-              <p>Desired Country:</p>
-
-            </div>
-            <div class="col-sm-3">
-              <p>Desired Budget:</p>
-
-            </div>
-        </div>
-
-
-        </div>
-
-        <div class="big-ads">
-          <div class="row">
-
-
-          <div class="col-sm-3 pro_img">
-            <img src="images/profile.png" alt="" height="60" width="60">
-          </div>
-          <div class="col-sm-7">
-            <h2 class="headings">Student Name</h2>
-          </div>
-        </div>
-        <div class="row">
-
-          <div class="col-sm-4">
-            <p>Gender:</p>
-          </div>
-            <div class="col-sm-4">
-              <p>Age:</p>
-            </div>
-            <div class="col-sm-4">
-              <p>Qualificaation:</p>
-
-            </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-4">
-            <p>Major Subject:</p>
-          </div>
-            <div class="col-sm-4">
-              <p>Passing Year:</p>
-            </div>
-            <div class="col-sm-4">
-              <p>City:</p>
-
-            </div>
-        </div>
-        <div class="row">
-
-          <div class="col-sm-4">
-            <p>Percentage/CGPA:</p>
-          </div>
-            <div class="col-sm-4">
-              <p>English Language:</p>
-            </div>
-            <div class="col-sm-4">
-              <p>Other Languages:</p>
-
-            </div>
-        </div>
-        <div class="row">
-
-          <div class="col-sm-3">
-            <p>Desired Degree:</p>
-          </div>
-            <div class="col-sm-3">
-              <p>Desired Subject:</p>
-            </div>
-            <div class="col-sm-3">
-              <p>Desired Country:</p>
-
-            </div>
-            <div class="col-sm-3">
-              <p>Desired Budget:</p>
-
-            </div>
-        </div>
-
-        </div>
         <div class="big-ads1">
           <p>Post Your Ads</p>
           </div>

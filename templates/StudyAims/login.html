@@ -74,6 +74,33 @@
       <div class="cnt-block">
         <form action="#" method="post" class="form-outer">
           {% csrf_token %}
+          <div class="row">
+            <div class="col-sm-4">
+              <h1>LOGIN AS</h1>
+            </div>
+
+
+            <div class="col-sm-3">
+              <ul class="select-opt clearfix">
+                <li>
+                  <input type="radio"  id="s-option" name="student_type" value="student_type">
+                  <label for="s-option">Student</label>
+                  <div class="check"></div>
+                </li> </ul>
+
+            </div>
+
+            <div class="col-sm-3">
+              <ul class="select-opt clearfix">
+                <li>
+                  <input type="radio"  id="f-option" name="agent_type" value="agent_type">
+                  <label for="f-option">Agent</label>
+                  <div class="check"></div>
+                </li> </ul>
+
+            </div>
+
+          </div>
           <input name="username" type="text" placeholder="Username or Email">
           <input name="password" type="password" placeholder="password">
           <div class="button-outer">

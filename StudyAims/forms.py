@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 #from crispy_forms.bootstrap import FormActions
 
 #from django.localflavor.us.forms import PhoneNumberField
-from StudyAims.models import  StdPersonalInfo, Countries, CityList, HighestQualification ,StudentLanguage, StudentQualifications, SubjectList, ProgramDuration, Percentage, PassingYear, StudentFuture, StudentImage, AgentMobileNumber, AgentCompanyInfo, AgentCompanyRegisterationInfo, AgentServicesOffered, AgentExpertise,AgentLogo, Budget, StateList, AgentFees
+from StudyAims.models import  StdPersonalInfo, Countries, CityList, HighestQualification ,StudentLanguage, SubjectList, ProgramDuration, Percentage, PassingYear, StudentFuture, StudentImage, AgentMobileNumber, AgentCompanyInfo, AgentCompanyRegisterationInfo, AgentServicesOffered, AgentExpertise,AgentLogo, Budget, StateList, AgentFees
 from django.utils.safestring import mark_safe
 
 
@@ -67,6 +67,7 @@ class PersonalInfoForm(forms.ModelForm):
     #             )
     nationality = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Nationality'}),
                  )
+
     #city = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'City'}),
     #             )
 
@@ -78,9 +79,10 @@ class PersonalInfoForm(forms.ModelForm):
     class Meta():
         model = StdPersonalInfo
         #exclude = ('user',)
-        fields = ('gender', 'age','city','country_of_residence','whatsapp','contact_number','any_other_number','address','state','nationality')
+        fields = ('gender', 'age','city','country_of_residence','whatsapp','contact_number','any_other_number','address','state','nationality', 'highest_qualification', 'subject', 'program_duration', 'Insititution','from_country', 'percentage', 'passing_year','studyGap' ,'study_gap1','study_gap2', 'study_gap2','study_gap3','study_gap4','experience','experience1','experience2','experience3','experience4','experience4','achievements','english_language', 'english_language_score', 'other_Language','Other_Language_score',
+        'desired_degree','desired_subject','desired_country','scholarships','budget')
 
-class StdQualificationForm(forms.ModelForm):
+#class StdQualificationForm(forms.ModelForm):
     #highest_qualification = forms.ModelChoiceField(queryset= HighestQualification.objects.all().order_by('qualification'), to_field_name="qualification")
     #subject = forms.ModelChoiceField(queryset= SubjectList.objects.all().order_by('subject'), to_field_name="subject")
     #program_duration = forms.ModelChoiceField(queryset= ProgramDuration.objects.all().order_by('duration'), to_field_name="duration")
@@ -88,30 +90,30 @@ class StdQualificationForm(forms.ModelForm):
     #percentage = forms.ModelChoiceField(queryset= Percentage.objects.all().order_by('Percent'), to_field_name="Percent")
     #passing_year = forms.ModelChoiceField(queryset= PassingYear.objects.all().order_by('year'), to_field_name="year")
 
-    class Meta():
+#    class Meta():
 
 
-        model = StudentQualifications
-        fields = ('highest_qualification', 'subject', 'program_duration', 'Insititution','from_country', 'percentage', 'passing_year', 'study_gap1','study_gap2', 'study_gap2','study_gap3','study_gap4','experience1','experience','experience3','experience4','experience4','achievements')
+#        model = StudentQualifications
+#        fields = ()
 
 class StudentLanguageForm(forms.ModelForm):
 
 
     class Meta():
         model = StudentLanguage
-        fields= ('english_language', 'english_language_score', 'other_Language','Other_Language_score')
+        fields= ()
 
 
 class StudentFutureForm(forms.ModelForm):
 
-    desired_degree = forms.ModelChoiceField(queryset= HighestQualification.objects.all().order_by('qualification'), to_field_name="qualification")
-    desired_subject = forms.ModelChoiceField(queryset= SubjectList.objects.all().order_by('subject'), to_field_name="subject")
-    program_duration = forms.ModelChoiceField(queryset= ProgramDuration.objects.all().order_by('duration'), to_field_name="duration")
-    desired_country = forms.ModelChoiceField(queryset= Countries.objects.all().order_by('country_name'), to_field_name="country_name")
+    #desired_degree = forms.ModelChoiceField(queryset= HighestQualification.objects.all().order_by('qualification'), to_field_name="qualification")
+    #desired_subject = forms.ModelChoiceField(queryset= SubjectList.objects.all().order_by('subject'), to_field_name="subject")
+    #program_duration = forms.ModelChoiceField(queryset= ProgramDuration.objects.all().order_by('duration'), to_field_name="duration")
+    #desired_country = forms.ModelChoiceField(queryset= Countries.objects.all().order_by('country_name'), to_field_name="country_name")
     #budget = forms.ModelChoiceField(queryset= Budget.objects.all().order_by('aff_budget'), to_field_name="aff_budget")
     class Meta():
         model = StudentFuture
-        fields = ('desired_degree','desired_subject','desired_country','scholarships','budget')
+        fields = ()
 
 
 class StudentImageForm():
@@ -154,16 +156,12 @@ class AgentCompanyInfoForm(forms.ModelForm):
     #             )
     nationality = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Nationality'}),
                  )
-    agent_city =    forms.ModelChoiceField(queryset= CityList.objects.all().order_by('city_name'), to_field_name="city_name")
-    agent_country = forms.ModelChoiceField(queryset= Countries.objects.all().order_by('country_name'), to_field_name="country_name")
-    agent_state = forms.ModelChoiceField(queryset= StateList.objects.all().order_by('state_name'), to_field_name="state_name")
+    agent_city =    forms.CharField(widget=forms.TextInput(attrs={'placeholder':'CITY'}),
+                 )
+    #agent_country = forms.ModelChoiceField(queryset= Countries.objects.all().order_by('country_name'), to_field_name="country_name")
+    agent_state = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Province'}),
+                 )
 
-    class Meta():
-        model = AgentCompanyInfo
-        fields = ('comp_name','service_type','company_owner','agent_whatsapp','address','alternative_email','agent_website','facebook_link','linked_In','office_contact','agent_city','agent_state','agent_country')
-
-
-class AgentCompanyRegisterationInfoForm(forms.ModelForm):
     pak_registeration_body1= forms.CharField(widget=forms.TextInput(attrs={'placeholder':'1.Registration Body'}),
                  )
     pak_registeration_body2= forms.CharField(widget=forms.TextInput(attrs={'placeholder':'2.Registration Body'}),
@@ -189,12 +187,6 @@ class AgentCompanyRegisterationInfoForm(forms.ModelForm):
 
     Internatiol_registeration_body6= forms.CharField(widget=forms.TextInput(attrs={'placeholder':'6.Registration Body'}),
                  )
-    class Meta():
-        model = AgentCompanyRegisterationInfo
-        fields=('pak_registeration_body1','pak_registeration_body2','pak_registeration_body3','pak_registeration_body4','pak_registeration_body5','pak_registeration_body6','Internatiol_registeration_body1','Internatiol_registeration_body2','Internatiol_registeration_body3',
-            'Internatiol_registeration_body4','Internatiol_registeration_body5','Internatiol_registeration_body6')
-
-class AgentServicesOfferedForm(forms.ModelForm):
     countries_Dealing = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Countries Dealing'}),
                  )
     #Services_offered= forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Services Offered'}),
@@ -217,12 +209,6 @@ class AgentServicesOfferedForm(forms.ModelForm):
                  )
     travel_arrangements = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Travel Arrangements'}),
                  )
-    class Meta():
-        model = AgentServicesOffered
-        fields = ('countries_Dealing','service_type','language_classes','program_specialist','refusal_appeals','scholarships_offered','interview_preparation','travel_and_health','travel_arrangements')
-
-
-class AgentExpertiseForm(forms.ModelForm):
 
     visa_ratio = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Visa Ratio'}),
                  )
@@ -232,18 +218,45 @@ class AgentExpertiseForm(forms.ModelForm):
                  )
     branches = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Branches'}),
                  )
-    number_of_counselors = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Number of Counselors'}),
-                 )
+    number_of_counselors = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Number of Counselors'}),)
+
+
+
+    class Meta():
+        model = AgentCompanyInfo
+        fields = ('comp_name','service_type','company_owner','agent_whatsapp','address','alternative_email','agent_website','facebook_link','linked_In','office_contact','agent_city','agent_state','agent_country',
+        'pak_registeration_body1','pak_registeration_body2','pak_registeration_body3','pak_registeration_body4','pak_registeration_body5','pak_registeration_body6','Internatiol_registeration_body1','Internatiol_registeration_body2','Internatiol_registeration_body3',
+            'Internatiol_registeration_body4','Internatiol_registeration_body5','Internatiol_registeration_body6','countries_Dealing','service_type','language_classes','program_specialist','refusal_appeals','scholarships_offered','interview_preparation','travel_and_health','travel_arrangements',
+            'visa_ratio','experience','regional_office','branches','number_of_counselors','processing_fee','language_fee','refusal_fee','Interview_fee')
+
+
+class AgentCompanyRegisterationInfoForm(forms.ModelForm):
+
+    class Meta():
+        model = AgentCompanyRegisterationInfo
+        fields=()
+
+class AgentServicesOfferedForm(forms.ModelForm):
+
+    class Meta():
+        model = AgentServicesOffered
+        fields = ()
+
+
+class AgentExpertiseForm(forms.ModelForm):
+
+
+
     class Meta():
         model = AgentExpertise
-        fields = ('visa_ratio','experience','regional_office','branches','number_of_counselors')
+        fields = ()
 
 
 class AgentFeesForm(forms.ModelForm):
 
     class Meta():
         model = AgentFees
-        fields = ('processing_fee','language_fee','refusal_fee','Interview_fee')
+        fields = ()
 
 
 class AgentLogoForm(forms.ModelForm):

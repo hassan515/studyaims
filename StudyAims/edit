@@ -1,0 +1,502 @@
+  Abbottabad = 'Abbottabad'
+	Adezai = 'Adezai'
+	AhmedNagerChatha = 'Ahmed Nager Chatha'
+	AhmedpurEast = 'Ahmedpur East'
+	AliBandar = 'Ali Bandar'
+	AliPur = 'Ali Pur'
+	Arifwala = 'Arifwala'
+	Astor = 'Astor'
+	Attock = 'Attock'
+	Ayubia = 'Ayubia'
+	Baden = 'Baden'
+	Bagh = 'Bagh'
+	Bahawalnagar = 'Bahawalnagar'
+	Bahawalpur = 'Bahawalpur'
+	Bajaur= 'Bajaur'
+	BandaDaudShah = 'Banda Daud Shah'
+	Bannu = 'Bannu'
+	Baramula = 'Baramula'
+	BastiMalook = 'Basti Malook'
+	Batagram = 'Batagram'
+	Bazdar  = 'Bazdar'
+	Bela = 'Bela'
+	Bellpat = 'Bellpat'
+	Bhagalchur = 'Bhagalchur'
+	Bhaipheru = 'Bhaipheru'
+	Bhakkar = 'Bhakkar'
+	Bhalwal = 'Bhalwal'
+	Bhimber = 'Bhimber'
+	Birote = 'Birote'
+	Buner = 'Buner'
+	Burewala = 'Burewala'
+	Burj = 'Burj'
+	Chachro = 'Chachro'
+	Chagai = 'Chagai'
+	ChahSandan = 'Chah Sandan'
+	Chailianwala = 'Chailianwala'
+	Chakdara = 'Chakdara'
+	Chakku = 'Chakku'
+	Chakwal = 'Chakwal'
+	Chaman = 'Chaman'
+	Charsadda = 'Charsadda'
+	Chhatr = 'Chhatr'
+	Chichawatni = 'Chichawatni'
+	Chiniot = 'Chiniot'
+	Chitral = 'Chitral'
+	ChowkAzam = 'Chowk Azam'
+	ChowkSarwarShaheed = 'Chowk Sarwar Shaheed'
+	Dadu = 'Dadu'
+	Dalbandin = 'Dalbandin'
+	Dargai = 'Dargai'
+	DaryaKhan = 'Darya Khan'
+	Daska = 'Daska'
+	DeraBugti = 'Dera Bugti'
+	DeraGhaziKhan = 'Dera Ghazi Khan'
+	DeraIsmailKhan = 'Dera Ismail Khan'
+	DerawarFort = 'Derawar Fort'
+	DhanaSar = 'Dhana Sar'
+	Dhaular = 'Dhaular'
+	Digri = 'Digri'
+	DinaCity = 'Dina City'
+	Dinga = 'Dinga'
+	Dipalpur = 'Dipalpur'
+	Diplo = 'Diplo'
+	Diwana = 'Diwana'
+	Dokri = 'Dokri'
+	Drasan = 'Drasan'
+	Drosh = 'Drosh'
+	Duki = 'Duki'
+	Dushi = 'Dushi'
+	Duzab = 'Duzab'
+	Faisalabad = 'Faisalabad'
+	FatehJang = 'Fateh Jang'
+	Gadar = 'Gadar'
+	Gajar = 'Gajar'
+	GarhiKhairo = 'Garhi Khairo'
+	Garruck = 'Garruck'
+	GhakharMandi = 'Ghakhar Mandi'
+	Ghanian = 'Ghanian'
+	Ghauspur = 'Ghauspur'
+	Ghazluna = 'Ghazluna'
+	Ghotki = 'Ghotki'
+	Gilgit = 'Gilgit'
+	Girdan = 'Girdan'
+	GujarKhan = 'Gujar Khan'
+	Gujranwala = 'Gujranwala'
+	Gujrat = 'Gujrat'
+	Gulistan = 'Gulistan'
+	Gwadar = 'Gwadar'
+	Gwash = 'Gwash'
+	HabChauki = 'Hab Chauki'
+	Hafizabad = 'Hafizabad'
+	Hala = 'Hala'
+	Hameedabad = 'Hameedabad'
+	Hangu = 'Hangu'
+	Haripur = 'Haripur'
+	Harnai = 'Harnai'
+	Haroonabad = 'Haroonabad'
+	Hasilpur = 'Hasilpur'
+	HaveliLakha = 'Haveli Lakha'
+	Hinglaj = 'Hinglaj'
+	Hoshab = 'Hoshab'
+	Hunza = 'Hunza'
+	Hyderabad = 'Hyderabad'
+	Islamkot = 'Islamkot'
+	Ispikan = 'Ispikan'
+	Jacobabad = 'Jacobabad'
+	Jahania = 'Jahania'
+	JallaAraain = 'Jalla Araain'
+	Jamesabad = 'Jamesabad'
+	Jampur = 'Jampur'
+	Jamshoro = 'Jamshoro'
+	Janghar = 'Janghar'
+	Jati = 'Jati (Mughalbhin)'
+	Jauharabad = 'Jauharabad'
+	JhalJhao = 'Jhal Jhao'
+	Jhang = 'Jhang'
+	Jhatpat = 'Jhatpat'
+	Jhelum = 'Jhelum'
+	Jhudo = 'Jhudo'
+	Jiwani = 'Jiwani'
+	Jungshahi = 'Jungshahi'
+	Kalabagh = 'Kalabagh'
+	Kalam = 'Kalam'
+	Kalandi = 'Kalandi'
+	Kalat = 'Kalat'
+	Kamalia = 'Kamalia'
+	Kamararod = 'Kamararod'
+	Kamokey = 'Kamokey'
+	Kanak = 'Kanak'
+	Kandi = 'Kandi'
+	Kandiaro = 'Kandiaro'
+	Kanpur = 'Kanpur'
+	Kapip = 'Kapip'
+	Kappar = 'Kappar'
+	Karachi = 'Karachi'
+	Karak = 'Karak'
+	Karodi = 'Karodi'
+	KarorLalEsan = 'Karor Lal Esan'
+	Kashmor = 'Kashmor'
+	Kasur = 'Kasur'
+	Katuri = 'Katuri'
+	KetiBandar = 'Keti Bandar'
+	Khairpur = 'Khairpur'
+	Khanaspur = 'Khanaspur'
+	Khanewal = 'Khanewal'
+	Khanpur = 'Khanpur'
+	Kharan = 'Kharan'
+	Kharian = 'Kharian'
+	Khokhropur = 'Khokhropur'
+	Khora = 'Khora'
+	khuiratta = 'khuiratta'
+	Khushab = 'Khushab'
+	Khuzdar = 'Khuzdar'
+	Khyber = 'Khyber'
+	Kikki = 'Kikki'
+	Klupro = 'Klupro'
+	Kohan = 'Kohan'
+	Kohat = 'Kohat'
+	Kohistan = 'Kohistan'
+	Kohlu = 'Kohlu'
+	Korak = 'Korak'
+	Korangi = 'Korangi'
+	KotAddu = 'Kot Addu'
+	KotSarae = 'Kot Sarae'
+	Kotli = 'Kotli'
+	Kotri = 'Kotri'
+	Kurram = 'Kurram'
+	Laar = 'Laar'
+	Lahore = 'Lahore'
+	Lahri = 'Lahri'
+	LakkiMarwat = 'Lakki Marwat'
+	Lalamusa = 'Lalamusa'
+	Larkana = 'Larkana'
+	Lasbela = 'Lasbela'
+	Latamber = 'Latamber'
+	Layyah = 'Layyah'
+	Liari = 'Liari'
+	Lodhran = 'Lodhran'
+	Loralai = 'Loralai'
+	LowerDir = 'Lower Dir'
+	Lund = 'Lund'
+	Mach = 'Mach'
+	Madyan = 'Madyan'
+	Mailsi = 'Mailsi'
+	MakhdoomAali = 'Makhdoom Aali'
+	Malakand = 'Malakand'
+	Mamoori = 'Mamoori'
+	Mand = 'Mand'
+	MandiBahauddin = 'Mandi Bahauddin'
+	MandiWarburton = 'Mandi Warburton'
+	Mangla = 'Mangla'
+	Manguchar = 'Manguchar'
+	Mansehra = 'Mansehra'
+	Mardan = 'Mardan'
+	MashkiChah = 'Mashki Chah'
+	Maslti = 'Maslti'
+	Mastuj = 'Mastuj'
+	Mastung = 'Mastung'
+	Mathi = 'Mathi'
+	Matiari = 'Matiari'
+	Mehar = 'Mehar'
+	Mekhtar = 'Mekhtar'
+	Merui = 'Merui'
+	MianChannu = 'Mian Channu'
+	Mianez = 'Mianez'
+	Mianwali = 'Mianwali'
+	Minawala = 'Minawala'
+	MiramShah = 'Miram Shah'
+	Mirpur = 'Mirpur'
+	MirpurBatoro = 'Mirpur Batoro'
+	MirpurKhas = 'Mirpur Khas'
+	MirpurSakro = 'Mirpur Sakro'
+	Mithani = 'Mithani'
+	Mithi = 'Mithi'
+	Mohmand = 'Mohmand'
+	Mongora = 'Mongora'
+	Moro = 'Moro'
+	Multan = 'Multan'
+	MurghaKibzai = 'Murgha Kibzai'
+	Muridke = 'Muridke'
+	Murree = 'Murree'
+	MusaKhelBazar = 'Musa Khel Bazar'
+	Muzaffarabad = 'Muzaffarabad'
+	Nagar = 'Nagar'
+	NagarParkar = 'Nagar Parkar'
+	NaghaKalat = 'Nagha Kalat'
+	Nal = 'Nal'
+	Naokot = 'Naokot'
+	Narowal = 'Narowal'
+	Naseerabad = 'Naseerabad'
+	Naudero = 'Naudero'
+	NaurozKalat = 'Nauroz Kalat'
+	Naushara = 'Naushara'
+	Nazimabad = 'Nazimabad'
+	NorthWaziristan = 'North Waziristan'
+	Noushero Feroz = 'Noushero Feroz'
+	Nowshera = 'Nowshera'
+	NurGamma = 'Nur Gamma'
+	Nushki = 'Nushki'
+	Nuttal = 'Nuttal'
+	Okara = 'Okara'
+	Ormara = 'Ormara'
+	Paharpur = 'Paharpur'
+	PakPattan = 'Pak Pattan'
+	Palantuk = 'Palantuk'
+	Panjgur = 'Panjgur'
+	Pasni = 'Pasni'
+	Pattoki = 'Pattoki'
+	Pendoo = 'Pendoo'
+	Peshawar = 'Peshawar'
+	Piharak = 'Piharak'
+	Pirmahal = 'Pirmahal'
+	Pishin = 'Pishin'
+	Plandri = 'Plandri'
+	Pokran = 'Pokran'
+	Punch = 'Punch'
+	Qambar = 'Qambar'
+	QamruddinKarez = 'Qamruddin Karez'
+	QaziAhmad = 'Qazi Ahmad'
+	QilaAbdullah = 'Qila Abdullah'
+	QilaDidarSingh = 'Qila Didar Singh'
+	QilaLadgasht = 'Qila Ladgasht'
+	QilaSafed = 'Qila Safed'
+	QilaSaifullah = 'Qila Saifullah'
+	Quetta = 'Quetta'
+	Rabwah = 'Rabwah'
+	RahimYarKhan = 'Rahim Yar Khan'
+	Raiwind = 'Raiwind'
+	RajanPur = 'Rajan Pur'
+	Rakhni = 'Rakhni'
+	Ranipur = 'Ranipur'
+	Ratodero = 'Ratodero'
+	Rawalakot = 'Rawalakot'
+	Rawalpindi = 'Rawalpindi'
+	RenalaKhurd = 'Renala Khurd'
+	RobatThana = 'Robat Thana'
+	Rodkhan = 'Rodkhan'
+	Rohri = 'Rohri'
+	Sadiqabad = 'Sadiqabad'
+	SafdarAbad  = 'Safdar Abad – (Dhaban Singh)'
+	Sahiwal = 'Sahiwal'
+	SaiduSharif = 'Saidu Sharif'
+	Saindak = 'Saindak'
+	Sakesar = 'Sakesar'
+	Samberial = 'Samberial'
+	Sanghar = 'Sanghar'
+	SanglaHill = 'Sangla Hill'
+	Sanjawi = 'Sanjawi'
+	SaraiAlamgir = 'Sarai Alamgir'
+	Sargodha = 'Sargodha'
+	Saruna = 'Saruna'
+	ShabazKalat = 'Shabaz Kalat'
+	Shadadkhot = 'Shadadkhot'
+	ShafqatShaheedChowk = 'Shafqat Shaheed Chowk'
+	Shahbandar = 'Shahbandar'
+	Shahdadpur = 'Shahdadpur'
+	Shahpur = 'Shahpur'
+	ShahpurChakar = 'Shahpur Chakar'
+	Shakargarh = 'Shakargarh'
+	Shandur = 'Shandur'
+	Shangla = 'Shangla'
+	Shangrila = 'Shangrila'
+	SharamJogizai = 'Sharam Jogizai'
+	Sheikhupura = 'Sheikhupura'
+	Shikarpur = 'Shikarpur'
+	Shingar = 'Shingar'
+	Shorap = 'Shorap'
+	Sialkot = 'Sialkot'
+	Sibi = 'Sibi'
+	Skardu = 'Skardu'
+	Sohawa = 'Sohawa'
+	Sonmiani = 'Sonmiani'
+	Sooianwala = 'Sooianwala'
+	SouthWaziristan = 'South Waziristan'
+	Spezand = 'Spezand'
+	Spintangi = 'Spintangi'
+	Sui = 'Sui'
+	Sujawal = 'Sujawal'
+	Sukkur = 'Sukkur'
+	Sundar = 'Sundar (city)'
+	Suntsar = 'Suntsar'
+	Surab = 'Surab'
+	Swabi = 'Swabi'
+	Swat = 'Swat'
+	Takhtbai = 'Takhtbai'
+	Talagang = 'Talagang'
+	TandoAdam = 'Tando Adam'
+	TandoAllahyar = 'Tando Allahyar'
+	TandoBago = 'Tando Bago'
+	Tangi = 'Tangi'
+	Tank = 'Tank'
+	TarAhamdRind = 'Tar Ahamd Rind'
+	Tarbela = 'Tarbela'
+	Taxila = 'Taxila'
+	Thall = 'Thall'
+	Thalo = 'Thalo'
+	Thatta = 'Thatta'
+	TobaTekSingh = 'Toba Tek Singh'
+	Tordher = 'Tordher'
+	Tujal = 'Tujal'
+	Tump = 'Tump'
+	Turbat = 'Turbat'
+	Umarao = 'Umarao'
+	Umarkot = 'Umarkot'
+	UpperDir = 'Upper Dir'
+	Uthal = 'Uthal'
+	Vehari = 'Vehari'
+	Veirwaro = 'Veirwaro'
+	Vitakri = 'Vitakri'
+	Wadh = 'Wadh'
+	WahCantonment = 'Wah Cantonment'
+	Wana = 'Wana'
+	Warah = 'Warah'
+	Washap = 'Washap'
+	Wasjuk = 'Wasjuk'
+	Wazirabad = 'Wazirabad'
+	Yakmach = 'Yakmach'
+	Zhob = 'Zhob'
+
+
+
+
+  (Muridke , 'Muridke'),
+      (Murree , 'Murree'),
+      (MusaKhelBazar , 'Musa Khel Bazar'),
+      (Muzaffarabad , 'Muzaffarabad'),
+      (Nagar , 'Nagar'),
+      (NagarParkar , 'Nagar Parkar'),
+      (NaghaKalat , 'Nagha Kalat'),
+      (Nal , 'Nal'),
+      (Naokot , 'Naokot'),
+      (Narowal , 'Narowal'),
+      (Naseerabad , 'Naseerabad'),
+      (Naudero , 'Naudero'),
+      (NaurozKalat , 'Nauroz Kalat'),
+      (Naushara , 'Naushara'),
+      (Nawabshah , 'Nawabshah'),
+      (Nazimabad , 'Nazimabad'),
+      (NorthWaziristan , 'North Waziristan'),
+      (NousheroFeroz , 'Noushero Feroz'),
+      (Nowshera , 'Nowshera'),
+      (NurGamma , 'Nur Gamma'),
+      (Nushki , 'Nushki'),
+      (Nuttal , 'Nuttal'),
+      (Okara , 'Okara'),
+      (Ormara , 'Ormara'),
+      (Paharpur , 'Paharpur'),
+      (PakPattan , 'Pak Pattan'),
+      (Palantuk , 'Palantuk'),
+      (Panjgur , 'Panjgur'),
+      (Pasni , 'Pasni'),
+      (Pattoki , 'Pattoki'),
+      (Pendoo , 'Pendoo'),
+      (Peshawar , 'Peshawar'),
+      (Piharak , 'Piharak'),
+      (Pirmahal , 'Pirmahal'),
+      (Pishin , 'Pishin'),
+      (Plandri , 'Plandri'),
+      (Pokran , 'Pokran'),
+      (Punch , 'Punch'),
+      (Qambar , 'Qambar'),
+      (QamruddinKarez , 'Qamruddin Karez'),
+      (QaziAhmad , 'Qazi Ahmad'),
+      (QilaAbdullah , 'Qila Abdullah'),
+      (QilaDidarSingh , 'Qila Didar Singh'),
+      (QilaLadgasht , 'Qila Ladgasht'),
+      (QilaSafed , 'Qila Safed'),
+      (QilaSaifullah , 'Qila Saifullah'),
+      (Quetta , 'Quetta'),
+      (Rabwah , 'Rabwah'),
+      (RahimYarKhan , 'Rahim Yar Khan'),
+      (Raiwind , 'Raiwind'),
+      (RajanPur , 'Rajan Pur'),
+      (Rakhni , 'Rakhni'),
+      (Ranipur , 'Ranipur'),
+      (Ratodero , 'Ratodero'),
+      (Rawalakot , 'Rawalakot'),
+      (Rawalpindi , 'Rawalpindi'),
+      (RenalaKhurd , 'Renala Khurd'),
+      (RobatThana , 'Robat Thana'),
+      (Rodkhan , 'Rodkhan'),
+      (Rohri , 'Rohri'),
+      (Sadiqabad , 'Sadiqabad'),
+      (SafdarAbad , 'Safdar Abad – (Dhaban Singh)'),
+      (Sahiwal , 'Sahiwal'),
+      (SaiduSharif , 'Saidu Sharif'),
+      (Saindak , 'Saindak'),
+      (Sakesar , 'Sakesar'),
+      (Samberial , 'Samberial'),
+      (Sanghar , 'Sanghar'),
+      (SanglaHill , 'Sangla Hill'),
+      (Sanjawi , 'Sanjawi'),
+      (SaraiAlamgir , 'Sarai Alamgir'),
+      (Sargodha , 'Sargodha'),
+      (Saruna , 'Saruna'),
+      (ShabazKalat , 'Shabaz Kalat'),
+      (Shadadkhot , 'Shadadkhot'),
+      (ShafqatShaheedChowk , 'Shafqat Shaheed Chowk'),
+      (Shahbandar , 'Shahbandar'),
+      (Shahdadpur , 'Shahdadpur'),
+      (Shahpur , 'Shahpur'),
+      (ShahpurChakar , 'Shahpur Chakar'),
+      (Shakargarh , 'Shakargarh'),
+      (Shandur , 'Shandur'),
+      (Shangla , 'Shangla'),
+      (Shangrila , 'Shangrila'),
+      (SharamJogizai , 'Sharam Jogizai'),
+      (Sheikhupura , 'Sheikhupura'),
+      (Shikarpur , 'Shikarpur'),
+      (Shingar , 'Shingar'),
+      (Shorap , 'Shorap'),
+      (Sialkot , 'Sialkot'),
+      (Sibi , 'Sibi'),
+      (Skardu , 'Skardu'),
+      (Sohawa , 'Sohawa'),
+      (Sonmiani , 'Sonmiani'),
+      (Sooianwala , 'Sooianwala'),
+      (SouthWaziristan , 'South Waziristan'),
+      (Spezand , 'Spezand'),
+      (Spintangi , 'Spintangi'),
+      (Sui , 'Sui'),
+      (Sujawal , 'Sujawal'),
+      (Sukkur , 'Sukkur'),
+      (Sundar  , 'Sundar (city)'),
+      (Suntsar , 'Suntsar'),
+      (Surab , 'Surab'),
+      (Swabi , 'Swabi'),
+      (Swat , 'Swat'),
+      (Takhtbai , 'Takhtbai'),
+      (Talagang , 'Talagang'),
+      (TandoAdam , 'Tando Adam'),
+      (TandoAllahyar , 'Tando Allahyar'),
+      (TandoBago , 'Tando Bago'),
+      (Tangi , 'Tangi'),
+      (Tank  , 'Tank'),
+      (TarAhamdRind , 'Tar Ahamd Rind'),
+      (Tarbela , 'Tarbela'),
+      (Taxila , 'Taxila'),
+      (Thall , 'Thall'),
+      (Thalo , 'Thalo'),
+      (Thatta , 'Thatta'),
+      (TobaTekSingh , 'Toba Tek Singh'),
+      (Tordher , 'Tordher'),
+        (Tujal , 'Tujal'),
+      (Tump , 'Tump'),
+      (Turbat , 'Turbat'),
+      (Umarao , 'Umarao'),
+      (Umarkot , 'Umarkot'),
+      (UpperDir , 'Upper Dir'),
+      (Uthal , 'Uthal'),
+      (Vehari , 'Vehari'),
+      (Veirwaro , 'Veirwaro'),
+      (Vitakri , 'Vitakri'),
+      (Wadh , 'Wadh'),
+      (WahCantonment , 'Wah Cantonment'),
+      (Wana , 'Wana'),
+      (Warah , 'Warah'),
+      (Washap , 'Washap'),
+      (Wasjuk , 'Wasjuk'),
+      (Wazirabad , 'Wazirabad'),
+      (Yakmach , 'Yakmach'),
+      (Zhob , 'Zhob'),

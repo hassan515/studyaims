@@ -209,108 +209,118 @@
 
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm-6">
 
-      <button type="button" name="button">Change Password</button>
-    </div>
-    <div class="col-sm-6">
-    <button type="button" name="button">Update Information</button>
-    </div>
-  </div>
 </div>
 
 
-<div class="right-bl" style="display:none" id="personal_info">
+<div class="right-bl"  id="personal_info">
   <div class="head-block">
-    <h1>Personal Information        <button type="button" name="button"> Edit <span class="glyphicon glyphicon-pencil"></span></button>    </h1>
+    <h1>Personal Information    </h1>
   </div>
+  <br>
+
 <div class="db">
+  <div class="row" id="name">
+    <div class="col-md-5">
 
+    </div>
+<div class="col-md-4">
+  <h2>{{current_user.username}}</h2>
+</div>
 
+<div class="col-md-3">
+
+</div>
+</div>
+<br>
   <div class="row">
-    <div class="col-sm-2">
+    <div class="col-md-6" id="infoSec">
       <b>Gender</b>
     </div>
-    <div class="col-sm-2">
-{{ current_user.studentpersonalinfo.gender }}
+    <div class="col-md-6">
+<b>{{ current_user.stdpersonalinfo.gender }}</b>
 
-    </div>
-    <div class="col-sm-3">
-      <b>Name</b>
 
+</div>
     </div>
-    <div class="col-sm-3">
-{{current_user.username}}
-    </div>
-    <div class="col-sm-2">
+<div class="row">
+    <div class="col-md-6" id="infoSec">
       <b>Age</b>
     </div>
-    <div class="col-sm-1">
-      {{ current_user.studentpersonalinfo.age }}
+    <div class="col-md-6">
+    <b>{{ current_user.stdpersonalinfo.age }}</b>
     </div>
 
   </div>
   <div class="row">
-<div class="col-sm-3">
+<div class="col-sm-6" id="infoSec">
   <b>Mobile Number</b>
 </div>
-<div class="col-sm-3">
+<div class="col-sm-6">
 
-</div>
-<div class="col-sm-3">
+</div></div>
+<div class="row">
+
+
+<div class="col-sm-6" id="infoSec">
   <b>WhatsApp Number</b>
 </div>
-<div class="col-sm-3">
-{{current_user.studentpersonalinfo.whatsapp}}
+<div class="col-sm-6">
+{{current_user.stdpersonalinfo.whatsapp}}
+</div>
 </div>
 
-  </div>
 <div class="row">
-  <div class="col-sm-3">
+  <div class="col-md-6" id="infoSec">
     <b>Email </b>
   </div>
-  <div class="col-sm-3">
+  <div class="col-sm-6">
     {{current_user.email}}
   </div>
-  <div class="col-sm-6">
-    <b></b>
-  </div>
+
 </div>
 <div class="row">
-<div class="col-sm-3">
+<div class="col-sm-6" id="infoSec">
   <b>Address</b>
 </div>
-<div class="col-sm-9">
+<div class="col-sm-6">
 {{current_user.studentpersonalinfo.address}}
 </div>
 </div>
 <div class="row">
-  <div class="col-sm-3">
+  <div class="col-sm-6" id="infoSec">
     <b>State / Province</b>
   </div>
-  <div class="col-sm-3">
+  <div class="col-sm-6">
 {{current_user.studentpersonalinfo.state}}
   </div>
-  <div class="col-sm-3">
+
+
+  </div>
+  <div class="row">
+  <div class="col-sm-6" id="infoSec">
     <b>City</b>
   </div>
-  <div class="col-sm-3">
+  <div class="col-sm-6">
 {{current_user.studentpersonalinfo.city}}
   </div>
 </div>
 
 <div class="row">
-  <div class="col-sm-3">
+  <div class="col-sm-6" id="infoSec">
     <b>Nationality</b>
   </div>
-  <div class="col-sm-3">
+  <div class="col-sm-6">
   {{current_user.studentpersonalinfo.nationality}}
   </div>
-  <div class="col-sm-3">
+
+
+  </div>
+  <div class="row">
+  <div class="col-sm-6" id="infoSec">
     <b>Country Of Residence</b>
   </div>
-  <div class="col-sm-3">
+  <div class="col-sm-6">
   {{current_user.studentpersonalinfo.country_of_residence}}
   </div>
 </div>
@@ -320,155 +330,119 @@
 
   </div>
 
-  <div class="right-bl" style="display:none" id="personal_info">
+  <div class="right-bl" style="display:none" id="qualification_info">
+
     <div class="head-block">
       <h1>Qualification</h1>
     </div>
-    <div class="row">
-  <div class="col-sm-9">
+    <div class="db">
 
+
+  <div class="row">
+    <div class="col-sm-6" id="infoSec">
+      <b>Last Qualification</b>
+    </div>
+    <div class="col-sm-6">
+      {{ current_user.stdpersonalinfo.highestQualification }}
+    </div>
   </div>
-  <div class="col-sm-3">
 
 
-     <button type="button" name="button" style="margin-top:10px"> Edit <span class="glyphicon glyphicon-pencil"></span></button>
+  <div class="row">
+    <div class="col-sm-6" id="infoSec">
+      <b>Major Subject</b>
     </div>
+    <div class="col-sm-6">
+      {{ current_user.stdpersonalinfo.subject }}
     </div>
-    <br><br>
-    <br><br>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6" id="infoSec">
+      <b>From Institute</b>
+    </div>
+    <div class="col-sm-6">
+      {{ current_user.stdpersonalinfo.Insititution }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6" id="infoSec">
+      <b>Percentage</b>
+    </div>
+    <div class="col-sm-6">
+      {{ current_user.stdpersonalinfo.percentage }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6" id="infoSec">
+      <b>Passing Year</b>
+    </div>
+    <div class="col-sm-6">
+      {{ current_user.stdpersonalinfo.passing_year }}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6" id="infoSec">
+      <b>Study Gap</b>
+    </div>
+    <div class="col-sm-6">
+      {{ current_user.stdpersonalinfo.studyGap }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6" id="infoSec">
+      <b>Job Experience</b>
+    </div>
+    <div class="col-sm-6">
+      {{ current_user.stdpersonalinfo.experience }}
+    </div>
+  </div>
+
+</div>
+
 
     </div>
 
-    <div class="right-bl"  id="language_skill_info">
+
+    <div class="right-bl"  id="language_skill_info"  style="display:none">
       <div class="head-block">
         <h1>Language Skills    <span class="glyphicon glyphicon-pencil"  ></span></h1>
       </div>
       <div class="db">
-      <div class="row">
-        <div class="col-sm3">
-          <b>IELTS</b>
+        <div class="row">
+          <div class="col-sm-4" id="infoSec">
+            <b>English Language</b>
+          </div>
+          <div class="col-sm-4">
+            {{ current_user.stdpersonalinfo.english_language }}
+          </div>
+          <div class="col-sm-4">
+            {{current_user.stdpersonalinfo.english_language_score}}
+          </div>
         </div>
-        <div class="col-sm-3">
+        <div class="row">
+          <div class="col-sm-4" id="infoSec">
+            <b>Other Language</b>
+          </div>
+          <div class="col-sm-4">
+            {{ current_user.stdpersonalinfo.other_Language }}
+          </div>
+          <div class="col-sm-4">
+            {{current_user.stdpersonalinfo.Other_Language_score}}
+          </div>
+        </div>
 
-        </div>
-        <div class="col-sm3">
-          <b>IELTS</b>
-        </div>
-        <div class="col-sm-3">
-          {% if current_user.studentlanguage.toefl == 'True' %}
 
-          {{current_user.studentlanguage.toefl_score}}
-          {% else %}
-          No TOEFL
-          {% endif %}
-        </div>
-
-
-      </div>
-      <div class="row">
-        <div class="col-sm3">
-          <b>PTE</b>
-        </div>
-        <div class="col-sm-3">
-      <!--     -->
-        </div>
-        <div class="col-sm3">
-          <b>OTHER</b>
-        </div>
-        <div class="col-sm-3">
-      <!--    -->
-        </div>
 
 
       </div>
-
-      <div class="row">
-        <div class="col-sm3">
-          <b>GERMAN</b>
-        </div>
-        <div class="col-sm-3">
-
-        </div>
-        <div class="col-sm3">
-          <b>IELTS</b>
-        </div>
-        <div class="col-sm-3">
-        <!--  -->
-        </div>
-
-
-      </div>
-
-      <div class="row">
-        <div class="col-sm3">
-          <b>JAPANESE</b>
-        </div>
-        <div class="col-sm-3">
-        <!--   -->
-        </div>
-        <div class="col-sm3">
-          <b>FRENCH</b>
-        </div>
-        <div class="col-sm-3">
-      <!--    -->
-        </div>
-
-
-      </div>
-
-
-            <div class="row">
-              <div class="col-sm3">
-                <b>SPANISH</b>
-              </div>
-              <div class="col-sm-3">
-                <!--  -->
-              </div>
-              <div class="col-sm3">
-                <b>PORTUGUESE</b>
-              </div>
-              <div class="col-sm-3">
-              <!--  -->
-              </div>
 
 
             </div>
 
-            <div class="row">
-              <div class="col-sm3">
-                <b>KORIAN</b>
-              </div>
-              <div class="col-sm-3">
 
-              </div>
-              <div class="col-sm3">
-                <b>CHINESE</b>
-              </div>
-              <div class="col-sm-3">
-            <!--     -->
-              </div>
-
-
-            </div>
-
-            <div class="row">
-              <div class="col-sm3">
-                <b>ITALIAN</b>
-              </div>
-              <div class="col-sm-3">
-            <!--    -->
-              </div>
-
-
-
-            </div></div>
-      <br><br>
-      <br><br>
-      <div class="row">
-          <button type="button" name="button">Update Information</button>
-        </div>
-      </div>
-      <div class="right-bl" id="account_info" style="display:none">
+      <div class="right-bl" id="futurePlan" style="display:none">
         <div class="head-block">
           <h1>Future Plans</h1>
         </div>
@@ -481,7 +455,7 @@
           <div class="col-sm-6" style="margin-top:20px">
             <div class="name-head">
           <h1>   Student Name </h1>
-              <p class="info" >Student Email</p>
+
 
             </div>
 
@@ -491,32 +465,108 @@
 
         </div>
         <br><br>
-        <div class="row">
-          <div class="col-sm-6">
-            <p class="info">Mobile Number</p>
-          </div>
-          <div class="col-sm-4">
-            <p class="info">+92334-7584587</p>
-          </div>
-          <div class="col-sm-1">
+        <div class="db">
 
+
+        <div class="row">
+          <div class="col-sm-6" id="infoSec">
+            <b>Desired Degree</b>
           </div>
+          <div class="col-sm-6">
+            {{ current_user.stdpersonalinfo.desired_degree }}
+          </div> </div>
+          <div class="row">
+            <div class="col-md-6" id="infoSec">
+              <b>Desired Subject: </b>
+            </div>
+            <div class="col-md-6">
+              {{ current_user.stdpersonalinfo.desired_subject }}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6" id="infoSec">
+              <b>Desired Country: </b>
+            </div>
+            <div class="col-md-6">
+              {{ current_user.stdpersonalinfo.desired_country }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6" id="infoSec">
+              <b>Available Budget: </b>
+            </div>
+            <div class="col-md-6">
+              {{ current_user.stdpersonalinfo.budget }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6" id="infoSec">
+              <b>Scholaship: </b>
+            </div>
+            <div class="col-md-6">
+              {{ current_user.stdpersonalinfo.scholarships }}
+            </div>
+          </div>
+
+
+        </div></div>
         </div><br><br>
-        <div class="row">
-          <div class="col-sm-6">
 
-            <button type="button" name="button">Change Password</button>
-          </div>
-          <div class="col-sm-6">
-          <button type="button" name="button">Update Information</button>
-          </div>
-        </div>
-      </div>
-</div>
-<script type="text/javascript" src="js/jquery.min.js"></script>
+
+
+
 <!-- Bootsrap JS -->
-<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Bootsrap JS -->
 <!-- Custom JS -->
 <script  src="{% static 'js/custom.js' %}"></script>
+<script type="text/javascript">
+$(document).ready(
+  function(){
+      $("#personal_info_label").click(function () {
+          $("#personal_info").show("slow");
+          $("#qualification_info").hide("slow");
+          $("#account_info").hide("slow");
+          $("#language_skill_info").hide("slow");
+      });
+
+  });
+  $(document).ready(
+    function(){
+        $("#qaulification_info_label").click(function () {
+            $("#qualification_info").show("slow");
+            $("#personal_info").hide("slow");
+            $("#account_info").hide("slow");
+            $("#language_skill_info").hide("slow");
+
+        });
+
+    });
+    $(document).ready(
+      function(){
+          $("#account_info_label").click(function () {
+              $("#account_info").show("slow");
+                $("#qualification_info").hide("slow");
+                  $("#personal_info").hide("slow");
+                    $("#language_skill_info").hide("slow");
+          });
+
+      });
+
+      $(document).ready(
+        function(){
+            $("#language_skill_label ").click(function () {
+                $("#language_skill_info").show("slow");
+                  $("#qualification_info").hide("slow");
+                    $("#personal_info").hide("slow");
+                    $("#account_info").hide("slow");
+            });
+
+        });
+</script>
   </body>
 </html>

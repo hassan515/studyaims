@@ -88,7 +88,7 @@
           <li><a href="blog.html">University Portal</a></li> -->
           {% if user.is_authenticated %}
           <li> Welcome {{ user.first_name }}</li>
-           <a href="{% url "StudyAims:user_login" %}" class="indexLogin" >Logout<span class="icon-more-icon"></span></a>
+           <a href="{% url 'user_logout' %}" class="indexLogin" >Logout<span class="icon-more-icon"></span></a>
 
 
 
@@ -144,12 +144,16 @@
       </div>
       <div class="navbar-collapse collapse" id="navbar">
         <form class="navbar-form navbar-right">
-          <input type="text" placeholder="Search Now" class="form-control">
-          <button class="search-btn"><span class="icon-search-icon"></span></button>
+      <!--    <input type="text" placeholder="Search Now" class="form-control">
+          <button class="search-btn"><span class="icon-search-icon"></span></button> -->
         </form>
         <ul class="nav navbar-nav">
           <li> <a href="index.html">Home</a></li>
+          {% if user.is_authenticated %}
+          <li> <a href="{% url 'StudyAims:search_students' %}">Students</a></li>
+          {% else %}
           <li> <a href="about.html">About</a></li>
+          {% endif %}
           <li class="dropdown"> <a data-toggle="dropdown" href="#">Services <i class="fa fa-angle-down" aria-hidden="true"></i></a>
             <ul class="dropdown-menu">
               <li><a href="course-listing.html">course Listing</a></li>

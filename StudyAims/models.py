@@ -2442,6 +2442,18 @@ class StdPersonalInfo(models.Model):
         (Australia , 'Australia'),
 
     )
+
+
+    CountryOfResidence = 'Country of Residence'
+    Pak = 'Pakistan'
+    Australia = 'Australia'
+
+    CountryOfResidence = (
+        (CountryOfResidence , 'Country of Residence'),
+        (Pak , 'Pakistan'),
+        (Australia , 'Australia'),
+
+    )
     #id = models.OneToOneField(User)
     Scholarships = 'Scholarships'
     Yes = 'Yes'
@@ -2462,7 +2474,7 @@ class StdPersonalInfo(models.Model):
     city = models.CharField(max_length=25,choices=City, default=City,  null=True)
     state = models.CharField(max_length=35, blank=False, default=None , null=True )
     nationality = models.CharField(max_length=35 , blank=False, default=None, null=True )
-    country_of_residence = models.CharField(max_length=35,choices=Country, default=Country, blank=False,  null=True)
+    country_of_residence = models.CharField(max_length=35,choices=CountryOfResidence, default=CountryOfResidence)
 
 
 

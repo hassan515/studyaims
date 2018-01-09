@@ -2482,12 +2482,12 @@ class StdPersonalInfo(models.Model):
     study_gap1 = models.CharField(max_length=20, blank=True, null=True)
     study_gap2 = models.CharField(max_length=20, blank=True, null=True)
     study_gap3 = models.CharField(max_length=20, blank=True, null=True)
-    study_gap4 = models.CharField(max_length=20, blank=True, null=True)
+    #study_gap4 = models.CharField(max_length=20, blank=True, null=True)
     experience = models.CharField(max_length=150, choices = JobExperience, default=JobExperience)
     experience1 = models.CharField(max_length=20, blank=True, null=True)
     experience2 = models.CharField(max_length=20, blank=True, null=True)
     experience3 = models.CharField(max_length=20, blank=True, null=True)
-    experience4 = models.CharField(max_length=20, blank=True, null=True)
+    #experience4 = models.CharField(max_length=20, blank=True, null=True)
     achievements = models.TextField(max_length=400, blank=True, null=True)
 
 
@@ -3264,11 +3264,11 @@ class AgentCompanyInfo(models.Model):
     branches = models.CharField(max_length=250, default= None, blank = True)
     number_of_counselors = models.CharField(max_length=20, default= None, blank = True)
 
-    processing_fee = models.CharField(max_length = 10,choices= ProcessingFee ,default = ProcessingFee, blank =True)
-    language_fee = models.CharField(max_length = 10,choices=LanguageFee, default = LanguageFee, blank=True,null=True,)
-    refusal_fee = models.CharField(max_length = 10,choices=RefusalFee ,default = RefusalFee, blank=True,null=True,)
-    Interview_fee = models.CharField(max_length = 10,choices=InterviewFee,  default = InterviewFee, blank=True,null=True,)
-    scholarshipfee = models.CharField(max_length = 10,choices=ScholarshipFee, default = ScholarshipFee, blank=True,null=True,)
+    processing_fee = models.CharField(max_length = 30,choices= ProcessingFee ,default = ProcessingFee, blank =True)
+    language_fee = models.CharField(max_length = 30,choices=LanguageFee, default = LanguageFee, blank=True,null=True,)
+    refusal_fee = models.CharField(max_length = 30,choices=RefusalFee ,default = RefusalFee, blank=True,null=True,)
+    Interview_fee = models.CharField(max_length = 30,choices=InterviewFee,  default = InterviewFee, blank=True,null=True,)
+    scholarshipfee = models.CharField(max_length = 30,choices=ScholarshipFee, default = ScholarshipFee, blank=True,null=True,)
     def __str__(self):
         return self.user.username
 

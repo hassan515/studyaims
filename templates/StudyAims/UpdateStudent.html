@@ -103,7 +103,11 @@
 
 
 
-
+<ul>
+  {% for errors in form.errors %}
+  <li>{{ form.errors }}</li>
+  {% endfor %}
+</ul>
 
 <div class="" id="personal_information">
 <h1>Personal Information</h1>
@@ -239,18 +243,18 @@
 </div>
  <div class="row">
    <div class="col-sm-6">
-     {{ form.study_gap1}}
+     {{ form.studyGap}}
    </div>
    <div class="col-sm-6">
-     {{ form.study_gap2 }}
+     {{ form.study_gap1 }}
    </div>
  </div>
  <div class="row">
    <div class="col-sm-6">
-     {{ form.study_gap3}}
+     {{ form.study_gap2}}
    </div>
    <div class="col-sm-6">
-     {{ form.study_gap4 }}
+     {{ form.study_gap3 }}
    </div>
  </div>
  <div class="row">
@@ -258,18 +262,19 @@
  </div>
               <div class="row">
                 <div class="col-sm-6">
-                  {{ form.experience1}}
+                  {{ form.experience }}
+
                 </div>
                 <div class="col-sm-6">
-                  {{ form.experience }}
+                    {{ form.experience1}}
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-6">
-                  {{ form.experience3}}
+                  {{ form.experience2}}
                 </div>
                 <div class="col-sm-6">
-                  {{ form.experience4 }}
+                  {{ form.experience2 }}
                 </div>
               </div>
 

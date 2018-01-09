@@ -3,6 +3,25 @@
 
 
 
+function regisration() {
+   document.getElementById('registerationInfo').style.display = "block";
+   document.getElementById('up_to_registrations').style.display = "None";
+}
+
+function services_info() {
+   document.getElementById('agent').style.display = "block";
+   document.getElementById('up_to_services').style.display = "None";
+}
+
+function showSuccess() {
+   document.getElementById('success_stories').style.display = "block";
+   document.getElementById('up_to_success').style.display = "None";
+}
+function showfees() {
+   document.getElementById('agentfee').style.display = "block";
+   document.getElementById('up_to_fee').style.display = "None";
+}
+
 
 
 /* optional dropdown */

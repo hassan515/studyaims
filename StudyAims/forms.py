@@ -79,7 +79,7 @@ class PersonalInfoForm(forms.ModelForm):
     class Meta():
         model = StdPersonalInfo
         #exclude = ('user',)
-        fields = ('gender', 'age','city','country_of_residence','whatsapp','contact_number','any_other_number','address','state','nationality', 'highest_qualification', 'subject', 'program_duration', 'Insititution','from_country', 'percentage', 'passing_year','studyGap' ,'study_gap1','study_gap2', 'study_gap2','study_gap3','study_gap4','experience','experience1','experience2','experience3','experience4','experience4','achievements','english_language', 'english_language_score', 'other_Language','Other_Language_score',
+        fields = ('gender', 'age','city','country_of_residence','whatsapp','contact_number','any_other_number','address','state','nationality', 'highest_qualification', 'subject', 'program_duration', 'Insititution','from_country', 'percentage', 'passing_year','studyGap' ,'study_gap1','study_gap2','study_gap3','experience','experience1','experience2','experience3','achievements','english_language', 'english_language_score', 'other_Language','Other_Language_score',
         'desired_degree','desired_subject','desired_country','scholarships','budget')
 
 #class StdQualificationForm(forms.ModelForm):

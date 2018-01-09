@@ -88,7 +88,7 @@
           <li><a href="blog.html">University Portal</a></li> -->
           {% if user.is_authenticated %}
           <li> Welcome {{ user.first_name }}</li>
-           <a href="{% url 'user_logout' %}" class="indexLogin" >Logout<span class="icon-more-icon"></span></a>
+           <a href="{% url 'StudyAims:user_logout' %}" class="indexLogin" >Logout<span class="icon-more-icon"></span></a>
 
 
 

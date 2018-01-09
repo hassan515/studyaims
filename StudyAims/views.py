@@ -232,6 +232,7 @@ def update_personal(request):
 
     else:
         form = PersonalInfoForm()
+        print(form.errors)
     return render(request,'StudyAims/UpdateStudent.html', {'form': form})
 
 #@login_required

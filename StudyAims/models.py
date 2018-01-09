@@ -2483,11 +2483,11 @@ class StdPersonalInfo(models.Model):
     #user = models.OneToOneField(User)
     #std_qual_id = models.ForeignKey(RegisterStudent,related_name="std_qual_id")
     #student = models.ForeignKey('name', related_name='Student')
-    highest_qualification = models.CharField(max_length=35, choices = Degree, default= Degree)
+    highest_qualification = models.CharField(max_length=500 , choices = Degree, default= Degree)
     subject = models.CharField(max_length=50,choices = Subject, default= Subject )
     program_duration = models.CharField(max_length=20 , choices = Program_Duration, default= Program_Duration)
     Insititution = models.CharField(max_length=200, blank=False)
-    from_country = models.CharField(max_length=35, choices = Country, default= Country)
+    from_country = models.CharField(max_length=500 , choices = Country, default= Country)
     percentage = models.CharField(max_length=10)
     passing_year = models.CharField(max_length=10, choices = PassingYear, default=PassingYear)
     studyGap = models.CharField(max_length=150, choices = StudyGap, default=StudyGap)
@@ -2510,11 +2510,11 @@ class StdPersonalInfo(models.Model):
     Other_Language_score = models.CharField(max_length=10, null=True,default= None)
 
     #Future Plans part
-    desired_degree = models.CharField(max_length=35, null=True,  choices = DesiredDegree, default = DesiredDegree)
-    desired_subject = models.CharField(max_length=35, null=True ,choices = DesireSubject,  default= DesireSubject)
-    desired_country = models.CharField(max_length=35, null=True,choices = Country,  default= Country)
-    scholarships = models.CharField(max_length=35, null=True,choices= Scholarships,  default= Scholarships)
-    budget = models.CharField(max_length=25, null=True, default= None)
+    desired_degree = models.CharField(max_length=500 , null=True,  choices = DesiredDegree, default = DesiredDegree)
+    desired_subject = models.CharField(max_length=500 , null=True ,choices = DesireSubject,  default= DesireSubject)
+    desired_country = models.CharField(max_length=500 , null=True,choices = Country,  default= Country)
+    scholarships = models.CharField(max_length=500 , null=True,choices= Scholarships,  default= Scholarships)
+    budget = models.CharField(max_length=500 , null=True, default= None)
 
     def __str__(self):
         return self.user.username
@@ -3239,9 +3239,9 @@ class AgentCompanyInfo(models.Model):
     facebook_link =  models.URLField( blank = True, null=True)
     linked_In = models.URLField(blank = True, null=True)
     office_contact = models.CharField(max_length=50 , default= None)
-    agent_city = models.CharField(max_length=35 , default= None)
-    agent_state = models.CharField(max_length=35 , default= None)
-    agent_country =  models.CharField(max_length=35 , choices = Country, default= Country)
+    agent_city = models.CharField(max_length=500  , default= None)
+    agent_state = models.CharField(max_length=500  , default= None)
+    agent_country =  models.CharField(max_length=500  , choices = Country, default= Country)
 
     pak_registeration_body1 = models.CharField(max_length=200, blank=True ,null=True,  default= None)
     pak_registeration_body2 = models.CharField(max_length=400, blank=True ,null=True, default= None)

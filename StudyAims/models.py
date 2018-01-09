@@ -2471,10 +2471,10 @@ class StdPersonalInfo(models.Model):
     contact_number = models.CharField(max_length = 15,blank=False, default=None, unique = True)
     any_other_number = models.CharField(max_length = 15,blank=True,)
     address = models.CharField(max_length=500, default= None , null=True)
-    city = models.CharField(max_length=25,choices=City, default=City,  null=True)
-    state = models.CharField(max_length=35, blank=False, default=None , null=True )
-    nationality = models.CharField(max_length=35 , blank=False, default=None, null=True )
-    country_of_residence = models.CharField(max_length=35,choices=CountryOfResidence, default=CountryOfResidence)
+    city = models.CharField(max_length=500,choices=City, default=City,  null=True)
+    state = models.CharField(max_length=500, blank=False, default=None , null=True )
+    nationality = models.CharField(max_length=500 , blank=False, default=None, null=True )
+    country_of_residence = models.CharField(max_length=500 ,choices=CountryOfResidence, default=CountryOfResidence)
 
 
 

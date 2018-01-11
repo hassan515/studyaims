@@ -68,11 +68,19 @@
         <!--  <li><a href="register.html">Student Portal</a></li>
           <li><a href="apply-online.html">Agent Portal</a></li>
           <li><a href="blog.html">University Portal</a></li> -->
+          {% if user.is_authenticated %}
+          <li> Welcome {{ user.first_name }}</li>
+           <a href="{% url "StudyAims:user_login" %}" class="indexLogin" >Logout<span class="icon-more-icon"></span></a>
+
+
+
+           {% else %}
           <li><a href="{% url "StudyAims:register_student" %}">Register</a></li>
 
 
-         <a href="{% url "StudyAims:user_login" %}" class="indexLogin" >Login <span class="icon-more-icon"></span></a>
+         <a href="{% url "StudyAims:user_login" %}" class="indexLogin" >Login <span class="icon-more-icon"></span></a>{% endif %}
 </ul>
+
       <!--  <div class="lang-wrapper">
       class="login"
           <div class="select-lang">
@@ -217,9 +225,9 @@
 </div>
 
 
-<div class="right-bl"  id="personal_info">
+<div class="right-bl"  id="company_info">
   <div class="head-block">
-    <h1>Personal Information    </h1>
+    <h1>Company Information </h1>
   </div>
   <br>
 
@@ -567,17 +575,7 @@ $(document).ready(
       });
 
   });
-  $(document).ready(
-    function(){
-        $("#edit_Infomration").click(function () {
-            $("#info_edit").show("slow");
-            $("#personal_info").hide("slow");
-            $("#qualification_info").hide("slow");
-            $("#account_info").hide("slow");
-            $("#language_skill_info").hide("slow");
-        });
 
-    });
   $(document).ready(
     function(){
         $("#qaulification_info_label").click(function () {

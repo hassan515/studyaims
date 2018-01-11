@@ -1787,7 +1787,7 @@ class StdPersonalInfo(models.Model):
     Y2018 = '2018'
 
     PassingYear = (
-
+            (PassingYear , 'Passing Year'),
             (Y1990 , '1990'),
             (Y1991 , '1991'),
             (Y1992 , '1992'),
@@ -2491,14 +2491,14 @@ class StdPersonalInfo(models.Model):
     percentage = models.CharField(max_length=250)
     passing_year = models.CharField(max_length=250, choices = PassingYear, default=PassingYear)
     studyGap = models.CharField(max_length=250, choices = StudyGap, default=StudyGap)
-    study_gap1 = models.CharField(max_length=250, blank=True, null=True)
-    study_gap2 = models.CharField(max_length=250, blank=True, null=True)
-    study_gap3 = models.CharField(max_length=250, blank=True, null=True)
+    #study_gap1 = models.CharField(max_length=250, blank=True, null=True)
+    #study_gap2 = models.CharField(max_length=250, blank=True, null=True)
+    #study_gap3 = models.CharField(max_length=250, blank=True, null=True)
     #study_gap4 = models.CharField(max_length=20, blank=True, null=True)
     experience = models.CharField(max_length=250, choices = JobExperience, default=JobExperience)
-    experience1 = models.CharField(max_length=250, blank=True, null=True)
-    experience2 = models.CharField(max_length=250, blank=True, null=True)
-    experience3 = models.CharField(max_length=250, blank=True, null=True)
+    #experience1 = models.CharField(max_length=250, blank=True, null=True)
+    #experience2 = models.CharField(max_length=250, blank=True, null=True)
+    #experience3 = models.CharField(max_length=250, blank=True, null=True)
     #experience4 = models.CharField(max_length=20, blank=True, null=True)
     achievements = models.TextField(max_length=400, blank=True, null=True)
 

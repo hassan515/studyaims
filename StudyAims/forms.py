@@ -70,8 +70,17 @@ class PersonalInfoForm(forms.ModelForm):
 
     #city = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'City'}),
     #             )
+    Insititution = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'From Institute'}),
+                 )
+    percentage = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Percentage'}),
+                 )
 
-
+    budget = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Budget'}),
+                 )
+    english_language_score =  forms.CharField(widget=forms.TextInput(attrs={'placeholder':'English Language Score'}),
+                 )
+    Other_Language_score =    forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Language Score'}),
+                 )
     #country_of_residence = forms.ModelChoiceField(queryset= Countries.objects.all().order_by('country_name'), to_field_name="country_name" ,)
     #city = forms.ModelChoiceField(queryset= CityList.objects.all().order_by('city_name'), to_field_name="city_name")
 
@@ -79,7 +88,7 @@ class PersonalInfoForm(forms.ModelForm):
     class Meta():
         model = StdPersonalInfo
         #exclude = ('user',)
-        fields = ('gender', 'age','city','country_of_residence','whatsapp','contact_number','any_other_number','address','state','nationality', 'highest_qualification', 'subject', 'program_duration', 'Insititution','from_country', 'percentage', 'passing_year','studyGap' ,'study_gap1','study_gap2','study_gap3','experience','experience1','experience2','experience3','achievements','english_language', 'english_language_score', 'other_Language','Other_Language_score',
+        fields = ('gender', 'age','city','country_of_residence','whatsapp','contact_number','any_other_number','address','state','nationality', 'highest_qualification', 'subject', 'program_duration', 'Insititution','from_country', 'percentage', 'passing_year','studyGap' ,'experience','achievements','english_language', 'english_language_score', 'other_Language','Other_Language_score',
         'desired_degree','desired_subject','desired_country','scholarships','budget')
 
 #class StdQualificationForm(forms.ModelForm):

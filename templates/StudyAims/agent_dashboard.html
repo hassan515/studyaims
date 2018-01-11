@@ -196,8 +196,8 @@
     <a href="#">  <label for="" id="language_skill_label">Your Expertise</label><br></a></li>
     <li>
       <a href="#">  <label for="" id="language_skill_label">Fee Information</label><br></a></li>
-      <a href="#">  <label for="" id="language_skill_label">Edit Your Profile</label><br></a></li>
-        <a href="#">  <label for="" id="language_skill_label">Change Password</label><br></a></li>
+    <a href="{% url 'StudyAims:profile_edit' pk=user.pk %}">  <label for="" id="edit_Infomration">Edit Information</label><br></a></li>
+        <a href="{% url 'StudyAims:change_password' %}">  <label for="" id="change_password">Change Password</label><br></a></li>
   </ul>
   </div>
 
@@ -249,7 +249,7 @@
 
 <div class="right-bl" style="display:none" id="personal_info">
   <div class="head-block">
-    <h1>Company Information        <button type="button" name="button"> Edit <span class="glyphicon glyphicon-pencil"></span></button>    </h1>
+    <h1>Company Information       <button type="button" name="button"> Edit <span class="glyphicon glyphicon-pencil"></span></button>    </h1>
   </div>
 <div class="db">
 
@@ -270,13 +270,13 @@
         <b>Owner Name</b>
       </div>
       <div class="col-sm-3">
-        {{current_user.agentcomanyinfo.company_owner}}
+        {{current_user.agentcompanyinfo.company_owner}}
       </div>
       <div class="col-sm-3">
         <b>Mobile Number</b>
       </div>
       <div class="col-sm-3">
-        {{current_user.agentmobilenumber.agent_contact_number}}
+        {{current_user.agentcompanyinfo.agent_contact_number}}
       </div>
     </div>
 <div class="row">
@@ -286,13 +286,13 @@
       <b>WhatsApp Number</b>
     </div>
     <div class="col-sm-3">
-      {{current_user.agentcomanyinfo.agent_whatsapp}}
+      {{current_user.agentcompanyinfo.agent_whatsapp}}
     </div>
     <div class="col-sm-3">
       <b>Alternative Email</b>
     </div>
     <div class="col-sm-3">
-      {{current_user.agentcomanyinfo.alternative_email}}
+      {{current_user.agentcompanyinfo.alternative_email}}
     </div>
 </div>
 <div class="row">
@@ -302,7 +302,7 @@
       <b>Address</b>
     </div>
     <div class="col-sm-9">
-      {{current_user.agentcomanyinfo.address}}
+      {{current_user.agentcompanyinfo.address}}
     </div>
 
 </div>
@@ -313,19 +313,19 @@
       <b>City</b>
     </div>
     <div class="col-sm-2">
-      {{current_user.agentcomanyinfo.agent_city}}
+      {{current_user.agentcompanyinfo.agent_city}}
     </div>
     <div class="col-sm-2">
       <b>State</b>
     </div>
     <div class="col-sm-2">
-      {{current_user.agentcomanyinfo.agent_state}}
+      {{current_user.agentcompanyinfo.agent_state}}
     </div>
     <div class="col-sm-2">
       <b>Country</b>
     </div>
     <div class="col-sm-2">
-      {{current_user.agentcomanyinfo.agent_country}}
+      {{current_user.agentcompanyinfo.agent_country}}
     </div>
 </div>
 <div class="row">
@@ -333,13 +333,13 @@
     <b>Office Contact</b>
   </div>
   <div class="col-sm-3">
-    {{current_user.agentcomanyinfo.office_contact}}
+    {{current_user.agentcompanyinfo.office_contact}}
   </div>
   <div class="col-sm-3">
     <b>Company Website</b>
   </div>
   <div class="col-sm-3">
-    {{current_user.agentcomanyinfo.agent_website}}
+    {{current_user.agentcompanyinfo.agent_website}}
   </div>
 
 </div>
@@ -348,13 +348,12 @@
     <b>Facebook URL</b>
   </div>
   <div class="col-sm-3">
-    {{current_user.agentcomanyinfo.facebook_link}
-  </div>
+    {{current_user.agentcompanyinfo.facebook_link}}
   <div class="col-sm-3">
     <b>LinkedIn URL</b>
   </div>
   <div class="col-sm-3">
-    {{current_user.agentcomanyinfo.linked_In}}
+    {{current_user.agentcompanyinfo.linked_In}}
   </div>
 
 </div>
@@ -368,7 +367,7 @@
 
   </div>
 
-  <div class="right-bl" style="display:none" id="personal_info">
+  <div class="right-bl" style="display:none" id="company_registeration">
     <div class="head-block">
       <h1>Company Registration Information</h1>
     </div>
@@ -757,10 +756,57 @@
 
 
 </div>
-<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <!-- Bootsrap JS -->
-<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
 <!-- Custom JS -->
 <script  src="{% static 'js/custom.js' %}"></script>
+<script type="text/javascript">
+$(document).ready(
+  function(){
+      $("#personal_info_label").click(function () {
+          $("#personal_info").show("slow");
+          $("#qualification_info").hide("slow");
+          $("#account_info").hide("slow");
+          $("#language_skill_info").hide("slow");
+      });
+
+  });
+
+  $(document).ready(
+    function(){
+        $("#qaulification_info_label").click(function () {
+            $("#qualification_info").show("slow");
+            $("#personal_info").hide("slow");
+            $("#account_info").hide("slow");
+            $("#language_skill_info").hide("slow");
+
+        });
+
+    });
+    $(document).ready(
+      function(){
+          $("#account_info_label").click(function () {
+              $("#account_info").show("slow");
+                $("#qualification_info").hide("slow");
+                  $("#personal_info").hide("slow");
+                    $("#language_skill_info").hide("slow");
+          });
+
+      });
+
+      $(document).ready(
+        function(){
+            $("#language_skill_label ").click(function () {
+                $("#language_skill_info").show("slow");
+                  $("#qualification_info").hide("slow");
+                    $("#personal_info").hide("slow");
+                    $("#account_info").hide("slow");
+            });
+
+        });
+</script>
   </body>
 </html>

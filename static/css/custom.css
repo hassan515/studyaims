@@ -82,6 +82,7 @@ body{
   padding-left: 20px;
   padding-right: 20px;
   text-transform: uppercase;
+
 }
 .dashboard .head-block{
 
@@ -172,7 +173,9 @@ body{
   border-bottom:  1px solid #919e9e;
   border-right: 1px solid #919e9e;
 
+
 }
+
 .dashboard label{
   margin-top: 15px;
   margin-left: 15px;

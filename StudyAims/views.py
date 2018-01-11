@@ -49,6 +49,25 @@ def profile_edit(request, pk):
 
 
 @login_required
+def agent_profile_edit(request, pk):
+    #personal = get_object_or_404(StdPersonalInfo, pk=pk)
+    related = User.objects.select_related().all()
+    user = get_object_or_404(related, pk=pk)
+    profile = user.stdpersonalinfo
+    profile_form = PersonalInfoForm(data=request.POST, instance=profile)
+    if request.method == "POST":
+        profile_form = PersonalInfoForm(request.POST,instance=profile )
+        if profile_form.is_valid():
+            profile = profile_form.save(commit=False)
+            profile.user = request.user
+            #post.published_date = timezone.now()
+            profile.save()
+            return redirect('/StudyAims/dashboard')
+    else:
+        profile_form = PersonalInfoForm( instance=profile)
+    return render(request, 'StudyAims/edit-information.html', {'profile_form': profile_form, 'pk':pk, 'user':user })
+
+@login_required
 def change_password(request):
     if request.method == 'POST':
         form = PasswordChangeForm(request.user, request.POST)

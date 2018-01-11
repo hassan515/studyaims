@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^update_profile_pic/', views.update_profile_pic , name='update_profile_pic'),
     url(r'^agent_dashboard/', views.agent_dashboard , name = 'agent_dashboard') ,
     url(r'^profile_edit/(?P<pk>\d+)/$', views.profile_edit, name='profile_edit'),
+    url(r'^agent_profile_edit/(?P<pk>\d+)/$', views.agent_profile_edit, name='agent_profile_edit'),
     url(r'^change_password/$', views.change_password, name='change_password'),
     #url(r'^student_search/', views.student_search , name = 'student_search') ,
     url(r'^search_students/', views.search_students, name='search_students'),

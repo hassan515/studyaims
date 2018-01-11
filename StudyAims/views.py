@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect ,  get_object_or_404
 from django.conf import settings
+from django.contrib import messages
+from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse, reverse_lazy
@@ -9,14 +11,59 @@ from django.template.context_processors import csrf
 from django.contrib.auth.models import User, Group
 from django.db.models import Q
 from StudyAims.models import StdPersonalInfo,  StudentLanguage, UserType , StudentFuture, AgentCompanyInfo
-from StudyAims.forms import  PersonalInfoForm, RegisterStudentForm, StudentLanguageForm, StudentFutureForm, StudentImageForm,  AgentCompanyInfoForm, AgentCompanyRegisterationInfoForm, AgentExpertiseForm, AgentLogoForm , AgentServicesOfferedForm
+from StudyAims.forms import   PersonalInfoForm, RegisterStudentForm, StudentLanguageForm, StudentFutureForm, StudentImageForm,  AgentCompanyInfoForm, AgentCompanyRegisterationInfoForm, AgentExpertiseForm, AgentLogoForm , AgentServicesOfferedForm
 from StudyAims.filters import UserFilter, FilterAgents
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.forms import PasswordChangeForm
+from django.views.generic import (TemplateView,ListView,DeleteView,DetailView,UpdateView,CreateView)
+
+class ProfileEditView(LoginRequiredMixin,UpdateView):
+    login_url = '/login/'
+    #redirect_field_name = 'StudyAims/dashboard.html'
+    #form_class = PersonalInfoForm
+    model = StdPersonalInfo
+    fields = ['gender', 'age','city','country_of_residence','whatsapp','contact_number',]
+
 def index(request):
 
     return render(request, "StudyAims/index.html")
+@login_required
+def profile_edit(request, pk):
+    #personal = get_object_or_404(StdPersonalInfo, pk=pk)
+    related = User.objects.select_related().all()
+    user = get_object_or_404(related, pk=pk)
+    profile = user.stdpersonalinfo
+    profile_form = PersonalInfoForm(data=request.POST, instance=profile)
+    if request.method == "POST":
+        profile_form = PersonalInfoForm(request.POST,instance=profile )
+        if profile_form.is_valid():
+            profile = profile_form.save(commit=False)
+            profile.user = request.user
+            #post.published_date = timezone.now()
+            profile.save()
+            return redirect('/StudyAims/dashboard')
+    else:
+        profile_form = PersonalInfoForm( instance=profile)
+    return render(request, 'StudyAims/edit-information.html', {'profile_form': profile_form, 'pk':pk, 'user':user })
 
 
+@login_required
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)  # Important!
+            messages.success(request, 'Your password was successfully updated!')
+            return redirect('/StudyAims/dashboard')
+        else:
+            messages.error(request, 'Please correct the error below.')
+    else:
+        form = PasswordChangeForm(request.user)
+    return render(request, 'StudyAims/change-password.html', {
+        'form': form
+    })
 
 @login_required
 def search_students(request):

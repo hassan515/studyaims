@@ -92,6 +92,15 @@ body{
   padding-bottom: 5px;
   text-align: center;
 }
+.information-block .edit-head{
+
+  border-top:  1px solid #919e9e;
+  border-bottom:  1px solid #919e9e;
+  background: #eee;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+}
 .left-bl{
   width: 30%;
   border-left: 1px solid #919e9e;

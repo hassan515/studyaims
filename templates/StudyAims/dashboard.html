@@ -171,6 +171,10 @@
   </li>
 <li>
   <a href="#">  <label for="" id="language_skill_label">Language Skill</label><br></a></li>
+  <li>
+    <a href="{% url 'StudyAims:profile_edit' pk=user.pk %}">  <label for="" id="edit_Infomration">Edit Information</label><br></a></li>
+    <li>
+      <a href="{% url 'StudyAims:change_password' %}">  <label for="" id="change_password">Change Password</label><br></a></li>
   </ul>
   </div>
 
@@ -257,7 +261,7 @@
   <b>Mobile Number</b>
 </div>
 <div class="col-sm-6">
-
+{{current_user.stdpersonalinfo.contact_number}}
 </div></div>
 <div class="row">
 
@@ -284,7 +288,8 @@
   <b>Address</b>
 </div>
 <div class="col-sm-6">
-{{current_user.studentpersonalinfo.address}}
+  {{current_user.stdpersonalinfo.address}}
+
 </div>
 </div>
 <div class="row">
@@ -292,7 +297,8 @@
     <b>State / Province</b>
   </div>
   <div class="col-sm-6">
-{{current_user.studentpersonalinfo.state}}
+    {{current_user.stdpersonalinfo.state}}
+
   </div>
 
 
@@ -302,7 +308,8 @@
     <b>City</b>
   </div>
   <div class="col-sm-6">
-{{current_user.studentpersonalinfo.city}}
+    {{current_user.stdpersonalinfo.city}}
+
   </div>
 </div>
 
@@ -311,7 +318,8 @@
     <b>Nationality</b>
   </div>
   <div class="col-sm-6">
-  {{current_user.studentpersonalinfo.nationality}}
+    {{current_user.stdpersonalinfo.nationality}}
+
   </div>
 
 
@@ -321,7 +329,8 @@
     <b>Country Of Residence</b>
   </div>
   <div class="col-sm-6">
-  {{current_user.studentpersonalinfo.country_of_residence}}
+    {{current_user.stdpersonalinfo.country_of_residence}}
+
   </div>
 </div>
 </div>
@@ -343,7 +352,8 @@
       <b>Last Qualification</b>
     </div>
     <div class="col-sm-6">
-      {{ current_user.stdpersonalinfo.highestQualification }}
+
+      {{ current_user.stdpersonalinfo.highest_qualification }}
     </div>
   </div>
 
@@ -511,6 +521,28 @@
 
 
         </div></div>
+        <div class="right-bl"  id="info_edit"  style="display:none">
+          <div class="head-block">
+            <h1>Edit Profile   </h1>
+          </div>
+          <br>
+
+        <div class="db">
+<form class="" action="" method="post">
+{{ form.as_p }}
+</form>
+        </div></div>
+        <div class="right-bl"  id="info_edit"  style="display:none">
+          <div class="head-block">
+            <h1>Edit Profile   </h1>
+          </div>
+          <br>
+
+        <div class="db">
+        <form class="" action="" method="post">
+          {% csrf_token %}
+            </form>
+        </div></div>
         </div><br><br>
 
 
@@ -535,6 +567,17 @@ $(document).ready(
       });
 
   });
+  $(document).ready(
+    function(){
+        $("#edit_Infomration").click(function () {
+            $("#info_edit").show("slow");
+            $("#personal_info").hide("slow");
+            $("#qualification_info").hide("slow");
+            $("#account_info").hide("slow");
+            $("#language_skill_info").hide("slow");
+        });
+
+    });
   $(document).ready(
     function(){
         $("#qaulification_info_label").click(function () {
@@ -570,3 +613,4 @@ $(document).ready(
 </script>
   </body>
 </html>
+tml>

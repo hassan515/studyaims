@@ -186,16 +186,16 @@
 <li>
   <a href="#"> <b> <label for="" id="account_info_label">Account Information</label></b></a></li>
   <li>
-  <a href="#">  <label for="" id="personal_info_label">Company Information</label><br></a></li>
+  <a href="#">  <label for="" id="_label">Company Information</label><br></a></li>
 <li>
-  <a href="#">  <label for="" id="qaulification_info_label">Company Registration Information</label><br></a>
+  <a href="#">  <label for="" id="_info_label">Company Registration Information</label><br></a>
   </li>
 <li>
-  <a href="#">  <label for="" id="language_skill_label">Services Information</label><br></a></li>
+  <a href="#">  <label for="" id="_skill_label">Services Information</label><br></a></li>
   <li>
-    <a href="#">  <label for="" id="language_skill_label">Your Expertise</label><br></a></li>
+    <a href="#">  <label for="" id="_skill_label">Your Expertise</label><br></a></li>
     <li>
-      <a href="#">  <label for="" id="language_skill_label">Fee Information</label><br></a></li>
+      <a href="#">  <label for="" id="_skill_label">Fee Information</label><br></a></li>
     <a href="{% url 'StudyAims:profile_edit' pk=user.pk %}">  <label for="" id="edit_Infomration">Edit Information</label><br></a></li>
         <a href="{% url 'StudyAims:change_password' %}">  <label for="" id="change_password">Change Password</label><br></a></li>
   </ul>
@@ -763,50 +763,6 @@
 <!-- Bootsrap JS -->
 <!-- Custom JS -->
 <script  src="{% static 'js/custom.js' %}"></script>
-<script type="text/javascript">
-$(document).ready(
-  function(){
-      $("#personal_info_label").click(function () {
-          $("#personal_info").show("slow");
-          $("#qualification_info").hide("slow");
-          $("#account_info").hide("slow");
-          $("#language_skill_info").hide("slow");
-      });
 
-  });
-
-  $(document).ready(
-    function(){
-        $("#qaulification_info_label").click(function () {
-            $("#qualification_info").show("slow");
-            $("#personal_info").hide("slow");
-            $("#account_info").hide("slow");
-            $("#language_skill_info").hide("slow");
-
-        });
-
-    });
-    $(document).ready(
-      function(){
-          $("#account_info_label").click(function () {
-              $("#account_info").show("slow");
-                $("#qualification_info").hide("slow");
-                  $("#personal_info").hide("slow");
-                    $("#language_skill_info").hide("slow");
-          });
-
-      });
-
-      $(document).ready(
-        function(){
-            $("#language_skill_label ").click(function () {
-                $("#language_skill_info").show("slow");
-                  $("#qualification_info").hide("slow");
-                    $("#personal_info").hide("slow");
-                    $("#account_info").hide("slow");
-            });
-
-        });
-</script>
   </body>
 </html>

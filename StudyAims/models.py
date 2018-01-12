@@ -1821,12 +1821,14 @@ class StdPersonalInfo(models.Model):
 
 
     English_Language = 'English_Language'
+    NoLanguage = 'No Language'
     IELTS = 'IELTS'
     TOEFL = 'TOEFL'
     PTE = 'PTE'
     Oher = 'Oher'
     English_Language = (
         (English_Language,'English_Language'),
+        (NoLanguage , 'No Language'),
         (IELTS, 'IELTS'),
         (TOEFL, 'TOEFL'),
         (PTE, 'PTE'),
@@ -2420,14 +2422,14 @@ class StdPersonalInfo(models.Model):
 
 
 
-    Program_Duration = 'Program Duration'
+    ProgramDuration = 'Program Duration'
     Years_2 = '2 Years'
     Years_3 = '3 Years'
     Years_4 = '4 Years'
 
 
-    Program_Duration = (
-        (Program_Duration , 'Program Duration'),
+    ProgramDuration = (
+        (ProgramDuration , 'Program Duration'),
         (Years_2  , '2 Years'),
         (Years_3  , '3 Years'),
         (Years_4 , '4 Years')
@@ -2485,17 +2487,17 @@ class StdPersonalInfo(models.Model):
     #student = models.ForeignKey('name', related_name='Student')
     highest_qualification = models.CharField(max_length=500 , choices = Degree, default= Degree)
     subject = models.CharField(max_length=250,choices = Subject, default= Subject )
-    program_duration = models.CharField(max_length=250 , choices = Program_Duration, default= Program_Duration)
+    program_duration = models.CharField(max_length=250 , choices = ProgramDuration, default= ProgramDuration)
     Insititution = models.CharField(max_length=200, blank=False)
     from_country = models.CharField(max_length=500 , choices = Country, default= Country)
     percentage = models.CharField(max_length=250)
     passing_year = models.CharField(max_length=250, choices = PassingYear, default=PassingYear)
-    studyGap = models.CharField(max_length=250, choices = StudyGap, default=StudyGap)
+    studyGap = models.CharField(max_length=250, choices = StudyGap, default=StudyGap, blank= True, null = True)
     #study_gap1 = models.CharField(max_length=250, blank=True, null=True)
     #study_gap2 = models.CharField(max_length=250, blank=True, null=True)
     #study_gap3 = models.CharField(max_length=250, blank=True, null=True)
     #study_gap4 = models.CharField(max_length=20, blank=True, null=True)
-    experience = models.CharField(max_length=250, choices = JobExperience, default=JobExperience)
+    experience = models.CharField(max_length=250, choices = JobExperience, default=JobExperience, blank= True, null = True)
     #experience1 = models.CharField(max_length=250, blank=True, null=True)
     #experience2 = models.CharField(max_length=250, blank=True, null=True)
     #experience3 = models.CharField(max_length=250, blank=True, null=True)
@@ -2504,10 +2506,10 @@ class StdPersonalInfo(models.Model):
 
 
     #Language part
-    english_language =  models.CharField(max_length=250,choices=English_Language, default=English_Language, null=True )
-    english_language_score = models.CharField(max_length=250, null=True ,default= None)
-    other_Language = models.CharField(max_length=250,choices=OtherLanguage, default=OtherLanguage, null=True )
-    Other_Language_score = models.CharField(max_length=250, null=True,default= None)
+    english_language =  models.CharField(max_length=250,choices=English_Language, default=English_Language, blank= True, null = True )
+    english_language_score = models.CharField(max_length=250, blank= True, null = True ,default= None)
+    other_Language = models.CharField(max_length=250,choices=OtherLanguage, default=OtherLanguage, blank= True, null = True )
+    Other_Language_score = models.CharField(max_length=250, blank= True, null = True,default= None)
 
     #Future Plans part
     desired_degree = models.CharField(max_length=500 , null=True,  choices = DesiredDegree, default = DesiredDegree)

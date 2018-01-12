@@ -1641,6 +1641,7 @@ class StdPersonalInfo(models.Model):
     )
 
     StudyGap = 'Study Gap'
+    NoGap = 'No Gap'
     Monthto3Months = '1 - Month to 3-Months'
     Monthto6Month = '3- Month to 6-Months'
     Yearto15Year = '1-Year to 1.5-Years'
@@ -1663,6 +1664,7 @@ class StdPersonalInfo(models.Model):
     Yearsto10Years = '9.5-Years to 10-Years'
     Other = 'Other'
     StudyGap = (
+    (NoGap , 'No Gap'),
     (StudyGap , 'Study Gap'),
     (Monthto3Months , '1- Month to 3-Months'),
     (Monthto6Month , '3- Month to 6-Months'),
@@ -1688,6 +1690,7 @@ class StdPersonalInfo(models.Model):
     )
 
     JobExperience = 'Job Experience'
+    NoExperience = 'No Experience'
     Monthto3Months = '1 - Month to 3-Months'
     Monthto6Month = '3- Month to 6-Months'
     Yearto15Year = '1-Year to 1.5-Years'
@@ -1710,6 +1713,7 @@ class StdPersonalInfo(models.Model):
     Yearsto10Years = '9.5-Years to 10-Years'
     Other = 'Other'
     JobExperience = (
+    (NoExperience , 'No Experience'),
     (JobExperience , 'Job Experience'),
     (Monthto3Months , '1- Month to 3-Months'),
     (Monthto6Month , '3- Month to 6-Months'),
@@ -1832,10 +1836,10 @@ class StdPersonalInfo(models.Model):
         (IELTS, 'IELTS'),
         (TOEFL, 'TOEFL'),
         (PTE, 'PTE'),
-        (Oher, 'Oher'),
+        (Other, 'Other'),
         )
 
-    OtherLanguage = 'Other_Language'
+    OtherLanguage = 'Other Language'
     German = 'German'
     Chinese = 'Chinese'
     Japanese = 'Japanese'

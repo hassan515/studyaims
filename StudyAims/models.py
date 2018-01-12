@@ -3043,7 +3043,7 @@ class AgentCompanyInfo(models.Model):
 
 
     ProcessingFee = (
-
+        (ProcessingFee ,  'Processing Fee'),
     	(zerofivek ,'0-5000'),
     	(fivektenk  ,'5000-10,000'),
     	(tenkfifteenk,  '10,000-15000'),
@@ -3086,7 +3086,7 @@ class AgentCompanyInfo(models.Model):
 
 
     LanguageFee = (
-
+        (LanguageFee ,  'Language Fees'),
     	(zerofivek ,'0-5000'),
     	(fivektenk  ,'5000-10,000'),
     	(tenkfifteenk,  '10,000-15000'),
@@ -3129,7 +3129,7 @@ class AgentCompanyInfo(models.Model):
 
 
     RefusalFee = (
-
+        (RefusalFee ,  'Refusal Fee'),
     	(zerofivek ,'0-5000'),
     	(fivektenk  ,'5000-10,000'),
     	(tenkfifteenk,  '10,000-15000'),
@@ -3172,7 +3172,7 @@ class AgentCompanyInfo(models.Model):
 
 
     InterviewFee = (
-
+            (InterviewFee ,  'Interview Fees'),
         	(zerofivek ,'0-5000'),
         	(fivektenk  ,'5000-10,000'),
         	(tenkfifteenk,  '10,000-15000'),
@@ -3216,7 +3216,7 @@ class AgentCompanyInfo(models.Model):
     onefiftyto200 = '150,000-200,000'
 
     ScholarshipFee = (
-
+            (ScholarshipFee, 'Scholarship Fees'),
         	(zerofivek ,'0-5000'),
         	(fivektenk  ,'5000-10,000'),
         	(tenkfifteenk,  '10,000-15000'),
@@ -3290,7 +3290,7 @@ class AgentCompanyInfo(models.Model):
     language_fee = models.CharField(max_length = 400,choices=LanguageFee, default = LanguageFee, blank=True,null=True,)
     refusal_fee = models.CharField(max_length = 400,choices=RefusalFee ,default = RefusalFee, blank=True,null=True,)
     Interview_fee = models.CharField(max_length =400,choices=InterviewFee,  default = InterviewFee, blank=True,null=True,)
-    scholarshipfee = models.CharField(max_length =400,choices=ScholarshipFee, default = ScholarshipFee, blank=True,null=True,)
+    scholarshipfee = models.CharField(max_length =400, choices=ScholarshipFee, default = ScholarshipFee, blank=True, null=True,)
     def __str__(self):
         return self.user.username
 

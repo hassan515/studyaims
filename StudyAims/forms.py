@@ -236,7 +236,7 @@ class AgentCompanyInfoForm(forms.ModelForm):
         fields = ('comp_name','service_type','company_owner','agent_whatsapp','address','alternative_email','agent_website','facebook_link','linked_In','office_contact','agent_city','agent_state','agent_country',
         'pak_registeration_body1','pak_registeration_body2','pak_registeration_body3','pak_registeration_body4','pak_registeration_body5','pak_registeration_body6','Internatiol_registeration_body1','Internatiol_registeration_body2','Internatiol_registeration_body3',
             'Internatiol_registeration_body4','Internatiol_registeration_body5','Internatiol_registeration_body6','countries_Dealing','service_type','language_classes','program_specialist','refusal_appeals','scholarships_offered','interview_preparation','travel_and_health','travel_arrangements',
-            'visa_ratio','experience','regional_office','branches','number_of_counselors','processing_fee','language_fee','refusal_fee','Interview_fee')
+            'visa_ratio','experience','regional_office','branches','number_of_counselors','processing_fee','language_fee','refusal_fee','Interview_fee','scholarshipfee')
 
 
 class AgentCompanyRegisterationInfoForm(forms.ModelForm):

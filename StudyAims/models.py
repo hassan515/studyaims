@@ -207,6 +207,1099 @@ class Profile(models.Model):
 class StdPersonalInfo(models.Model):
     user = models.OneToOneField(User)
 
+    AffordableBudget = 'Affordable Budget'
+    Lessthan1k = 'Less than $1000'
+    OnkTo2kd   = '$1000-$2000'
+    twokTo3kd   = '$2000-$4000'
+    threekTo4kd   = '$4000-$6000'
+    sixkTo8kd   = '$6000-$8000'
+    eightkTo10kd  = '$8000-$10000'
+    tenkTo12kd = '$10000-$12000'
+    forteenkTo16kd = '$14000-$16000'
+    sixteenkTo18kd = '$16000-$18000'
+    eighteenkTo20kd = '$18000-$20000'
+    twentykTo22kd = '$20000-$22000'
+    twentytwokTo24kd = '$22000-$24000'
+    twen4To26kd = '$24000-$26000'
+    twenty6kTo28kd = '$26000-$28000'
+    twenty8kTo30kd = '$28000-$30000'
+    more = 'More than $30,000'
+
+    AffordableBudget = (
+    (AffordableBudget , 'Affordable Budget'),
+    (Lessthan1k , 'Less than $1000'),
+    (OnkTo2kd   , '$1000-$2000'),
+    (twokTo3kd  , '$2000-$4000'),
+    (threekTo4kd   , '$4000-$6000'),
+    (sixkTo8kd   , '$6000-$8000'),
+    (eightkTo10kd  , '$8000-$10000'),
+    (tenkTo12kd , '$10000-$12000'),
+    (forteenkTo16kd , '$14000-$16000'),
+    (sixteenkTo18kd , '$16000-$18000'),
+    (eighteenkTo20kd , '$18000-$20000'),
+    (twentykTo22kd , '$20000-$22000'),
+    (twentytwokTo24kd , '$22000-$24000'),
+    (twen4To26kd , '$24000-$26000'),
+    (twenty6kTo28kd , '$26000-$28000'),
+    (twenty8kTo30kd , '$28000-$30000'),
+    (more , 'More than $30,000'),
+    )
+
+
+
+
+    DesiredCountry = 'Desired Country'
+    Nationality = 'Nationality'
+    Pakistan = 'Pakistan'
+    India = 'India'
+    Australia = 'Australia'
+    UK = 'UK'
+    Canada = 'Canada'
+    Ireland = 'Ireland'
+    NewZealand = 'New Zealand'
+    Germany = 'Germany'
+    Sweden = 'Sweden'
+    Afghanistan = 'Afghanistan'
+    Algeria = 'Algeria'
+    Albania = 'Albania'
+    Andorra = 'Andorra'
+    Angola = 'Angola'
+    Anguilla = 'Anguilla'
+    AntiguaBarbuda = 'Antigua & Barbuda'
+
+    Argentina = 'Argentina'
+    Armenia = 'Armenia'
+    Austria = 'Austria'
+    Azerbaijan = 'Azerbaijan'
+    Bahamas = 'Bahamas'
+    Bahrain = 'Bahrain'
+    Bangladesh = 'Bangladesh'
+    Barbados = 'Barbados'
+    Belarus = 'Belarus'
+    Belgium = 'Belgium'
+    Belize = 'Belize'
+    Benin = 'Benin'
+    Bermuda = 'Bermuda'
+    Bhutan = 'Bhutan'
+    Bolivia = 'Bolivia'
+    BosniaHerzegovina = 'Bosnia & Herzegovina'
+    Botswana = 'Botswana'
+    Brazil = 'Brazil'
+    BruneiDarussalam = 'Brunei Darussalam'
+    Bulgaria = 'Bulgaria'
+    BurkinaFaso = 'Burkina Faso'
+    MyanmarBurma = 'Myanmar/Burma'
+    Burundi = 'Burundi'
+    Cambodia = 'Cambodia'
+    Cameroon = 'Cameroon'
+    CapeVerde = 'Cape Verde'
+    CaymanIslands = 'Cayman Islands'
+    CentralAfrican = 'Central African'
+    ChadRepublic = 'Chad Republic'
+    Chile = 'Chile'
+    China = 'China'
+    Colombia = 'Colombia'
+    Comoros = 'Comoros'
+    Congo = 'Congo'
+    CostaRica = 'Costa Rica'
+    Croatia = 'Croatia'
+    Cuba = 'Cuba'
+    Cyprus = 'Cyprus'
+    CzechRepublic = 'Czech Republic'
+    DemocraticRepublicoftheCongo = 'Democratic Republic of the Congo'
+    Denmark = 'Denmark'
+    Djibouti = 'Djibouti'
+    DominicanRepublic = 'Dominican Republic'
+    Dominica = 'Dominica'
+    Ecuador = 'Ecuador'
+    Egypt = 'Egypt'
+    ElSalvador = 'El Salvador'
+    EquatorialGuinea = 'Equatorial Guinea'
+    Eritrea ='Eritrea'
+    Estonia = 'Estonia'
+    Ethiopia = 'Ethiopia'
+    Fiji = 'Fiji'
+    Finland = 'Finland'
+    France = 'France'
+    FrenchGuiana = 'French Guiana'
+    Gabon = 'Gabon'
+    Gambia = 'Gambia'
+    Georgia = 'Georgia'
+    Ghana = 'Ghana'
+    GreatBritain = 'Great Britain'
+    Greece = 'Greece'
+    Grenada = 'Grenada'
+    Guadeloupe = 'Guadeloupe'
+    Guatemala = 'Guatemala'
+    Guinea = 'Guinea'
+    GuineaBissau = 'Guinea-Bissau'
+    Guyana = 'Guyana'
+    Haiti = 'Haiti'
+    Honduras = 'Honduras'
+    Hungary = 'Hungary'
+    Iceland = 'Iceland'
+    Indonesia = 'Indonesia'
+    Iran = 'Iran'
+    Iraq = 'Iraq'
+    IsraelandtheOccupiedTerritories = 'Israel and the Occupied Territories'
+    Italy = 'Italy'
+    IvoryCoast = 'Ivory Coast (Cote dIvoire)'
+    Jamaica = 'Jamaica'
+    Japan = 'Japan'
+    Jordan = 'Jordan'
+    Kazakhstan = 'Kazakhstan'
+    Kenya = 'Kenya'
+    Kosovo = 'Kosovo'
+    Kuwait = 'Kuwait'
+    Korea = 'Korea'
+    KyrgyzRepublic ='Kyrgyz Republic (Kyrgyzstan)'
+    Laos = 'Laos'
+    Latvia = 'Latvia'
+    Lebanon = 'Lebanon'
+    Lesotho = 'Lesotho'
+    Liberia = 'Liberia'
+    Libya = 'Libya'
+    Liechtenstein = 'Liechtenstein'
+    Lithuania = 'Lithuania'
+    Luxembourg = 'Luxembourg'
+    RepublicofMacedonia = 'Republic of Macedonia'
+    Madagascar = 'Madagascar'
+    Malawi = 'Malawi'
+    Malaysia = 'Malaysia'
+    Maldives = 'Maldives'
+    Mali = 'Mali'
+    Malta = 'Malta'
+    Martinique = 'Martinique'
+    Mauritania = 'Mauritania'
+    Mauritius = 'Mauritius'
+    Mayotte = 'Mayotte'
+    Mexico = 'Mexico'
+    Moldova = 'Moldova'
+    Mongolia = 'Mongolia'
+    Montenegro = 'Montenegro'
+    Montserrat = 'Montserrat'
+    Morocco = 'Morocco'
+    Mozambique = 'Mozambique'
+    Namibia = 'Namibia'
+    Nepal = 'Nepal'
+    Netherlands = 'Netherlands'
+    NewZealand = 'New Zealand'
+    Nicaragua = 'Nicaragua'
+    Niger = 'Niger'
+    Nigeria = 'Nigeria'
+    Oman = 'Oman'
+    PacificIslands = 'Pacific Islands'
+    Pakistan = 'Pakistan'
+    Panama = 'Panama'
+    PapuaNewGuinea = 'Papua New Guinea'
+    Paraguay = 'Paraguay'
+    Peru = 'Peru'
+    Philippines = 'Philippines'
+    Poland = 'Poland'
+    Portugal = 'Portugal'
+    PuertoRico = 'Puerto Rico'
+    Qatar = 'Qatar'
+    Reunion = 'Reunion'
+    Romania = 'Romania'
+    RussianFederation = 'Russian Federation'
+    Rwanda = 'Rwanda'
+    SaintKittsandNevis = 'Saint Kitts and Nevis'
+    SaintLucia = 'Saint Lucia'
+    SaintVincentGrenadines  ='Saint Vincents & Grenadines'
+    Samoa = 'Samoa'
+    SaoTomeandPrincipe = 'Sao Tome and Principe'
+    SaudiArabia = 'Saudi Arabia'
+    Senegal = 'Senegal'
+    Serbia = 'Serbia'
+    Seychelles = 'Seychelles'
+    SierraLeone = 'Sierra Leone'
+    Singapore = 'Singapore'
+    SlovakRepublic = 'Slovak Republic'
+    Slovenia = 'Slovenia'
+    SolomonIslands = 'Solomon Islands'
+    Somalia = 'Somalia'
+    SouthAfrica = 'South Africa'
+    RepublicofSouthKorea = 'Korea, Republic of (South Korea)'
+    SouthSudan = 'South Sudan'
+    Spain = 'Spain'
+    SriLanka = 'Sri Lanka'
+    Sudan = 'Sudan'
+    Suriname = 'Suriname'
+    Swaziland = 'Swaziland'
+    Switzerland = 'Switzerland'
+    Syria = 'Syria'
+    Tajikistan = 'Tajikistan'
+    Tanzania = 'Tanzania'
+    Thailand = 'Thailand'
+    TimorLeste = 'Timor Leste'
+    Togo = 'Togo'
+    TrinidadTobago = 'Trinidad & Tobago'
+    Turkey = 'Turkey'
+    Turkmenistan = 'Turkmenistan'
+    TurksCaicos = 'Turks & Caicos'
+    Uganda = 'Uganda'
+    Ukraine = 'Ukraine'
+    UnitedArabEmirates = 'United Arab Emirates'
+    Uruguay = 'Uruguay'
+    USA = 'USA'
+    Uzbekistan = 'Uzbekistan'
+    Venezuela = 'Venezuela'
+    Vietnam = 'Vietnam'
+    VirginIslandsUK = 'Virgin Islands (UK)'
+    VirginIslandsUS = 'Virgin Islands (US)'
+    Yemen = 'Yemen'
+    Zambia  = 'Zambia '
+    Zimbabwe = 'Zimbabwe'
+    Norway = 'Norway'
+    FromCountry = 'From Country'
+
+
+
+
+
+    Nationality = (
+    (Nationality, 'Nationality'),
+    (Pakistan , 'Pakistan'),
+
+    (Australia , 'Australia'),
+	(USA , 'USA'),
+	(Canada , 'Canada'),
+	(UK , 'UK'),
+	(Ireland , 'Ireland'),
+	(NewZealand , 'NewZealand'),
+	(Germany , 'Germany'),
+	(Sweden , 'Sweden'),
+
+	(Afghanistan , 'Afghanistan'),
+	(Albania , 'Albania'),
+	(Algeria , 'Algeria'),
+	(Andorra , 'Andorra'),
+	(Angola , 'Angola'),
+	(Anguilla , 'Anguilla'),
+	(AntiguaBarbuda , 'Antigua & Barbuda'),
+	(Argentina , 'Argentina'),
+	(Armenia , 'Armenia'),
+	(Austria , 'Austria'),
+	(Azerbaijan , 'Azerbaijan'),
+	(Bahamas , 'Bahamas'),
+	(Bahrain , 'Bahrain'),
+	(Bangladesh , 'Bangladesh'),
+	(Barbados , 'Barbados'),
+	(Belarus , 'Belarus'),
+	(Belgium , 'Belgium'),
+	(Belize , 'Belize'),
+	(Benin , 'Benin'),
+	(Bermuda , 'Bermuda'),
+	(Bhutan , 'Bhutan'),
+	(Bolivia , 'Bolivia'),
+	(BosniaHerzegovina , 'Bosnia & Herzegovina'),
+	(Botswana , 'Botswana'),
+	(Brazil , 'Brazil'),
+	(BruneiDarussalam , 'Brunei Darussalam'),
+	(Bulgaria , 'Bulgaria'),
+	(BurkinaFaso , 'Burkina Faso'),
+	(MyanmarBurma , 'Myanmar/Burma'),
+	(Burundi , 'Burundi'),
+	(Cambodia , 'Cambodia'),
+	(Cameroon , 'Cameroon'),
+	(CapeVerde , 'Cape Verde'),
+	(CaymanIslands , 'Cayman Islands'),
+	(CentralAfrican , 'Central African'),
+	(ChadRepublic , 'Chad Republic'),
+	(Chile , 'Chile'),
+	(China , 'China'),
+	(Colombia , 'Colombia'),
+	(Comoros , 'Comoros'),
+	(Congo , 'Congo'),
+	(CostaRica , 'Costa Rica'),
+	(Croatia , 'Croatia'),
+	(Cuba , 'Cuba'),
+	(Cyprus , 'Cyprus'),
+	(CzechRepublic , 'Czech Republic'),
+	(DemocraticRepublicoftheCongo , 'Democratic Republic of the Congo'),
+	(Denmark , 'Denmark'),
+	(Djibouti , 'Djibouti'),
+	(DominicanRepublic , 'Dominican Republic'),
+	(Dominica , 'Dominica'),
+	(Ecuador , 'Ecuador'),
+	(Egypt , 'Egypt'),
+	(ElSalvador , 'El Salvador'),
+	(EquatorialGuinea , 'Equatorial Guinea'),
+	(Eritrea , 'Eritrea'),
+	(Estonia , 'Estonia'),
+	(Ethiopia , 'Ethiopia'),
+	(Fiji , 'Fiji'),
+	(Finland , 'Finland'),
+	(France , 'France'),
+	(FrenchGuiana , 'French Guiana'),
+	(Gabon , 'Gabon'),
+	(Gambia , 'Gambia'),
+	(Georgia , 'Georgia'),
+	(Ghana , 'Ghana'),
+	(GreatBritain , 'Great Britain'),
+	(Greece , 'Greece'),
+	(Grenada , 'Grenada'),
+	(Guadeloupe , 'Guadeloupe'),
+	(Guatemala , 'Guatemala'),
+	(Guinea , 'Guinea'),
+	(GuineaBissau , 'Guinea-Bissau'),
+	(Guyana , 'Guyana'),
+	(Haiti , 'Haiti'),
+	(Honduras , 'Honduras'),
+	(Hungary , 'Hungary'),
+	(Iceland , 'Iceland'),
+	(India , 'India'),
+	(Indonesia , 'Indonesia'),
+	(Iran , 'Iran'),
+	(Iraq , 'Iraq'),
+	(IsraelandtheOccupiedTerritories , 'Israel and the Occupied Territories'),
+	(Italy , 'Italy'),
+	(IvoryCoast , 'Ivory Coast (Cote dIvoire)'),
+	(Jamaica , 'Jamaica'),
+	(Japan , 'Japan'),
+	(Jordan , 'Jordan'),
+	(Kazakhstan , 'Kazakhstan'),
+	(Kenya , 'Kenya'),
+	(Kosovo , 'Kosovo'),
+	(Kuwait , 'Kuwait'),
+	(Korea , 'Korea'),
+	(KyrgyzRepublic , 'Kyrgyz Republic (Kyrgyzstan)'),
+	(Laos , 'Laos'),
+	(Latvia , 'Latvia'),
+	(Lebanon , 'Lebanon'),
+	(Lesotho , 'Lesotho'),
+	(Liberia , 'Liberia'),
+	(Libya , 'Libya'),
+	(Liechtenstein , 'Liechtenstein'),
+	(Lithuania , 'Lithuania'),
+	(Luxembourg , 'Luxembourg'),
+	(RepublicofMacedonia , 'Republic of Macedonia'),
+	(Madagascar , 'Madagascar'),
+	(Malawi , 'Malawi'),
+	(Malaysia , 'Malaysia'),
+	(Maldives , 'Maldives'),
+	(Mali , 'Mali'),
+	(Malta , 'Malta'),
+	(Martinique , 'Martinique'),
+	(Mauritania , 'Mauritania'),
+	(Mauritius , 'Mauritius'),
+	(Mayotte , 'Mayotte'),
+	(Mexico , 'Mexico'),
+	(Moldova , 'Moldova'),
+	(Mongolia , 'Mongolia'),
+	(Montenegro , 'Montenegro'),
+	(Montserrat , 'Montserrat'),
+	(Morocco , 'Morocco'),
+	(Mozambique , 'Mozambique'),
+	(Namibia , 'Namibia'),
+	(Nepal , 'Nepal'),
+	(Netherlands , 'Netherlands'),
+	(NewZealand , 'NewZealand'),
+	(Nicaragua , 'Nicaragua'),
+	(Niger , 'Niger'),
+	(Nigeria , 'Nigeria'),
+	(Norway , 'Norway'),
+	(Oman , 'Oman'),
+	(PacificIslands , 'Pacific Islands'),
+
+	(Panama , 'Panama'),
+	(PapuaNewGuinea , 'Papua New Guinea'),
+	(Paraguay , 'Paraguay'),
+	(Peru , 'Peru'),
+	(Philippines , 'Philippines'),
+	(Poland , 'Poland'),
+	(Portugal , 'Portugal'),
+	(PuertoRico , 'Puerto Rico'),
+	(Qatar , 'Qatar'),
+	(Reunion , 'Reunion'),
+	(Romania , 'Romania'),
+	(RussianFederation , 'Russian Federation'),
+	(Rwanda , 'Rwanda'),
+	(SaintKittsandNevis , 'Saint Kitts and Nevis'),
+	(SaintLucia , 'Saint Lucia'),
+	(SaintVincentGrenadines , 'Saint Vincents & Grenadines'),
+	(Samoa , 'Samoa'),
+	(SaoTomeandPrincipe , 'Sao Tome and Principe'),
+	(SaudiArabia , 'Saudi Arabia'),
+	(Senegal , 'Senegal'),
+	(Serbia , 'Serbia'),
+	(Seychelles , 'Seychelles'),
+	(SierraLeone , 'Sierra Leone'),
+	(Singapore , 'Singapore'),
+	(SlovakRepublic , 'Slovak Republic'),
+	(Slovenia , 'Slovenia'),
+	(SolomonIslands , 'Solomon Islands'),
+	(Somalia , 'Somalia'),
+	(SouthAfrica , 'South Africa'),
+
+	(SouthSudan , 'South Sudan'),
+	(Spain , 'Spain'),
+	(SriLanka , 'Sri Lanka'),
+	(Sudan , 'Sudan'),
+	(Suriname , 'Suriname'),
+	(Swaziland , 'Swaziland'),
+	(Switzerland , 'Switzerland'),
+	(Syria , 'Syria'),
+	(Tajikistan , 'Tajikistan'),
+	(Tanzania , 'Tanzania'),
+	(Thailand , 'Thailand'),
+	(TimorLeste , 'Timor Leste'),
+	(Togo , 'Togo'),
+	(TrinidadTobago , 'Trinidad & Tobago'),
+	(Turkey , 'Turkey'),
+	(Turkmenistan , 'Turkmenistan'),
+	(TurksCaicos , 'Turks & Caicos'),
+	(Uganda , 'Uganda'),
+	(Ukraine , 'Ukraine'),
+	(UnitedArabEmirates , 'United Arab Emirates'),
+	(Uruguay , 'Uruguay'),
+	(Uzbekistan , 'Uzbekistan'),
+	(Venezuela , 'Venezuela'),
+	(Vietnam , 'Vietnam'),
+	(VirginIslandsUS , 'Virgin Islands (US)'),
+    (VirginIslandsUK , 'Virgin Islands (UK)'),
+	(Yemen , 'Yemen'),
+	(Zambia , 'Zambia'),
+	(Zimbabwe , 'Zimbabwe'),
+
+    )
+
+    DesiredCountry=(
+    (DesiredCountry, 'Desired Country'),
+    (Australia , 'Australia'),
+	(USA , 'USA'),
+	(Canada , 'Canada'),
+	(UK , 'UK'),
+	(Ireland , 'Ireland'),
+	(NewZealand , 'NewZealand'),
+	(Germany , 'Germany'),
+	(Sweden , 'Sweden'),
+
+	(Afghanistan , 'Afghanistan'),
+	(Albania , 'Albania'),
+	(Algeria , 'Algeria'),
+	(Andorra , 'Andorra'),
+	(Angola , 'Angola'),
+	(Anguilla , 'Anguilla'),
+	(AntiguaBarbuda , 'Antigua & Barbuda'),
+	(Argentina , 'Argentina'),
+	(Armenia , 'Armenia'),
+	(Austria , 'Austria'),
+	(Azerbaijan , 'Azerbaijan'),
+	(Bahamas , 'Bahamas'),
+	(Bahrain , 'Bahrain'),
+	(Bangladesh , 'Bangladesh'),
+	(Barbados , 'Barbados'),
+	(Belarus , 'Belarus'),
+	(Belgium , 'Belgium'),
+	(Belize , 'Belize'),
+	(Benin , 'Benin'),
+	(Bermuda , 'Bermuda'),
+	(Bhutan , 'Bhutan'),
+	(Bolivia , 'Bolivia'),
+	(BosniaHerzegovina , 'Bosnia & Herzegovina'),
+	(Botswana , 'Botswana'),
+	(Brazil , 'Brazil'),
+	(BruneiDarussalam , 'Brunei Darussalam'),
+	(Bulgaria , 'Bulgaria'),
+	(BurkinaFaso , 'Burkina Faso'),
+	(MyanmarBurma , 'Myanmar/Burma'),
+	(Burundi , 'Burundi'),
+	(Cambodia , 'Cambodia'),
+	(Cameroon , 'Cameroon'),
+	(CapeVerde , 'Cape Verde'),
+	(CaymanIslands , 'Cayman Islands'),
+	(CentralAfrican , 'Central African'),
+	(ChadRepublic , 'Chad Republic'),
+	(Chile , 'Chile'),
+	(China , 'China'),
+	(Colombia , 'Colombia'),
+	(Comoros , 'Comoros'),
+	(Congo , 'Congo'),
+	(CostaRica , 'Costa Rica'),
+	(Croatia , 'Croatia'),
+	(Cuba , 'Cuba'),
+	(Cyprus , 'Cyprus'),
+	(CzechRepublic , 'Czech Republic'),
+	(DemocraticRepublicoftheCongo , 'Democratic Republic of the Congo'),
+	(Denmark , 'Denmark'),
+	(Djibouti , 'Djibouti'),
+	(DominicanRepublic , 'Dominican Republic'),
+	(Dominica , 'Dominica'),
+	(Ecuador , 'Ecuador'),
+	(Egypt , 'Egypt'),
+	(ElSalvador , 'El Salvador'),
+	(EquatorialGuinea , 'Equatorial Guinea'),
+	(Eritrea , 'Eritrea'),
+	(Estonia , 'Estonia'),
+	(Ethiopia , 'Ethiopia'),
+	(Fiji , 'Fiji'),
+	(Finland , 'Finland'),
+	(France , 'France'),
+	(FrenchGuiana , 'French Guiana'),
+	(Gabon , 'Gabon'),
+	(Gambia , 'Gambia'),
+	(Georgia , 'Georgia'),
+	(Ghana , 'Ghana'),
+	(GreatBritain , 'Great Britain'),
+	(Greece , 'Greece'),
+	(Grenada , 'Grenada'),
+	(Guadeloupe , 'Guadeloupe'),
+	(Guatemala , 'Guatemala'),
+	(Guinea , 'Guinea'),
+	(GuineaBissau , 'Guinea-Bissau'),
+	(Guyana , 'Guyana'),
+	(Haiti , 'Haiti'),
+	(Honduras , 'Honduras'),
+	(Hungary , 'Hungary'),
+	(Iceland , 'Iceland'),
+	(India , 'India'),
+	(Indonesia , 'Indonesia'),
+	(Iran , 'Iran'),
+	(Iraq , 'Iraq'),
+	(IsraelandtheOccupiedTerritories , 'Israel and the Occupied Territories'),
+	(Italy , 'Italy'),
+	(IvoryCoast , 'Ivory Coast (Cote dIvoire)'),
+	(Jamaica , 'Jamaica'),
+	(Japan , 'Japan'),
+	(Jordan , 'Jordan'),
+	(Kazakhstan , 'Kazakhstan'),
+	(Kenya , 'Kenya'),
+	(Kosovo , 'Kosovo'),
+	(Kuwait , 'Kuwait'),
+	(Korea , 'Korea'),
+	(KyrgyzRepublic , 'Kyrgyz Republic (Kyrgyzstan)'),
+	(Laos , 'Laos'),
+	(Latvia , 'Latvia'),
+	(Lebanon , 'Lebanon'),
+	(Lesotho , 'Lesotho'),
+	(Liberia , 'Liberia'),
+	(Libya , 'Libya'),
+	(Liechtenstein , 'Liechtenstein'),
+	(Lithuania , 'Lithuania'),
+	(Luxembourg , 'Luxembourg'),
+	(RepublicofMacedonia , 'Republic of Macedonia'),
+	(Madagascar , 'Madagascar'),
+	(Malawi , 'Malawi'),
+	(Malaysia , 'Malaysia'),
+	(Maldives , 'Maldives'),
+	(Mali , 'Mali'),
+	(Malta , 'Malta'),
+	(Martinique , 'Martinique'),
+	(Mauritania , 'Mauritania'),
+	(Mauritius , 'Mauritius'),
+	(Mayotte , 'Mayotte'),
+	(Mexico , 'Mexico'),
+	(Moldova , 'Moldova'),
+	(Mongolia , 'Mongolia'),
+	(Montenegro , 'Montenegro'),
+	(Montserrat , 'Montserrat'),
+	(Morocco , 'Morocco'),
+	(Mozambique , 'Mozambique'),
+	(Namibia , 'Namibia'),
+	(Nepal , 'Nepal'),
+	(Netherlands , 'Netherlands'),
+	(NewZealand , 'NewZealand'),
+	(Nicaragua , 'Nicaragua'),
+	(Niger , 'Niger'),
+	(Nigeria , 'Nigeria'),
+	(Norway , 'Norway'),
+	(Oman , 'Oman'),
+	(PacificIslands , 'Pacific Islands'),
+
+	(Panama , 'Panama'),
+	(PapuaNewGuinea , 'Papua New Guinea'),
+	(Paraguay , 'Paraguay'),
+	(Peru , 'Peru'),
+	(Philippines , 'Philippines'),
+	(Poland , 'Poland'),
+	(Portugal , 'Portugal'),
+	(PuertoRico , 'Puerto Rico'),
+	(Qatar , 'Qatar'),
+	(Reunion , 'Reunion'),
+	(Romania , 'Romania'),
+	(RussianFederation , 'Russian Federation'),
+	(Rwanda , 'Rwanda'),
+	(SaintKittsandNevis , 'Saint Kitts and Nevis'),
+	(SaintLucia , 'Saint Lucia'),
+	(SaintVincentGrenadines , 'Saint Vincents & Grenadines'),
+	(Samoa , 'Samoa'),
+	(SaoTomeandPrincipe , 'Sao Tome and Principe'),
+	(SaudiArabia , 'Saudi Arabia'),
+	(Senegal , 'Senegal'),
+	(Serbia , 'Serbia'),
+	(Seychelles , 'Seychelles'),
+	(SierraLeone , 'Sierra Leone'),
+	(Singapore , 'Singapore'),
+	(SlovakRepublic , 'Slovak Republic'),
+	(Slovenia , 'Slovenia'),
+	(SolomonIslands , 'Solomon Islands'),
+	(Somalia , 'Somalia'),
+	(SouthAfrica , 'South Africa'),
+
+	(SouthSudan , 'South Sudan'),
+	(Spain , 'Spain'),
+	(SriLanka , 'Sri Lanka'),
+	(Sudan , 'Sudan'),
+	(Suriname , 'Suriname'),
+	(Swaziland , 'Swaziland'),
+	(Switzerland , 'Switzerland'),
+	(Syria , 'Syria'),
+	(Tajikistan , 'Tajikistan'),
+	(Tanzania , 'Tanzania'),
+	(Thailand , 'Thailand'),
+	(TimorLeste , 'Timor Leste'),
+	(Togo , 'Togo'),
+	(TrinidadTobago , 'Trinidad & Tobago'),
+	(Turkey , 'Turkey'),
+	(Turkmenistan , 'Turkmenistan'),
+	(TurksCaicos , 'Turks & Caicos'),
+	(Uganda , 'Uganda'),
+	(Ukraine , 'Ukraine'),
+	(UnitedArabEmirates , 'United Arab Emirates'),
+	(Uruguay , 'Uruguay'),
+	(Uzbekistan , 'Uzbekistan'),
+	(Venezuela , 'Venezuela'),
+	(Vietnam , 'Vietnam'),
+	(VirginIslandsUS , 'Virgin Islands (US)'),
+    (VirginIslandsUK , 'Virgin Islands (UK)'),
+	(Yemen , 'Yemen'),
+	(Zambia , 'Zambia'),
+	(Zimbabwe , 'Zimbabwe'),
+    )
+
+    FromCountry = (
+    (FromCountry, 'From Country'),
+    (Pakistan , 'Pakistan'),
+
+    (Australia , 'Australia'),
+	(USA , 'USA'),
+	(Canada , 'Canada'),
+	(UK , 'UK'),
+	(Ireland , 'Ireland'),
+	(NewZealand , 'NewZealand'),
+	(Germany , 'Germany'),
+	(Sweden , 'Sweden'),
+
+	(Afghanistan , 'Afghanistan'),
+	(Albania , 'Albania'),
+	(Algeria , 'Algeria'),
+	(Andorra , 'Andorra'),
+	(Angola , 'Angola'),
+	(Anguilla , 'Anguilla'),
+	(AntiguaBarbuda , 'Antigua & Barbuda'),
+	(Argentina , 'Argentina'),
+	(Armenia , 'Armenia'),
+	(Austria , 'Austria'),
+	(Azerbaijan , 'Azerbaijan'),
+	(Bahamas , 'Bahamas'),
+	(Bahrain , 'Bahrain'),
+	(Bangladesh , 'Bangladesh'),
+	(Barbados , 'Barbados'),
+	(Belarus , 'Belarus'),
+	(Belgium , 'Belgium'),
+	(Belize , 'Belize'),
+	(Benin , 'Benin'),
+	(Bermuda , 'Bermuda'),
+	(Bhutan , 'Bhutan'),
+	(Bolivia , 'Bolivia'),
+	(BosniaHerzegovina , 'Bosnia & Herzegovina'),
+	(Botswana , 'Botswana'),
+	(Brazil , 'Brazil'),
+	(BruneiDarussalam , 'Brunei Darussalam'),
+	(Bulgaria , 'Bulgaria'),
+	(BurkinaFaso , 'Burkina Faso'),
+	(MyanmarBurma , 'Myanmar/Burma'),
+	(Burundi , 'Burundi'),
+	(Cambodia , 'Cambodia'),
+	(Cameroon , 'Cameroon'),
+	(CapeVerde , 'Cape Verde'),
+	(CaymanIslands , 'Cayman Islands'),
+	(CentralAfrican , 'Central African'),
+	(ChadRepublic , 'Chad Republic'),
+	(Chile , 'Chile'),
+	(China , 'China'),
+	(Colombia , 'Colombia'),
+	(Comoros , 'Comoros'),
+	(Congo , 'Congo'),
+	(CostaRica , 'Costa Rica'),
+	(Croatia , 'Croatia'),
+	(Cuba , 'Cuba'),
+	(Cyprus , 'Cyprus'),
+	(CzechRepublic , 'Czech Republic'),
+	(DemocraticRepublicoftheCongo , 'Democratic Republic of the Congo'),
+	(Denmark , 'Denmark'),
+	(Djibouti , 'Djibouti'),
+	(DominicanRepublic , 'Dominican Republic'),
+	(Dominica , 'Dominica'),
+	(Ecuador , 'Ecuador'),
+	(Egypt , 'Egypt'),
+	(ElSalvador , 'El Salvador'),
+	(EquatorialGuinea , 'Equatorial Guinea'),
+	(Eritrea , 'Eritrea'),
+	(Estonia , 'Estonia'),
+	(Ethiopia , 'Ethiopia'),
+	(Fiji , 'Fiji'),
+	(Finland , 'Finland'),
+	(France , 'France'),
+	(FrenchGuiana , 'French Guiana'),
+	(Gabon , 'Gabon'),
+	(Gambia , 'Gambia'),
+	(Georgia , 'Georgia'),
+	(Ghana , 'Ghana'),
+	(GreatBritain , 'Great Britain'),
+	(Greece , 'Greece'),
+	(Grenada , 'Grenada'),
+	(Guadeloupe , 'Guadeloupe'),
+	(Guatemala , 'Guatemala'),
+	(Guinea , 'Guinea'),
+	(GuineaBissau , 'Guinea-Bissau'),
+	(Guyana , 'Guyana'),
+	(Haiti , 'Haiti'),
+	(Honduras , 'Honduras'),
+	(Hungary , 'Hungary'),
+	(Iceland , 'Iceland'),
+	(India , 'India'),
+	(Indonesia , 'Indonesia'),
+	(Iran , 'Iran'),
+	(Iraq , 'Iraq'),
+	(IsraelandtheOccupiedTerritories , 'Israel and the Occupied Territories'),
+	(Italy , 'Italy'),
+	(IvoryCoast , 'Ivory Coast (Cote dIvoire)'),
+	(Jamaica , 'Jamaica'),
+	(Japan , 'Japan'),
+	(Jordan , 'Jordan'),
+	(Kazakhstan , 'Kazakhstan'),
+	(Kenya , 'Kenya'),
+	(Kosovo , 'Kosovo'),
+	(Kuwait , 'Kuwait'),
+	(Korea , 'Korea'),
+	(KyrgyzRepublic , 'Kyrgyz Republic (Kyrgyzstan)'),
+	(Laos , 'Laos'),
+	(Latvia , 'Latvia'),
+	(Lebanon , 'Lebanon'),
+	(Lesotho , 'Lesotho'),
+	(Liberia , 'Liberia'),
+	(Libya , 'Libya'),
+	(Liechtenstein , 'Liechtenstein'),
+	(Lithuania , 'Lithuania'),
+	(Luxembourg , 'Luxembourg'),
+	(RepublicofMacedonia , 'Republic of Macedonia'),
+	(Madagascar , 'Madagascar'),
+	(Malawi , 'Malawi'),
+	(Malaysia , 'Malaysia'),
+	(Maldives , 'Maldives'),
+	(Mali , 'Mali'),
+	(Malta , 'Malta'),
+	(Martinique , 'Martinique'),
+	(Mauritania , 'Mauritania'),
+	(Mauritius , 'Mauritius'),
+	(Mayotte , 'Mayotte'),
+	(Mexico , 'Mexico'),
+	(Moldova , 'Moldova'),
+	(Mongolia , 'Mongolia'),
+	(Montenegro , 'Montenegro'),
+	(Montserrat , 'Montserrat'),
+	(Morocco , 'Morocco'),
+	(Mozambique , 'Mozambique'),
+	(Namibia , 'Namibia'),
+	(Nepal , 'Nepal'),
+	(Netherlands , 'Netherlands'),
+	(NewZealand , 'NewZealand'),
+	(Nicaragua , 'Nicaragua'),
+	(Niger , 'Niger'),
+	(Nigeria , 'Nigeria'),
+	(Norway , 'Norway'),
+	(Oman , 'Oman'),
+	(PacificIslands , 'Pacific Islands'),
+
+	(Panama , 'Panama'),
+	(PapuaNewGuinea , 'Papua New Guinea'),
+	(Paraguay , 'Paraguay'),
+	(Peru , 'Peru'),
+	(Philippines , 'Philippines'),
+	(Poland , 'Poland'),
+	(Portugal , 'Portugal'),
+	(PuertoRico , 'Puerto Rico'),
+	(Qatar , 'Qatar'),
+	(Reunion , 'Reunion'),
+	(Romania , 'Romania'),
+	(RussianFederation , 'Russian Federation'),
+	(Rwanda , 'Rwanda'),
+	(SaintKittsandNevis , 'Saint Kitts and Nevis'),
+	(SaintLucia , 'Saint Lucia'),
+	(SaintVincentGrenadines , 'Saint Vincents & Grenadines'),
+	(Samoa , 'Samoa'),
+	(SaoTomeandPrincipe , 'Sao Tome and Principe'),
+	(SaudiArabia , 'Saudi Arabia'),
+	(Senegal , 'Senegal'),
+	(Serbia , 'Serbia'),
+	(Seychelles , 'Seychelles'),
+	(SierraLeone , 'Sierra Leone'),
+	(Singapore , 'Singapore'),
+	(SlovakRepublic , 'Slovak Republic'),
+	(Slovenia , 'Slovenia'),
+	(SolomonIslands , 'Solomon Islands'),
+	(Somalia , 'Somalia'),
+	(SouthAfrica , 'South Africa'),
+
+	(SouthSudan , 'South Sudan'),
+	(Spain , 'Spain'),
+	(SriLanka , 'Sri Lanka'),
+	(Sudan , 'Sudan'),
+	(Suriname , 'Suriname'),
+	(Swaziland , 'Swaziland'),
+	(Switzerland , 'Switzerland'),
+	(Syria , 'Syria'),
+	(Tajikistan , 'Tajikistan'),
+	(Tanzania , 'Tanzania'),
+	(Thailand , 'Thailand'),
+	(TimorLeste , 'Timor Leste'),
+	(Togo , 'Togo'),
+	(TrinidadTobago , 'Trinidad & Tobago'),
+	(Turkey , 'Turkey'),
+	(Turkmenistan , 'Turkmenistan'),
+	(TurksCaicos , 'Turks & Caicos'),
+	(Uganda , 'Uganda'),
+	(Ukraine , 'Ukraine'),
+	(UnitedArabEmirates , 'United Arab Emirates'),
+	(Uruguay , 'Uruguay'),
+	(Uzbekistan , 'Uzbekistan'),
+	(Venezuela , 'Venezuela'),
+	(Vietnam , 'Vietnam'),
+	(VirginIslandsUS , 'Virgin Islands (US)'),
+    (VirginIslandsUK , 'Virgin Islands (UK)'),
+	(Yemen , 'Yemen'),
+	(Zambia , 'Zambia'),
+	(Zimbabwe , 'Zimbabwe'),
+
+    )
+
+    DesiredCountry=(
+    (DesiredCountry, 'Desired Country'),
+    (Australia , 'Australia'),
+	(USA , 'USA'),
+	(Canada , 'Canada'),
+	(UK , 'UK'),
+	(Ireland , 'Ireland'),
+	(NewZealand , 'NewZealand'),
+	(Germany , 'Germany'),
+	(Sweden , 'Sweden'),
+
+	(Afghanistan , 'Afghanistan'),
+	(Albania , 'Albania'),
+	(Algeria , 'Algeria'),
+	(Andorra , 'Andorra'),
+	(Angola , 'Angola'),
+	(Anguilla , 'Anguilla'),
+	(AntiguaBarbuda , 'Antigua & Barbuda'),
+	(Argentina , 'Argentina'),
+	(Armenia , 'Armenia'),
+	(Austria , 'Austria'),
+	(Azerbaijan , 'Azerbaijan'),
+	(Bahamas , 'Bahamas'),
+	(Bahrain , 'Bahrain'),
+	(Bangladesh , 'Bangladesh'),
+	(Barbados , 'Barbados'),
+	(Belarus , 'Belarus'),
+	(Belgium , 'Belgium'),
+	(Belize , 'Belize'),
+	(Benin , 'Benin'),
+	(Bermuda , 'Bermuda'),
+	(Bhutan , 'Bhutan'),
+	(Bolivia , 'Bolivia'),
+	(BosniaHerzegovina , 'Bosnia & Herzegovina'),
+	(Botswana , 'Botswana'),
+	(Brazil , 'Brazil'),
+	(BruneiDarussalam , 'Brunei Darussalam'),
+	(Bulgaria , 'Bulgaria'),
+	(BurkinaFaso , 'Burkina Faso'),
+	(MyanmarBurma , 'Myanmar/Burma'),
+	(Burundi , 'Burundi'),
+	(Cambodia , 'Cambodia'),
+	(Cameroon , 'Cameroon'),
+	(CapeVerde , 'Cape Verde'),
+	(CaymanIslands , 'Cayman Islands'),
+	(CentralAfrican , 'Central African'),
+	(ChadRepublic , 'Chad Republic'),
+	(Chile , 'Chile'),
+	(China , 'China'),
+	(Colombia , 'Colombia'),
+	(Comoros , 'Comoros'),
+	(Congo , 'Congo'),
+	(CostaRica , 'Costa Rica'),
+	(Croatia , 'Croatia'),
+	(Cuba , 'Cuba'),
+	(Cyprus , 'Cyprus'),
+	(CzechRepublic , 'Czech Republic'),
+	(DemocraticRepublicoftheCongo , 'Democratic Republic of the Congo'),
+	(Denmark , 'Denmark'),
+	(Djibouti , 'Djibouti'),
+	(DominicanRepublic , 'Dominican Republic'),
+	(Dominica , 'Dominica'),
+	(Ecuador , 'Ecuador'),
+	(Egypt , 'Egypt'),
+	(ElSalvador , 'El Salvador'),
+	(EquatorialGuinea , 'Equatorial Guinea'),
+	(Eritrea , 'Eritrea'),
+	(Estonia , 'Estonia'),
+	(Ethiopia , 'Ethiopia'),
+	(Fiji , 'Fiji'),
+	(Finland , 'Finland'),
+	(France , 'France'),
+	(FrenchGuiana , 'French Guiana'),
+	(Gabon , 'Gabon'),
+	(Gambia , 'Gambia'),
+	(Georgia , 'Georgia'),
+	(Ghana , 'Ghana'),
+	(GreatBritain , 'Great Britain'),
+	(Greece , 'Greece'),
+	(Grenada , 'Grenada'),
+	(Guadeloupe , 'Guadeloupe'),
+	(Guatemala , 'Guatemala'),
+	(Guinea , 'Guinea'),
+	(GuineaBissau , 'Guinea-Bissau'),
+	(Guyana , 'Guyana'),
+	(Haiti , 'Haiti'),
+	(Honduras , 'Honduras'),
+	(Hungary , 'Hungary'),
+	(Iceland , 'Iceland'),
+	(India , 'India'),
+	(Indonesia , 'Indonesia'),
+	(Iran , 'Iran'),
+	(Iraq , 'Iraq'),
+	(IsraelandtheOccupiedTerritories , 'Israel and the Occupied Territories'),
+	(Italy , 'Italy'),
+	(IvoryCoast , 'Ivory Coast (Cote dIvoire)'),
+	(Jamaica , 'Jamaica'),
+	(Japan , 'Japan'),
+	(Jordan , 'Jordan'),
+	(Kazakhstan , 'Kazakhstan'),
+	(Kenya , 'Kenya'),
+	(Kosovo , 'Kosovo'),
+	(Kuwait , 'Kuwait'),
+	(Korea , 'Korea'),
+	(KyrgyzRepublic , 'Kyrgyz Republic (Kyrgyzstan)'),
+	(Laos , 'Laos'),
+	(Latvia , 'Latvia'),
+	(Lebanon , 'Lebanon'),
+	(Lesotho , 'Lesotho'),
+	(Liberia , 'Liberia'),
+	(Libya , 'Libya'),
+	(Liechtenstein , 'Liechtenstein'),
+	(Lithuania , 'Lithuania'),
+	(Luxembourg , 'Luxembourg'),
+	(RepublicofMacedonia , 'Republic of Macedonia'),
+	(Madagascar , 'Madagascar'),
+	(Malawi , 'Malawi'),
+	(Malaysia , 'Malaysia'),
+	(Maldives , 'Maldives'),
+	(Mali , 'Mali'),
+	(Malta , 'Malta'),
+	(Martinique , 'Martinique'),
+	(Mauritania , 'Mauritania'),
+	(Mauritius , 'Mauritius'),
+	(Mayotte , 'Mayotte'),
+	(Mexico , 'Mexico'),
+	(Moldova , 'Moldova'),
+	(Mongolia , 'Mongolia'),
+	(Montenegro , 'Montenegro'),
+	(Montserrat , 'Montserrat'),
+	(Morocco , 'Morocco'),
+	(Mozambique , 'Mozambique'),
+	(Namibia , 'Namibia'),
+	(Nepal , 'Nepal'),
+	(Netherlands , 'Netherlands'),
+	(NewZealand , 'NewZealand'),
+	(Nicaragua , 'Nicaragua'),
+	(Niger , 'Niger'),
+	(Nigeria , 'Nigeria'),
+	(Norway , 'Norway'),
+	(Oman , 'Oman'),
+	(PacificIslands , 'Pacific Islands'),
+
+	(Panama , 'Panama'),
+	(PapuaNewGuinea , 'Papua New Guinea'),
+	(Paraguay , 'Paraguay'),
+	(Peru , 'Peru'),
+	(Philippines , 'Philippines'),
+	(Poland , 'Poland'),
+	(Portugal , 'Portugal'),
+	(PuertoRico , 'Puerto Rico'),
+	(Qatar , 'Qatar'),
+	(Reunion , 'Reunion'),
+	(Romania , 'Romania'),
+	(RussianFederation , 'Russian Federation'),
+	(Rwanda , 'Rwanda'),
+	(SaintKittsandNevis , 'Saint Kitts and Nevis'),
+	(SaintLucia , 'Saint Lucia'),
+	(SaintVincentGrenadines , 'Saint Vincents & Grenadines'),
+	(Samoa , 'Samoa'),
+	(SaoTomeandPrincipe , 'Sao Tome and Principe'),
+	(SaudiArabia , 'Saudi Arabia'),
+	(Senegal , 'Senegal'),
+	(Serbia , 'Serbia'),
+	(Seychelles , 'Seychelles'),
+	(SierraLeone , 'Sierra Leone'),
+	(Singapore , 'Singapore'),
+	(SlovakRepublic , 'Slovak Republic'),
+	(Slovenia , 'Slovenia'),
+	(SolomonIslands , 'Solomon Islands'),
+	(Somalia , 'Somalia'),
+	(SouthAfrica , 'South Africa'),
+
+	(SouthSudan , 'South Sudan'),
+	(Spain , 'Spain'),
+	(SriLanka , 'Sri Lanka'),
+	(Sudan , 'Sudan'),
+	(Suriname , 'Suriname'),
+	(Swaziland , 'Swaziland'),
+	(Switzerland , 'Switzerland'),
+	(Syria , 'Syria'),
+	(Tajikistan , 'Tajikistan'),
+	(Tanzania , 'Tanzania'),
+	(Thailand , 'Thailand'),
+	(TimorLeste , 'Timor Leste'),
+	(Togo , 'Togo'),
+	(TrinidadTobago , 'Trinidad & Tobago'),
+	(Turkey , 'Turkey'),
+	(Turkmenistan , 'Turkmenistan'),
+	(TurksCaicos , 'Turks & Caicos'),
+	(Uganda , 'Uganda'),
+	(Ukraine , 'Ukraine'),
+	(UnitedArabEmirates , 'United Arab Emirates'),
+	(Uruguay , 'Uruguay'),
+	(Uzbekistan , 'Uzbekistan'),
+	(Venezuela , 'Venezuela'),
+	(Vietnam , 'Vietnam'),
+	(VirginIslandsUS , 'Virgin Islands (US)'),
+    (VirginIslandsUK , 'Virgin Islands (UK)'),
+	(Yemen , 'Yemen'),
+	(Zambia , 'Zambia'),
+	(Zimbabwe , 'Zimbabwe'),
+    )
+
+    Provice = 'Province'
+    Punjab = 'Punjab'
+    IslamabadICT = 'Islamabad ICT'
+    Sindh = 'Sindh'
+    KPK = 'KPC'
+    Balochistan = 'Balochistan'
+    GilgitBaltistan = 'Gilgit Baltistan'
+    AzadJamuKashmir = 'Azad Jamui Kashmir'
+
+    Province = (
+    (Provice , 'Province'),
+    (Punjab , 'Punjab'),
+    (IslamabadICT , 'Islamabad ICT'),
+    (Sindh , 'Sindh'),
+    (KPK , 'KPC'),
+    (Balochistan , 'Balochistan'),
+    (GilgitBaltistan , 'Gilgit Baltistan'),
+    (AzadJamuKashmir , 'Azad Jamui Kashmir'),
+    )
+
+
     Gender = 'Gender'
     male = 'male'
     female = 'female'
@@ -215,6 +1308,7 @@ class StdPersonalInfo(models.Model):
         (male, 'male'),
         (female, 'female'),
         )
+
     City = 'City'
     Lahore = 'Lahore'
     Islmabad = 'Islamabad'
@@ -439,7 +1533,9 @@ class StdPersonalInfo(models.Model):
     Moro = 'Moro'
     Multan = 'Multan'
     MurghaKibzai = 'Murgha Kibzai'
+
     City  =(
+            (City,'City'),
             (Abbottabad , 'Abbottabad'),
         	(Adezai , 'Adezai'),
         	(AhmedNagerChatha , 'Ahmed Nager Chatha'),
@@ -661,418 +1757,8 @@ class StdPersonalInfo(models.Model):
         	(MurghaKibzai , 'Murgha Kibzai'),
 
     )
-    Country = 'Country'
-    Pakistan = 'Pakistan'
-    India = 'India'
-    Australia = 'Australia'
-    UK = 'UK'
-    Canada = 'Canada'
-    Ireland = 'Ireland'
-    NewZealand = 'New Zealand'
-    Germany = 'Germany'
-    Sweden = 'Sweden'
-    Afghanistan = 'Afghanistan'
-    Algeria = 'Algeria'
-    Albania = 'Albania'
-    Andorra = 'Andorra'
-    Angola = 'Angola'
-    Anguilla = 'Anguilla'
-    AntiguaBarbuda = 'Antigua & Barbuda'
-
-    Argentina = 'Argentina'
-    Armenia = 'Armenia'
-    Austria = 'Austria'
-    Azerbaijan = 'Azerbaijan'
-    Bahamas = 'Bahamas'
-    Bahrain = 'Bahrain'
-    Bangladesh = 'Bangladesh'
-    Barbados = 'Barbados'
-    Belarus = 'Belarus'
-    Belgium = 'Belgium'
-    Belize = 'Belize'
-    Benin = 'Benin'
-    Bermuda = 'Bermuda'
-    Bhutan = 'Bhutan'
-    Bolivia = 'Bolivia'
-    BosniaHerzegovina = 'Bosnia & Herzegovina'
-    Botswana = 'Botswana'
-    Brazil = 'Brazil'
-    BruneiDarussalam = 'Brunei Darussalam'
-    Bulgaria = 'Bulgaria'
-    BurkinaFaso = 'Burkina Faso'
-    MyanmarBurma = 'Myanmar/Burma'
-    Burundi = 'Burundi'
-    Cambodia = 'Cambodia'
-    Cameroon = 'Cameroon'
-    CapeVerde = 'Cape Verde'
-    CaymanIslands = 'Cayman Islands'
-    CentralAfrican = 'Central African'
-    ChadRepublic = 'Chad Republic'
-    Chile = 'Chile'
-    China = 'China'
-    Colombia = 'Colombia'
-    Comoros = 'Comoros'
-    Congo = 'Congo'
-    CostaRica = 'Costa Rica'
-    Croatia = 'Croatia'
-    Cuba = 'Cuba'
-    Cyprus = 'Cyprus'
-    CzechRepublic = 'Czech Republic'
-    DemocraticRepublicoftheCongo = 'Democratic Republic of the Congo'
-    Denmark = 'Denmark'
-    Djibouti = 'Djibouti'
-    DominicanRepublic = 'Dominican Republic'
-    Dominica = 'Dominica'
-    Ecuador = 'Ecuador'
-    Egypt = 'Egypt'
-    ElSalvador = 'El Salvador'
-    EquatorialGuinea = 'Equatorial Guinea'
-    Eritrea ='Eritrea'
-    Estonia = 'Estonia'
-    Ethiopia = 'Ethiopia'
-    Fiji = 'Fiji'
-    Finland = 'Finland'
-    France = 'France'
-    FrenchGuiana = 'French Guiana'
-    Gabon = 'Gabon'
-    Gambia = 'Gambia'
-    Georgia = 'Georgia'
-    Ghana = 'Ghana'
-    GreatBritain = 'Great Britain'
-    Greece = 'Greece'
-    Grenada = 'Grenada'
-    Guadeloupe = 'Guadeloupe'
-    Guatemala = 'Guatemala'
-    Guinea = 'Guinea'
-    GuineaBissau = 'Guinea-Bissau'
-    Guyana = 'Guyana'
-    Haiti = 'Haiti'
-    Honduras = 'Honduras'
-    Hungary = 'Hungary'
-    Iceland = 'Iceland'
-    Indonesia = 'Indonesia'
-    Iran = 'Iran'
-    Iraq = 'Iraq'
-    IsraelandtheOccupiedTerritories = 'Israel and the Occupied Territories'
-    Italy = 'Italy'
-    IvoryCoast = 'Ivory Coast (Cote dIvoire)'
-    Jamaica = 'Jamaica'
-    Japan = 'Japan'
-    Jordan = 'Jordan'
-    Kazakhstan = 'Kazakhstan'
-    Kenya = 'Kenya'
-    Kosovo = 'Kosovo'
-    Kuwait = 'Kuwait'
-    Korea = 'Korea'
-    KyrgyzRepublic ='Kyrgyz Republic (Kyrgyzstan)'
-    Laos = 'Laos'
-    Latvia = 'Latvia'
-    Lebanon = 'Lebanon'
-    Lesotho = 'Lesotho'
-    Liberia = 'Liberia'
-    Libya = 'Libya'
-    Liechtenstein = 'Liechtenstein'
-    Lithuania = 'Lithuania'
-    Luxembourg = 'Luxembourg'
-    RepublicofMacedonia = 'Republic of Macedonia'
-    Madagascar = 'Madagascar'
-    Malawi = 'Malawi'
-    Malaysia = 'Malaysia'
-    Maldives = 'Maldives'
-    Mali = 'Mali'
-    Malta = 'Malta'
-    Martinique = 'Martinique'
-    Mauritania = 'Mauritania'
-    Mauritius = 'Mauritius'
-    Mayotte = 'Mayotte'
-    Mexico = 'Mexico'
-    Moldova = 'Moldova'
-    Mongolia = 'Mongolia'
-    Montenegro = 'Montenegro'
-    Montserrat = 'Montserrat'
-    Morocco = 'Morocco'
-    Mozambique = 'Mozambique'
-    Namibia = 'Namibia'
-    Nepal = 'Nepal'
-    Netherlands = 'Netherlands'
-    NewZealand = 'New Zealand'
-    Nicaragua = 'Nicaragua'
-    Niger = 'Niger'
-    Nigeria = 'Nigeria'
-    Oman = 'Oman'
-    PacificIslands = 'Pacific Islands'
-    Pakistan = 'Pakistan'
-    Panama = 'Panama'
-    PapuaNewGuinea = 'Papua New Guinea'
-    Paraguay = 'Paraguay'
-    Peru = 'Peru'
-    Philippines = 'Philippines'
-    Poland = 'Poland'
-    Portugal = 'Portugal'
-    PuertoRico = 'Puerto Rico'
-    Qatar = 'Qatar'
-    Reunion = 'Reunion'
-    Romania = 'Romania'
-    RussianFederation = 'Russian Federation'
-    Rwanda = 'Rwanda'
-    SaintKittsandNevis = 'Saint Kitts and Nevis'
-    SaintLucia = 'Saint Lucia'
-    SaintVincentGrenadines  ='Saint Vincents & Grenadines'
-    Samoa = 'Samoa'
-    SaoTomeandPrincipe = 'Sao Tome and Principe'
-    SaudiArabia = 'Saudi Arabia'
-    Senegal = 'Senegal'
-    Serbia = 'Serbia'
-    Seychelles = 'Seychelles'
-    SierraLeone = 'Sierra Leone'
-    Singapore = 'Singapore'
-    SlovakRepublic = 'Slovak Republic'
-    Slovenia = 'Slovenia'
-    SolomonIslands = 'Solomon Islands'
-    Somalia = 'Somalia'
-    SouthAfrica = 'South Africa'
-    RepublicofSouthKorea = 'Korea, Republic of (South Korea)'
-    SouthSudan = 'South Sudan'
-    Spain = 'Spain'
-    SriLanka = 'Sri Lanka'
-    Sudan = 'Sudan'
-    Suriname = 'Suriname'
-    Swaziland = 'Swaziland'
-    Switzerland = 'Switzerland'
-    Syria = 'Syria'
-    Tajikistan = 'Tajikistan'
-    Tanzania = 'Tanzania'
-    Thailand = 'Thailand'
-    TimorLeste = 'Timor Leste'
-    Togo = 'Togo'
-    TrinidadTobago = 'Trinidad & Tobago'
-    Turkey = 'Turkey'
-    Turkmenistan = 'Turkmenistan'
-    TurksCaicos = 'Turks & Caicos'
-    Uganda = 'Uganda'
-    Ukraine = 'Ukraine'
-    UnitedArabEmirates = 'United Arab Emirates'
-    Uruguay = 'Uruguay'
-    USA = 'USA'
-    Uzbekistan = 'Uzbekistan'
-    Venezuela = 'Venezuela'
-    Vietnam = 'Vietnam'
-    VirginIslandsUK = 'Virgin Islands (UK)'
-    VirginIslandsUS = 'Virgin Islands (US)'
-    Yemen = 'Yemen'
-    Zambia  = 'Zambia '
-    Zimbabwe = 'Zimbabwe'
-    Norway = 'Norway'
 
 
-
-
-
-
-    Country = (
-        (Country, 'Country'),
-    (Australia , 'Australia'),
-	(USA , 'USA'),
-	(Canada , 'Canada'),
-	(UK , 'UK'),
-	(Ireland , 'Ireland'),
-	(NewZealand , 'NewZealand'),
-	(Germany , 'Germany'),
-	(Sweden , 'Sweden'),
-
-	(Afghanistan , 'Afghanistan'),
-	(Albania , 'Albania'),
-	(Algeria , 'Algeria'),
-	(Andorra , 'Andorra'),
-	(Angola , 'Angola'),
-	(Anguilla , 'Anguilla'),
-	(AntiguaBarbuda , 'Antigua & Barbuda'),
-	(Argentina , 'Argentina'),
-	(Armenia , 'Armenia'),
-	(Austria , 'Austria'),
-	(Azerbaijan , 'Azerbaijan'),
-	(Bahamas , 'Bahamas'),
-	(Bahrain , 'Bahrain'),
-	(Bangladesh , 'Bangladesh'),
-	(Barbados , 'Barbados'),
-	(Belarus , 'Belarus'),
-	(Belgium , 'Belgium'),
-	(Belize , 'Belize'),
-	(Benin , 'Benin'),
-	(Bermuda , 'Bermuda'),
-	(Bhutan , 'Bhutan'),
-	(Bolivia , 'Bolivia'),
-	(BosniaHerzegovina , 'Bosnia & Herzegovina'),
-	(Botswana , 'Botswana'),
-	(Brazil , 'Brazil'),
-	(BruneiDarussalam , 'Brunei Darussalam'),
-	(Bulgaria , 'Bulgaria'),
-	(BurkinaFaso , 'Burkina Faso'),
-	(MyanmarBurma , 'Myanmar/Burma'),
-	(Burundi , 'Burundi'),
-	(Cambodia , 'Cambodia'),
-	(Cameroon , 'Cameroon'),
-	(CapeVerde , 'Cape Verde'),
-	(CaymanIslands , 'Cayman Islands'),
-	(CentralAfrican , 'Central African'),
-	(ChadRepublic , 'Chad Republic'),
-	(Chile , 'Chile'),
-	(China , 'China'),
-	(Colombia , 'Colombia'),
-	(Comoros , 'Comoros'),
-	(Congo , 'Congo'),
-	(CostaRica , 'Costa Rica'),
-	(Croatia , 'Croatia'),
-	(Cuba , 'Cuba'),
-	(Cyprus , 'Cyprus'),
-	(CzechRepublic , 'Czech Republic'),
-	(DemocraticRepublicoftheCongo , 'Democratic Republic of the Congo'),
-	(Denmark , 'Denmark'),
-	(Djibouti , 'Djibouti'),
-	(DominicanRepublic , 'Dominican Republic'),
-	(Dominica , 'Dominica'),
-	(Ecuador , 'Ecuador'),
-	(Egypt , 'Egypt'),
-	(ElSalvador , 'El Salvador'),
-	(EquatorialGuinea , 'Equatorial Guinea'),
-	(Eritrea , 'Eritrea'),
-	(Estonia , 'Estonia'),
-	(Ethiopia , 'Ethiopia'),
-	(Fiji , 'Fiji'),
-	(Finland , 'Finland'),
-	(France , 'France'),
-	(FrenchGuiana , 'French Guiana'),
-	(Gabon , 'Gabon'),
-	(Gambia , 'Gambia'),
-	(Georgia , 'Georgia'),
-	(Ghana , 'Ghana'),
-	(GreatBritain , 'Great Britain'),
-	(Greece , 'Greece'),
-	(Grenada , 'Grenada'),
-	(Guadeloupe , 'Guadeloupe'),
-	(Guatemala , 'Guatemala'),
-	(Guinea , 'Guinea'),
-	(GuineaBissau , 'Guinea-Bissau'),
-	(Guyana , 'Guyana'),
-	(Haiti , 'Haiti'),
-	(Honduras , 'Honduras'),
-	(Hungary , 'Hungary'),
-	(Iceland , 'Iceland'),
-	(India , 'India'),
-	(Indonesia , 'Indonesia'),
-	(Iran , 'Iran'),
-	(Iraq , 'Iraq'),
-	(IsraelandtheOccupiedTerritories , 'Israel and the Occupied Territories'),
-	(Italy , 'Italy'),
-	(IvoryCoast , 'Ivory Coast (Cote dIvoire)'),
-	(Jamaica , 'Jamaica'),
-	(Japan , 'Japan'),
-	(Jordan , 'Jordan'),
-	(Kazakhstan , 'Kazakhstan'),
-	(Kenya , 'Kenya'),
-	(Kosovo , 'Kosovo'),
-	(Kuwait , 'Kuwait'),
-	(Korea , 'Korea'),
-	(KyrgyzRepublic , 'Kyrgyz Republic (Kyrgyzstan)'),
-	(Laos , 'Laos'),
-	(Latvia , 'Latvia'),
-	(Lebanon , 'Lebanon'),
-	(Lesotho , 'Lesotho'),
-	(Liberia , 'Liberia'),
-	(Libya , 'Libya'),
-	(Liechtenstein , 'Liechtenstein'),
-	(Lithuania , 'Lithuania'),
-	(Luxembourg , 'Luxembourg'),
-	(RepublicofMacedonia , 'Republic of Macedonia'),
-	(Madagascar , 'Madagascar'),
-	(Malawi , 'Malawi'),
-	(Malaysia , 'Malaysia'),
-	(Maldives , 'Maldives'),
-	(Mali , 'Mali'),
-	(Malta , 'Malta'),
-	(Martinique , 'Martinique'),
-	(Mauritania , 'Mauritania'),
-	(Mauritius , 'Mauritius'),
-	(Mayotte , 'Mayotte'),
-	(Mexico , 'Mexico'),
-	(Moldova , 'Moldova'),
-	(Mongolia , 'Mongolia'),
-	(Montenegro , 'Montenegro'),
-	(Montserrat , 'Montserrat'),
-	(Morocco , 'Morocco'),
-	(Mozambique , 'Mozambique'),
-	(Namibia , 'Namibia'),
-	(Nepal , 'Nepal'),
-	(Netherlands , 'Netherlands'),
-	(NewZealand , 'NewZealand'),
-	(Nicaragua , 'Nicaragua'),
-	(Niger , 'Niger'),
-	(Nigeria , 'Nigeria'),
-	(Norway , 'Norway'),
-	(Oman , 'Oman'),
-	(PacificIslands , 'Pacific Islands'),
-	(Pakistan , 'Pakistan'),
-	(Panama , 'Panama'),
-	(PapuaNewGuinea , 'Papua New Guinea'),
-	(Paraguay , 'Paraguay'),
-	(Peru , 'Peru'),
-	(Philippines , 'Philippines'),
-	(Poland , 'Poland'),
-	(Portugal , 'Portugal'),
-	(PuertoRico , 'Puerto Rico'),
-	(Qatar , 'Qatar'),
-	(Reunion , 'Reunion'),
-	(Romania , 'Romania'),
-	(RussianFederation , 'Russian Federation'),
-	(Rwanda , 'Rwanda'),
-	(SaintKittsandNevis , 'Saint Kitts and Nevis'),
-	(SaintLucia , 'Saint Lucia'),
-	(SaintVincentGrenadines , 'Saint Vincents & Grenadines'),
-	(Samoa , 'Samoa'),
-	(SaoTomeandPrincipe , 'Sao Tome and Principe'),
-	(SaudiArabia , 'Saudi Arabia'),
-	(Senegal , 'Senegal'),
-	(Serbia , 'Serbia'),
-	(Seychelles , 'Seychelles'),
-	(SierraLeone , 'Sierra Leone'),
-	(Singapore , 'Singapore'),
-	(SlovakRepublic , 'Slovak Republic'),
-	(Slovenia , 'Slovenia'),
-	(SolomonIslands , 'Solomon Islands'),
-	(Somalia , 'Somalia'),
-	(SouthAfrica , 'South Africa'),
-
-	(SouthSudan , 'South Sudan'),
-	(Spain , 'Spain'),
-	(SriLanka , 'Sri Lanka'),
-	(Sudan , 'Sudan'),
-	(Suriname , 'Suriname'),
-	(Swaziland , 'Swaziland'),
-	(Switzerland , 'Switzerland'),
-	(Syria , 'Syria'),
-	(Tajikistan , 'Tajikistan'),
-	(Tanzania , 'Tanzania'),
-	(Thailand , 'Thailand'),
-	(TimorLeste , 'Timor Leste'),
-	(Togo , 'Togo'),
-	(TrinidadTobago , 'Trinidad & Tobago'),
-	(Turkey , 'Turkey'),
-	(Turkmenistan , 'Turkmenistan'),
-	(TurksCaicos , 'Turks & Caicos'),
-	(Uganda , 'Uganda'),
-	(Ukraine , 'Ukraine'),
-	(UnitedArabEmirates , 'United Arab Emirates'),
-	(Uruguay , 'Uruguay'),
-	(Uzbekistan , 'Uzbekistan'),
-	(Venezuela , 'Venezuela'),
-	(Vietnam , 'Vietnam'),
-	(VirginIslandsUS , 'Virgin Islands (US)'),
-    (VirginIslandsUK , 'Virgin Islands (UK)'),
-	(Yemen , 'Yemen'),
-	(Zambia , 'Zambia'),
-	(Zimbabwe , 'Zimbabwe'),
-
-    )
 
     PopularDestinations = 'Popular Destinations'
 
@@ -1664,8 +2350,8 @@ class StdPersonalInfo(models.Model):
     Yearsto10Years = '9.5-Years to 10-Years'
     Other = 'Other'
     StudyGap = (
-    (NoGap , 'No Gap'),
     (StudyGap , 'Study Gap'),
+    (NoGap , 'No Gap'),
     (Monthto3Months , '1- Month to 3-Months'),
     (Monthto6Month , '3- Month to 6-Months'),
     (Yearto15Year , '1-Year to 1.5-Yeara'),
@@ -1713,8 +2399,9 @@ class StdPersonalInfo(models.Model):
     Yearsto10Years = '9.5-Years to 10-Years'
     Other = 'Other'
     JobExperience = (
-    (NoExperience , 'No Experience'),
     (JobExperience , 'Job Experience'),
+    (NoExperience , 'No Experience'),
+
     (Monthto3Months , '1- Month to 3-Months'),
     (Monthto6Month , '3- Month to 6-Months'),
     (Yearto15Year , '1-Year to 1.5-Yeara'),
@@ -1739,10 +2426,36 @@ class StdPersonalInfo(models.Model):
     )
 
     Percentage = 'Percentage'
-
+    thirtyfive = '35%'
+    forty = '40%'
+    fortyfive = '45%'
+    fifty = '50%'
+    fiftyfive = '55%'
+    sixty = '60%'
+    sixtyfive = '65%'
+    seventy = '70%'
+    seventyfive = '75%'
+    eighty = '80%'
+    eightyfive = '85%'
+    ninty = '90%'
+    nintyfive = '95%'
+    hundred = '100%'
 
     Percentage = (
         (Percentage , 'Percentage'),
+        (thirtyfive , '35%'),
+        (forty , '40%'),
+        (fifty , '50%'),
+        (fiftyfive , '55%'),
+        (sixty , '60%'),
+        (sixtyfive , '65%'),
+        (seventy , '70%'),
+        (seventyfive , '75%'),
+        (eighty , '80%'),
+        (eightyfive , '85%'),
+        (ninty , '90%'),
+        (nintyfive , '95%'),
+        (hundred , '100%'),
 
     )
 
@@ -1824,14 +2537,14 @@ class StdPersonalInfo(models.Model):
     )
 
 
-    English_Language = 'English_Language'
+    EnglishLanguage = 'English Language'
     NoLanguage = 'No Language'
     IELTS = 'IELTS'
     TOEFL = 'TOEFL'
     PTE = 'PTE'
     Oher = 'Oher'
-    English_Language = (
-        (English_Language,'English_Language'),
+    EnglishLanguage = (
+        (EnglishLanguage,'English Language'),
         (NoLanguage , 'No Language'),
         (IELTS, 'IELTS'),
         (TOEFL, 'TOEFL'),
@@ -2439,15 +3152,9 @@ class StdPersonalInfo(models.Model):
         (Years_4 , '4 Years')
     )
 
-    Country = 'Country'
-    Pak = 'Pakistan'
-    Australia = 'Australia'
-    Country = (
-        (Country , 'Country'),
-        (Pak , 'Pakistan'),
-        (Australia , 'Australia'),
 
-    )
+
+
 
 
     CountryOfResidence = 'Country of Residence'
@@ -2478,8 +3185,8 @@ class StdPersonalInfo(models.Model):
     any_other_number = models.CharField(max_length = 250,blank=True,)
     address = models.CharField(max_length=500, default= None , null=True)
     city = models.CharField(max_length=500,choices=City, default=City,  null=True)
-    state = models.CharField(max_length=500, blank=False, default=None , null=True )
-    nationality = models.CharField(max_length=500 , blank=False, default=None, null=True )
+    state = models.CharField(max_length=500,choices =Province, blank=False, default=Province , null=True )
+    nationality = models.CharField(max_length=500 ,choices= Nationality, default= Nationality, null=True )
     country_of_residence = models.CharField(max_length=500 ,choices=CountryOfResidence, default=CountryOfResidence)
 
 
@@ -2491,17 +3198,17 @@ class StdPersonalInfo(models.Model):
     #student = models.ForeignKey('name', related_name='Student')
     highest_qualification = models.CharField(max_length=500 , choices = Degree, default= Degree)
     subject = models.CharField(max_length=250,choices = Subject, default= Subject )
-    program_duration = models.CharField(max_length=250 , choices = ProgramDuration, default= ProgramDuration)
+    #program_duration = models.CharField(max_length=500 , choices = ProgramDuration, default= ProgramDuration)
     Insititution = models.CharField(max_length=200, blank=False)
-    from_country = models.CharField(max_length=500 , choices = Country, default= Country)
-    percentage = models.CharField(max_length=250)
-    passing_year = models.CharField(max_length=250, choices = PassingYear, default=PassingYear)
-    studyGap = models.CharField(max_length=250, choices = StudyGap, default=StudyGap, blank= True, null = True)
+    from_country = models.CharField(max_length=500, choices = FromCountry, default=FromCountry)
+    percentage = models.CharField(max_length=500, choices = Percentage, default= Percentage)
+    passing_year = models.CharField(max_length=500, choices = PassingYear, default=PassingYear)
+    studyGap = models.CharField(max_length=250, choices = StudyGap, default=StudyGap, null = True)
     #study_gap1 = models.CharField(max_length=250, blank=True, null=True)
     #study_gap2 = models.CharField(max_length=250, blank=True, null=True)
     #study_gap3 = models.CharField(max_length=250, blank=True, null=True)
     #study_gap4 = models.CharField(max_length=20, blank=True, null=True)
-    experience = models.CharField(max_length=250, choices = JobExperience, default=JobExperience, blank= True, null = True)
+    experience = models.CharField(max_length=250, choices = JobExperience, default=JobExperience,  null = True)
     #experience1 = models.CharField(max_length=250, blank=True, null=True)
     #experience2 = models.CharField(max_length=250, blank=True, null=True)
     #experience3 = models.CharField(max_length=250, blank=True, null=True)
@@ -2510,17 +3217,17 @@ class StdPersonalInfo(models.Model):
 
 
     #Language part
-    english_language =  models.CharField(max_length=250,choices=English_Language, default=English_Language, blank= True, null = True )
+    english_language =  models.CharField(max_length=250,choices=EnglishLanguage, default=EnglishLanguage,  null = True )
     english_language_score = models.CharField(max_length=250, blank= True, null = True ,default= None)
-    other_Language = models.CharField(max_length=250,choices=OtherLanguage, default=OtherLanguage, blank= True, null = True )
+    other_Language = models.CharField(max_length=250,choices=OtherLanguage, default=OtherLanguage, null = True )
     Other_Language_score = models.CharField(max_length=250, blank= True, null = True,default= None)
 
     #Future Plans part
     desired_degree = models.CharField(max_length=500 , null=True,  choices = DesiredDegree, default = DesiredDegree)
     desired_subject = models.CharField(max_length=500 , null=True ,choices = DesireSubject,  default= DesireSubject)
-    desired_country = models.CharField(max_length=500 , null=True,choices = Country,  default= Country)
+    desired_country = models.CharField(max_length=500 ,choices=DesiredCountry,  null=True, default=DesiredCountry)
     scholarships = models.CharField(max_length=500 , null=True,choices= Scholarships,  default= Scholarships)
-    budget = models.CharField(max_length=500 , null=True, default= None)
+    budget = models.CharField(max_length=500 ,choices=AffordableBudget, null=True, default= AffordableBudget)
 
 
     def get_absolute_url(self):
@@ -2606,6 +3313,7 @@ class AgentMobileNumber(models.Model):
 class AgentCompanyInfo(models.Model):
 
     Country = 'Country'
+    Nationality = 'Nationality'
     Pakistan = 'Pakistan'
     India = 'India'
     Australia = 'Australia'
@@ -3018,6 +3726,209 @@ class AgentCompanyInfo(models.Model):
 
     )
 
+    Nationality = (
+    (Nationality, 'Nationality'),
+    (Australia , 'Australia'),
+	(USA , 'USA'),
+	(Canada , 'Canada'),
+	(UK , 'UK'),
+	(Ireland , 'Ireland'),
+	(NewZealand , 'NewZealand'),
+	(Germany , 'Germany'),
+	(Sweden , 'Sweden'),
+
+	(Afghanistan , 'Afghanistan'),
+	(Albania , 'Albania'),
+	(Algeria , 'Algeria'),
+	(Andorra , 'Andorra'),
+	(Angola , 'Angola'),
+	(Anguilla , 'Anguilla'),
+	(AntiguaBarbuda , 'Antigua & Barbuda'),
+	(Argentina , 'Argentina'),
+	(Armenia , 'Armenia'),
+	(Austria , 'Austria'),
+	(Azerbaijan , 'Azerbaijan'),
+	(Bahamas , 'Bahamas'),
+	(Bahrain , 'Bahrain'),
+	(Bangladesh , 'Bangladesh'),
+	(Barbados , 'Barbados'),
+	(Belarus , 'Belarus'),
+	(Belgium , 'Belgium'),
+	(Belize , 'Belize'),
+	(Benin , 'Benin'),
+	(Bermuda , 'Bermuda'),
+	(Bhutan , 'Bhutan'),
+	(Bolivia , 'Bolivia'),
+	(BosniaHerzegovina , 'Bosnia & Herzegovina'),
+	(Botswana , 'Botswana'),
+	(Brazil , 'Brazil'),
+	(BruneiDarussalam , 'Brunei Darussalam'),
+	(Bulgaria , 'Bulgaria'),
+	(BurkinaFaso , 'Burkina Faso'),
+	(MyanmarBurma , 'Myanmar/Burma'),
+	(Burundi , 'Burundi'),
+	(Cambodia , 'Cambodia'),
+	(Cameroon , 'Cameroon'),
+	(CapeVerde , 'Cape Verde'),
+	(CaymanIslands , 'Cayman Islands'),
+	(CentralAfrican , 'Central African'),
+	(ChadRepublic , 'Chad Republic'),
+	(Chile , 'Chile'),
+	(China , 'China'),
+	(Colombia , 'Colombia'),
+	(Comoros , 'Comoros'),
+	(Congo , 'Congo'),
+	(CostaRica , 'Costa Rica'),
+	(Croatia , 'Croatia'),
+	(Cuba , 'Cuba'),
+	(Cyprus , 'Cyprus'),
+	(CzechRepublic , 'Czech Republic'),
+	(DemocraticRepublicoftheCongo , 'Democratic Republic of the Congo'),
+	(Denmark , 'Denmark'),
+	(Djibouti , 'Djibouti'),
+	(DominicanRepublic , 'Dominican Republic'),
+	(Dominica , 'Dominica'),
+	(Ecuador , 'Ecuador'),
+	(Egypt , 'Egypt'),
+	(ElSalvador , 'El Salvador'),
+	(EquatorialGuinea , 'Equatorial Guinea'),
+	(Eritrea , 'Eritrea'),
+	(Estonia , 'Estonia'),
+	(Ethiopia , 'Ethiopia'),
+	(Fiji , 'Fiji'),
+	(Finland , 'Finland'),
+	(France , 'France'),
+	(FrenchGuiana , 'French Guiana'),
+	(Gabon , 'Gabon'),
+	(Gambia , 'Gambia'),
+	(Georgia , 'Georgia'),
+	(Ghana , 'Ghana'),
+	(GreatBritain , 'Great Britain'),
+	(Greece , 'Greece'),
+	(Grenada , 'Grenada'),
+	(Guadeloupe , 'Guadeloupe'),
+	(Guatemala , 'Guatemala'),
+	(Guinea , 'Guinea'),
+	(GuineaBissau , 'Guinea-Bissau'),
+	(Guyana , 'Guyana'),
+	(Haiti , 'Haiti'),
+	(Honduras , 'Honduras'),
+	(Hungary , 'Hungary'),
+	(Iceland , 'Iceland'),
+	(India , 'India'),
+	(Indonesia , 'Indonesia'),
+	(Iran , 'Iran'),
+	(Iraq , 'Iraq'),
+	(IsraelandtheOccupiedTerritories , 'Israel and the Occupied Territories'),
+	(Italy , 'Italy'),
+	(IvoryCoast , 'Ivory Coast (Cote dIvoire)'),
+	(Jamaica , 'Jamaica'),
+	(Japan , 'Japan'),
+	(Jordan , 'Jordan'),
+	(Kazakhstan , 'Kazakhstan'),
+	(Kenya , 'Kenya'),
+	(Kosovo , 'Kosovo'),
+	(Kuwait , 'Kuwait'),
+	(Korea , 'Korea'),
+	(KyrgyzRepublic , 'Kyrgyz Republic (Kyrgyzstan)'),
+	(Laos , 'Laos'),
+	(Latvia , 'Latvia'),
+	(Lebanon , 'Lebanon'),
+	(Lesotho , 'Lesotho'),
+	(Liberia , 'Liberia'),
+	(Libya , 'Libya'),
+	(Liechtenstein , 'Liechtenstein'),
+	(Lithuania , 'Lithuania'),
+	(Luxembourg , 'Luxembourg'),
+	(RepublicofMacedonia , 'Republic of Macedonia'),
+	(Madagascar , 'Madagascar'),
+	(Malawi , 'Malawi'),
+	(Malaysia , 'Malaysia'),
+	(Maldives , 'Maldives'),
+	(Mali , 'Mali'),
+	(Malta , 'Malta'),
+	(Martinique , 'Martinique'),
+	(Mauritania , 'Mauritania'),
+	(Mauritius , 'Mauritius'),
+	(Mayotte , 'Mayotte'),
+	(Mexico , 'Mexico'),
+	(Moldova , 'Moldova'),
+	(Mongolia , 'Mongolia'),
+	(Montenegro , 'Montenegro'),
+	(Montserrat , 'Montserrat'),
+	(Morocco , 'Morocco'),
+	(Mozambique , 'Mozambique'),
+	(Namibia , 'Namibia'),
+	(Nepal , 'Nepal'),
+	(Netherlands , 'Netherlands'),
+	(NewZealand , 'NewZealand'),
+	(Nicaragua , 'Nicaragua'),
+	(Niger , 'Niger'),
+	(Nigeria , 'Nigeria'),
+	(Norway , 'Norway'),
+	(Oman , 'Oman'),
+	(PacificIslands , 'Pacific Islands'),
+	(Pakistan , 'Pakistan'),
+	(Panama , 'Panama'),
+	(PapuaNewGuinea , 'Papua New Guinea'),
+	(Paraguay , 'Paraguay'),
+	(Peru , 'Peru'),
+	(Philippines , 'Philippines'),
+	(Poland , 'Poland'),
+	(Portugal , 'Portugal'),
+	(PuertoRico , 'Puerto Rico'),
+	(Qatar , 'Qatar'),
+	(Reunion , 'Reunion'),
+	(Romania , 'Romania'),
+	(RussianFederation , 'Russian Federation'),
+	(Rwanda , 'Rwanda'),
+	(SaintKittsandNevis , 'Saint Kitts and Nevis'),
+	(SaintLucia , 'Saint Lucia'),
+	(SaintVincentGrenadines , 'Saint Vincents & Grenadines'),
+	(Samoa , 'Samoa'),
+	(SaoTomeandPrincipe , 'Sao Tome and Principe'),
+	(SaudiArabia , 'Saudi Arabia'),
+	(Senegal , 'Senegal'),
+	(Serbia , 'Serbia'),
+	(Seychelles , 'Seychelles'),
+	(SierraLeone , 'Sierra Leone'),
+	(Singapore , 'Singapore'),
+	(SlovakRepublic , 'Slovak Republic'),
+	(Slovenia , 'Slovenia'),
+	(SolomonIslands , 'Solomon Islands'),
+	(Somalia , 'Somalia'),
+	(SouthAfrica , 'South Africa'),
+
+	(SouthSudan , 'South Sudan'),
+	(Spain , 'Spain'),
+	(SriLanka , 'Sri Lanka'),
+	(Sudan , 'Sudan'),
+	(Suriname , 'Suriname'),
+	(Swaziland , 'Swaziland'),
+	(Switzerland , 'Switzerland'),
+	(Syria , 'Syria'),
+	(Tajikistan , 'Tajikistan'),
+	(Tanzania , 'Tanzania'),
+	(Thailand , 'Thailand'),
+	(TimorLeste , 'Timor Leste'),
+	(Togo , 'Togo'),
+	(TrinidadTobago , 'Trinidad & Tobago'),
+	(Turkey , 'Turkey'),
+	(Turkmenistan , 'Turkmenistan'),
+	(TurksCaicos , 'Turks & Caicos'),
+	(Uganda , 'Uganda'),
+	(Ukraine , 'Ukraine'),
+	(UnitedArabEmirates , 'United Arab Emirates'),
+	(Uruguay , 'Uruguay'),
+	(Uzbekistan , 'Uzbekistan'),
+	(Venezuela , 'Venezuela'),
+	(Vietnam , 'Vietnam'),
+	(VirginIslandsUS , 'Virgin Islands (US)'),
+    (VirginIslandsUK , 'Virgin Islands (UK)'),
+	(Yemen , 'Yemen'),
+	(Zambia , 'Zambia'),
+	(Zimbabwe , 'Zimbabwe'),
+    )
 
 
 
@@ -3237,6 +4148,848 @@ class AgentCompanyInfo(models.Model):
         	(onefiftyto200 , '150,000-200,000'),
         )
 
+    RefusalAppeals = 'Refusal Appeals'
+    Yes = 'Yes'
+    No = 'No'
+    ScholarshipsOffered = 'Scholarships Offered'
+    InterviewPreparation = 'Interview Preparation'
+    TravelAndHealthInsurance = 'Travel and Health Insurance'
+    TravelArrangements = 'Travel Arrangements'
+    RegionalOffice = 'Regional Office'
+    RefusalAppeals = (
+    (RefusalAppeals , 'Refusal Appeals'),
+    (Yes , 'Yes'),
+    (No , 'No'),
+    )
+
+    ScholarshipsOffered = (
+    (ScholarshipsOffered , 'Scholarships Offered'),
+    (Yes , 'Yes'),
+    (No , 'No'),
+    )
+
+    InterviewPreparation = (
+    (InterviewPreparation , 'Interview Preparation'),
+    (Yes , 'Yes'),
+    (No , 'No'),
+    )
+    TravelAndHealthInsurance = (
+    (TravelAndHealthInsurance , 'Travel and Health Insurance'),
+    (Yes , 'Yes'),
+    (No , 'No'),
+    )
+    RegionalOffice = (
+    (RegionalOffice , 'Regional Office'),
+    (Yes , 'Yes'),
+    (No , 'No'),
+    )
+
+
+    TravelArrangements = (
+    (TravelArrangements , 'Travel Arrangements'),
+    (Yes , 'Yes'),
+    (No , 'No'),
+    )
+
+
+    VisaSuccessRatio = 'Visa Success Ratio'
+    thirtyfive = '35%'
+    forty = '40%'
+    fortyfive = '45%'
+    fifty = '50%'
+    fiftyfive = '55%'
+    sixty = '60%'
+    sixtyfive = '65%'
+    seventy = '70%'
+    seventyfive = '75%'
+    eighty = '80%'
+    eightyfive = '85%'
+    ninty = '90%'
+    nintyfive = '95%'
+    hundred = '100%'
+
+    VisaSuccessRatio = (
+            (VisaSuccessRatio , 'Visa Success Ratio'),
+            (thirtyfive , '35%'),
+            (forty , '40%'),
+            (fifty , '50%'),
+            (fiftyfive , '55%'),
+            (sixty , '60%'),
+            (sixtyfive , '65%'),
+            (seventy , '70%'),
+            (seventyfive , '75%'),
+            (eighty , '80%'),
+            (eightyfive , '85%'),
+            (ninty , '90%'),
+            (nintyfive , '95%'),
+            (hundred , '100%'),
+
+        )
+
+    Experience = 'Experience'
+    NoExperience = 'No Experience'
+    Monthto3Months = '1 - Month to 3-Months'
+    Monthto6Month = '3- Month to 6-Months'
+    Yearto15Year = '1-Year to 1.5-Years'
+    Yearto2Years  = '1.5-Year to 2 Years'
+    Yearsto25Years = '2-Years to 2.5-Years'
+    Yearsto3Years = '2.5-Years to 3-Years'
+    Yearsto35Years = '3-Years to 3.5-Years'
+    Yearsto4Years = '3.5-Years to 4-Years'
+    Yearsto45Years = '4-Years to 4.5-Years'
+    Yearsto5Years = '4.5-Years to 5-Years'
+    Yearsto55Years = '5-Years to 5.5-Years'
+    Yearsto6Years = '5.5-Years to 6-Years'
+    Yearsto65Years = '6-Years to 6.5-Years'
+    Yearsto7Years = '6.5-Years to 7-Years'
+    Yearsto75Years = '7-Years to 7.5-Years'
+    Yearsto8Years = '7.5-Years to 8-Years'
+    Yearsto85Years = '8-Years to 8.5-Years'
+    Yearsto9Years = '8.5-Years to 9-Years'
+    Yearsto95Years = '9-Years to 9.5-Years'
+    Yearsto10Years = '9.5-Years to 10-Years'
+    more = 'More Than 10 Years'
+
+    Experience = (
+    (Experience , 'Experience' ),
+    (NoExperience , 'No Experience'),
+
+    (Yearto15Year , '1-Year to 1.5-Yeara'),
+    (Yearto2Years , '1.5-Year to 2 Years'),
+    (Yearsto25Years , '2-Years to 2.5-Years'),
+    (Yearsto3Years  , '2.5-Years to 3-Years'),
+    (Yearsto35Years , '3-Years to 3.5-Years'),
+    (Yearsto45Years , '4-Years to 4.5-Years'),
+    (Yearsto5Years , '4.5-Years to 5-Years'),
+    (Yearsto55Years , '5-Years to 5.5-Years'),
+    (Yearsto6Years , '5.5-Years to 6-Years'),
+    (Yearsto65Years , '6-Years to 6.5-Years'),
+    (Yearsto7Years , '6.5-Years to 7-Years'),
+    (Yearsto75Years  , '7-Years to 7.5-Years'),
+    (Yearsto8Years , '7.5-Years to 8-Years'),
+    (Yearsto85Years , '8-Years to 8.5-Years'),
+    (Yearsto9Years , '8.5-Years to 9-Years'),
+    (Yearsto95Years , '9-Years to 9.5-Years'),
+    (Yearsto10Years , '9.5-Years to 10-Years'),
+    (more , 'More Than 10 Years'),
+
+    )
+
+
+    Branches = 'Branches'
+    City = 'City'
+    Lahore = 'Lahore'
+    Islmabad = 'Islamabad'
+    Abbottabad = 'Abbottabad'
+    Adezai = 'Adezai'
+    AhmedNagerChatha = 'Ahmed Nager Chatha'
+    AhmedpurEast = 'Ahmedpur East'
+    AliBandar = 'Ali Bandar'
+    AliPur = 'Ali Pur'
+    Arifwala = 'Arifwala'
+    Astor = 'Astor'
+    Attock = 'Attock'
+    Ayubia = 'Ayubia'
+    Baden = 'Baden'
+    Bagh = 'Bagh'
+    Bahawalnagar = 'Bahawalnagar'
+    Bahawalpur = 'Bahawalpur'
+    Bajaur = 'Bajaur'
+    BandaDaudShah = 'Banda Daud Shah'
+    Bannu = 'Bannu'
+    Baramula = 'Baramula'
+    BastiMalook = 'Basti Malook'
+    Batagram = 'Batagram'
+    Bazdar  = 'Bazdar'
+    Bela = 'Bela'
+    Bellpat = 'Bellpat'
+    Bhagalchur = 'Bhagalchur'
+    Bhaipheru = 'Bhaipheru'
+    Bhakkar = 'Bhakkar'
+    Bhalwal = 'Bhalwal'
+    Bhimber = 'Bhimber'
+    Buner = 'Buner'
+    Birote = 'Birote'
+    Burewala = 'Burewala'
+    Burj = 'Burj'
+    Chachro = 'Chachro'
+    Chagai = 'Chagai'
+    ChahSandan = 'Chah Sandan'
+    Chailianwala = 'Chailianwala'
+    Chakdara = 'Chakdara'
+    Chakku = 'Chakku'
+    Chakwal = 'Chakwal'
+    Chaman = 'Chaman'
+    Charsadda = 'Charsadda'
+    Chhatr = 'Chhatr'
+    Chichawatni = 'Chichawatni'
+    Chiniot = 'Chiniot'
+    Chitral = 'Chitral'
+    ChowkAzam = 'Chowk Azam'
+    ChowkSarwarShaheed = 'Chowk Sarwar Shaheed'
+    Dadu = 'Dadu'
+    Dalbandin = 'Dalbandin'
+    Dargai = 'Dargai'
+    DaryaKhan = 'Darya Khan'
+    Daska = 'Daska'
+    DeraBugti = 'Dera Bugti'
+    DeraGhaziKhan = 'Dera Ghazi Khan'
+    DeraIsmailKhan = 'Dera Ismail Khan'
+    DerawarFort = 'Derawar Fort'
+    DhanaSar = 'Dhana Sar'
+    Dhaular = 'Dhaular'
+    Digri = 'Digri'
+    DinaCity = 'Dina City'
+    Dinga = 'Dinga'
+    Dipalpur = 'Dipalpur'
+    Diplo = 'Diplo'
+    Diwana = 'Diwana'
+    Dokri = 'Dokri'
+    Drasan = 'Drasan'
+    Drosh = 'Drosh'
+    Duki = 'Duki'
+    Dushi = 'Dushi'
+    Duzab = 'Duzab'
+    Faisalabad = 'Faisalabad'
+    FatehJang = 'Fateh Jang'
+    Gadar = 'Gadar'
+    Gajar = 'Gajar'
+    GarhiKhairo = 'Garhi Khairo'
+    Garruck = 'Garruck'
+    GhakharMandi = 'Ghakhar Mandi'
+    Ghanian = 'Ghanian'
+    Ghauspur = 'Ghauspur'
+    Ghazluna = 'Ghazluna'
+    Ghotki = 'Ghotki'
+    Gilgit = 'Gilgit'
+    Girdan = 'Girdan'
+    GujarKhan = 'Gujar Khan'
+    Gujranwala = 'Gujranwala'
+    Gujrat = 'Gujrat'
+    Gulistan = 'Gulistan'
+    Gwadar = 'Gwadar'
+    Gwash = 'Gwash'
+    HabChauki = 'Hab Chauki'
+    Hafizabad = 'Hafizabad'
+    Hala = 'Hala'
+    Hameedabad = 'Hameedabad'
+    Hangu = 'Hangu'
+    Haripur = 'Haripur'
+    Harnai = 'Harnai'
+    Haroonabad = 'Haroonabad'
+    Hasilpur = 'Hasilpur'
+    HaveliLakha = 'Haveli Lakha'
+    Hinglaj = 'Hinglaj'
+    Hoshab = 'Hoshab'
+    Hunza = 'Hunza'
+    Hyderabad = 'Hyderabad'
+    Islamkot = 'Islamkot'
+    Ispikan = 'Ispikan'
+    Jacobabad = 'Jacobabad'
+    Jahania = 'Jahania'
+
+    JallaAraain = 'Jalla Araain'
+    Jamesabad = 'Jamesabad'
+    Jampur = 'Jampur'
+    Jamshoro = 'Jamshoro'
+    Janghar = 'Janghar'
+    Jati = 'Jati (Mughalbhin)'
+    Jauharabad = 'Jauharabad'
+    JhalJhao = 'Jhal Jhao'
+    Jhang = 'Jhang'
+    Jhatpat = 'Jhatpat'
+    Jhelum = 'Jhelum'
+    Jhudo = 'Jhudo'
+    Jiwani = 'Jiwani'
+    Jungshahi = 'Jungshahi'
+    Kalabagh = 'Kalabagh'
+    Kalam = 'Kalam'
+    Kalandi = 'Kalandi'
+    Kalat = 'Kalat'
+    Kamalia = 'Kamalia'
+    Kamararod = 'Kamararod'
+    Kamokey = 'Kamokey'
+    Kanak = 'Kanak'
+    Kandi = 'Kandi'
+    Kandiaro = 'Kandiaro'
+    Kanpur = 'Kanpur'
+    Kapip = 'Kapip'
+    Kappar = 'Kappar'
+    Karachi = 'Karachi'
+    Karak = 'Karak'
+    Karodi = 'Karodi'
+    KarorLalEsan = 'Karor Lal Esan'
+    Kashmor = 'Kashmor'
+    Kasur = 'Kasur'
+    Katuri = 'Katuri'
+    KetiBandar = 'Keti Bandar'
+    Khairpur = 'Khairpur'
+    Khanaspur = 'Khanaspur'
+    Khanewal = 'Khanewal'
+    Khanpur = 'Khanpur'
+    Kharan = 'Kharan'
+    Kharian = 'Kharian'
+    Khokhropur = 'Khokhropur'
+    Khora = 'Khora'
+    khuiratta = 'khuiratta'
+    Khushab = 'Khushab'
+    Khuzdar = 'Khuzdar'
+    Khyber = 'Khyber'
+    Kikki = 'Kikki'
+    Klupro = 'Klupro'
+    Kohan = 'Kohan'
+    Kohat = 'Kohat'
+    Kohistan = 'Kohistan'
+    Kohlu = 'Kohlu'
+    Korak = 'Korak'
+    Korangi = 'Korangi'
+    KotAddu = 'Kot Addu'
+    KotSarae = 'Kot Sarae'
+    Kotli = 'Kotli'
+    Kotri = 'Kotri'
+    Kurram = 'Kurram'
+    Laar = 'Laar'
+    Lahore = 'Lahore'
+    Lahri = 'Lahri'
+    LakkiMarwat = 'Lakki Marwat'
+    Lalamusa = 'Lalamusa'
+    Larkana = 'Larkana'
+    Lasbela = 'Lasbela'
+    Latamber = 'Latamber'
+    Layyah = 'Layyah'
+    Liari = 'Liari'
+    Lodhran = 'Lodhran'
+    Loralai = 'Loralai'
+    LowerDir = 'Lower Dir'
+    Lund = 'Lund'
+    Mach = 'Mach'
+    Madyan = 'Madyan'
+    Mailsi = 'Mailsi'
+    MakhdoomAali = 'Makhdoom Aali'
+    Malakand = 'Malakand'
+    Mamoori = 'Mamoori'
+    Mand = 'Mand'
+    MandiBahauddin = 'Mandi Bahauddin'
+    MandiWarburton = 'Mandi Warburton'
+    Mangla = 'Mangla'
+
+    Manguchar = 'Manguchar'
+    Mansehra = 'Mansehra'
+    Mardan = 'Mardan'
+    MashkiChah = 'Mashki Chah'
+    Maslti = 'Maslti'
+    Mastuj = 'Mastuj'
+    Mastung = 'Mastung'
+    Mathi = 'Mathi'
+    Matiari = 'Matiari'
+    Mehar = 'Mehar'
+    Mekhtar = 'Mekhtar'
+    Merui = 'Merui'
+    MianChannu = 'Mian Channu'
+    Mianez = 'Mianez'
+    Mianwali = 'Mianwali'
+    Minawala = 'Minawala'
+    MiramShah = 'Miram Shah'
+    Mirpur = 'Mirpur'
+    MirpurBatoro = 'Mirpur Batoro'
+    MirpurKhas = 'Mirpur Khas'
+    MirpurSakro = 'Mirpur Sakro'
+    Mithani = 'Mithani'
+    Mithi = 'Mithi'
+    Mohmand = 'Mohmand'
+    Mongora = 'Mongora'
+    Moro = 'Moro'
+    Multan = 'Multan'
+    MurghaKibzai = 'Murgha Kibzai'
+    Branches =(
+            (Abbottabad , 'Abbottabad'),
+        	(Adezai , 'Adezai'),
+        	(AhmedNagerChatha , 'Ahmed Nager Chatha'),
+        	(AhmedpurEast , 'Ahmedpur East'),
+        	(AliBandar , 'Ali Bandar'),
+        	(AliPur , 'Ali Pur'),
+        	(Arifwala , 'Arifwala'),
+        	(Astor , 'Astor'),
+        	(Attock , 'Attock'),
+        	(Ayubia , 'Ayubia'),
+        	(Baden , 'Baden'),
+        	(Bagh , 'Bagh'),
+        	(Bahawalnagar , 'Bahawalnagar'),
+        	(Bahawalpur , 'Bahawalpur'),
+        	(Bajaur , 'Bajaur'),
+        	(BandaDaudShah , 'Banda Daud Shah'),
+        	(Bannu , 'Bannu'),
+        	(Baramula , 'Baramula'),
+        	(BastiMalook , 'Basti Malook'),
+        	(Batagram , 'Batagram'),
+        	(Bazdar , 'Bazdar'),
+        	(Bela , 'Bela'),
+        	(Bellpat , 'Bellpat'),
+        	(Bhagalchur , 'Bhagalchur'),
+        	(Bhaipheru , 'Bhaipheru'),
+        	(Bhakkar , 'Bhakkar'),
+        	(Bhalwal , 'Bhalwal'),
+        	(Bhimber , 'Bhimber'),
+        	(Birote , 'Birote'),
+        	(Buner , 'Buner'),
+        	(Burewala , 'Burewala'),
+        	(Burj , 'Burj'),
+        	(Chachro , 'Chachro'),
+        	(Chagai , 'Chagai'),
+        	(ChahSandan , 'Chah Sandan'),
+        	(Chailianwala , 'Chailianwala'),
+        	(Chakdara , 'Chakdara'),
+        	(Chakku , 'Chakku'),
+        	(Chakwal , 'Chakwal'),
+        	(Chaman , 'Chaman'),
+        	(Charsadda , 'Charsadda'),
+        	(Chhatr , 'Chhatr'),
+        	(Chichawatni , 'Chichawatni'),
+        	(Chiniot , 'Chiniot'),
+        	(Chitral , 'Chitral'),
+        	(ChowkAzam , 'Chowk Azam'),
+        	(ChowkSarwarShaheed , 'Chowk Sarwar Shaheed'),
+        	(Dadu , 'Dadu'),
+        	(Dalbandin , 'Dalbandin'),
+        	(Dargai , 'Dargai'),
+        	(DaryaKhan , 'Darya Khan'),
+        	(Daska , 'Daska'),
+        	(DeraBugti , 'Dera Bugti'),
+        	(DeraGhaziKhan , 'Dera Ghazi Khan'),
+        	(DeraIsmailKhan , 'Dera Ismail Khan'),
+        	(DerawarFort , 'Derawar Fort'),
+        	(DhanaSar , 'Dhana Sar'),
+        	(Dhaular , 'Dhaular'),
+        	(Digri , 'Digri'),
+        	(DinaCity , 'Dina City'),
+        	(Dinga , 'Dinga'),
+        	(Dipalpur , 'Dipalpur'),
+        	(Diplo , 'Diplo'),
+        	(Diwana , 'Diwana'),
+        	(Dokri , 'Dokri'),
+        	(Drasan , 'Drasan'),
+        	(Drosh , 'Drosh'),
+        	(Duki , 'Duki'),
+        	(Dushi , 'Dushi'),
+        	(Duzab , 'Duzab'),
+        	(Faisalabad , 'Faisalabad'),
+        	(FatehJang , 'Fateh Jang'),
+        	(Gadar , 'Gadar'),
+        	(Gajar , 'Gajar'),
+        	(GarhiKhairo , 'Garhi Khairo'),
+        	(Garruck , 'Garruck'),
+        	(GhakharMandi , 'Ghakhar Mandi'),
+        	(Ghanian , 'Ghanian'),
+        	(Ghauspur , 'Ghauspur'),
+        	(Ghazluna , 'Ghazluna'),
+        	(Ghotki , 'Ghotki'),
+        	(Gilgit , 'Gilgit'),
+        	(Girdan , 'Girdan'),
+        	(GujarKhan , 'Gujar Khan'),
+        	(Gujranwala , 'Gujranwala'),
+        	(Gujrat , 'Gujrat'),
+        	(Gulistan , 'Gulistan'),
+        	(Gwadar , 'Gwadar'),
+        	(Gwash , 'Gwash'),
+        	(HabChauki , 'Hab Chauki'),
+        	(Hafizabad , 'Hafizabad'),
+        	(Hala , 'Hala'),
+        	(Hameedabad , 'Hameedabad'),
+        	(Hangu , 'Hangu'),
+        	(Haripur , 'Haripur'),
+        	(Harnai , 'Harnai'),
+        	(Haroonabad , 'Haroonabad'),
+        	(Hasilpur , 'Hasilpur'),
+        	(HaveliLakha , 'Haveli Lakha'),
+        	(Hinglaj , 'Hinglaj'),
+        	(Hoshab , 'Hoshab'),
+        	(Hunza , 'Hunza'),
+        	(Hyderabad , 'Hyderabad'),
+        	(Islamkot , 'Islamkot'),
+        	(Ispikan , 'Ispikan'),
+        	(Jacobabad , 'Jacobabad'),
+        	(Jahania , 'Jahania'),
+        	(JallaAraain , 'Jalla Araain'),
+        	(Jamesabad , 'Jamesabad'),
+        	(Jampur , 'Jampur'),
+        	(Jamshoro , 'Jamshoro'),
+        	(Janghar , 'Janghar'),
+        	(Jati , 'Jati (Mughalbhin)'),
+        	(Jauharabad , 'Jauharabad'),
+        	(JhalJhao , 'Jhal Jhao'),
+        	(Jhang , 'Jhang'),
+        	(Jhatpat , 'Jhatpat'),
+        	(Jhelum , 'Jhelum'),
+        	(Jhudo , 'Jhudo'),
+        	(Jiwani , 'Jiwani'),
+        	(Jungshahi , 'Jungshahi'),
+        	(Kalabagh , 'Kalabagh'),
+        	(Kalam , 'Kalam'),
+        	(Kalandi , 'Kalandi'),
+        	(Kalat , 'Kalat'),
+        	(Kamalia , 'Kamalia'),
+        	(Kamararod , 'Kamararod'),
+        	(Kamokey , 'Kamokey'),
+        	(Kanak , 'Kanak'),
+        	(Kandi , 'Kandi'),
+        	(Kandiaro , 'Kandiaro'),
+        	(Kanpur , 'Kanpur'),
+        	(Kapip , 'Kapip'),
+        	(Kappar , 'Kappar'),
+        	(Karachi , 'Karachi'),
+        	(Karak , 'Karak'),
+        	(Karodi , 'Karodi'),
+        	(KarorLalEsan , 'Karor Lal Esan'),
+        	(Kashmor , 'Kashmor'),
+        	(Kasur , 'Kasur'),
+        	(Katuri , 'Katuri'),
+        	(KetiBandar , 'Keti Bandar'),
+        	(Khairpur , 'Khairpur'),
+        	(Khanaspur , 'Khanaspur'),
+        	(Khanewal , 'Khanewal'),
+        	(Khanpur , 'Khanpur'),
+        	(Kharan , 'Kharan'),
+        	(Kharian , 'Kharian'),
+        	(Khokhropur , 'AKhokhropur'),
+        	(Khora , 'Khora'),
+        	(khuiratta , 'khuiratta'),
+        	(Khushab , 'Khushab'),
+        	(Khuzdar , 'Khuzdar'),
+        	(Khyber , 'Khyber'),
+        	(Kikki , 'Kikki'),
+        	(Klupro , 'Klupro'),
+        	(Kohan , 'Kohan'),
+        	(Kohat , 'Kohat'),
+        	(Kohistan , 'Kohistan'),
+        	(Kohlu , 'Kohlu'),
+        	(Korak , 'Korak'),
+        	(Korangi , 'Korangi'),
+        	(KotAddu , 'Kot Addu'),
+        	(KotSarae , 'Kot Sarae'),
+        	(Kotli , 'Kotli'),
+        	(Kotri , 'Kotri'),
+        	(Kurram , 'Kurram'),
+        	(Laar , 'Laar'),
+        	(Lahore , 'Lahore'),
+        	(Lahri , 'Lahri'),
+        	(LakkiMarwat , 'Lakki Marwat'),
+        	(Lalamusa , 'Lalamusa'),
+        	(Larkana , 'Larkana'),
+        	(Lasbela , 'Lasbela'),
+        	(Latamber , 'Latamber'),
+        	(Layyah , 'Layyah'),
+        	(Liari , 'Liari'),
+        	(Lodhran , 'Lodhran'),
+        	(Loralai , 'Loralai'),
+        	(LowerDir , 'Lower Dir'),
+        	(Lund , 'Lund'),
+        	(Mach , 'Mach'),
+        	(Madyan , 'Madyan'),
+        	(Mailsi , 'Mailsi'),
+        	(MakhdoomAali , 'Makhdoom Aali'),
+        	(Malakand , 'Malakand'),
+        	(Mamoori , 'Mamoori'),
+        	(Mand , 'Mand'),
+        	(MandiBahauddin , 'Mandi Bahauddin'),
+        	(MandiWarburton , 'Mandi Warburton'),
+        	(Mangla , 'Mangla'),
+        	(Manguchar , 'Manguchar'),
+        	(Mansehra , 'Mansehra'),
+        	(Mardan , 'Mardan'),
+        	(MashkiChah , 'Mashki Chah'),
+        	(Maslti , 'Maslti'),
+        	(Mastuj , 'Mastuj'),
+        	(Mastung , 'Mastung'),
+        	(Mathi , 'Mathi'),
+        	(Matiari , 'Matiari'),
+        	(Mehar , 'Mehar'),
+        	(Mekhtar , 'Mekhtar'),
+        	(Merui , 'Merui'),
+        	(MianChannu , 'Mian Channu'),
+        	(Mianez , 'Mianez'),
+        	(Mianwali , 'Mianwali'),
+        	(Minawala , 'Minawala'),
+        	(MiramShah , 'Miram Shah'),
+        	(Mirpur , 'Mirpur'),
+        	(MirpurBatoro , 'Mirpur Batoro'),
+        	(MirpurKhas , 'Mirpur Khas'),
+        	(MirpurSakro , 'Mirpur Sakro'),
+        	(Mithani , 'Mithani'),
+        	(Mithi , 'Mithi'),
+        	(Mohmand , 'Mohmand'),
+        	(Mongora , 'Mongora'),
+        	(Moro , 'Moro'),
+        	(Multan , 'Multan'),
+        	(MurghaKibzai , 'Murgha Kibzai'),
+
+    )
+
+    City=(
+    (City, 'City'),
+    (Abbottabad , 'Abbottabad'),
+    (Adezai , 'Adezai'),
+    (AhmedNagerChatha , 'Ahmed Nager Chatha'),
+    (AhmedpurEast , 'Ahmedpur East'),
+    (AliBandar , 'Ali Bandar'),
+    (AliPur , 'Ali Pur'),
+    (Arifwala , 'Arifwala'),
+    (Astor , 'Astor'),
+    (Attock , 'Attock'),
+    (Ayubia , 'Ayubia'),
+    (Baden , 'Baden'),
+    (Bagh , 'Bagh'),
+    (Bahawalnagar , 'Bahawalnagar'),
+    (Bahawalpur , 'Bahawalpur'),
+    (Bajaur , 'Bajaur'),
+    (BandaDaudShah , 'Banda Daud Shah'),
+    (Bannu , 'Bannu'),
+    (Baramula , 'Baramula'),
+    (BastiMalook , 'Basti Malook'),
+    (Batagram , 'Batagram'),
+    (Bazdar , 'Bazdar'),
+    (Bela , 'Bela'),
+    (Bellpat , 'Bellpat'),
+    (Bhagalchur , 'Bhagalchur'),
+    (Bhaipheru , 'Bhaipheru'),
+    (Bhakkar , 'Bhakkar'),
+    (Bhalwal , 'Bhalwal'),
+    (Bhimber , 'Bhimber'),
+    (Birote , 'Birote'),
+    (Buner , 'Buner'),
+    (Burewala , 'Burewala'),
+    (Burj , 'Burj'),
+    (Chachro , 'Chachro'),
+    (Chagai , 'Chagai'),
+    (ChahSandan , 'Chah Sandan'),
+    (Chailianwala , 'Chailianwala'),
+    (Chakdara , 'Chakdara'),
+    (Chakku , 'Chakku'),
+    (Chakwal , 'Chakwal'),
+    (Chaman , 'Chaman'),
+    (Charsadda , 'Charsadda'),
+    (Chhatr , 'Chhatr'),
+    (Chichawatni , 'Chichawatni'),
+    (Chiniot , 'Chiniot'),
+    (Chitral , 'Chitral'),
+    (ChowkAzam , 'Chowk Azam'),
+    (ChowkSarwarShaheed , 'Chowk Sarwar Shaheed'),
+    (Dadu , 'Dadu'),
+    (Dalbandin , 'Dalbandin'),
+    (Dargai , 'Dargai'),
+    (DaryaKhan , 'Darya Khan'),
+    (Daska , 'Daska'),
+    (DeraBugti , 'Dera Bugti'),
+    (DeraGhaziKhan , 'Dera Ghazi Khan'),
+    (DeraIsmailKhan , 'Dera Ismail Khan'),
+    (DerawarFort , 'Derawar Fort'),
+    (DhanaSar , 'Dhana Sar'),
+    (Dhaular , 'Dhaular'),
+    (Digri , 'Digri'),
+    (DinaCity , 'Dina City'),
+    (Dinga , 'Dinga'),
+    (Dipalpur , 'Dipalpur'),
+    (Diplo , 'Diplo'),
+    (Diwana , 'Diwana'),
+    (Dokri , 'Dokri'),
+    (Drasan , 'Drasan'),
+    (Drosh , 'Drosh'),
+    (Duki , 'Duki'),
+    (Dushi , 'Dushi'),
+    (Duzab , 'Duzab'),
+    (Faisalabad , 'Faisalabad'),
+    (FatehJang , 'Fateh Jang'),
+    (Gadar , 'Gadar'),
+    (Gajar , 'Gajar'),
+    (GarhiKhairo , 'Garhi Khairo'),
+    (Garruck , 'Garruck'),
+    (GhakharMandi , 'Ghakhar Mandi'),
+    (Ghanian , 'Ghanian'),
+    (Ghauspur , 'Ghauspur'),
+    (Ghazluna , 'Ghazluna'),
+    (Ghotki , 'Ghotki'),
+    (Gilgit , 'Gilgit'),
+    (Girdan , 'Girdan'),
+    (GujarKhan , 'Gujar Khan'),
+    (Gujranwala , 'Gujranwala'),
+    (Gujrat , 'Gujrat'),
+    (Gulistan , 'Gulistan'),
+    (Gwadar , 'Gwadar'),
+    (Gwash , 'Gwash'),
+    (HabChauki , 'Hab Chauki'),
+    (Hafizabad , 'Hafizabad'),
+    (Hala , 'Hala'),
+    (Hameedabad , 'Hameedabad'),
+    (Hangu , 'Hangu'),
+    (Haripur , 'Haripur'),
+    (Harnai , 'Harnai'),
+    (Haroonabad , 'Haroonabad'),
+    (Hasilpur , 'Hasilpur'),
+    (HaveliLakha , 'Haveli Lakha'),
+    (Hinglaj , 'Hinglaj'),
+    (Hoshab , 'Hoshab'),
+    (Hunza , 'Hunza'),
+    (Hyderabad , 'Hyderabad'),
+    (Islamkot , 'Islamkot'),
+    (Ispikan , 'Ispikan'),
+    (Jacobabad , 'Jacobabad'),
+    (Jahania , 'Jahania'),
+    (JallaAraain , 'Jalla Araain'),
+    (Jamesabad , 'Jamesabad'),
+    (Jampur , 'Jampur'),
+    (Jamshoro , 'Jamshoro'),
+    (Janghar , 'Janghar'),
+    (Jati , 'Jati (Mughalbhin)'),
+    (Jauharabad , 'Jauharabad'),
+    (JhalJhao , 'Jhal Jhao'),
+    (Jhang , 'Jhang'),
+    (Jhatpat , 'Jhatpat'),
+    (Jhelum , 'Jhelum'),
+    (Jhudo , 'Jhudo'),
+    (Jiwani , 'Jiwani'),
+    (Jungshahi , 'Jungshahi'),
+    (Kalabagh , 'Kalabagh'),
+    (Kalam , 'Kalam'),
+    (Kalandi , 'Kalandi'),
+    (Kalat , 'Kalat'),
+    (Kamalia , 'Kamalia'),
+    (Kamararod , 'Kamararod'),
+    (Kamokey , 'Kamokey'),
+    (Kanak , 'Kanak'),
+    (Kandi , 'Kandi'),
+    (Kandiaro , 'Kandiaro'),
+    (Kanpur , 'Kanpur'),
+    (Kapip , 'Kapip'),
+    (Kappar , 'Kappar'),
+    (Karachi , 'Karachi'),
+    (Karak , 'Karak'),
+    (Karodi , 'Karodi'),
+    (KarorLalEsan , 'Karor Lal Esan'),
+    (Kashmor , 'Kashmor'),
+    (Kasur , 'Kasur'),
+    (Katuri , 'Katuri'),
+    (KetiBandar , 'Keti Bandar'),
+    (Khairpur , 'Khairpur'),
+    (Khanaspur , 'Khanaspur'),
+    (Khanewal , 'Khanewal'),
+    (Khanpur , 'Khanpur'),
+    (Kharan , 'Kharan'),
+    (Kharian , 'Kharian'),
+    (Khokhropur , 'AKhokhropur'),
+    (Khora , 'Khora'),
+    (khuiratta , 'khuiratta'),
+    (Khushab , 'Khushab'),
+    (Khuzdar , 'Khuzdar'),
+    (Khyber , 'Khyber'),
+    (Kikki , 'Kikki'),
+    (Klupro , 'Klupro'),
+    (Kohan , 'Kohan'),
+    (Kohat , 'Kohat'),
+    (Kohistan , 'Kohistan'),
+    (Kohlu , 'Kohlu'),
+    (Korak , 'Korak'),
+    (Korangi , 'Korangi'),
+    (KotAddu , 'Kot Addu'),
+    (KotSarae , 'Kot Sarae'),
+    (Kotli , 'Kotli'),
+    (Kotri , 'Kotri'),
+    (Kurram , 'Kurram'),
+    (Laar , 'Laar'),
+    (Lahore , 'Lahore'),
+    (Lahri , 'Lahri'),
+    (LakkiMarwat , 'Lakki Marwat'),
+    (Lalamusa , 'Lalamusa'),
+    (Larkana , 'Larkana'),
+    (Lasbela , 'Lasbela'),
+    (Latamber , 'Latamber'),
+    (Layyah , 'Layyah'),
+    (Liari , 'Liari'),
+    (Lodhran , 'Lodhran'),
+    (Loralai , 'Loralai'),
+    (LowerDir , 'Lower Dir'),
+    (Lund , 'Lund'),
+    (Mach , 'Mach'),
+    (Madyan , 'Madyan'),
+    (Mailsi , 'Mailsi'),
+    (MakhdoomAali , 'Makhdoom Aali'),
+    (Malakand , 'Malakand'),
+    (Mamoori , 'Mamoori'),
+    (Mand , 'Mand'),
+    (MandiBahauddin , 'Mandi Bahauddin'),
+    (MandiWarburton , 'Mandi Warburton'),
+    (Mangla , 'Mangla'),
+    (Manguchar , 'Manguchar'),
+    (Mansehra , 'Mansehra'),
+    (Mardan , 'Mardan'),
+    (MashkiChah , 'Mashki Chah'),
+    (Maslti , 'Maslti'),
+    (Mastuj , 'Mastuj'),
+    (Mastung , 'Mastung'),
+    (Mathi , 'Mathi'),
+    (Matiari , 'Matiari'),
+    (Mehar , 'Mehar'),
+    (Mekhtar , 'Mekhtar'),
+    (Merui , 'Merui'),
+    (MianChannu , 'Mian Channu'),
+    (Mianez , 'Mianez'),
+    (Mianwali , 'Mianwali'),
+    (Minawala , 'Minawala'),
+    (MiramShah , 'Miram Shah'),
+    (Mirpur , 'Mirpur'),
+    (MirpurBatoro , 'Mirpur Batoro'),
+    (MirpurKhas , 'Mirpur Khas'),
+    (MirpurSakro , 'Mirpur Sakro'),
+    (Mithani , 'Mithani'),
+    (Mithi , 'Mithi'),
+    (Mohmand , 'Mohmand'),
+    (Mongora , 'Mongora'),
+    (Moro , 'Moro'),
+    (Multan , 'Multan'),
+    (MurghaKibzai , 'Murgha Kibzai'),
+    )
+    NumberOfCounselors = 'Number of Counselors'
+    five = '5'
+    ten = '10'
+    fifteen = '15'
+    twenty = '20'
+    twentyfive = '25'
+    thirty = '30'
+    thirtyfive = '35'
+    forty = '40'
+    fortyfive = '45'
+    fifty = '50'
+
+    NumberOfCounselors = (
+    (NumberOfCounselors , 'Number of Counselors'),
+    (five , '5'),
+    (ten , '10'),
+    (fifteen , '15'),
+    (twenty ,'20'),
+    (twentyfive , '25'),
+    (thirty , '30'),
+    (thirtyfive , '35'),
+    (forty , '40'),
+    (fortyfive , '45'),
+    (fifty , '50'),
+    )
+    Provice = 'Province'
+    Punjab = 'Punjab'
+    IslamabadICT = 'Islamabad ICT'
+    Sindh = 'Sindh'
+    KPK = 'KPC'
+    Balochistan = 'Balochistan'
+    GilgitBaltistan = 'Gilgit Baltistan'
+    AzadJamuKashmir = 'Azad Jamui Kashmir'
+
+    Province = (
+    (Provice , 'Province'),
+    (Punjab , 'Punjab'),
+    (IslamabadICT , 'Islamabad ICT'),
+    (Sindh , 'Sindh'),
+    (KPK , 'KPC'),
+    (Balochistan , 'Balochistan'),
+    (GilgitBaltistan , 'Gilgit Baltistan'),
+    (AzadJamuKashmir , 'Azad Jamui Kashmir'),
+    )
 
     user = models.OneToOneField(User)
     comp_name = models.CharField(max_length=500, blank=False , default= None)
@@ -3244,18 +4997,19 @@ class AgentCompanyInfo(models.Model):
     company_owner = models.CharField(max_length=500 , default= None)
     agent_whatsapp = models.CharField(max_length=500 , default= None)
     address = models.TextField(blank=False, default= None, null=True)
-    alternative_email = models.EmailField(blank=False , default= None, null=True)
+    alternative_email = models.EmailField(blank=True , default= None, null=True)
     agent_website = models.URLField( blank = True, null=True)
     facebook_link =  models.URLField( blank = True, null=True)
     linked_In = models.URLField(blank = True, null=True)
-    office_contact = models.CharField(max_length=500 , default= None)
-    agent_city = models.CharField(max_length=500  , default= None)
-    agent_state = models.CharField(max_length=500  , default= None)
+    office_contact = models.CharField(max_length=500 , default= None, blank = True, null =True)
+    agent_city = models.CharField(max_length=500  , choices = City, default= City)
+    agent_state = models.CharField(max_length=500  ,choices=Province, default= Province)
     agent_country =  models.CharField(max_length=500  , choices = Country, default= Country)
+    nationality = models.CharField(max_length=500 ,choices= Nationality,    default= Nationality, null=True )
+    pak_registeration_body1 = models.CharField(max_length=400, blank=True ,  default= None)
+    pak_registeration_body2 = models.CharField(max_length=400, blank=True , default= None)
+    pak_registeration_body3 = models.CharField(max_length=400, blank=True , default= None)
 
-    pak_registeration_body1 = models.CharField(max_length=400, blank=True ,null=True,  default= None)
-    pak_registeration_body2 = models.CharField(max_length=400, blank=True ,null=True, default= None)
-    pak_registeration_body3 = models.CharField(max_length=400, blank=True ,null=True, default= None)
     pak_registeration_body4 = models.CharField(max_length=400, blank=True ,null=True, default= None)
     pak_registeration_body5 = models.CharField(max_length=400, blank=True ,null=True, default= None)
     pak_registeration_body6 = models.CharField(max_length=400, blank=True ,null=True, default= None)
@@ -3268,29 +5022,29 @@ class AgentCompanyInfo(models.Model):
     Internatiol_registeration_body6 = models.CharField(max_length=400, blank=True,null=True, default= None)
 
 
-    countries_Dealing = models.CharField(max_length=400, choices = Country,  default= Country)
+    countries_Dealing = models.CharField(max_length=400)
     #Services_offered = models.CharField(max_length=250, default= None)
-    service_type =  models.CharField(max_length=400, default= None)
-    language_classes =  models.CharField(max_length=400, default= None, blank = True, null=True)
+    #service_type =  models.CharField(max_length=400, default= None)
+    language_classes =  models.CharField(max_length=400, default= None, blank = True)
     processing = models.CharField(max_length=400 , default= None, blank = True, null=True)
     program_specialist = models.CharField(max_length=400, default= None, blank = True, null=True)
-    refusal_appeals = models.CharField(max_length=400, default= None, blank = True)
-    scholarships_offered = models.CharField(max_length=400, default= None, blank = True)
-    interview_preparation = models.CharField(max_length=400, default= None, blank = True)
-    travel_and_health = models.CharField(max_length=400, default= None, blank = True)
-    travel_arrangements = models.CharField(max_length=400, default= None, blank = True)
+    refusal_appeals = models.CharField(max_length=400, choices=RefusalAppeals, default= RefusalAppeals, null = True )
+    scholarships_offered = models.CharField(max_length=400, choices = ScholarshipsOffered, default= ScholarshipsOffered, null = True)
+    interview_preparation = models.CharField(max_length=400,choices= InterviewPreparation, default= InterviewPreparation, null = True)
+    travel_and_health = models.CharField(max_length=400,choices= TravelAndHealthInsurance ,default= TravelAndHealthInsurance, null = True)
+    travel_arrangements = models.CharField(max_length=400,choices=TravelArrangements, default= TravelArrangements, null = True)
 
-    visa_ratio = models.CharField(max_length=400, default= None, blank = True)
-    experience = models.CharField(max_length=400, default= None, blank = True)
-    regional_office = models.CharField(max_length=400, default= None, blank = True)
+    visa_ratio = models.CharField(max_length=400, choices = VisaSuccessRatio, default= VisaSuccessRatio, null = True)
+    experience = models.CharField(max_length=400,choices= Experience,  default= Experience, null = True)
+    regional_office = models.CharField(max_length=400, choices=RegionalOffice, default= RegionalOffice, null = True)
     branches = models.CharField(max_length=400, default= None, blank = True)
-    number_of_counselors = models.CharField(max_length=400, default= None, blank = True)
+    number_of_counselors = models.CharField(max_length=400,choices=NumberOfCounselors, default= NumberOfCounselors, null = True)
 
-    processing_fee = models.CharField(max_length = 400,choices= ProcessingFee ,default = ProcessingFee, blank =True)
-    language_fee = models.CharField(max_length = 400,choices=LanguageFee, default = LanguageFee, blank=True,null=True,)
-    refusal_fee = models.CharField(max_length = 400,choices=RefusalFee ,default = RefusalFee, blank=True,null=True,)
-    Interview_fee = models.CharField(max_length =400,choices=InterviewFee,  default = InterviewFee, blank=True,null=True,)
-    scholarshipfee = models.CharField(max_length =400, choices=ScholarshipFee, default = ScholarshipFee, blank=True, null=True,)
+    processing_fee = models.CharField(max_length = 400,choices= ProcessingFee ,default = ProcessingFee, null = True)
+    language_fee = models.CharField(max_length = 400,choices=LanguageFee, default = LanguageFee,null=True,)
+    refusal_fee = models.CharField(max_length = 400,choices=RefusalFee ,default = RefusalFee,null=True,)
+    Interview_fee = models.CharField(max_length =400,choices=InterviewFee,  default = InterviewFee,null=True,)
+    scholarshipfee = models.CharField(max_length =400, choices=ScholarshipFee, default = ScholarshipFee, null=True,)
     def __str__(self):
         return self.user.username
 

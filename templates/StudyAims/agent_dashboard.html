@@ -153,7 +153,7 @@
               <li><a href="mba-operations.html">MBA Operations</a></li>
             </ul>
           </li>
-          <li> <a href="gallery.html">Classified Ads</a></li>
+        <!--  <li> <a href="gallery.html">Classified Ads</a></li> -->
           <li class="dropdown"> <a data-toggle="dropdown" href="#">Events<i class="fa fa-angle-down" aria-hidden="true"></i></a>
             <ul class="dropdown-menu">
               <li class="visible-xs"><a href="register.html">Student Portal</a></li>
@@ -186,17 +186,17 @@
 <li>
   <a href="#"> <b> <label for="" id="account_info_label">Account Information</label></b></a></li>
   <li>
-  <a href="#">  <label for="" id="_label">Company Information</label><br></a></li>
+  <a href="#">  <label for="" id="company_info_label">Company Information</label><br></a></li>
 <li>
-  <a href="#">  <label for="" id="_info_label">Company Registration Information</label><br></a>
+  <a href="#">  <label for="" id="regisration_info_label">Company Registration Information</label><br></a>
   </li>
 <li>
-  <a href="#">  <label for="" id="_skill_label">Services Information</label><br></a></li>
+  <a href="#">  <label for="" id="service_skill_label">Services Information</label><br></a></li>
   <li>
-    <a href="#">  <label for="" id="_skill_label">Your Expertise</label><br></a></li>
+    <a href="#">  <label for="" id="expertise_info_label">Your Expertise</label><br></a></li>
     <li>
-      <a href="#">  <label for="" id="_skill_label">Fee Information</label><br></a></li>
-    <a href="{% url 'StudyAims:profile_edit' pk=user.pk %}">  <label for="" id="edit_Infomration">Edit Information</label><br></a></li>
+      <a href="#">  <label for="" id="fee_info_label">Fee Information</label><br></a></li>
+    <a href="{% url 'StudyAims:agent_profile_edit' pk=user.pk %}">  <label for="" id="edit_Infomration">Edit Information</label><br></a></li>
         <a href="{% url 'StudyAims:change_password' %}">  <label for="" id="change_password">Change Password</label><br></a></li>
   </ul>
   </div>
@@ -237,126 +237,164 @@
     </div>
   </div>
   <br><br>
-  <div class="row">
-    <div class="col-sm-12">
 
-
-    <button type="button" class="btn" name="button">Edit Information</button>
-    </div>
-  </div>
 </div>
 
 
-<div class="right-bl" style="display:none" id="personal_info">
+<div class="right-bl" style="display:none" id="company_info">
   <div class="head-block">
-    <h1>Company Information       <button type="button" name="button"> Edit <span class="glyphicon glyphicon-pencil"></span></button>    </h1>
+    <h1>Company Information       </h1>
   </div>
 <div class="db">
 
 
-  <div class="row">
-    <div class="col-sm-3">
-      <b>Company Name</b>
-    </div>
-    <div class="col-sm-5">
-{{ current_user.agentcompanyinfo.comp_name}}
 
-    </div>
-
-
-    </div>
     <div class="row">
-      <div class="col-sm-3">
-        <b>Owner Name</b>
+      <div class="col-md-6" id="infoSec">
+        <b>Company Name</b>
       </div>
-      <div class="col-sm-3">
-        {{current_user.agentcompanyinfo.company_owner}}
+      <div class="col-md-6">
+  <b>{{ current_user.agentcompanyinfo.comp_name}}</b>
+
+
+  </div>
       </div>
-      <div class="col-sm-3">
-        <b>Mobile Number</b>
+      <div class="row">
+        <div class="col-md-6" id="infoSec">
+          <b>Owner Name</b>
+        </div>
+        <div class="col-md-6">
+    <b>{{current_user.agentcompanyinfo.company_owner}}</b>
+
+
+    </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6" id="infoSec">
+            <b>Mobile Number</b>
+          </div>
+          <div class="col-md-6">
+      <b>{{current_user.agentcompanyinfo.agent_contact_number}}
+    </div></b>
+
+
       </div>
-      <div class="col-sm-3">
-        {{current_user.agentcompanyinfo.agent_contact_number}}
-      </div>
-    </div>
-<div class="row">
 
 
-    <div class="col-sm-3">
-      <b>WhatsApp Number</b>
-    </div>
-    <div class="col-sm-3">
-      {{current_user.agentcompanyinfo.agent_whatsapp}}
-    </div>
-    <div class="col-sm-3">
-      <b>Alternative Email</b>
-    </div>
-    <div class="col-sm-3">
-      {{current_user.agentcompanyinfo.alternative_email}}
-    </div>
-</div>
-<div class="row">
+          <div class="row">
+            <div class="col-md-6" id="infoSec">
+              <b>WhatsApp Number</b>
+            </div>
+            <div class="col-md-6">
+          <b>{{current_user.agentcompanyinfo.agent_whatsapp}}</b>
+          </div>
 
 
-    <div class="col-sm-3">
-      <b>Address</b>
-    </div>
-    <div class="col-sm-9">
-      {{current_user.agentcompanyinfo.address}}
-    </div>
-
-</div>
-<div class="row">
+          </div>
 
 
-    <div class="col-sm-2">
-      <b>City</b>
-    </div>
-    <div class="col-sm-2">
-      {{current_user.agentcompanyinfo.agent_city}}
-    </div>
-    <div class="col-sm-2">
-      <b>State</b>
-    </div>
-    <div class="col-sm-2">
-      {{current_user.agentcompanyinfo.agent_state}}
-    </div>
-    <div class="col-sm-2">
-      <b>Country</b>
-    </div>
-    <div class="col-sm-2">
-      {{current_user.agentcompanyinfo.agent_country}}
-    </div>
-</div>
-<div class="row">
-  <div class="col-sm-3">
-    <b>Office Contact</b>
-  </div>
-  <div class="col-sm-3">
-    {{current_user.agentcompanyinfo.office_contact}}
-  </div>
-  <div class="col-sm-3">
-    <b>Company Website</b>
-  </div>
-  <div class="col-sm-3">
-    {{current_user.agentcompanyinfo.agent_website}}
-  </div>
+            <div class="row">
+              <div class="col-md-6" id="infoSec">
+                <b>WhatsApp Number</b>
+              </div>
+              <div class="col-md-6">
+            <b>{{current_user.agentcompanyinfo.agent_whatsapp}}</b>
+            </div>
 
-</div>
-<div class="row">
-  <div class="col-sm-3">
-    <b>Facebook URL</b>
-  </div>
-  <div class="col-sm-3">
-    {{current_user.agentcompanyinfo.facebook_link}}
-  <div class="col-sm-3">
-    <b>LinkedIn URL</b>
-  </div>
-  <div class="col-sm-3">
-    {{current_user.agentcompanyinfo.linked_In}}
-  </div>
 
-</div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6" id="infoSec">
+                <b>Alternative Email</b>
+              </div>
+              <div class="col-md-6">
+            <b>{{current_user.agentcompanyinfo.alternative_email}}</b>
+            </div>
+
+
+            </div>
+
+            <div class="row">
+              <div class="col-md-6" id="infoSec">
+                <b>Address</b>
+              </div>
+              <div class="col-md-6">
+            <b>  {{current_user.agentcompanyinfo.address}}</b>
+            </div>
+
+
+            </div>
+
+            <div class="row">
+              <div class="col-md-6" id="infoSec">
+                <b>City</b>
+              </div>
+              <div class="col-md-6">
+            <b>  {{current_user.agentcompanyinfo.agent_city}}</b>
+            </div>
+
+
+            </div>
+
+            <div class="row">
+              <div class="col-md-6" id="infoSec">
+                <b>State</b>
+              </div>
+              <div class="col-md-6">
+            <b>  {{current_user.agentcompanyinfo.agent_state}}</b>
+            </div>
+
+
+            </div>
+
+            <div class="row">
+              <div class="col-md-6" id="infoSec">
+                <b>Country</b>
+              </div>
+              <div class="col-md-6">
+            <b>  {{current_user.agentcompanyinfo.agent_country}}</b>
+            </div>
+
+
+            </div>
+
+
+            <div class="row">
+              <div class="col-md-6" id="infoSec">
+                <b>Office Contact</b>
+              </div>
+              <div class="col-md-6">
+            <b>  {{current_user.agentcompanyinfo.office_contact}}</b>
+            </div>
+
+
+            </div>
+
+            <div class="row">
+              <div class="col-md-6" id="infoSec">
+                <b>Company Website</b>
+              </div>
+              <div class="col-md-6">
+            <b>      {{current_user.agentcompanyinfo.agent_website}}</b>
+            </div>
+
+
+            </div>
+            <div class="row">
+              <div class="col-md-6" id="infoSec">
+                <b>Facebook URL</b>
+              </div>
+              <div class="col-md-6">
+            <b>      {{current_user.agentcompanyinfo.facebook_link}}</b>
+            </div>
+
+
+            </div>
+
+
+
 
 
 
@@ -367,396 +405,448 @@
 
   </div>
 
-  <div class="right-bl" style="display:none" id="company_registeration">
+  <div class="right-bl" style="display:none" id="registeration_info">
     <div class="head-block">
       <h1>Company Registration Information</h1>
     </div>
-    <div class="row">
-  <div class="col-sm-9">
-
-  </div>
-  <div class="col-sm-3">
 
 
-     <button type="button" name="button" style="margin-top:10px"> Edit <span class="glyphicon glyphicon-pencil"></span></button>
-    </div>
-    </div>
+
+<div class="db">
+
+
+
+
+
+
+
     <div class="row">
-      <h1>Pakistan Registration Bodies</h1>
+      <h1 align="center">Pakistan Registration Bodies</h1>
     </div>
+<br><br>
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-md-6" id="infoSec">
         <b>1.Registration Body</b>
       </div>
-      <div class="col-sm-3">
-        {{ current_user.agentcompanyregistationinfo.pak_registeration_body1 }}
-      </div>
-      <div class="col-sm-3">
+      <div class="col-md-6">
+    <b>       {{ current_user.agentcompanyinfo.pak_registeration_body1 }}</b>
+    </div>
+
+
+    </div>
+    <div class="row">
+      <div class="col-md-6" id="infoSec">
         <b>2.Registration Body</b>
       </div>
-      <div class="col-sm-3">
-        {{ current_user.agentcompanyregistationinfo.pak_registeration_body2 }}
-      </div>
+      <div class="col-md-6">
+    <b>       {{ current_user.agentcompanyinfo.pak_registeration_body2 }}</b>
+    </div>
+
+
     </div>
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-md-6" id="infoSec">
         <b>3.Registration Body</b>
       </div>
-      <div class="col-sm-3">
-        {{ current_user.agentcompanyregistationinfo.pak_registeration_body3 }}
-      </div>
-      <div class="col-sm-3">
-        <b>4.Registration Body</b>
-      </div>
-      <div class="col-sm-3">
-        {{ current_user.agentcompanyregistationinfo.pak_registeration_body4 }}
-      </div>
+      <div class="col-md-6">
+    <b>       {{ current_user.agentcompanyinfo.pak_registeration_body3 }}</b>
     </div>
-    <div class="row">
-      <div class="col-sm-3">
-        <b>5.Registration Body</b>
-      </div>
-      <div class="col-sm-3">
-        {{ current_user.agentcompanyregistationinfo.pak_registeration_body5 }}
-      </div>
-      <div class="col-sm-3">
-        <b>6.Registration Body</b>
-      </div>
-      <div class="col-sm-3">
-        {{ current_user.agentcompanyregistationinfo.pak_registeration_body6 }}
-      </div>
+
+
     </div>
+
+
+
+
+
+
 
 
 
 
     <br><br>
-    <br><br>
+
 
 
     <div class="row">
-      <h1>International Registration Bodies</h1>
+      <h1 align="center">International Registration Bodies</h1>
     </div>
+
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-md-6" id="infoSec">
         <b>1.Registration Body</b>
       </div>
-      <div class="col-sm-3">
-        {{ current_user.agentcompanyregistationinfo.Internatiol_registeration_body1 }}
-      </div>
-      <div class="col-sm-3">
+      <div class="col-md-6">
+    <b>      {{ current_user.agentcompanyinfo.Internatiol_registeration_body1 }}</b>
+    </div>
+
+
+    </div>
+    <div class="row">
+      <div class="col-md-6" id="infoSec">
         <b>2.Registration Body</b>
       </div>
-      <div class="col-sm-3">
-        {{ current_user.agentcompanyregistationinfo.Internatiol_registeration_body2 }}
-      </div>
+      <div class="col-md-6">
+    <b>      {{ current_user.agentcompanyinfo.Internatiol_registeration_body2 }}</b>
+    </div>
+
+
     </div>
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-md-6" id="infoSec">
         <b>3.Registration Body</b>
       </div>
-      <div class="col-sm-3">
-        {{ current_user.agentcompanyregistationinfo.Internatiol_registeration_body3 }}
-      </div>
-      <div class="col-sm-3">
-        <b>4.Registration Body</b>
-      </div>
-      <div class="col-sm-3">
-        {{ current_user.agentcompanyregistationinfo.Internatiol_registeration_body4 }}
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-3">
-        <b>5.Registration Body</b>
-      </div>
-      <div class="col-sm-3">
-        {{ current_user.agentcompanyregistationinfo.Internatiol_registeration_body5 }}
-      </div>
-      <div class="col-sm-3">
-        <b>6.Registration Body</b>
-      </div>
-      <div class="col-sm-3">
-        {{ current_user.agentcompanyregistationinfo.Internatiol_registeration_body6 }}
-      </div>
+      <div class="col-md-6">
+    <b>      {{ current_user.agentcompanyinfo.Internatiol_registeration_body3 }}</b>
     </div>
 
 
     </div>
 
-    <div class="right-bl" style="display:none" id="language_skill_info">
+</div>
+
+
+    </div>
+
+    <div class="right-bl" style="display:none" id="service_info">
       <div class="head-block">
         <h1>Service Information   <span class="glyphicon glyphicon-pencil"  ></span></h1>
       </div>
       <div class="db">
-      <div class="row">
-        <div class="col-sm-3">
-          <b>Countries Dealing</b>
+        <div class="row">
+          <div class="col-md-6" id="infoSec">
+            <b>Countries Dealing</b>
+          </div>
+          <div class="col-md-6">
+        <b>      {{ current_user.agentcompanyinfo.countries_Dealing }}</b>
         </div>
-        <div class="col-sm-3">
-          {{ current_user.agentservicesoffered.countries_Dealing }}
+
+
         </div>
-        <div class="col-sm-3">
-          <b></b>
+
+        <div class="row">
+          <div class="col-md-6" id="infoSec">
+            <b>Services Offering</b>
+          </div>
+          <div class="col-md-6">
+        <b>     {{ current_user.agentcompanyinfo.Services_offered }}</b>
         </div>
-        <div class="col-sm-3">
+
 
         </div>
 
 
+        <div class="row">
+          <div class="col-md-6" id="infoSec">
+            <b>Language Classes</b>
+          </div>
+          <div class="col-md-6">
+        <b>     {{ current_user.agentcompanyinfo.language_classes }}</b>
+        </div>
+
+
+        </div>       <div class="row">
+          <div class="col-md-6" id="infoSec">
+              <b>Program Specialist</b>
+          </div>
+          <div class="col-md-6">
+        <b>       {{ current_user.agentcompanyinfo.program_specialist }}</b>
+        </div>
+
+
+        </div>
+        <div class="row">
+         <div class="col-md-6" id="infoSec">
+             <b>Refusal Appeals</b>
+         </div>
+         <div class="col-md-6">
+       <b>         {{ current_user.agentcompanyinfo.refusal_appeals }}</b>
+       </div>
+
+
+       </div>
+       <div class="row">
+        <div class="col-md-6" id="infoSec">
+            <b>Scholaships Offered</b>
+        </div>
+        <div class="col-md-6">
+      <b>        {{ current_user.agentcompanyinfo.scholarships_offered }}</b>
       </div>
-      <div class="row">
-        <div class="col-sm-3">
-          <b>Services Offering</b>
-        </div>
-        <div class="col-sm-3">
-      {{ current_user.agentservicesoffered.Services_offered }}
-        </div>
-        <div class="col-sm-3">
-          <b>OTHER</b>
-        </div>
-        <div class="col-sm-3">
-      <!--    -->
-        </div>
-
-
-      </div>
-
-      <div class="row">
-        <div class="col-sm-3">
-          <b>Language Classes</b>
-        </div>
-        <div class="col-sm-3">
-          {{ current_user.agentservicesoffered.language_classes }}
-        </div>
-        <div class="col-sm-3">
-          <b></b>
-        </div>
-        <div class="col-sm-3">
-        <!--  -->
-        </div>
-
-
-      </div>
-
-      <div class="row">
-        <div class="col-sm-3">
-          <b>Program Specialist</b>
-        </div>
-        <div class="col-sm-3">
-        {{ current_user.agentservicesoffered.program_specialist }}
-        </div>
-        <div class="col-sm-3">
-          <b></b>
-        </div>
-        <div class="col-sm-3">
-      <!--    -->
-        </div>
 
 
       </div>
 
-
-            <div class="row">
-              <div class="col-sm-3">
-                <b>Refusal Appeals</b>
-              </div>
-              <div class="col-sm-3">
-              {{ current_user.agentservicesoffered.refusal_appeals }}
-              </div>
-              <div class="col-sm-3">
-                <b>Scholaships Offered</b>
-              </div>
-              <div class="col-sm-3">
-              {{ current_user.agentservicesoffered.scholarships_offered }}
-              </div>
+      <div class="row">
+       <div class="col-md-6" id="infoSec">
+           <b>Interview Preparations</b>
+       </div>
+       <div class="col-md-6">
+     <b>        {{ current_user.agentcompanyinfo.interview_preparation }}</b>
+     </div>
 
 
-            </div>
-
-            <div class="row">
-              <div class="col-sm-3">
-                <b>Interview Preparations</b>
-              </div>
-              <div class="col-sm-3">
-                {{ current_user.agentservicesoffered.interview_preparation }}
-              </div>
-              <div class="col-sm-3">
-                <b>Travel and Health Insurance</b>
-              </div>
-              <div class="col-sm-3">
-            <!--     -->
-            {{ current_user.agentservicesoffered.travel_and_health }}
-              </div>
+     </div>
+     <div class="row">
+      <div class="col-md-6" id="infoSec">
+          <b>Travel and Health Insurance</b>
+      </div>
+      <div class="col-md-6">
+    <b>        {{ current_user.agentcompanyinfo.travel_and_health }}</b>
+    </div>
 
 
-            </div>
-
-            <div class="row">
-              <div class="col-sm-3">
-                <b>Travel Arrangements</b>
-              </div>
-              <div class="col-sm-3">
-                {{ current_user.agentservicesoffered.travel_arrangements }}
-            <!--    -->
-              </div>
+    </div>
+    <div class="row">
+     <div class="col-md-6" id="infoSec">
+         <b>Travel Arrangements</b>
+     </div>
+     <div class="col-md-6">
+    <b>        {{ current_user.agentcompanyinfo.travel_arrangements }}</b>
+    </div>
 
 
+    </div>
 
-            </div></div>
+
+          </div>
       <br><br>
       <br><br>
-      <div class="row">
-          <button type="button" name="button">Update Information</button>
-        </div>
+
       </div>
 
-      <div class="right-bl" style="display:none" id="language_skill_info">
+      <div class="right-bl" style="display:none" id="fee_info">
         <div class="head-block">
           <h1>Fee Information<span class="glyphicon glyphicon-pencil"  ></span></h1>
         </div>
         <div class="db">
-        <div class="row">
-          <div class="col-sm-3">
-            <b>Processing Fee</b>
-          </div>
-          <div class="col-sm-3">
-            {{ current_user.agentfees.processing_fee }}
-          </div>
-          <div class="col-sm-3">
-            <b>Language Fee</b>
-          </div>
-          <div class="col-sm-3">
-              {{ current_user.agentfees.language_fee }}
+
+          <div class="row">
+           <div class="col-md-6" id="infoSec">
+               <b>Processing Fee</b>
+           </div>
+           <div class="col-md-6">
+          <b>        {{ current_user.agentcompanyinfo.processing_fee }}</b>
           </div>
 
 
-        </div>
-        <div class="row">
-          <div class="col-sm-3">
-            <b>Refusal Appeals Fee</b>
           </div>
-          <div class="col-sm-3">
-        {{ current_user.agentfees.refusal_fee }}
-          </div>
-          <div class="col-sm-3">
-            <b>Scholarship Fee</b>
-          </div>
-          <div class="col-sm-3">
-              {{ current_user.agentfees.scholarshipfee }}
-          </div>
-    </div>
-
-        <div class="row">
-          <div class="col-sm-3">
-            <b>Interview Preparation Fee</b>
-          </div>
-          <div class="col-sm-3">
-            {{ current_user.agentfees.Interview_fee }}
-          </div>
-          <div class="col-sm-3">
-            <b></b>
-          </div>
-          <div class="col-sm-3">
-          <!--  -->
+          <div class="row">
+           <div class="col-md-6" id="infoSec">
+               <b>Language Fee</b>
+           </div>
+           <div class="col-md-6">
+          <b>        {{ current_user.agentcompanyinfo.language_fee }}</b>
           </div>
 
 
-        </div>
+          </div>
+          <div class="row">
+           <div class="col-md-6" id="infoSec">
+               <b>Refusal Appeals Fee</b>
+           </div>
+           <div class="col-md-6">
+          <b>          {{ current_user.agentcompanyinfo.refusal_fee }}</b>
+          </div>
+
+
+          </div>
+          <div class="row">
+           <div class="col-md-6" id="infoSec">
+               <b>Scholarship Fee</b>
+           </div>
+           <div class="col-md-6">
+          <b>            {{ current_user.agentcompanyinfo.scholarshipfee }}</b>
+          </div>
+
+
+          </div>
+
+          <div class="row">
+           <div class="col-md-6" id="infoSec">
+                <b>Interview Preparation Fee</b>
+           </div>
+           <div class="col-md-6">
+          <b>              {{ current_user.agentcompanyinfo.Interview_fee }}</b>
+          </div>
+
+
+          </div>
+
+
+
+
+
+
 
 
 </div>
         <br><br>
         <br><br>
-        <div class="row">
-            <button type="button" name="button">Update Information</button>
-          </div>
+
         </div>
 
 
-      <div class="right-bl" style="display:None"  id="language_skill_info">
+      <div class="right-bl" style="display:None"  id="expertise_info">
         <div class="head-block">
           <h1>Your Expertise   <span class="glyphicon glyphicon-pencil"  ></span></h1>
         </div>
         <div class="db">
-        <div class="row">
-          <div class="col-sm-3">
-            <b>Visa Ratio</b>
-          </div>
-          <div class="col-sm-3">
-            {{ current_user.agentexpertise.visa_ratio}}
-          </div>
-          <div class="col-sm-3">
-            <b>Experience</b>
-          </div>
-          <div class="col-sm-3">
-            {{ current_user.agentexpertise.experience}}
+
+          <div class="row">
+           <div class="col-md-6" id="infoSec">
+                <<b>Visa Ratio</b>
+           </div>
+           <div class="col-md-6">
+          <b>             {{ current_user.agentcompanyinfo.visa_ratio}}</b>
           </div>
 
 
-        </div>
-        <div class="row">
-          <div class="col-sm-3">
-            <b>Regional Offices</b>
           </div>
-          <div class="col-sm-3">
-        {{ current_user.agentexpertise.regional_office}}
+
+          <div class="row">
+           <div class="col-md-6" id="infoSec">
+                  <b>Experience</b>
+           </div>
+           <div class="col-md-6">
+          <b>               {{ current_user.agentcompanyinfo.experience}}</b>
           </div>
-          <div class="col-sm-3">
-            <b></b>
-          </div>
-          <div class="col-sm-3">
+
 
           </div>
 
 
-        </div>
-
-        <div class="row">
-          <div class="col-sm-3">
-            <b>Branches</b>
-          </div>
-          <div class="col-sm-3">
-          {{ current_user.agentexpertise.visa_ratio }}
-          </div>
-          <div class="col-sm-3">
-            <b></b>
-          </div>
-          <div class="col-sm-3">
-          <!--  -->
+          <div class="row">
+           <div class="col-md-6" id="infoSec">
+                  <b>Regional Offices</b>
+           </div>
+           <div class="col-md-6">
+          <b>              {{ current_user.agentcompanyinfo.regional_office}}</b>
           </div>
 
 
-        </div>
+          </div>
 
-        <div class="row">
-          <div class="col-sm-3">
-            <b>Number Of Counselors</b>
-          </div>
-          <div class="col-sm-3">
-          {{ current_user.agentexpertise.number_of_counselors}}
-          </div>
-          <div class="col-sm-3">
-            <b></b>
-          </div>
-          <div class="col-sm-3">
-        <!--    -->
+          <div class="row">
+           <div class="col-md-6" id="infoSec">
+                    <b>Branches</b>
+           </div>
+           <div class="col-md-6">
+          <b>              {{ current_user.agentcompanyinfo.visa_ratio }}</b>
           </div>
 
 
-        </div>
+          </div>
+
+          <div class="row">
+           <div class="col-md-6" id="infoSec">
+                  <b>Number Of Counselors</b>
+           </div>
+           <div class="col-md-6">
+          <b>                {{ current_user.agentcompanyinfo.number_of_counselors}}</b>
+          </div>
+
+
+          </div>
+
+
+
+
+
 
 
               </div>
         <br><br>
         <br><br>
-        <div class="row">
-            <button type="button" name="button">Update Information</button>
-          </div>
+
         </div>
 
 
 </div>
 <script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
+
+
+
+<script type="text/javascript">
+
+$(document).ready(
+  function(){
+      $("#account_info_label").click(function () {
+          $("#account_info").show("slow");
+          $("#company_info").hide("slow");
+          $("#registeration_info").hide("slow");
+          $("#service_info").hide("slow");
+          $("#expertise_info").hide("slow");
+      });
+
+  });
+
+  $(document).ready(
+    function(){
+        $("#company_info_label").click(function () {
+            $("#company_info").show("slow");
+            $("#account_info").hide("slow");
+
+            $("#registeration_info").hide("slow");
+            $("#service_info").hide("slow");
+            $("#expertise_info").hide("slow");
+
+        });
+
+    });
+
+    $(document).ready(
+      function(){
+          $("#regisration_info_label").click(function () {
+            $("#company_info").hide("slow");
+            $("#account_info").hide("slow");
+
+            $("#registeration_info").show("slow");
+            $("#service_info").hide("slow");
+            $("#expertise_info").hide("slow");
+          });
+
+      });
+
+      $(document).ready(
+        function(){
+            $("#service_skill_label ").click(function () {
+              $("#company_info").hide("slow");
+              $("#account_info").hide("slow");
+
+              $("#registeration_info").hide("slow");
+              $("#service_info").show("slow");
+              $("#expertise_info").hide("slow");
+            });
+
+        });
+
+
+$(document).ready(
+  function(){
+      $("#expertise_info_label ").click(function () {
+        $("#company_info").hide("slow");
+        $("#account_info").hide("slow");
+
+        $("#registeration_info").hide("slow");
+        $("#service_info").hide("slow");
+        $("#expertise_info").show("slow");
+      });
+
+  });
+
+  $(document).ready(
+    function(){
+        $("#fee_info_label ").click(function () {
+          $("#company_info").hide("slow");
+          $("#account_info").hide("slow");
+          $("#fee_info").show("slow");
+          $("#registeration_info").hide("slow");
+          $("#service_info").hide("slow");
+          $("#expertise_info").hide("slow");
+        });
+
+    });
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

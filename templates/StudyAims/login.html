@@ -75,6 +75,9 @@
         <form action="#" method="post" class="form-outer">
           {% csrf_token %}
           <div class="row">
+            {{ err }}
+          </div>
+          <div class="row">
             <div class="col-sm-4">
               <h1>LOGIN AS</h1>
             </div>
@@ -101,6 +104,7 @@
             </div>
 
           </div>
+
           <input name="username" type="text" placeholder="Username or Email">
           <input name="password" type="password" placeholder="password">
           <div class="button-outer">

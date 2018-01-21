@@ -16,14 +16,8 @@ from StudyAims.filters import UserFilter, FilterAgents
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import PasswordChangeForm
-from django.views.generic import (TemplateView,ListView,DeleteView,DetailView,UpdateView,CreateView)
 
-class ProfileEditView(LoginRequiredMixin,UpdateView):
-    login_url = '/login/'
-    #redirect_field_name = 'StudyAims/dashboard.html'
-    #form_class = PersonalInfoForm
-    model = StdPersonalInfo
-    fields = ['gender', 'age','city','country_of_residence','whatsapp','contact_number',]
+
 
 def index(request):
 
@@ -53,19 +47,19 @@ def agent_profile_edit(request, pk):
     #personal = get_object_or_404(StdPersonalInfo, pk=pk)
     related = User.objects.select_related().all()
     user = get_object_or_404(related, pk=pk)
-    profile = user.stdpersonalinfo
-    profile_form = PersonalInfoForm(data=request.POST, instance=profile)
+    profile = user.agentcompanyinfo
+    form = AgentCompanyInfoForm(data=request.POST, instance=profile)
     if request.method == "POST":
-        profile_form = PersonalInfoForm(request.POST,instance=profile )
-        if profile_form.is_valid():
-            profile = profile_form.save(commit=False)
+        form = AgentCompanyInfoForm(request.POST,instance=profile )
+        if form.is_valid():
+            profile = form.save(commit=False)
             profile.user = request.user
             #post.published_date = timezone.now()
             profile.save()
-            return redirect('/StudyAims/dashboard')
+            return redirect('/StudyAims/agent_dashboard')
     else:
-        profile_form = PersonalInfoForm( instance=profile)
-    return render(request, 'StudyAims/edit-information.html', {'profile_form': profile_form, 'pk':pk, 'user':user })
+        form = AgentCompanyInfoForm(instance=profile)
+    return render(request, 'StudyAims/agent-profile-edit.html', {'form': form, 'pk':pk, 'user':user })
 
 @login_required
 def change_password(request):
@@ -181,6 +175,7 @@ def register(request):
 
 
 def user_login(request):
+    err = ""
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -196,13 +191,16 @@ def user_login(request):
                         return HttpResponseRedirect(reverse_lazy('StudyAims:dashboard'))
                     else:
                         return HttpResponseRedirect(reverse_lazy('StudyAims:update_personal'))
-                else:
+                elif agent_type:
 
                     login(request,user)
                     if AgentCompanyInfo.objects.filter(user= request.user).exists():
                         return HttpResponseRedirect(reverse_lazy('StudyAims:agent_dashboard'))
                     else:
                         return HttpResponseRedirect(reverse_lazy('StudyAims:update_agent_company_info'))
+                else:
+                    err = "Please Select a User Type"
+                    return render(request,'StudyAims/login.html',{'err':err})
                 #global user_variable
                 #user_variable = request.user
                 #print(user_variable)
@@ -233,7 +231,7 @@ def user_login(request):
             print("Username: {} and Password: {}".format(username,password))
             return HttpResponse("Invalid login details supplied!")
     else:
-        return render(request,'StudyAims/login.html',{})
+        return render(request,'StudyAims/login.html',{'err':err})
 
 
 

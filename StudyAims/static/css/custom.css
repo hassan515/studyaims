@@ -6283,7 +6283,57 @@ background-color:  #e1f2f2 ;
 
 	background-color:    #e1f2f2 ;
 }
+
+#state {
+  display: none;
+  border: 1px #dadada solid;
+	margin-left: 10%;
+	width: 100%;
+	height: 100px;
+	overflow-y: scroll;
+  background-color: #fff;
+  color: #B7BEBF ;
+  z-index: 9999;
+
+
 }
+
+#state label {
+  display: block;
+}
+
+#state label:hover {
+
+	background-color:    #e1f2f2 ;
+}
+
+
+
+#city {
+  display: none;
+  border: 1px #dadada solid;
+	margin-left: 10%;
+	width: 100%;
+	height: 100px;
+	overflow-y: scroll;
+  background-color: #fff;
+  color: #B7BEBF ;
+  z-index: 9999;
+
+
+}
+
+#city label {
+  display: block;
+}
+
+#city label:hover {
+
+	background-color:    #e1f2f2 ;
+}
+
+
+
 
 .lang-text{
 	margin-left: 10px;

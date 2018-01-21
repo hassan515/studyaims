@@ -1128,7 +1128,23 @@
           </select>
           <div class="overSelect"></div>
         </div>
-        <div id="st_gap">{% render_field filter.form.studyGap onChange="form.submit();" %}</div></div></div> <!--
+        <div id="st_gap">{% render_field filter.form.studyGap onChange="form.submit();" %}</div></div></div>
+
+
+        <div class="row">
+          <div class="multiselect">
+              <div class="selectBox" onclick="job_exp()">
+                <select>
+                  <option class="hida">Job Experience</option>
+                  <p class="multiSel"></p>
+                </select>
+                <div class="overSelect"></div>
+              </div>
+              <div id="job" style="display:none">
+                {% render_field filter.form.experience onChange="form.submit();" %}
+        </div></div> </div>
+
+        <!--
           <label for="">
             <input type="checkbox" name="Study_Gap" name="" value="">No Gap</label>
             <label for="">
@@ -1249,24 +1265,65 @@
   <h2 class="headings" >Future Plan</h2>
 </div>
 <div class="row">
-  {{ filter.form.desired_degree.label_tag }}
+
+
+  <div class="multiselect">
+      <div class="selectBox" onclick="desired_degree()">
+        <select name="Select_degree">
+          <option class="hida">Desired Degree</option>
+          <p class="multiSel"></p>
+        </select>
+        <div class="overSelect"></div>
+      </div>
+      <div id="desired_deg">
+
   {% render_field filter.form.desired_degree onChange="form.submit();" %}
-</div>
+</div></div></div>
 <div class="row">
-  {{ filter.form.desired_subject.label_tag }}
+
+  <div class="multiselect">
+      <div class="selectBox" onclick="des_sub()">
+        <select>
+          <option class="hida">Desired Subject</option>
+          <p class="multiSel"></p>
+        </select>
+        <div class="overSelect"></div>
+      </div>
+      <div id="des_subject">
   {% render_field filter.form.desired_subject onChange="form.submit();" %}
-</div>
+</div></div></div>
 <div class="row">
-  {{ filter.form.desired_country.label_tag }}
+
+
+  <div class="multiselect">
+      <div class="selectBox" onclick="des_country()">
+        <select>
+          <option class="hida">Desired Country</option>
+          <p class="multiSel"></p>
+        </select>
+        <div class="overSelect"></div>
+      </div>
+      <div id="des_count">
   {% render_field filter.form.desired_country onChange="form.submit();" %}
-</div>
+</div></div></div>
 <div class="row">
-  {{ filter.form.scholarships.label_tag }}
+
+<b>
+<label for=""> Scholarships ?</label></b>
   {% render_field filter.form.scholarships onChange="form.submit();" %}
 </div>
 <div class="row">
-
-</div>
+  <div class="multiselect">
+      <div class="selectBox" onclick="aff_bud()">
+        <select>
+          <option class="hida">Affordable Budget (US$)</option>
+          <p class="multiSel"></p>
+        </select>
+        <div class="overSelect"></div>
+      </div>
+      <div id="aff">
+{% render_field filter.form.budget onChange="form.submit();" %}
+</div></div></div>
 
 
 <!--
@@ -2382,7 +2439,7 @@
       </select>
 
     </div> -->
-    <input type="submit" id="filter_records" name="" value="Submit">
+
 
 
     </form>
@@ -2407,36 +2464,36 @@
 
 
       <div class="row select_filter">
-        <div class="col-sm-3 filter_div">
+        <div class="col-sm-2 filter_div">
+            {% render_field filter.form.gender onChange="form.submit();" %}
 
-          <select class="" name="">
-            <option selected disabled style="display:none">Gender</option>
-
-            <option value="1">Male</option>
-            <option value="2">Female</option>
-            <option value="">Both</option>
-          </select>
         </div>
         <div class="col-sm-5 filter_div">
-          <select class="" name="state" id="state" onchange="setCities();">
+          <div class="multiselect">
+              <div class="selectBox" onclick="state()">
+                <select>
+                  <option class="hida">State / Province</option>
+                  <p class="multiSel"></p>
+                </select>
+                <div class="overSelect"></div>
+              </div>
+              <div id="state" style="display:none">
+            {% render_field filter.form.state onChange="form.submit();" %}
 
-            <option value="Pakistan">All over Pakistan</option>
-            <option value="Punjab">Punjab</option>
-            <option value="Islamabad">Islamabad ICT</option>
-            <option value="Sindh">Sindh</option>
-            <option value="KPK">KPK</option>
-            <option value="Balochistan">Balochistan</option>
-            <option value="Gilgit">Gilgit Baltistan</option>
-            <option value="AJK">Azad Jammu Kashmir</option>
-          </select>
+        </div></div></div>
+        <div class="col-sm-5 filter_div">
+          <div class="multiselect">
+              <div class="selectBox" onclick="city()">
+                <select>
+                  <option class="hida">City</option>
+                  <p class="multiSel"></p>
+                </select>
+                <div class="overSelect"></div>
+              </div>
+              <div id="city" style="display:none">
+                {% render_field filter.form.city onChange="form.submit();" %}
         </div>
-        <div class="col-sm-4 filter_div">
-          <select class="" name="city" id="city">
-            <option selected disabled style="display:none">City</option>
-
-          </select>
-        </div>
-      </div>
+      </div></div>
 
 
     </div>
@@ -3317,7 +3374,35 @@
     <!-- Bootsrap JS -->
 
     <script type="text/javascript">
-/*    $(function () {
+    var expanded = false;
+
+    function desired_degree() {
+      var checkboxes = document.getElementById("desired_deg");
+      if (!expanded) {
+        desired_deg.style.display = "block";
+        expanded = true;
+      } else {
+        desired_deg.style.display = "none";
+        expanded = false;
+      }
+    }
+
+    $(document).mouseup(function (e) {
+               var container = new Array();
+               container.push($('#msel'));
+               $.each(container, function (key, value) {
+                   if (!$(value).is(e.target) && $(value).has(e.target).length === 0) {
+                       ///--need to have better code from yourside..
+                       var checkboxes = document.getElementById("desired_deg");
+                       checkboxes.style.display = "none";
+                       ///--need to have better code from yourside..
+                   }
+               });
+           });
+
+
+
+   $(function () {
             $("#selectAllPercents").change(function () {
                 $('.searchPercentages').prop('checked', this.checked);
             });
@@ -3458,6 +3543,63 @@
                       });
                   });
 
+
+
+
+                  var expanded = false;
+
+                  function state() {
+                    var checkboxes = document.getElementById("state");
+                    if (!expanded) {
+                      checkboxes.style.display = "block";
+                      expanded = true;
+                    } else {
+                      checkboxes.style.display = "none";
+                      expanded = false;
+                    }
+                  }
+
+                  $(document).mouseup(function (e) {
+                             var container = new Array();
+                             container.push($('#msel'));
+                             $.each(container, function (key, value) {
+                                 if (!$(value).is(e.target) && $(value).has(e.target).length === 0) {
+                                     ///--need to have better code from yourside..
+                                     var checkboxes = document.getElementById("state");
+                                     checkboxes.style.display = "none";
+                                     ///--need to have better code from yourside..
+                                 }
+                             });
+                         });
+                         var expanded = false;
+
+                         function city() {
+                           var checkboxes = document.getElementById("city");
+                           if (!expanded) {
+                             checkboxes.style.display = "block";
+                             expanded = true;
+                           } else {
+                             checkboxes.style.display = "none";
+                             expanded = false;
+                           }
+                         }
+
+                         $(document).mouseup(function (e) {
+                                    var container = new Array();
+                                    container.push($('#msel'));
+                                    $.each(container, function (key, value) {
+                                        if (!$(value).is(e.target) && $(value).has(e.target).length === 0) {
+                                            ///--need to have better code from yourside..
+                                            var checkboxes = document.getElementById("city");
+                                            checkboxes.style.display = "none";
+                                            ///--need to have better code from yourside..
+                                        }
+                                    });
+                                });
+
+
+
+
     var expanded = false;
 
     function des_sub() {
@@ -3576,7 +3718,7 @@
 
         }
       });
-    }); */
+    });
     </script>
     <script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
 

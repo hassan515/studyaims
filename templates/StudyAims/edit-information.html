@@ -85,10 +85,16 @@
     <div class="regiter-inner">
 
       <div class="login-logo"> <a href="index.html"><img src="images/login-logo.png" class="img-responsive" alt=""></a> </div>
-
+      <ul id="progressbar">
+    <li class="active">Personal Information</li>
+    <li>Qaulifications</li>
+    <li>Language Skills</li>
+    <li>Future Plans</li>
+    <li>Profile Picture</li>
+  </ul>
 
       <div class="head-block">
-        <h1>Edit Profile</h1>
+        <h1> Update Infomration</h1>
       </div>
       <div class="cnt-block">
       <form action="#" method="post" class="form-outer"> {% csrf_token %}
@@ -176,9 +182,10 @@
 
 
 
+
 </div>
 
-
+<br><br>
 <div class="" id="qualification_fields" >
   <h1>Update Qualification</h1>
   <br><br>
@@ -196,23 +203,14 @@
 
  <div class="row">
    <div class="col-sm-6">
-     {{ profile_form.program_duration }}
+    {{ profile_form.percentage }}
    </div>
    <div class="col-sm-6">
      {{ profile_form.Insititution }}
    </div>
  </div>
  <div class="row">
-   <div class="col-sm-6">
-     {{ profile_form.percentage }}
-   </div>
-   <div class="col-sm-6">
-     {{ profile_form.from_country }}
-   </div>
- </div>
 
-
- <div class="row">
    <div class="col-sm-6">
      {{ profile_form.passing_year}}
    </div>
@@ -220,45 +218,33 @@
      {{ profile_form.from_country }}
    </div>
  </div>
+
+
+
 <div class="row">
-<h2>Any Study Gap?</h2>
+  <div class="col-sm-3">
+    <h2>Any Study Gap?</h2>
+  </div>
+<div class="col-sm-3">
+
+</div>
+<div class="col-sm-3">
+  <h2>Any Job Experience?</h2>
+</div>
+<div class="col-sm-3">
+
+</div>
 </div>
  <div class="row">
    <div class="col-sm-6">
      {{ profile_form.studyGap}}
    </div>
    <div class="col-sm-6">
-     {{ profile_form.study_gap1 }}
-   </div>
- </div>
- <div class="row">
-   <div class="col-sm-6">
-     {{ profile_form.study_gap2}}
-   </div>
-   <div class="col-sm-6">
-     {{ profile_form.study_gap3 }}
-   </div>
- </div>
- <div class="row">
-   <h2>Any Job Experience?</h2>
- </div>
-              <div class="row">
-                <div class="col-sm-6">
-                  {{ profile_form.experience }}
+     {{ profile_form.experience }}
 
-                </div>
-                <div class="col-sm-6">
-                    {{ profile_form.experience1}}
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-6">
-                  {{ profile_form.experience2}}
-                </div>
-                <div class="col-sm-6">
-                  {{ profile_form.experience2 }}
-                </div>
-              </div>
+   </div>
+ </div>
+
 
 
  <div class="row study">
@@ -282,9 +268,9 @@
  </div>
 
  </div></div>
+<br><br>
 
-
-<div class="row" id="Achievements" style="display:none" >
+<div class="row" id="Achievements" style="display:none"  >
 <div class="col-sm-12">
 {{ profile_form.achievements }}
 </div></div>
@@ -323,15 +309,13 @@
   <br>
   <br>
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-6">
 {{ profile_form.desired_degree }}
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-6">
 {{ profile_form.desired_subject }}
     </div>
-    <div class="col-sm-4">
-{{ profile_form.program_duration }}
-    </div>
+
   </div>
 
 
@@ -1350,7 +1334,25 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <!-- Bootsrap JS -->
 <script type="text/javascript">
+function showDiv() {
+   document.getElementById('qualification_fields').style.display = "block";
+   document.getElementById('personalInfo').style.display = "None";
+}
 
+
+function showLanguages() {
+
+   document.getElementById('lanaguages').style.display = "block";
+   document.getElementById('up_to_language').style.display = "None";
+
+}
+
+function showfuturePlans() {
+
+   document.getElementById('future_plans').style.display = "block";
+   document.getElementById('up_to_future').style.display = "None";
+
+}
 </script>
 <!-- Select2 JS -->
 <script type="text/javascript" src="{% static "assets/select2/js/select2.min.js" %}"></script>

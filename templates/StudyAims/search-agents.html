@@ -264,23 +264,56 @@
               <h2 class="headings" >Offered Services for Admission & visa</h2>
             </div>
             <div class="row">
-              {{ filter.form.processing.label_tag }}
+              <div class="multiselect">
+                  <div class="selectBox" onclick="services()">
+                    <select>
+                      <option class="hida">Services Offering</option>
+                      <p class="multiSel"></p>
+                    </select>
+                    <div class="overSelect"></div>
+                  </div>
+                  <div id="services">
               {% render_field filter.form.processing  %}
-            </div>
+            </div></div></div>
             <div class="row">
-              {{ filter.form.countries_Dealing.label_tag }}
+              <div class="multiselect">
+                  <div class="selectBox" onclick="countryDeal()">
+                    <select>
+                      <option class="hida">Countries Dealing</option>
+                      <p class="multiSel"></p>
+                    </select>
+                    <div class="overSelect"></div>
+                  </div>
+                  <div id="deal-count">
               {% render_field filter.form.countries_Dealing  %}
-            </div>
+            </div></div></div>
+
 
             <div class="row">
-              {{ filter.form.language_classes.label_tag }}
-              {% render_field filter.form.language_classes  %}
-            </div>
-            <div class="row">
-              {{ filter.form.program_specialist.label_tag }}
+              <div class="multiselect">
+                  <div class="selectBox" onclick="des_deg()">
+                    <select>
+                      <option class="hida">Program Specialists</option>
+                      <p class="multiSel"></p>
+                    </select>
+                    <div class="overSelect"></div>
+                  </div>
+                  <div id="desired" style="display:none">
+
               {% render_field filter.form.program_specialist  %}
+            </div></div></div>
+            <div class="row">
+              <div class="multiselect">
+                  <div class="selectBox" onclick="language_classes()">
+                    <select>
+                      <option>Language Classes</option>
+                    </select>
+                    <div class="overSelect"></div>
+                  </div>
+                  <div id="lang-class">
+              {% render_field filter.form.language_classes  %}
+            </div></div>
             </div>
-
             <div class="row">
               {{ filter.form.refusal_appeals.label_tag }}
               {% render_field filter.form.refusal_appeals  %}
@@ -1100,8 +1133,17 @@
           {% render_field filter.form.regional_office   %}
         </div>
         <div class="row">
-          {{ filter.form.branches.label_tag }}
+          <div class="multiselect">
+              <div class="selectBox" onclick="branches_select()">
+                <select>
+                  <option>Branches</option>
+                </select>
+                <div class="overSelect"></div>
+              </div>
+              <div id="branches" style="display:none">
+
           {% render_field filter.form.branches   %}
+        </div></div>
         </div>
 <!--
   <div class="row">
@@ -2039,6 +2081,32 @@ $(document).mouseup(function (e) {
             });
         });
 
+        function services() {
+          var checkboxes = document.getElementById("services");
+          if (!expanded) {
+            checkboxes.style.display = "block";
+            expanded = true;
+          } else {
+            checkboxes.style.display = "none";
+            expanded = false;
+          }
+        }
+        $(document).mouseup(function (e) {
+                    var container = new Array();
+                    container.push($('#msel'));
+                    $.each(container, function (key, value) {
+                        if (!$(value).is(e.target) && $(value).has(e.target).length === 0) {
+                            ///--need to have better code from yourside..
+                            var checkboxes = document.getElementById("services");
+                            checkboxes.style.display = "none";
+                            ///--need to have better code from yourside..
+
+                        }
+                        else{
+                          checkboxes.style.display = "block";
+                        }
+                    });
+                });
 
 
 var expanded = false;

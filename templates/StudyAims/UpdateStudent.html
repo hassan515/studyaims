@@ -181,23 +181,12 @@
 
 
 
-<div class="button-outer">
 
-  <div class="row">
-
-
-    <div class="col-sm-12">
-
-  <button type="button" class="btn" name="button" id="personalInfo" onclick="showDiv()">Next</button>
-    </div>
-  </div>
 
 </div>
 
-</div>
-
-
-<div class="" id="qualification_fields" style="display:None">
+<br><br>
+<div class="" id="qualification_fields" >
   <h1>Update Qualification</h1>
   <br><br>
   <div class="row">
@@ -214,20 +203,18 @@
 
  <div class="row">
    <div class="col-sm-6">
-     {{ form.program_duration }}
+    {{ form.percentage }}
    </div>
    <div class="col-sm-6">
      {{ form.Insititution }}
    </div>
  </div>
  <div class="row">
-   <div class="col-sm-4">
-     {{ form.percentage }}
-   </div>
-   <div class="col-sm-4">
+
+   <div class="col-sm-6">
      {{ form.passing_year}}
    </div>
-   <div class="col-sm-4">
+   <div class="col-sm-6">
      {{ form.from_country }}
    </div>
  </div>
@@ -281,28 +268,18 @@
  </div>
 
  </div></div>
+<br><br>
 
-
-<div class="row" id="Achievements" style="display:none" >
+<div class="row" id="Achievements" style="display:none"  >
 <div class="col-sm-12">
 {{ form.achievements }}
 </div></div>
 
 
 
-<div class="button-outer">
-
-<div class="row">
-
-
-<div class="col-sm-12">
-<button class="btn" id="up_to_language" type="submit" onclick="showLanguages()" name="button">Next</button>
-</div>
-</div>
 
 </div>
-</div>
-<div class="" id="lanaguages" style="display:None">
+<div class="" id="lanaguages" >
   <h1>Update Lnaguages</h1>
   <br><br>
   <div class="row">
@@ -324,33 +301,21 @@
 
 
 
-  <div class="button-outer">
 
-    <div class="row">
-
-
-      <div class="col-sm-12">
-      <button class="btn" id="up_to_future" onclick="showfuturePlans()" name="button">Next</button>
-      </div>
-    </div>
-
-  </div>
 </div>
 
-<div class="" id="future_plans" style="display:none">
+<div class="" id="future_plans" >
   <h1>Future Plans</h1>
   <br>
   <br>
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-6">
 {{ form.desired_degree }}
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-6">
 {{ form.desired_subject }}
     </div>
-    <div class="col-sm-4">
-{{ form.program_duration }}
-    </div>
+
   </div>
 
 

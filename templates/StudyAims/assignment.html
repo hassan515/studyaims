@@ -1,0 +1,93 @@
+CS101
+Assignment No.2
+Solution fall – 2017
+<html>
+	<head>
+		<title>homepage</title>
+		<script>
+			function check(){
+				var x;
+					x = document.getElementById('in_kg').value;
+					if (isNaN(x) || x <= 0) {
+						window.alert("Enter value grater than 0");
+					}else{
+						var num;
+						num = x * 1000 ;
+						document.getElementById('grams').value = num;
+						num = x * 2.2046 ;
+						document.getElementById('pounds').value = num;
+						num = x * 1000000 ;
+						document.getElementById('mg').value = num;
+						num = x * 0.0011023 ;
+						document.getElementById('Us_ton').value = num;
+						num = x * 35.274 ;
+						document.getElementById('ounce').value = num;
+					}
+			}
+		</script>
+	</head>
+
+	<body>
+	<div align="center" style="margin-left: 35%; margin-right: 35%;">
+		<div style="font-size: 36px; background-color: Yellow; color: Red;">Weight Converter</div>
+		<p style="font-size: 20px; background-color: gray; margin: 5px;">Welcome to the online converter</p>
+	</div>
+	<form align="center">
+		<table align="center">
+			<tr>
+				<td>
+					<label>Weight in KG:</label>
+				</td>
+				<td>
+					<input type="number" name="kg" id="in_kg">
+					<input type="button" name="submit" value="Convert" onclick="check()">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Weight In Grams:</label>
+				</td>
+				<td>
+					<input type="number" name="in_g" id="grams">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Pounds:</label>
+				</td>
+				<td>
+					<input type="number" name="in_p" id="pounds">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>MilliGram:</label>
+				</td>
+				<td>
+					<input type="number" name="in_m" id="mg">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>US Ton:</label>
+				</td>
+				<td>
+					<input type="number" name="in_t" id="Us_ton">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Ounces:</label>
+				</td>
+				<td>
+					<input type="number" name="in_o" id="ounce">
+				</td>
+			</tr>
+		</table>
+		<div id="grams"></div>
+		<input type="reset" name="reset" value="Reset Form">
+
+	<p>You can press Reset Button for another conversion</p>
+	</form>
+	</body>
+</html>

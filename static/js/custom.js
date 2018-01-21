@@ -54,6 +54,9 @@ $(document).mouseup(function (e) {
 
 
 
+      
+
+
 var expanded = false;
 
 function showCheckboxes() {

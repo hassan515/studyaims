@@ -1,147 +1,412 @@
-alabaster==0.7.9
+Country = 'Country'
+  Pakistan = 'Pakistan'
+  India = 'India'
+  Australia = 'Australia'
+  UK = 'UK'
+  Canada = 'Canada'
+  Ireland = 'Ireland'
+  NewZealand = 'New Zealand'
+  Germany = 'Germany'
+  Sweden = 'Sweden'
+  Afghanistan = 'Afghanistan'
+  Algeria = 'Algeria'
+  Albania = 'Albania'
+  Andorra = 'Andorra'
+  Angola = 'Angola'
+  Anguilla = 'Anguilla'
+  AntiguaBarbuda = 'Antigua & Barbuda'
 
-astroid==1.4.9
-astropy==1.3
-Babel==2.3.4
-backports.shutil-get-terminal-size==1.0.0
-beautifulsoup4==4.5.3
-bitarray==0.8.1
-blaze==0.10.1
-bokeh==0.12.4
-boto==2.45.0
-Bottleneck==1.2.0
-cffi==1.9.1
-chardet==2.3.0
-chest==0.2.3
-click==6.7
-cloudpickle==0.2.2
+  Argentina = 'Argentina'
+  Armenia = 'Armenia'
+  Austria = 'Austria'
+  Azerbaijan = 'Azerbaijan'
+  Bahamas = 'Bahamas'
+  Bahrain = 'Bahrain'
+  Bangladesh = 'Bangladesh'
+  Barbados = 'Barbados'
+  Belarus = 'Belarus'
+  Belgium = 'Belgium'
+  Belize = 'Belize'
+  Benin = 'Benin'
+  Bermuda = 'Bermuda'
+  Bhutan = 'Bhutan'
+  Bolivia = 'Bolivia'
+  BosniaHerzegovina = 'Bosnia & Herzegovina'
+  Botswana = 'Botswana'
+  Brazil = 'Brazil'
+  BruneiDarussalam = 'Brunei Darussalam'
+  Bulgaria = 'Bulgaria'
+  BurkinaFaso = 'Burkina Faso'
+  MyanmarBurma = 'Myanmar/Burma'
+  Burundi = 'Burundi'
+  Cambodia = 'Cambodia'
+  Cameroon = 'Cameroon'
+  CapeVerde = 'Cape Verde'
+  CaymanIslands = 'Cayman Islands'
+  CentralAfrican = 'Central African'
+  ChadRepublic = 'Chad Republic'
+  Chile = 'Chile'
+  China = 'China'
+  Colombia = 'Colombia'
+  Comoros = 'Comoros'
+  Congo = 'Congo'
+  CostaRica = 'Costa Rica'
+  Croatia = 'Croatia'
+  Cuba = 'Cuba'
+  Cyprus = 'Cyprus'
+  CzechRepublic = 'Czech Republic'
+  DemocraticRepublicoftheCongo = 'Democratic Republic of the Congo'
+  Denmark = 'Denmark'
+  Djibouti = 'Djibouti'
+  DominicanRepublic = 'Dominican Republic'
+  Dominica = 'Dominica'
+  Ecuador = 'Ecuador'
+  Egypt = 'Egypt'
+  ElSalvador = 'El Salvador'
+  EquatorialGuinea = 'Equatorial Guinea'
+  Eritrea ='Eritrea'
+  Estonia = 'Estonia'
+  Ethiopia = 'Ethiopia'
+  Fiji = 'Fiji'
+  Finland = 'Finland'
+  France = 'France'
+  FrenchGuiana = 'French Guiana'
+  Gabon = 'Gabon'
+  Gambia = 'Gambia'
+  Georgia = 'Georgia'
+  Ghana = 'Ghana'
+  GreatBritain = 'Great Britain'
+  Greece = 'Greece'
+  Grenada = 'Grenada'
+  Guadeloupe = 'Guadeloupe'
+  Guatemala = 'Guatemala'
+  Guinea = 'Guinea'
+  GuineaBissau = 'Guinea-Bissau'
+  Guyana = 'Guyana'
+  Haiti = 'Haiti'
+  Honduras = 'Honduras'
+  Hungary = 'Hungary'
+  Iceland = 'Iceland'
+  Indonesia = 'Indonesia'
+  Iran = 'Iran'
+  Iraq = 'Iraq'
+  IsraelandtheOccupiedTerritories = 'Israel and the Occupied Territories'
+  Italy = 'Italy'
+  IvoryCoast = 'Ivory Coast (Cote dIvoire)'
+  Jamaica = 'Jamaica'
+  Japan = 'Japan'
+  Jordan = 'Jordan'
+  Kazakhstan = 'Kazakhstan'
+  Kenya = 'Kenya'
+  Kosovo = 'Kosovo'
+  Kuwait = 'Kuwait'
+  Korea = 'Korea'
+  KyrgyzRepublic ='Kyrgyz Republic (Kyrgyzstan)'
+  Laos = 'Laos'
+  Latvia = 'Latvia'
+  Lebanon = 'Lebanon'
+  Lesotho = 'Lesotho'
+  Liberia = 'Liberia'
+  Libya = 'Libya'
+  Liechtenstein = 'Liechtenstein'
+  Lithuania = 'Lithuania'
+  Luxembourg = 'Luxembourg'
+  RepublicofMacedonia = 'Republic of Macedonia'
+  Madagascar = 'Madagascar'
+  Malawi = 'Malawi'
+  Malaysia = 'Malaysia'
+  Maldives = 'Maldives'
+  Mali = 'Mali'
+  Malta = 'Malta'
+  Martinique = 'Martinique'
+  Mauritania = 'Mauritania'
+  Mauritius = 'Mauritius'
+  Mayotte = 'Mayotte'
+  Mexico = 'Mexico'
+  Moldova = 'Moldova'
+  Mongolia = 'Mongolia'
+  Montenegro = 'Montenegro'
+  Montserrat = 'Montserrat'
+  Morocco = 'Morocco'
+  Mozambique = 'Mozambique'
+  Namibia = 'Namibia'
+  Nepal = 'Nepal'
+  Netherlands = 'Netherlands'
+  NewZealand = 'New Zealand'
+  Nicaragua = 'Nicaragua'
+  Niger = 'Niger'
+  Nigeria = 'Nigeria'
+  Oman = 'Oman'
+  PacificIslands = 'Pacific Islands'
+  Pakistan = 'Pakistan'
+  Panama = 'Panama'
+  PapuaNewGuinea = 'Papua New Guinea'
+  Paraguay = 'Paraguay'
+  Peru = 'Peru'
+  Philippines = 'Philippines'
+  Poland = 'Poland'
+  Portugal = 'Portugal'
+  PuertoRico = 'Puerto Rico'
+  Qatar = 'Qatar'
+  Reunion = 'Reunion'
+  Romania = 'Romania'
+  RussianFederation = 'Russian Federation'
+  Rwanda = 'Rwanda'
+  SaintKittsandNevis = 'Saint Kitts and Nevis'
+  SaintLucia = 'Saint Lucia'
+  SaintVincentGrenadines  ='Saint Vincents & Grenadines'
+  Samoa = 'Samoa'
+  SaoTomeandPrincipe = 'Sao Tome and Principe'
+  SaudiArabia = 'Saudi Arabia'
+  Senegal = 'Senegal'
+  Serbia = 'Serbia'
+  Seychelles = 'Seychelles'
+  SierraLeone = 'Sierra Leone'
+  Singapore = 'Singapore'
+  SlovakRepublic = 'Slovak Republic'
+  Slovenia = 'Slovenia'
+  SolomonIslands = 'Solomon Islands'
+  Somalia = 'Somalia'
+  SouthAfrica = 'South Africa'
+  RepublicofSouthKorea = 'Korea, Republic of (South Korea)'
+  SouthSudan = 'South Sudan'
+  Spain = 'Spain'
+  SriLanka = 'Sri Lanka'
+  Sudan = 'Sudan'
+  Suriname = 'Suriname'
+  Swaziland = 'Swaziland'
+  Switzerland = 'Switzerland'
+  Syria = 'Syria'
+  Tajikistan = 'Tajikistan'
+  Tanzania = 'Tanzania'
+  Thailand = 'Thailand'
+  TimorLeste = 'Timor Leste'
+  Togo = 'Togo'
+  TrinidadTobago = 'Trinidad & Tobago'
+  Turkey = 'Turkey'
+  Turkmenistan = 'Turkmenistan'
+  TurksCaicos = 'Turks & Caicos'
+  Uganda = 'Uganda'
+  Ukraine = 'Ukraine'
+  UnitedArabEmirates = 'United Arab Emirates'
+  Uruguay = 'Uruguay'
+  USA = 'USA'
+  Uzbekistan = 'Uzbekistan'
+  Venezuela = 'Venezuela'
+  Vietnam = 'Vietnam'
+  VirginIslandsUK = 'Virgin Islands (UK)'
+  VirginIslandsUS = 'Virgin Islands (US)'
+  Yemen = 'Yemen'
+  Zambia  = 'Zambia '
+  Zimbabwe = 'Zimbabwe'
+  Norway = 'Norway'
 
-colorama==0.3.7
 
 
-configobj==5.0.6
-contextlib2==0.5.4
-cryptography==1.7.1
-cycler==0.10.0
-Cython==0.25.2
-cytoolz==0.8.2
-dask==0.13.0
-
-decorator==4.0.11
-dill==0.2.5
-dj-database-url==0.4.2
-Django==1.11.5
-django-custom-user==0.7
-django-localflavor==1.6
-django-mssql==1.8
-docutils==0.13.1
-et-xmlfile==1.0.1
-fastcache==1.0.2
-Flask==0.12
-Flask-Cors==3.0.2
-gevent==1.2.1
-greenlet==0.4.11
-gunicorn==19.0.0
-h5py==2.6.0
-HeapDict==1.0.0
-idna==2.2
-imagesize==0.7.1
-ipykernel==4.5.2
-ipython==5.1.0
-ipython-genutils==0.1.0
-ipywidgets==5.2.2
-isort==4.2.5
-itsdangerous==0.24
-jdcal==1.3
-jedi==0.9.0
-Jinja2==2.9.4
-jsonschema==2.5.1
-jupyter==1.0.0
-jupyter-client==4.4.0
-jupyter-console==5.0.0
-jupyter-core==4.2.1
-lazy-object-proxy==1.2.2
-
-locket==0.2.0
-lxml==3.7.2
-MarkupSafe==0.23
-matplotlib==2.0.0
 
 
-mpmath==0.19
-multipledispatch==0.4.9
-mysqlclient==1.3.12
-nbconvert==4.2.0
-nbformat==4.2.0
-networkx==1.11
 
-nose==1.3.7
-notebook==4.3.1
-numba==0.30.1
-numexpr==2.6.1
-numpy==1.11.3
-numpydoc==0.6.0
-odo==0.5.0
-openpyxl==2.4.1
-pandas==0.19.2
-partd==0.3.7
+  Country = (
+      (Country, 'Country'),
+  (Australia , 'Australia'),
+(USA , 'USA'),
+(Canada , 'Canada'),
+(UK , 'UK'),
+(Ireland , 'Ireland'),
+(NewZealand , 'NewZealand'),
+(Germany , 'Germany'),
+(Sweden , 'Sweden'),
 
-pathlib2==2.2.0
-patsy==0.4.1
-pep8==1.7.0
-pickleshare==0.7.4
-Pillow==4.0.0
-ply==3.9
-prompt-toolkit==1.0.9
-psutil==5.0.1
-psycopg2==2.7.3.1
-py==1.4.32
-pyasn1==0.1.9
-pycosat==0.6.1
-pycparser==2.17
-pycrypto==2.6.1
-pycurl==7.43.0
-pyflakes==1.5.0
-Pygments==2.1.3
-pylint==1.6.4
-pyOpenSSL==16.2.0
-pyparsing==2.1.4
-pytest==3.0.5
-python-dateutil==2.6.0
-pytz==2016.10
+(Afghanistan , 'Afghanistan'),
+(Albania , 'Albania'),
+(Algeria , 'Algeria'),
+(Andorra , 'Andorra'),
+(Angola , 'Angola'),
+(Anguilla , 'Anguilla'),
+(AntiguaBarbuda , 'Antigua & Barbuda'),
+(Argentina , 'Argentina'),
+(Armenia , 'Armenia'),
+(Austria , 'Austria'),
+(Azerbaijan , 'Azerbaijan'),
+(Bahamas , 'Bahamas'),
+(Bahrain , 'Bahrain'),
+(Bangladesh , 'Bangladesh'),
+(Barbados , 'Barbados'),
+(Belarus , 'Belarus'),
+(Belgium , 'Belgium'),
+(Belize , 'Belize'),
+(Benin , 'Benin'),
+(Bermuda , 'Bermuda'),
+(Bhutan , 'Bhutan'),
+(Bolivia , 'Bolivia'),
+(BosniaHerzegovina , 'Bosnia & Herzegovina'),
+(Botswana , 'Botswana'),
+(Brazil , 'Brazil'),
+(BruneiDarussalam , 'Brunei Darussalam'),
+(Bulgaria , 'Bulgaria'),
+(BurkinaFaso , 'Burkina Faso'),
+(MyanmarBurma , 'Myanmar/Burma'),
+(Burundi , 'Burundi'),
+(Cambodia , 'Cambodia'),
+(Cameroon , 'Cameroon'),
+(CapeVerde , 'Cape Verde'),
+(CaymanIslands , 'Cayman Islands'),
+(CentralAfrican , 'Central African'),
+(ChadRepublic , 'Chad Republic'),
+(Chile , 'Chile'),
+(China , 'China'),
+(Colombia , 'Colombia'),
+(Comoros , 'Comoros'),
+(Congo , 'Congo'),
+(CostaRica , 'Costa Rica'),
+(Croatia , 'Croatia'),
+(Cuba , 'Cuba'),
+(Cyprus , 'Cyprus'),
+(CzechRepublic , 'Czech Republic'),
+(DemocraticRepublicoftheCongo , 'Democratic Republic of the Congo'),
+(Denmark , 'Denmark'),
+(Djibouti , 'Djibouti'),
+(DominicanRepublic , 'Dominican Republic'),
+(Dominica , 'Dominica'),
+(Ecuador , 'Ecuador'),
+(Egypt , 'Egypt'),
+(ElSalvador , 'El Salvador'),
+(EquatorialGuinea , 'Equatorial Guinea'),
+(Eritrea , 'Eritrea'),
+(Estonia , 'Estonia'),
+(Ethiopia , 'Ethiopia'),
+(Fiji , 'Fiji'),
+(Finland , 'Finland'),
+(France , 'France'),
+(FrenchGuiana , 'French Guiana'),
+(Gabon , 'Gabon'),
+(Gambia , 'Gambia'),
+(Georgia , 'Georgia'),
+(Ghana , 'Ghana'),
+(GreatBritain , 'Great Britain'),
+(Greece , 'Greece'),
+(Grenada , 'Grenada'),
+(Guadeloupe , 'Guadeloupe'),
+(Guatemala , 'Guatemala'),
+(Guinea , 'Guinea'),
+(GuineaBissau , 'Guinea-Bissau'),
+(Guyana , 'Guyana'),
+(Haiti , 'Haiti'),
+(Honduras , 'Honduras'),
+(Hungary , 'Hungary'),
+(Iceland , 'Iceland'),
+(India , 'India'),
+(Indonesia , 'Indonesia'),
+(Iran , 'Iran'),
+(Iraq , 'Iraq'),
+(IsraelandtheOccupiedTerritories , 'Israel and the Occupied Territories'),
+(Italy , 'Italy'),
+(IvoryCoast , 'Ivory Coast (Cote dIvoire)'),
+(Jamaica , 'Jamaica'),
+(Japan , 'Japan'),
+(Jordan , 'Jordan'),
+(Kazakhstan , 'Kazakhstan'),
+(Kenya , 'Kenya'),
+(Kosovo , 'Kosovo'),
+(Kuwait , 'Kuwait'),
+(Korea , 'Korea'),
+(KyrgyzRepublic , 'Kyrgyz Republic (Kyrgyzstan)'),
+(Laos , 'Laos'),
+(Latvia , 'Latvia'),
+(Lebanon , 'Lebanon'),
+(Lesotho , 'Lesotho'),
+(Liberia , 'Liberia'),
+(Libya , 'Libya'),
+(Liechtenstein , 'Liechtenstein'),
+(Lithuania , 'Lithuania'),
+(Luxembourg , 'Luxembourg'),
+(RepublicofMacedonia , 'Republic of Macedonia'),
+(Madagascar , 'Madagascar'),
+(Malawi , 'Malawi'),
+(Malaysia , 'Malaysia'),
+(Maldives , 'Maldives'),
+(Mali , 'Mali'),
+(Malta , 'Malta'),
+(Martinique , 'Martinique'),
+(Mauritania , 'Mauritania'),
+(Mauritius , 'Mauritius'),
+(Mayotte , 'Mayotte'),
+(Mexico , 'Mexico'),
+(Moldova , 'Moldova'),
+(Mongolia , 'Mongolia'),
+(Montenegro , 'Montenegro'),
+(Montserrat , 'Montserrat'),
+(Morocco , 'Morocco'),
+(Mozambique , 'Mozambique'),
+(Namibia , 'Namibia'),
+(Nepal , 'Nepal'),
+(Netherlands , 'Netherlands'),
+(NewZealand , 'NewZealand'),
+(Nicaragua , 'Nicaragua'),
+(Niger , 'Niger'),
+(Nigeria , 'Nigeria'),
+(Norway , 'Norway'),
+(Oman , 'Oman'),
+(PacificIslands , 'Pacific Islands'),
+(Pakistan , 'Pakistan'),
+(Panama , 'Panama'),
+(PapuaNewGuinea , 'Papua New Guinea'),
+(Paraguay , 'Paraguay'),
+(Peru , 'Peru'),
+(Philippines , 'Philippines'),
+(Poland , 'Poland'),
+(Portugal , 'Portugal'),
+(PuertoRico , 'Puerto Rico'),
+(Qatar , 'Qatar'),
+(Reunion , 'Reunion'),
+(Romania , 'Romania'),
+(RussianFederation , 'Russian Federation'),
+(Rwanda , 'Rwanda'),
+(SaintKittsandNevis , 'Saint Kitts and Nevis'),
+(SaintLucia , 'Saint Lucia'),
+(SaintVincentGrenadines , 'Saint Vincents & Grenadines'),
+(Samoa , 'Samoa'),
+(SaoTomeandPrincipe , 'Sao Tome and Principe'),
+(SaudiArabia , 'Saudi Arabia'),
+(Senegal , 'Senegal'),
+(Serbia , 'Serbia'),
+(Seychelles , 'Seychelles'),
+(SierraLeone , 'Sierra Leone'),
+(Singapore , 'Singapore'),
+(SlovakRepublic , 'Slovak Republic'),
+(Slovenia , 'Slovenia'),
+(SolomonIslands , 'Solomon Islands'),
+(Somalia , 'Somalia'),
+(SouthAfrica , 'South Africa'),
 
-PyYAML==3.12
-pyzmq==16.0.2
-QtAwesome==0.4.3
-qtconsole==4.2.1
-QtPy==1.2.1
-requests==2.12.4
-rope-py3k==0.9.4.post1
+(SouthSudan , 'South Sudan'),
+(Spain , 'Spain'),
+(SriLanka , 'Sri Lanka'),
+(Sudan , 'Sudan'),
+(Suriname , 'Suriname'),
+(Swaziland , 'Swaziland'),
+(Switzerland , 'Switzerland'),
+(Syria , 'Syria'),
+(Tajikistan , 'Tajikistan'),
+(Tanzania , 'Tanzania'),
+(Thailand , 'Thailand'),
+(TimorLeste , 'Timor Leste'),
+(Togo , 'Togo'),
+(TrinidadTobago , 'Trinidad & Tobago'),
+(Turkey , 'Turkey'),
+(Turkmenistan , 'Turkmenistan'),
+(TurksCaicos , 'Turks & Caicos'),
+(Uganda , 'Uganda'),
+(Ukraine , 'Ukraine'),
+(UnitedArabEmirates , 'United Arab Emirates'),
+(Uruguay , 'Uruguay'),
+(Uzbekistan , 'Uzbekistan'),
+(Venezuela , 'Venezuela'),
+(Vietnam , 'Vietnam'),
+(VirginIslandsUS , 'Virgin Islands (US)'),
+  (VirginIslandsUK , 'Virgin Islands (UK)'),
+(Yemen , 'Yemen'),
+(Zambia , 'Zambia'),
+(Zimbabwe , 'Zimbabwe'),
 
-scipy==0.18.1
-seaborn==0.7.1
-simplegeneric==0.8.1
-singledispatch==3.4.0.3
-six==1.10.0
-snowballstemmer==1.2.1
-sockjs-tornado==1.0.3
-sphinx==1.5.1
-spyder==3.1.2
-SQLAlchemy==1.1.5
-statsmodels==0.6.1
-sympy==1.0
-
-toolz==0.8.2
-tornado==4.4.2
-traitlets==4.3.1
-unicodecsv==0.14.1
-wcwidth==0.1.7
-Werkzeug==0.11.15
-whitenoise==3.3.1
-widgetsnbextension==1.2.6
-win-unicode-console==0.5
-wrapt==1.10.8
-xlrd==1.0.0
-XlsxWriter==0.9.6
-
-xlwt==1.2.0
+  )

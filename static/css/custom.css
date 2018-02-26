@@ -62,7 +62,113 @@ Cutom SelectBox
 
 */
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+
+
+
+.mutliSelect{
+  width: 100px;
+  border: 1px solid #eee;
+  text-align: left;
+  padding-left: 10px;
+}
+
+
+.dropdown {
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+}
+
+a {
+  color: #fff;
+}
+
+.dropdown dd,
+.dropdown dt {
+  margin: 0px;
+  padding: 0px;
+}
+
+.dropdown ul {
+  margin: -1px 0 0 0;
+}
+
+.dropdown dd {
+  position: relative;
+}
+
+.dropdown a,
+.dropdown a:visited {
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+  font-size: 12px;
+}
+
+.dropdown dt a {
+  background-color: #4F6877;
+  display: block;
+  padding: 8px 20px 5px 10px;
+  min-height: 25px;
+  line-height: 24px;
+  overflow: hidden;
+  border: 0;
+  width: 272px;
+}
+
+.dropdown dt a span,
+.multiSel span {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 3px 2px 0;
+}
+
+.dropdown dd ul {
+  background-color: #4F6877;
+  border: 0;
+  color: #fff;
+  display: none;
+  left: 0px;
+  padding: 2px 15px 2px 5px;
+  position: absolute;
+  top: 2px;
+  width: 280px;
+  list-style: none;
+  height: 100px;
+  overflow: auto;
+}
+
+.dropdown span.value {
+  display: none;
+}
+
+.dropdown dd ul li a {
+  padding: 5px;
+  display: block;
+}
+
+.dropdown dd ul li a:hover {
+  background-color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Chosen v1.5.1 | (c) 2011-2016 by Harvest | MIT License, https://gexithub.com/harvesthq/chosen/blob/master/LICENSE.md */
@@ -74,14 +180,12 @@ Cutom SelectBox
 
 
 }
-body{
 
-}
 .dashboard .db{
   text-align: left;
   padding-left: 20px;
   padding-right: 20px;
-  text-transform: uppercase;
+
 
 }
 .dashboard .head-block{
@@ -107,6 +211,7 @@ body{
   border-left: 1px solid #919e9e;
   border-right: 1px solid #919e9e;
 
+
   border-bottom:  1px solid #919e9e;
   text-align: left;
   text-transform: uppercase;
@@ -128,6 +233,7 @@ body{
 .regBody{
   background: #333;
 }
+
 
 .registration .head-block{
 
@@ -185,6 +291,7 @@ body{
   font-weight: 500;
   color: grey;
 }
+
 
 .dashboard label:hover{
   color: blue;
@@ -633,7 +740,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	padding: 0px;
 	margin: 0px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	text-transform: uppercase;
 	color: #24353b;
 }
@@ -938,7 +1045,7 @@ input:focus, textarea:focus, select:focus {
 	padding: 0 30px;
 	border-right: 1px #dedddd solid;
 	float: left;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
 	color: #4f4a4a;
 	line-height: 18px;
@@ -1017,7 +1124,7 @@ input:focus, textarea:focus, select:focus {
 	border: none;
 }
 .navbar-inverse .navbar-nav > li > a {
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	color: #fff;
 }
@@ -1112,9 +1219,6 @@ input:focus, textarea:focus, select:focus {
 	overflow-x: hidden;
 }
 
-
-
-
 .banner-slider .container {
 	display: table;
 	height: 100%;
@@ -1142,7 +1246,7 @@ input:focus, textarea:focus, select:focus {
 .banner-outer .content h1 {
 	display: block;
 	padding-bottom: 20px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 32px;
 	color: #24343a;
 	line-height: 50px;
@@ -1184,23 +1288,24 @@ input:focus, textarea:focus, select:focus {
 .banner-outer .slide3 .content h1, .banner-outer .slide3 .content p {
 	color: #fff;
 }
+
 .btn {
 	display: inline-block;
-	padding: 9px 160px;
-
-
+	padding: 9px 145px;
 	border-radius: 4px;
 	background: #ff9600;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	color: #fff;
 	margin-top: 10px;
+
 	text-transform: uppercase;
 	-moz-transition: all 0.3s ease 0s;
 	-o-transition: all 0.3s ease 0s;
 	-webkit-transition: all 0.3s ease 0s;
 	-ms-transition: all 0.3s ease 0s;
 	transition: all 0.3s ease 0s;
+
 }
 #courses{
 	text-align: left;
@@ -1226,7 +1331,7 @@ input:focus, textarea:focus, select:focus {
 	border-radius: 4px;
 	border: 0px;
 	background: #ff9600;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	color: #fff;
 	text-transform: uppercase;
@@ -1355,7 +1460,7 @@ input:focus, textarea:focus, select:focus {
 .about ul.our-links li .detail h3 {
 	display: block;
 	padding-bottom: 10px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 24px;
 	color: #fff;
 	text-transform: uppercase;
@@ -1391,7 +1496,7 @@ input:focus, textarea:focus, select:focus {
 }
 .about .sm-head {
 	display: block;
-	font-family: 'texgyreadventorregular';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	color: #7d7c7c;
 	line-height: 18px;
@@ -1458,7 +1563,7 @@ input:focus, textarea:focus, select:focus {
 	padding-right: 24px;
 	position: relative;
 	z-index: 2;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	color: #645847;
 	text-transform: uppercase;
@@ -1486,14 +1591,14 @@ input:focus, textarea:focus, select:focus {
 .our-cources h2, .how-study h2, .why-choose h2, .news-events h2, .campus-tour h2, .testimonial h2, .about h2, .browse-teacher h2, .how-apply h2, .have-question h2 {
 	display: block;
 	padding-bottom: 44px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 36px;
 	text-transform: uppercase;
 	text-align: center;
 }
 .our-cources h2 span, .how-study h2 span, .why-choose h2 span, .news-events h2 span, .campus-tour h2 span, .browse-teacher h2 span, .how-apply h2 span {
 	display: block;
-	font-family: 'texgyreadventorregular';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	opacity: 0.8;
 }
@@ -1559,7 +1664,7 @@ input:focus, textarea:focus, select:focus {
 .our-cources ul.course-list li h3 {
 	display: block;
 	padding-bottom: 10px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
 	text-transform: uppercase;
 	line-height: 22px;
@@ -1588,7 +1693,7 @@ input:focus, textarea:focus, select:focus {
 	text-transform: uppercase;
 }
 .our-cources ul.course-list li .fess-box span {
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 }
 .our-cources ul.course-list li .bottom-txt {
@@ -1604,7 +1709,7 @@ input:focus, textarea:focus, select:focus {
 }
 .our-cources ul.course-list li .duration h4 {
 	display: block;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	color: #fff;
 	text-transform: uppercase;
@@ -1682,7 +1787,7 @@ input:focus, textarea:focus, select:focus {
 .our-impotance ul li h3 {
 	display: block;
 	padding: 22px 0 12px 0;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
 	color: #284962;
 	text-transform: uppercase;
@@ -1739,7 +1844,7 @@ input:focus, textarea:focus, select:focus {
 .how-study ul li .cnt-block h3 {
 	display: block;
 	padding-bottom: 12px;
-	font-family: 'texgyreadventorregular';
+  font-family: 'Open Sans', sans-serif;
 	font-size: 22px;
 	color: #fff;
 	line-height: 26px;
@@ -1838,7 +1943,7 @@ ul.our-strength li .icon span {
 }
 ul.our-strength li span {
 	padding-bottom: 12px;
-	font-family: 'texgyreadventorregular';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 48px;
 }
 ul.our-strength li .couter-outer {
@@ -1846,7 +1951,7 @@ ul.our-strength li .couter-outer {
 }
 ul.our-strength li .title {
 	display: block;
-	font-family: 'texgyreadventorregular';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	opacity: 0.8;
 	text-transform: uppercase;
@@ -1908,7 +2013,7 @@ ul.our-strength li .title {
 .news-events ul li .cnt-block h3 {
 	display: block;
 	padding-bottom: 36px;
-	font-family: 'texgyreadventorregular';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 22px;
 	color: #41484d;
 	line-height: 32px;
@@ -2016,7 +2121,7 @@ ul.our-strength li .title {
 	position: relative;
 	background: #f3f6f8;
 	z-index: 2;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	color: #645847;
 	text-transform: uppercase;
@@ -2080,7 +2185,7 @@ ul.our-strength li .title {
 .campus-tour ul.gallery li h3 {
 	display: block;
 	padding-bottom: 4px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 24px;
 	color: #fff;
 	text-transform: uppercase;
@@ -2182,7 +2287,7 @@ ul.our-strength li .title {
 	z-index: 2;
 }
 .testimonial h2 {
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	color: #fff;
 }
 .testimonial .wrapper {
@@ -2216,18 +2321,18 @@ ul.our-strength li .title {
 .testimonial ul li p {
 	display: block;
 	padding-bottom: 32px;
-	font-family: 'texgyreadventorregular';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 23px;
 	color: #b2d3ed;
 	line-height: 38px;
 }
 .testimonial ul li p a {
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
 	color: #fff;
 }
 .testimonial ul li span {
-	font-family: 'texgyreadventorregular';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
 	color: #fff;
 }
@@ -2289,7 +2394,7 @@ ul.our-strength li .title {
 .footer h3 {
 	display: block;
 	padding-bottom: 20px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	color: #fff;
 	text-transform: uppercase;
@@ -2505,7 +2610,7 @@ ul.our-strength.opt2 li .title {
 .about-video p {
 	display: table-cell;
 	vertical-align: middle;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 60px;
 	color: #d1d3d4;
 }
@@ -2563,7 +2668,7 @@ ul.our-strength.opt2 li .title {
 .inner-banner h1 {
 	display: block;
 	padding-bottom: 18px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 46px;
 	color: #24353b;
 	text-transform: uppercase;
@@ -2581,7 +2686,7 @@ ul.our-strength.opt2 li .title {
 	margin-bottom: 26px;
 	background: #ff9600;
 	text-transform: uppercase;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
 	color: #fff;
 	position: relative;
@@ -2628,7 +2733,7 @@ ul.our-strength.opt2 li .title {
 a.download-prospects {
 	display: block;
 	padding: 0 10px 10px 0;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	color: #43647d;
 	text-transform: uppercase;
@@ -2649,7 +2754,7 @@ a.download-prospects.brochure {
 }
 a.download-prospects .small {
 	display: block;
-	font-family: 'texgyreadventorregular';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
 	color: #8f9ba1;
 	line-height: 14px;
@@ -2728,7 +2833,7 @@ a.download-pros:hover, a.download-cert:hover {
 .select-course .select2-container--default .select2-selection--single .select2-selection__rendered {
 	padding-left: 20px;
 	line-height: 48px;
-	font-family: 'texgyreadventorregular';
+	font-family: 'Open Sans', sans-serif;
 	color: #fff;
 
 	text-transform: uppercase;
@@ -2941,7 +3046,7 @@ a.download-pros:hover, a.download-cert:hover {
 	margin: 0px;
 }
 .pagination > li > a, .pagination > li > span {
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	color: #8faabe;
 	margin: 0 4px;
 	border: none;
@@ -3020,7 +3125,7 @@ ul.browse-teachers-list figure:before {
 	background: url(../images/teacher-overlay-bg-tab.png) no-repeat center top;
 }
 ul.browse-teachers-list h3 {
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	text-transform: uppercase;
 	color: #414a4f;
@@ -3087,7 +3192,7 @@ ul.teachers-follow li:nth-child(3) a {
 .enquire-now .inner h3 {
 	display: block;
 	padding-bottom: 26px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 24px;
 	color: #fff;
 	text-transform: none;
@@ -3129,7 +3234,7 @@ ul.teachers-follow li:nth-child(3) a {
 .enquire-now .enquire-btn {
 	width: 100%;
 	padding: 13px 15px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	text-transform: uppercase;
 	background: #ff9600;
@@ -3162,7 +3267,7 @@ ul.teachers-follow li:nth-child(3) a {
 	display: inline-block;
 	padding-right: 14px;
 	background: #fff;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
 	color: #211d1e;
 	z-index: 1;
@@ -3248,14 +3353,14 @@ ul.cert-list li span {
 	display: block;
 	padding: 10px 0 0 16px;
 	float: left;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
 	color: #4f4a4a;
 	line-height: 22px;
 }
 .course-detail .duration .detail span {
 	display: block;
-	font-family: 'texgyreadventorregular';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	color: #8f9ba1;
 	text-transform: uppercase;
@@ -3286,7 +3391,7 @@ ul.cert-list li span {
 }
 .course-tab > li > a {
 	padding: 0 0 26px 0;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
 	color: #909aa1;
 	text-transform: uppercase;
@@ -3341,7 +3446,7 @@ ul.cert-list li span {
 .details-tab .course-table > thead > tr > th {
 	padding: 11px 30px;
 	background: #e9f4fd;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	text-transform: uppercase;
 	font-size: 14px;
 	color: #4e5d52;
@@ -3377,7 +3482,7 @@ ul.cert-list li span {
 	width: 55%;
 }
 #schedule .fee-amt {
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 24px;
 	color: #585d60;
 }
@@ -3527,7 +3632,7 @@ ul.cert-list li span {
 	right: -20px;
 	top: 45px;
 	display: block;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
 	line-height: 44px;
 	color: #fff;
@@ -3543,7 +3648,7 @@ ul.cert-list li span {
 .how-apply ul li h3 {
 	display: block;
 	padding: 34px 0 25px 0;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
 	color: #211d1e;
 	text-transform: uppercase;
@@ -3583,7 +3688,7 @@ ul.cert-list li span {
 .comments-wrapper h2 {
 	display: block;
 	padding-bottom: 22px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 24px;
 	color: #606d87;
 	text-transform: uppercase;
@@ -3645,7 +3750,7 @@ ul.cert-list li span {
 .comments-wrapper ul.comments li .com-txt h3 {
 	display: block;
 	padding-bottom: 13px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	color: #4b5761;
 	text-transform: uppercase;
@@ -3688,7 +3793,7 @@ ul.cert-list li span {
 .leave-comment h4 {
 	display: block;
 	padding: 60px 0;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 20px;
 	color: #606d87;
 	text-transform: uppercase;
@@ -3842,7 +3947,7 @@ ul.cert-list li span {
 .contact-detail .inner a {
 	padding-bottom: 6px;
 	font-size: 18px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	color: #fff;
 }
 .contact-bottom {
@@ -3956,7 +4061,7 @@ ul.blog-listing > li {
 }
 ul.blog-listing > li h2 {
 	padding: 30px 0 20px 0;
-	font-family: 'texgyreadventorregular';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 24px;
 	color: #343a3c;
 	line-height: 36px;
@@ -3967,7 +4072,7 @@ ul.blog-listing > li p {
 	color: #8d8f8f;
 }
 ul.blog-listing > li .read-more {
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	color: #606d87;
 	text-transform: uppercase;
@@ -4120,7 +4225,7 @@ ul.post-detail li .label {
 }
 .recent-post ul li .detail h4 {
 	padding-bottom: 4px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
 	color: #5f6f77;
 	text-transform: uppercase;
@@ -4299,7 +4404,7 @@ ul.blog-listing.detail > li {
 }
 .not-found-wrapper p {
 	padding-bottom: 60px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 30px;
 	color: #bcbfc1;
 	text-transform: uppercase;
@@ -4448,7 +4553,7 @@ ul.faq-listing li h2 {
 	display: block;
 	padding: 15px 0;
 	text-align: center;
-	background: rgba(255, 255, 255, 0.8);
+	background: rgba(218, 239, 236, 0.8);
 }
 .login-wrapper .head-block h1 {
 	font-size: 25px;
@@ -4463,6 +4568,9 @@ ul.faq-listing li h2 {
 .steps_1{
 	background:  #a5732d ;
 }
+
+
+
 .form-outer input {
 	width: 100%;
 	height: 40px;
@@ -4471,24 +4579,26 @@ ul.faq-listing li h2 {
 	padding: 0 20px;
 	background: none;
 	border: none;
-	border-left: 1px #dae4e8 solid;
-	border-bottom: 1px #dae4e8 solid;
-	font-size: 12px;
+	border-left: 1px #bfc8cc solid;
+	border-bottom: 1px #bfc8cc solid;
+	font-size: 14px;
 	font-weight: 500;
-	color: #6C6F6F;
+	color: #8a9c9c;
 	z-index: 2;
 	position: relative;
 }
 .login-wrapper .button-outer {
 	display: block;
 	position: relative;
+
 }
 .login-wrapper .or {
 
 	width: 16%;
 	display: inline-block;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
+
 	text-align: right;
 	color: #b7c1c4;
 	text-transform: uppercase;
@@ -4506,7 +4616,7 @@ ul.faq-listing li h2 {
 .login-wrapper .remember {
 	display: block;
 	margin: 15px 0 0 0;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
 	text-transform: uppercase;
 	text-align: center;
@@ -4630,7 +4740,7 @@ ul.faq-listing li h2 {
 	padding-left: 20px;
 	padding-right: 20px;
 	border-radius: 6px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	color: #fff;
 	margin-left: 10px;
@@ -4748,7 +4858,7 @@ ul.gallery-filter {
 ul.gallery-filter li {
 	width: 19%;
 	display: inline-block;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
 	text-transform: uppercase;
 	position: relative;
@@ -4810,7 +4920,7 @@ ul.news-listing > li .cnt-block {
 }
 ul.news-listing > li h2 {
 	padding-bottom: 12px;
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 20px;
 	color: #4d5557;
 	line-height: 30px;
@@ -4821,7 +4931,7 @@ ul.news-listing > li p {
 	color: #8d8f8f;
 }
 ul.news-listing > li .read-more {
-	font-family: 'texgyreadventorbold';
+	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	color: #606d87;
 	text-transform: uppercase;
@@ -5111,6 +5221,7 @@ ul.select-opt li {
 	position: relative;
 	float: left;
 	font-size: 12px;
+
 	text-transform: uppercase;
 }
 .login-wrapper .cnt-block ul.select-opt li input {
@@ -5118,8 +5229,11 @@ ul.select-opt li {
 	margin: 0px;
 }
 ul.select-opt li input[type=radio] {
-	position: absolute;
+	position: relative;
 	visibility: hidden;
+  height: 10px;
+  width: 10px;
+
 }
 ul.select-opt li label {
 	display: block;
@@ -5162,6 +5276,8 @@ ul.select-opt li label {
 .featured_ads{
 	background: #eee;
 	width: 100%;
+  font-family: sans-serif;
+  padding-left: 50px;
 }
 
 .main .featured_2{
@@ -5198,6 +5314,7 @@ ul.select-opt li label {
 	text-align: left;
 	align-content: left;
 	padding-left: 5px;
+
 }
 .std_filters{
 	width: 100%;
@@ -5215,6 +5332,7 @@ ul.select-opt li label {
 	border-right: 1px solid #d4d0d0;
 
 	margin-right: 0px;
+
 
 }
 .filter_div{
@@ -5329,11 +5447,12 @@ ul.select-opt li label {
 .left-filters-div select{
 		width: 72%;
     font-weight: 400;
+
     color: black;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-right:  8px;
-		padding-left: 8px;
+
     border-radius: 5px;
     border: 2px solid #eee;
 		margin-right: 10px;
@@ -5393,6 +5512,7 @@ ul.select-opt li label {
 	padding-top: 30px;
 	text-align: center ;
 	margin-right: 20px;
+  font-family: sans-serif;
 	border-left: 1px solid #d4d0d0;
 	border-bottom: 2px solid #d4d0d0;
 	width: 100%;
@@ -5429,6 +5549,7 @@ ul.select-opt li label {
 	padding-left: 10px;
 	padding-right: 10px;
 	margin-right: 20px;
+  font-family: sans-serif;
 	border-top: 2px solid #d4d0d0;
 	border-left: 2px solid #d4d0d0;
 	border-right: 2px solid #d4d0d0;
@@ -5689,8 +5810,7 @@ h1 { font-size: 1.5em; margin: 10px; }
 
 
 }
-
- .serv_box select {
+.serv_box select {
 
 	font-weight: 800;
 
@@ -5709,33 +5829,6 @@ h1 { font-size: 1.5em; margin: 10px; }
 
 }
 
- #services {
-
-	border: 1px #dadada solid;
-
-	height: 200px;
-	padding-left: 10px;
-	width: 100%;
-	overflow-y: auto;
-	text-align: left;
-	position: absolute;
- background-color: #fff;
-  color: #B7BEBF;
-  z-index: 9999;
-}
-
-
-
- #services {
-	display: flex;
-}
-
-.#services label:hover {
-	background-color:  #e1f2f2 ;
-}
-#services input[type=checkbox]{
-	margin-right: 10px;
-}
 #serv_type {
 
  border: 1px #dadada solid;
@@ -5762,6 +5855,37 @@ h1 { font-size: 1.5em; margin: 10px; }
 .#serv_type label:hover {
  background-color:  #e1f2f2 ;
 }
+
+
+
+#processing {
+
+ border: 1px #dadada solid;
+ position: absolute;
+ height: 200px;
+ padding-left: 10px;
+ width: 80%;
+ overflow-y: auto;
+ text-align: left;
+
+ background-color: #fff;
+ color: #B7BEBF ;
+ z-index: 9999;
+
+
+}
+
+ #processing input[type=checkbox] {
+	 margin-right: 20px;
+
+}
+
+
+#processing label:hover {
+ background-color:  #e1f2f2 ;
+}
+
+
 
 
 
@@ -5840,7 +5964,7 @@ background-color: #fff;
 .#branch_div  label:hover {
  background-color:  #e1f2f2 ;
 }
-/* multiselect optional*/
+/* multiselect optional
 
 .multiselect {
 
@@ -5851,10 +5975,8 @@ background-color: #fff;
 	text-align: left;
 
 }
-#service{
 
-}
-
+*/
 
 .selectBox select {
 
@@ -5940,6 +6062,7 @@ background-color: #fff;
 #consult label:hover {
   background-color:   #e1f2f2  ;
 }
+
 
 
 #major_subjects {
@@ -6072,7 +6195,6 @@ background-color:  #e1f2f2 ;
 #lang-class label:hover {
 background-color:  #e1f2f2 ;
 }
-
 
 
 #eng {
@@ -6394,13 +6516,15 @@ ul.select-opt li .check::before {
 	margin: auto;
 }
 .form-outer input[type=radio]:checked ~ .check {
-	border: 3px solid #dae4e8;
+	border: 3px solid #bfc8cc;
+
 }
 .form-outer input[type=radio]:checked ~ .check::before {
 	background: #ef5b34;
 }
 .form-outer input[type="radio"]:checked ~ label {
 	color: #343a3c;
+
 }
 
 
@@ -7936,10 +8060,7 @@ a.btn-circle:hover {
 		/*border-right: 1px solid #d4d0d0; */
 		border-radius: 4px;
 	}
-	.filter_div{
 
-
-	}
 	.left-filters{
 		width: 120px;
 		margin-left: 15px;

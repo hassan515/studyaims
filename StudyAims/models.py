@@ -5,11 +5,21 @@ from django.db import models
 from django.core.signals import request_finished
 from django.db.models.signals import post_save
 from django.contrib.auth import get_user_model
+from django.contrib.auth.models import PermissionsMixin
 #from django.localflavor.us.models import USPhoneNumberField
 from django.contrib.auth.models import User , Group, AbstractBaseUser, BaseUserManager, AbstractUser
 from django.core.mail import send_mail
 from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
+
+
+
+
+
+
+
+
+
 
 #class Students(models.Model):
 #    user =
@@ -57,14 +67,7 @@ from django.core.urlresolvers import reverse
 #class UserGroup(Group):
     #user = models.ManyToManyField(User)
 
-class UserType(models.Model):
-    user = models.OneToOneField
-    agent_type = models.CharField(max_length=30)
-    student_type = models.CharField(max_length=30)
 
-    def __unicode__(self):
-
-        return self.user
 #class AgGroup(models.Model):
 
 #    Agents = Group.objects.create(name='consultants')
@@ -82,96 +85,6 @@ class UserType(models.Model):
 
     #Student = Group.objects.create(name='Students')
     #Agents = Group.objects.create(name='Agents')
-
-class Countries(models.Model):
-    country_name = models.CharField(max_length=50, default=None)
-    country_value = models.CharField(max_length=50, default=None)
-
-    def __str__(self):              # __unicode__ on Python 2
-        return self.country_name
-class CityList(models.Model):
-    city_name = models.CharField(max_length=50, default=None)
-    city_value = models.CharField(max_length=50, default=None)
-
-    def __str__(self):              # __unicode__ on Python 2
-        return self.city_name
-
-class StateList(models.Model):
-    state_name = models.CharField(max_length=50, default=None)
-    state_value = models.CharField(max_length=50, default=None)
-
-    def __str__(self):              # __unicode__ on Python 2
-        return self.state_name
-
-class Processing(models.Model):
-    processing_fee = models.CharField(max_length=10, default=None)
-    processing_value = models.CharField(max_length=10, default=None)
-    def __str__(self):              # __unicode__ on Python 2
-        return self.processing_fee
-
-class Language_Fees(models.Model):
-    language_fee = models.CharField(max_length=10, default=None)
-    language_value = models.CharField(max_length=10, default=None)
-
-    def __str__(self):              # __unicode__ on Python 2
-        return self.language_fee
-
-class InterviewFees(models.Model):
-    preparation_fee = models.CharField(max_length=10, default=None)
-    interview_value = models.CharField(max_length=10, default=None)
-
-    def __str__(self):              # __unicode__ on Python 2
-        return self.preparation_fee
-
-class ScholarhipFees(models.Model):
-    scholarship_fee = models.CharField(max_length=10, default=None)
-    scholarship_value = models.CharField(max_length=10, default=None)
-
-    def __str__(self):              # __unicode__ on Python 2
-        return self.scholarship_fee
-
-class PassingYear(models.Model):
-    year = models.CharField(max_length=50, default=None)
-    year_value = models.CharField(max_length=50, default=None)
-    def __str__(self):              # __unicode__ on Python 2
-        return self.year
-
-class Budget(models.Model):
-    aff_budget = models.CharField(max_length=50, default=None)
-    budget_value = models.CharField(max_length=50, default=None)
-    def __str__(self):              # __unicode__ on Python 2
-        return self.aff_budget
-
-class HighestQualification(models.Model):
-    qualification = models.CharField(max_length=50, default=None)
-    qualification_value = models.CharField(max_length=50, default=None)
-    def __str__(self):              # __unicode__ on Python 2
-        return self.qualification
-class SubjectList(models.Model):
-    subject = models.CharField(max_length=50, default=None)
-    subject_value = models.CharField(max_length=50, default=None)
-    def __str__(self):              # __unicode__ on Python 2
-        return self.subject
-class ProgramDuration(models.Model):
-    duration = models.CharField(max_length=50, default=None)
-    duration_value = models.CharField(max_length=50, default=None)
-    def __str__(self):
-        return self.duration
-class Percentage(models.Model):
-    Percent = models.CharField(max_length=50, default=None)
-    Percent_value = models.CharField(max_length=50, default=None)
-    def __str__(self):
-            return self.Percent
-
-
-class Profile(models.Model):
-    @property
-    def is_student(self):
-        try:
-            self.student
-            return True
-        except Student.DoesNotExist:
-            return False
 
 #class Student(Profile):
 #    user =  models.ForeignKey(User, on_delete=models.CASCADE)
@@ -664,7 +577,7 @@ class StdPersonalInfo(models.Model):
 
     )
 
-    DesiredCountry=(
+    DesiredC=(
     (DesiredCountry, 'Desired Country'),
     (Australia , 'Australia'),
 	(USA , 'USA'),
@@ -1075,215 +988,12 @@ class StdPersonalInfo(models.Model):
 
     )
 
-    DesiredCountry=(
-    (DesiredCountry, 'Desired Country'),
-    (Australia , 'Australia'),
-	(USA , 'USA'),
-	(Canada , 'Canada'),
-	(UK , 'UK'),
-	(Ireland , 'Ireland'),
-	(NewZealand , 'NewZealand'),
-	(Germany , 'Germany'),
-	(Sweden , 'Sweden'),
-
-	(Afghanistan , 'Afghanistan'),
-	(Albania , 'Albania'),
-	(Algeria , 'Algeria'),
-	(Andorra , 'Andorra'),
-	(Angola , 'Angola'),
-	(Anguilla , 'Anguilla'),
-	(AntiguaBarbuda , 'Antigua & Barbuda'),
-	(Argentina , 'Argentina'),
-	(Armenia , 'Armenia'),
-	(Austria , 'Austria'),
-	(Azerbaijan , 'Azerbaijan'),
-	(Bahamas , 'Bahamas'),
-	(Bahrain , 'Bahrain'),
-	(Bangladesh , 'Bangladesh'),
-	(Barbados , 'Barbados'),
-	(Belarus , 'Belarus'),
-	(Belgium , 'Belgium'),
-	(Belize , 'Belize'),
-	(Benin , 'Benin'),
-	(Bermuda , 'Bermuda'),
-	(Bhutan , 'Bhutan'),
-	(Bolivia , 'Bolivia'),
-	(BosniaHerzegovina , 'Bosnia & Herzegovina'),
-	(Botswana , 'Botswana'),
-	(Brazil , 'Brazil'),
-	(BruneiDarussalam , 'Brunei Darussalam'),
-	(Bulgaria , 'Bulgaria'),
-	(BurkinaFaso , 'Burkina Faso'),
-	(MyanmarBurma , 'Myanmar/Burma'),
-	(Burundi , 'Burundi'),
-	(Cambodia , 'Cambodia'),
-	(Cameroon , 'Cameroon'),
-	(CapeVerde , 'Cape Verde'),
-	(CaymanIslands , 'Cayman Islands'),
-	(CentralAfrican , 'Central African'),
-	(ChadRepublic , 'Chad Republic'),
-	(Chile , 'Chile'),
-	(China , 'China'),
-	(Colombia , 'Colombia'),
-	(Comoros , 'Comoros'),
-	(Congo , 'Congo'),
-	(CostaRica , 'Costa Rica'),
-	(Croatia , 'Croatia'),
-	(Cuba , 'Cuba'),
-	(Cyprus , 'Cyprus'),
-	(CzechRepublic , 'Czech Republic'),
-	(DemocraticRepublicoftheCongo , 'Democratic Republic of the Congo'),
-	(Denmark , 'Denmark'),
-	(Djibouti , 'Djibouti'),
-	(DominicanRepublic , 'Dominican Republic'),
-	(Dominica , 'Dominica'),
-	(Ecuador , 'Ecuador'),
-	(Egypt , 'Egypt'),
-	(ElSalvador , 'El Salvador'),
-	(EquatorialGuinea , 'Equatorial Guinea'),
-	(Eritrea , 'Eritrea'),
-	(Estonia , 'Estonia'),
-	(Ethiopia , 'Ethiopia'),
-	(Fiji , 'Fiji'),
-	(Finland , 'Finland'),
-	(France , 'France'),
-	(FrenchGuiana , 'French Guiana'),
-	(Gabon , 'Gabon'),
-	(Gambia , 'Gambia'),
-	(Georgia , 'Georgia'),
-	(Ghana , 'Ghana'),
-	(GreatBritain , 'Great Britain'),
-	(Greece , 'Greece'),
-	(Grenada , 'Grenada'),
-	(Guadeloupe , 'Guadeloupe'),
-	(Guatemala , 'Guatemala'),
-	(Guinea , 'Guinea'),
-	(GuineaBissau , 'Guinea-Bissau'),
-	(Guyana , 'Guyana'),
-	(Haiti , 'Haiti'),
-	(Honduras , 'Honduras'),
-	(Hungary , 'Hungary'),
-	(Iceland , 'Iceland'),
-	(India , 'India'),
-	(Indonesia , 'Indonesia'),
-	(Iran , 'Iran'),
-	(Iraq , 'Iraq'),
-	(IsraelandtheOccupiedTerritories , 'Israel and the Occupied Territories'),
-	(Italy , 'Italy'),
-	(IvoryCoast , 'Ivory Coast (Cote dIvoire)'),
-	(Jamaica , 'Jamaica'),
-	(Japan , 'Japan'),
-	(Jordan , 'Jordan'),
-	(Kazakhstan , 'Kazakhstan'),
-	(Kenya , 'Kenya'),
-	(Kosovo , 'Kosovo'),
-	(Kuwait , 'Kuwait'),
-	(Korea , 'Korea'),
-	(KyrgyzRepublic , 'Kyrgyz Republic (Kyrgyzstan)'),
-	(Laos , 'Laos'),
-	(Latvia , 'Latvia'),
-	(Lebanon , 'Lebanon'),
-	(Lesotho , 'Lesotho'),
-	(Liberia , 'Liberia'),
-	(Libya , 'Libya'),
-	(Liechtenstein , 'Liechtenstein'),
-	(Lithuania , 'Lithuania'),
-	(Luxembourg , 'Luxembourg'),
-	(RepublicofMacedonia , 'Republic of Macedonia'),
-	(Madagascar , 'Madagascar'),
-	(Malawi , 'Malawi'),
-	(Malaysia , 'Malaysia'),
-	(Maldives , 'Maldives'),
-	(Mali , 'Mali'),
-	(Malta , 'Malta'),
-	(Martinique , 'Martinique'),
-	(Mauritania , 'Mauritania'),
-	(Mauritius , 'Mauritius'),
-	(Mayotte , 'Mayotte'),
-	(Mexico , 'Mexico'),
-	(Moldova , 'Moldova'),
-	(Mongolia , 'Mongolia'),
-	(Montenegro , 'Montenegro'),
-	(Montserrat , 'Montserrat'),
-	(Morocco , 'Morocco'),
-	(Mozambique , 'Mozambique'),
-	(Namibia , 'Namibia'),
-	(Nepal , 'Nepal'),
-	(Netherlands , 'Netherlands'),
-	(NewZealand , 'NewZealand'),
-	(Nicaragua , 'Nicaragua'),
-	(Niger , 'Niger'),
-	(Nigeria , 'Nigeria'),
-	(Norway , 'Norway'),
-	(Oman , 'Oman'),
-	(PacificIslands , 'Pacific Islands'),
-
-	(Panama , 'Panama'),
-	(PapuaNewGuinea , 'Papua New Guinea'),
-	(Paraguay , 'Paraguay'),
-	(Peru , 'Peru'),
-	(Philippines , 'Philippines'),
-	(Poland , 'Poland'),
-	(Portugal , 'Portugal'),
-	(PuertoRico , 'Puerto Rico'),
-	(Qatar , 'Qatar'),
-	(Reunion , 'Reunion'),
-	(Romania , 'Romania'),
-	(RussianFederation , 'Russian Federation'),
-	(Rwanda , 'Rwanda'),
-	(SaintKittsandNevis , 'Saint Kitts and Nevis'),
-	(SaintLucia , 'Saint Lucia'),
-	(SaintVincentGrenadines , 'Saint Vincents & Grenadines'),
-	(Samoa , 'Samoa'),
-	(SaoTomeandPrincipe , 'Sao Tome and Principe'),
-	(SaudiArabia , 'Saudi Arabia'),
-	(Senegal , 'Senegal'),
-	(Serbia , 'Serbia'),
-	(Seychelles , 'Seychelles'),
-	(SierraLeone , 'Sierra Leone'),
-	(Singapore , 'Singapore'),
-	(SlovakRepublic , 'Slovak Republic'),
-	(Slovenia , 'Slovenia'),
-	(SolomonIslands , 'Solomon Islands'),
-	(Somalia , 'Somalia'),
-	(SouthAfrica , 'South Africa'),
-
-	(SouthSudan , 'South Sudan'),
-	(Spain , 'Spain'),
-	(SriLanka , 'Sri Lanka'),
-	(Sudan , 'Sudan'),
-	(Suriname , 'Suriname'),
-	(Swaziland , 'Swaziland'),
-	(Switzerland , 'Switzerland'),
-	(Syria , 'Syria'),
-	(Tajikistan , 'Tajikistan'),
-	(Tanzania , 'Tanzania'),
-	(Thailand , 'Thailand'),
-	(TimorLeste , 'Timor Leste'),
-	(Togo , 'Togo'),
-	(TrinidadTobago , 'Trinidad & Tobago'),
-	(Turkey , 'Turkey'),
-	(Turkmenistan , 'Turkmenistan'),
-	(TurksCaicos , 'Turks & Caicos'),
-	(Uganda , 'Uganda'),
-	(Ukraine , 'Ukraine'),
-	(UnitedArabEmirates , 'United Arab Emirates'),
-	(Uruguay , 'Uruguay'),
-	(Uzbekistan , 'Uzbekistan'),
-	(Venezuela , 'Venezuela'),
-	(Vietnam , 'Vietnam'),
-	(VirginIslandsUS , 'Virgin Islands (US)'),
-    (VirginIslandsUK , 'Virgin Islands (UK)'),
-	(Yemen , 'Yemen'),
-	(Zambia , 'Zambia'),
-	(Zimbabwe , 'Zimbabwe'),
-    )
 
     Provice = 'Province'
     Punjab = 'Punjab'
     IslamabadICT = 'Islamabad ICT'
     Sindh = 'Sindh'
-    KPK = 'KPC'
+    KPK = 'KPK'
     Balochistan = 'Balochistan'
     GilgitBaltistan = 'Gilgit Baltistan'
     AzadJamuKashmir = 'Azad Jamui Kashmir'
@@ -1293,7 +1003,7 @@ class StdPersonalInfo(models.Model):
     (Punjab , 'Punjab'),
     (IslamabadICT , 'Islamabad ICT'),
     (Sindh , 'Sindh'),
-    (KPK , 'KPC'),
+    (KPK , 'KPK'),
     (Balochistan , 'Balochistan'),
     (GilgitBaltistan , 'Gilgit Baltistan'),
     (AzadJamuKashmir , 'Azad Jamui Kashmir'),
@@ -2292,18 +2002,18 @@ class StdPersonalInfo(models.Model):
     IntermediateHSSE = 'Intermediate(HSSE)'
     AssociateDegree = 'Associate Degree'
     ALevel = 'A-Level'
-    BachelorYears2 = 'Bachelor(2-Years)'
-    BachelorYears3 = 'Bachelor(3-Years)'
-    BachelorYears4 = 'Bachelor(4-Years)'
-    BachelorYears5 = 'Bachelor(5-Years)'
-    BachelorYears6 = 'Bachelor(6-Years)'
-    MasterMonths6 = 'Master(6-Months)'
-    MasterYear1 = 'Master(1-Year)'
-    MasterYear15 = 'Master(1.5 Years)'
-    MasterYears2 = 'Master(2-Years)'
-    MasterYear25 = 'Master(2.5Years)'
+    BachelorYears2 = 'Bachelor 2-Years'
+    BachelorYears3 = 'Bachelor 3-Years'
+    BachelorYears4 = 'Bachelor 4-Years'
+    BachelorYears5 = 'Bachelor 5-Years'
+    BachelorYears6 = 'Bachelor 6-Years'
+    MasterMonths6 = 'Master 6-Months'
+    MasterYear1 = 'Master 1-Year'
+    MasterYear15 = 'Master 1.5 Years'
+    MasterYears2 = 'Master 2-Years'
+    MasterYear25 = 'Master 2.5Years'
     Phd = 'Phd / Doctor(Res)'
-    OtherRes = 'Other(Res)'
+    OtherRes = 'Others'
 
     Degree = (
         (Degree , 'Degree'),
@@ -2316,14 +2026,14 @@ class StdPersonalInfo(models.Model):
         (BachelorYears3 , 'Bachelor 3-Years'),
         (BachelorYears4 , 'Bachelor 4-Years'),
         (BachelorYears5 , 'Bachelor 5-Years'),
-        (BachelorYears6 , 'Bachelor(6-Years)'),
-        (MasterMonths6 , 'Master(6-Months)'),
-        (MasterYear1 , 'Master(1-Year)'),
-        (MasterYear15 , 'Master(1.5 Years)'),
-        (MasterYears2 , 'Master(2-Years)'),
-        (MasterYear25 , 'Master(2.5Years)'),
+        (BachelorYears6 , 'Bachelor 6-Years'),
+        (MasterMonths6 , 'Master 6-Months'),
+        (MasterYear1 , 'Master 1-Year'),
+        (MasterYear15 , 'Master 1.5 Years'),
+        (MasterYears2 , 'Master 2-Years'),
+        (MasterYear25 , 'Master 2.5Years'),
         (Phd  , 'Phd / Doctor(Res)'),
-        (OtherRes , 'Other(Res)'),
+        (OtherRes , 'Others'),
     )
 
     StudyGap = 'Study Gap'
@@ -2348,7 +2058,7 @@ class StdPersonalInfo(models.Model):
     Yearsto9Years = '8.5-Years to 9-Years'
     Yearsto95Years = '9-Years to 9.5-Years'
     Yearsto10Years = '9.5-Years to 10-Years'
-    Other = 'Other'
+    Other = 'More than 10 Year'
     StudyGap = (
     (StudyGap , 'Study Gap'),
     (NoGap , 'No Gap'),
@@ -2371,7 +2081,7 @@ class StdPersonalInfo(models.Model):
     (Yearsto9Years , '8.5-Years to 9-Years'),
     (Yearsto95Years , '9-Years to 9.5-Years'),
     (Yearsto10Years , '9.5-Years to 10-Years'),
-    (Other , 'Other'),
+    (Other , 'More than 10 Year'),
 
     )
 
@@ -2397,7 +2107,7 @@ class StdPersonalInfo(models.Model):
     Yearsto9Years = '8.5-Years to 9-Years'
     Yearsto95Years = '9-Years to 9.5-Years'
     Yearsto10Years = '9.5-Years to 10-Years'
-    Other = 'Other'
+    Other = 'More than 10 Year'
     JobExperience = (
     (JobExperience , 'Job Experience'),
     (NoExperience , 'No Experience'),
@@ -2421,41 +2131,30 @@ class StdPersonalInfo(models.Model):
     (Yearsto9Years , '8.5-Years to 9-Years'),
     (Yearsto95Years , '9-Years to 9.5-Years'),
     (Yearsto10Years , '9.5-Years to 10-Years'),
-    (Other , 'Other'),
+    (Other , 'More than 10 Year'),
 
     )
 
     Percentage = 'Percentage'
-    thirtyfive = '35%'
-    forty = '40%'
-    fortyfive = '45%'
-    fifty = '50%'
-    fiftyfive = '55%'
-    sixty = '60%'
-    sixtyfive = '65%'
-    seventy = '70%'
-    seventyfive = '75%'
-    eighty = '80%'
-    eightyfive = '85%'
-    ninty = '90%'
-    nintyfive = '95%'
-    hundred = '100%'
+    thirtyfive = '33%-40%'
+    forty = '40%-50'
+    fortyfive = '50%-60%'
+    fifty = '60%-70%'
+    fiftyfive = '70%-80%'
+    sixty = '80%-90%'
+    sixtyfive = '90%-100%'
+
 
     Percentage = (
         (Percentage , 'Percentage'),
-        (thirtyfive , '35%'),
-        (forty , '40%'),
-        (fifty , '50%'),
-        (fiftyfive , '55%'),
-        (sixty , '60%'),
-        (sixtyfive , '65%'),
-        (seventy , '70%'),
-        (seventyfive , '75%'),
-        (eighty , '80%'),
-        (eightyfive , '85%'),
-        (ninty , '90%'),
-        (nintyfive , '95%'),
-        (hundred , '100%'),
+        (thirtyfive , '33%-40%'),
+        (forty , '40%-50'),
+        (fortyfive , '50%-60%'),
+        (fifty , '60%-70%'),
+        (fiftyfive , '70%-80%'),
+        (sixty , '80%-90%'),
+        (sixtyfive , '90%-100%'),
+
 
     )
 
@@ -2472,6 +2171,7 @@ class StdPersonalInfo(models.Model):
     )
 
     PassingYear = 'Passing Year'
+    b490 = "Before 1990"
     Y1990 = '1990'
     Y1991 = '1991'
     Y1992 = '1992'
@@ -2505,6 +2205,7 @@ class StdPersonalInfo(models.Model):
 
     PassingYear = (
             (PassingYear , 'Passing Year'),
+            (b490 , "Before 1990"),
             (Y1990 , '1990'),
             (Y1991 , '1991'),
             (Y1992 , '1992'),
@@ -2561,7 +2262,7 @@ class StdPersonalInfo(models.Model):
     Italian = 'Italian'
     Turkish= 'Turkish'
     Portoguese = 'Portoguese'
-    Korian = 'Korian'
+    Korean = 'Korean'
     Other = 'Oher'
 
     OtherLanguage = (
@@ -2574,48 +2275,52 @@ class StdPersonalInfo(models.Model):
         (Italian , 'Italian'),
         (Turkish, 'Turkish'),
         (Portoguese , 'Portoguese'),
-        (Korian , 'Korian'),
+        (Korean , 'Korean'),
         (Other , 'Oher'),
 
         )
     DesiredDegree = 'Desired Degree'
-    Matriculation_SSE = 'Matriculation SSE'
+    Certificate = 'Certificate'
+    Diploma = 'Diploma'
     OLevel = 'O-Level'
-    IntermediateHSSE = 'Intermediate(HSSE)'
+    IntBaccalaureate = ' Int. Baccalaureate (IB)'
+    foundation = 'Foundation'
     AssociateDegree = 'Associate Degree'
     ALevel = 'A-Level'
-    BachelorYears2 = 'Bachelor(2-Years)'
-    BachelorYears3 = 'Bachelor(3-Years)'
-    BachelorYears4 = 'Bachelor(4-Years)'
-    BachelorYears5 = 'Bachelor(5-Years)'
-    BachelorYears6 = 'Bachelor(6-Years)'
-    MasterMonths6 = 'Master(6-Months)'
-    MasterYear1 = 'Master(1-Year)'
-    MasterYear15 = 'Master(1.5 Years)'
-    MasterYears2 = 'Master(2-Years)'
-    MasterYear25 = 'Master(2.5Years)'
+    BachelorYears2 = 'Bachelor 2-Years'
+    BachelorYears3 = 'Bachelor 3-Years'
+    BachelorYears4 = 'Bachelor 4-Years'
+    BachelorYears5 = 'Bachelor 5-Years'
+    BachelorYears6 = 'Bachelor 6-Years'
+    MasterMonths6 = 'Master 6-Months'
+    MasterYear1 = 'Master 1-Year'
+    MasterYear15 = 'Master 1.5 Years'
+    MasterYears2 = 'Master 2-Years'
+    MasterYear25 = 'Master 2.5Years'
     Phd = 'Phd / Doctor(Res)'
-    OtherRes = 'Other(Res)'
+    OtherRes = 'Others'
 
-    DesiredDegree = (
+    DesiredD = (
         (DesiredDegree , ' Desired Degree'),
-        (Matriculation_SSE , 'Matriculation SSE'),
+        (Certificate , 'Certificate'),
+        (Diploma , 'Diploma'),
         (OLevel , 'O-Level'),
-        (IntermediateHSSE , 'Intermediate HSSE'),
+        (IntBaccalaureate , ' Int. Baccalaureate (IB)'),
+        (foundation , 'Foundation'),
         (AssociateDegree , 'Associate Degree'),
         (ALevel , 'A-Level'),
         (BachelorYears2 , 'Bachelor 2-Years'),
         (BachelorYears3 , 'Bachelor 3-Years'),
         (BachelorYears4 , 'Bachelor 4-Years'),
         (BachelorYears5 , 'Bachelor 5-Years'),
-        (BachelorYears6 , 'Bachelor(6-Years)'),
-        (MasterMonths6 , 'Master(6-Months)'),
-        (MasterYear1 , 'Master(1-Year)'),
-        (MasterYear15 , 'Master(1.5 Years)'),
-        (MasterYears2 , 'Master(2-Years)'),
-        (MasterYear25 , 'Master(2.5Years)'),
+        (BachelorYears6 , 'Bachelor 6-Years'),
+        (MasterMonths6 , 'Master 6-Months'),
+        (MasterYear1 , 'Master 1-Year'),
+        (MasterYear15 , 'Master 1.5 Years'),
+        (MasterYears2 , 'Master 2 Years'),
+        (MasterYear25 , 'Master 2.5 Years'),
         (Phd  , 'Phd / Doctor(Res)'),
-        (OtherRes , 'Other(Res)'),
+        (OtherRes , 'Others'),
     )
     DesireSubject = 'Desired Subject'
     AppliedArts = 'Applied Arts'
@@ -2876,7 +2581,7 @@ class StdPersonalInfo(models.Model):
     Zoology = 'Zoology'
 
 
-    DesireSubject = (
+    DesireS = (
     (DesireSubject , 'Desire Subject'),
 
     (AppliedArts , 'Applied Arts'),
@@ -3160,11 +2865,211 @@ class StdPersonalInfo(models.Model):
     CountryOfResidence = 'Country of Residence'
     Pak = 'Pakistan'
     Australia = 'Australia'
+    a = "---------------------------"
 
-    CountryOfResidence = (
+    CountryOfResi = (
         (CountryOfResidence , 'Country of Residence'),
         (Pak , 'Pakistan'),
         (Australia , 'Australia'),
+    	(USA , 'USA'),
+    	(Canada , 'Canada'),
+    	(UK , 'UK'),
+    	(Ireland , 'Ireland'),
+    	(NewZealand , 'NewZealand'),
+    	(Germany , 'Germany'),
+    	(Sweden , 'Sweden'),
+        (a , "---------------------------"),
+    	(Afghanistan , 'Afghanistan'),
+    	(Albania , 'Albania'),
+    	(Algeria , 'Algeria'),
+    	(Andorra , 'Andorra'),
+    	(Angola , 'Angola'),
+    	(Anguilla , 'Anguilla'),
+    	(AntiguaBarbuda , 'Antigua & Barbuda'),
+    	(Argentina , 'Argentina'),
+    	(Armenia , 'Armenia'),
+    	(Austria , 'Austria'),
+    	(Azerbaijan , 'Azerbaijan'),
+    	(Bahamas , 'Bahamas'),
+    	(Bahrain , 'Bahrain'),
+    	(Bangladesh , 'Bangladesh'),
+    	(Barbados , 'Barbados'),
+    	(Belarus , 'Belarus'),
+    	(Belgium , 'Belgium'),
+    	(Belize , 'Belize'),
+    	(Benin , 'Benin'),
+    	(Bermuda , 'Bermuda'),
+    	(Bhutan , 'Bhutan'),
+    	(Bolivia , 'Bolivia'),
+    	(BosniaHerzegovina , 'Bosnia & Herzegovina'),
+    	(Botswana , 'Botswana'),
+    	(Brazil , 'Brazil'),
+    	(BruneiDarussalam , 'Brunei Darussalam'),
+    	(Bulgaria , 'Bulgaria'),
+    	(BurkinaFaso , 'Burkina Faso'),
+    	(MyanmarBurma , 'Myanmar/Burma'),
+    	(Burundi , 'Burundi'),
+    	(Cambodia , 'Cambodia'),
+    	(Cameroon , 'Cameroon'),
+    	(CapeVerde , 'Cape Verde'),
+    	(CaymanIslands , 'Cayman Islands'),
+    	(CentralAfrican , 'Central African'),
+    	(ChadRepublic , 'Chad Republic'),
+    	(Chile , 'Chile'),
+    	(China , 'China'),
+    	(Colombia , 'Colombia'),
+    	(Comoros , 'Comoros'),
+    	(Congo , 'Congo'),
+    	(CostaRica , 'Costa Rica'),
+    	(Croatia , 'Croatia'),
+    	(Cuba , 'Cuba'),
+    	(Cyprus , 'Cyprus'),
+    	(CzechRepublic , 'Czech Republic'),
+    	(DemocraticRepublicoftheCongo , 'Democratic Republic of the Congo'),
+    	(Denmark , 'Denmark'),
+    	(Djibouti , 'Djibouti'),
+    	(DominicanRepublic , 'Dominican Republic'),
+    	(Dominica , 'Dominica'),
+    	(Ecuador , 'Ecuador'),
+    	(Egypt , 'Egypt'),
+    	(ElSalvador , 'El Salvador'),
+    	(EquatorialGuinea , 'Equatorial Guinea'),
+    	(Eritrea , 'Eritrea'),
+    	(Estonia , 'Estonia'),
+    	(Ethiopia , 'Ethiopia'),
+    	(Fiji , 'Fiji'),
+    	(Finland , 'Finland'),
+    	(France , 'France'),
+    	(FrenchGuiana , 'French Guiana'),
+    	(Gabon , 'Gabon'),
+    	(Gambia , 'Gambia'),
+    	(Georgia , 'Georgia'),
+    	(Ghana , 'Ghana'),
+    	(GreatBritain , 'Great Britain'),
+    	(Greece , 'Greece'),
+    	(Grenada , 'Grenada'),
+    	(Guadeloupe , 'Guadeloupe'),
+    	(Guatemala , 'Guatemala'),
+    	(Guinea , 'Guinea'),
+    	(GuineaBissau , 'Guinea-Bissau'),
+    	(Guyana , 'Guyana'),
+    	(Haiti , 'Haiti'),
+    	(Honduras , 'Honduras'),
+    	(Hungary , 'Hungary'),
+    	(Iceland , 'Iceland'),
+    	(India , 'India'),
+    	(Indonesia , 'Indonesia'),
+    	(Iran , 'Iran'),
+    	(Iraq , 'Iraq'),
+    	(IsraelandtheOccupiedTerritories , 'Israel and the Occupied Territories'),
+    	(Italy , 'Italy'),
+    	(IvoryCoast , 'Ivory Coast (Cote dIvoire)'),
+    	(Jamaica , 'Jamaica'),
+    	(Japan , 'Japan'),
+    	(Jordan , 'Jordan'),
+    	(Kazakhstan , 'Kazakhstan'),
+    	(Kenya , 'Kenya'),
+    	(Kosovo , 'Kosovo'),
+    	(Kuwait , 'Kuwait'),
+    	(Korea , 'Korea'),
+    	(KyrgyzRepublic , 'Kyrgyz Republic (Kyrgyzstan)'),
+    	(Laos , 'Laos'),
+    	(Latvia , 'Latvia'),
+    	(Lebanon , 'Lebanon'),
+    	(Lesotho , 'Lesotho'),
+    	(Liberia , 'Liberia'),
+    	(Libya , 'Libya'),
+    	(Liechtenstein , 'Liechtenstein'),
+    	(Lithuania , 'Lithuania'),
+    	(Luxembourg , 'Luxembourg'),
+    	(RepublicofMacedonia , 'Republic of Macedonia'),
+    	(Madagascar , 'Madagascar'),
+    	(Malawi , 'Malawi'),
+    	(Malaysia , 'Malaysia'),
+    	(Maldives , 'Maldives'),
+    	(Mali , 'Mali'),
+    	(Malta , 'Malta'),
+    	(Martinique , 'Martinique'),
+    	(Mauritania , 'Mauritania'),
+    	(Mauritius , 'Mauritius'),
+    	(Mayotte , 'Mayotte'),
+    	(Mexico , 'Mexico'),
+    	(Moldova , 'Moldova'),
+    	(Mongolia , 'Mongolia'),
+    	(Montenegro , 'Montenegro'),
+    	(Montserrat , 'Montserrat'),
+    	(Morocco , 'Morocco'),
+    	(Mozambique , 'Mozambique'),
+    	(Namibia , 'Namibia'),
+    	(Nepal , 'Nepal'),
+    	(Netherlands , 'Netherlands'),
+    	(NewZealand , 'NewZealand'),
+    	(Nicaragua , 'Nicaragua'),
+    	(Niger , 'Niger'),
+    	(Nigeria , 'Nigeria'),
+    	(Norway , 'Norway'),
+    	(Oman , 'Oman'),
+    	(PacificIslands , 'Pacific Islands'),
+        (Pak , 'Pakistan'),
+    	(Panama , 'Panama'),
+    	(PapuaNewGuinea , 'Papua New Guinea'),
+    	(Paraguay , 'Paraguay'),
+    	(Peru , 'Peru'),
+    	(Philippines , 'Philippines'),
+    	(Poland , 'Poland'),
+    	(Portugal , 'Portugal'),
+    	(PuertoRico , 'Puerto Rico'),
+    	(Qatar , 'Qatar'),
+    	(Reunion , 'Reunion'),
+    	(Romania , 'Romania'),
+    	(RussianFederation , 'Russian Federation'),
+    	(Rwanda , 'Rwanda'),
+    	(SaintKittsandNevis , 'Saint Kitts and Nevis'),
+    	(SaintLucia , 'Saint Lucia'),
+    	(SaintVincentGrenadines , 'Saint Vincents & Grenadines'),
+    	(Samoa , 'Samoa'),
+    	(SaoTomeandPrincipe , 'Sao Tome and Principe'),
+    	(SaudiArabia , 'Saudi Arabia'),
+    	(Senegal , 'Senegal'),
+    	(Serbia , 'Serbia'),
+    	(Seychelles , 'Seychelles'),
+    	(SierraLeone , 'Sierra Leone'),
+    	(Singapore , 'Singapore'),
+    	(SlovakRepublic , 'Slovak Republic'),
+    	(Slovenia , 'Slovenia'),
+    	(SolomonIslands , 'Solomon Islands'),
+    	(Somalia , 'Somalia'),
+    	(SouthAfrica , 'South Africa'),
+
+    	(SouthSudan , 'South Sudan'),
+    	(Spain , 'Spain'),
+    	(SriLanka , 'Sri Lanka'),
+    	(Sudan , 'Sudan'),
+    	(Suriname , 'Suriname'),
+    	(Swaziland , 'Swaziland'),
+    	(Switzerland , 'Switzerland'),
+    	(Syria , 'Syria'),
+    	(Tajikistan , 'Tajikistan'),
+    	(Tanzania , 'Tanzania'),
+    	(Thailand , 'Thailand'),
+    	(TimorLeste , 'Timor Leste'),
+    	(Togo , 'Togo'),
+    	(TrinidadTobago , 'Trinidad & Tobago'),
+    	(Turkey , 'Turkey'),
+    	(Turkmenistan , 'Turkmenistan'),
+    	(TurksCaicos , 'Turks & Caicos'),
+    	(Uganda , 'Uganda'),
+    	(Ukraine , 'Ukraine'),
+    	(UnitedArabEmirates , 'United Arab Emirates'),
+    	(Uruguay , 'Uruguay'),
+    	(Uzbekistan , 'Uzbekistan'),
+    	(Venezuela , 'Venezuela'),
+    	(Vietnam , 'Vietnam'),
+    	(VirginIslandsUS , 'Virgin Islands (US)'),
+        (VirginIslandsUK , 'Virgin Islands (UK)'),
+    	(Yemen , 'Yemen'),
+    	(Zambia , 'Zambia'),
+    	(Zimbabwe , 'Zimbabwe'),
 
     )
     #id = models.OneToOneField(User)
@@ -3187,7 +3092,7 @@ class StdPersonalInfo(models.Model):
     city = models.CharField(max_length=500,choices=City, default=City,  null=True)
     state = models.CharField(max_length=500,choices =Province, blank=False, default=Province , null=True )
     nationality = models.CharField(max_length=500 ,choices= Nationality, default= Nationality, null=True )
-    country_of_residence = models.CharField(max_length=500 ,choices=CountryOfResidence, default=CountryOfResidence)
+    country_of_residence = models.CharField(max_length=500 ,choices=CountryOfResi, default=CountryOfResidence)
 
 
 
@@ -3223,9 +3128,9 @@ class StdPersonalInfo(models.Model):
     Other_Language_score = models.CharField(max_length=250, blank= True, null = True,default= None)
 
     #Future Plans part
-    desired_degree = models.CharField(max_length=500 , null=True,  choices = DesiredDegree, default = DesiredDegree)
-    desired_subject = models.CharField(max_length=500 , null=True ,choices = DesireSubject,  default= DesireSubject)
-    desired_country = models.CharField(max_length=500 ,choices=DesiredCountry,  null=True, default=DesiredCountry)
+    desired_degree = models.CharField(max_length=500 , null=True,  choices = DesiredD, default = DesiredDegree)
+    desired_subject = models.CharField(max_length=500 , null=True ,choices = DesireS,  default= DesireSubject)
+    desired_country = models.CharField(max_length=500 ,choices=DesiredC,  null=True, default=DesiredCountry)
     scholarships = models.CharField(max_length=500 , null=True,choices= Scholarships,  default= Scholarships)
     budget = models.CharField(max_length=500 ,choices=AffordableBudget, null=True, default= AffordableBudget)
 
@@ -3290,25 +3195,429 @@ class StudentLanguage(models.Model):
         return self.user.username
 
 
-class StudentFuture(models.Model):
+class Country_Deal(models.Model):
+        Country = 'Country'
+        Nationality = 'Nationality'
+        Pakistan = 'Pakistan'
+        India = 'India'
+        Australia = 'Australia'
+        UK = 'UK'
+        Canada = 'Canada'
+        Ireland = 'Ireland'
+        NewZealand = 'New Zealand'
+        Germany = 'Germany'
+        Sweden = 'Sweden'
+        Afghanistan = 'Afghanistan'
+        Algeria = 'Algeria'
+        Albania = 'Albania'
+        Andorra = 'Andorra'
+        Angola = 'Angola'
+        Anguilla = 'Anguilla'
+        AntiguaBarbuda = 'Antigua & Barbuda'
 
-#    std_future_id = models.ForeignKey(RegisterStudent,related_name="std_future_id")
-    user = models.OneToOneField(User)
+        Argentina = 'Argentina'
+        Armenia = 'Armenia'
+        Austria = 'Austria'
+        Azerbaijan = 'Azerbaijan'
+        Bahamas = 'Bahamas'
+        Bahrain = 'Bahrain'
+        Bangladesh = 'Bangladesh'
+        Barbados = 'Barbados'
+        Belarus = 'Belarus'
+        Belgium = 'Belgium'
+        Belize = 'Belize'
+        Benin = 'Benin'
+        Bermuda = 'Bermuda'
+        Bhutan = 'Bhutan'
+        Bolivia = 'Bolivia'
+        BosniaHerzegovina = 'Bosnia & Herzegovina'
+        Botswana = 'Botswana'
+        Brazil = 'Brazil'
+        BruneiDarussalam = 'Brunei Darussalam'
+        Bulgaria = 'Bulgaria'
+        BurkinaFaso = 'Burkina Faso'
+        MyanmarBurma = 'Myanmar/Burma'
+        Burundi = 'Burundi'
+        Cambodia = 'Cambodia'
+        Cameroon = 'Cameroon'
+        CapeVerde = 'Cape Verde'
+        CaymanIslands = 'Cayman Islands'
+        CentralAfrican = 'Central African'
+        ChadRepublic = 'Chad Republic'
+        Chile = 'Chile'
+        China = 'China'
+        Colombia = 'Colombia'
+        Comoros = 'Comoros'
+        Congo = 'Congo'
+        CostaRica = 'Costa Rica'
+        Croatia = 'Croatia'
+        Cuba = 'Cuba'
+        Cyprus = 'Cyprus'
+        CzechRepublic = 'Czech Republic'
+        DemocraticRepublicoftheCongo = 'Democratic Republic of the Congo'
+        Denmark = 'Denmark'
+        Djibouti = 'Djibouti'
+        DominicanRepublic = 'Dominican Republic'
+        Dominica = 'Dominica'
+        Ecuador = 'Ecuador'
+        Egypt = 'Egypt'
+        ElSalvador = 'El Salvador'
+        EquatorialGuinea = 'Equatorial Guinea'
+        Eritrea ='Eritrea'
+        Estonia = 'Estonia'
+        Ethiopia = 'Ethiopia'
+        Fiji = 'Fiji'
+        Finland = 'Finland'
+        France = 'France'
+        FrenchGuiana = 'French Guiana'
+        Gabon = 'Gabon'
+        Gambia = 'Gambia'
+        Georgia = 'Georgia'
+        Ghana = 'Ghana'
+        GreatBritain = 'Great Britain'
+        Greece = 'Greece'
+        Grenada = 'Grenada'
+        Guadeloupe = 'Guadeloupe'
+        Guatemala = 'Guatemala'
+        Guinea = 'Guinea'
+        GuineaBissau = 'Guinea-Bissau'
+        Guyana = 'Guyana'
+        Haiti = 'Haiti'
+        Honduras = 'Honduras'
+        Hungary = 'Hungary'
+        Iceland = 'Iceland'
+        Indonesia = 'Indonesia'
+        Iran = 'Iran'
+        Iraq = 'Iraq'
+        IsraelandtheOccupiedTerritories = 'Israel and the Occupied Territories'
+        Italy = 'Italy'
+        IvoryCoast = 'Ivory Coast (Cote dIvoire)'
+        Jamaica = 'Jamaica'
+        Japan = 'Japan'
+        Jordan = 'Jordan'
+        Kazakhstan = 'Kazakhstan'
+        Kenya = 'Kenya'
+        Kosovo = 'Kosovo'
+        Kuwait = 'Kuwait'
+        Korea = 'Korea'
+        KyrgyzRepublic ='Kyrgyz Republic (Kyrgyzstan)'
+        Laos = 'Laos'
+        Latvia = 'Latvia'
+        Lebanon = 'Lebanon'
+        Lesotho = 'Lesotho'
+        Liberia = 'Liberia'
+        Libya = 'Libya'
+        Liechtenstein = 'Liechtenstein'
+        Lithuania = 'Lithuania'
+        Luxembourg = 'Luxembourg'
+        RepublicofMacedonia = 'Republic of Macedonia'
+        Madagascar = 'Madagascar'
+        Malawi = 'Malawi'
+        Malaysia = 'Malaysia'
+        Maldives = 'Maldives'
+        Mali = 'Mali'
+        Malta = 'Malta'
+        Martinique = 'Martinique'
+        Mauritania = 'Mauritania'
+        Mauritius = 'Mauritius'
+        Mayotte = 'Mayotte'
+        Mexico = 'Mexico'
+        Moldova = 'Moldova'
+        Mongolia = 'Mongolia'
+        Montenegro = 'Montenegro'
+        Montserrat = 'Montserrat'
+        Morocco = 'Morocco'
+        Mozambique = 'Mozambique'
+        Namibia = 'Namibia'
+        Nepal = 'Nepal'
+        Netherlands = 'Netherlands'
+        NewZealand = 'New Zealand'
+        Nicaragua = 'Nicaragua'
+        Niger = 'Niger'
+        Nigeria = 'Nigeria'
+        Oman = 'Oman'
+        PacificIslands = 'Pacific Islands'
+        Pakistan = 'Pakistan'
+        Panama = 'Panama'
+        PapuaNewGuinea = 'Papua New Guinea'
+        Paraguay = 'Paraguay'
+        Peru = 'Peru'
+        Philippines = 'Philippines'
+        Poland = 'Poland'
+        Portugal = 'Portugal'
+        PuertoRico = 'Puerto Rico'
+        Qatar = 'Qatar'
+        Reunion = 'Reunion'
+        Romania = 'Romania'
+        RussianFederation = 'Russian Federation'
+        Rwanda = 'Rwanda'
+        SaintKittsandNevis = 'Saint Kitts and Nevis'
+        SaintLucia = 'Saint Lucia'
+        SaintVincentGrenadines  ='Saint Vincents & Grenadines'
+        Samoa = 'Samoa'
+        SaoTomeandPrincipe = 'Sao Tome and Principe'
+        SaudiArabia = 'Saudi Arabia'
+        Senegal = 'Senegal'
+        Serbia = 'Serbia'
+        Seychelles = 'Seychelles'
+        SierraLeone = 'Sierra Leone'
+        Singapore = 'Singapore'
+        SlovakRepublic = 'Slovak Republic'
+        Slovenia = 'Slovenia'
+        SolomonIslands = 'Solomon Islands'
+        Somalia = 'Somalia'
+        SouthAfrica = 'South Africa'
+        RepublicofSouthKorea = 'Korea, Republic of (South Korea)'
+        SouthSudan = 'South Sudan'
+        Spain = 'Spain'
+        SriLanka = 'Sri Lanka'
+        Sudan = 'Sudan'
+        Suriname = 'Suriname'
+        Swaziland = 'Swaziland'
+        Switzerland = 'Switzerland'
+        Syria = 'Syria'
+        Tajikistan = 'Tajikistan'
+        Tanzania = 'Tanzania'
+        Thailand = 'Thailand'
+        TimorLeste = 'Timor Leste'
+        Togo = 'Togo'
+        TrinidadTobago = 'Trinidad & Tobago'
+        Turkey = 'Turkey'
+        Turkmenistan = 'Turkmenistan'
+        TurksCaicos = 'Turks & Caicos'
+        Uganda = 'Uganda'
+        Ukraine = 'Ukraine'
+        UnitedArabEmirates = 'United Arab Emirates'
+        Uruguay = 'Uruguay'
+        USA = 'USA'
+        Uzbekistan = 'Uzbekistan'
+        Venezuela = 'Venezuela'
+        Vietnam = 'Vietnam'
+        VirginIslandsUK = 'Virgin Islands (UK)'
+        VirginIslandsUS = 'Virgin Islands (US)'
+        Yemen = 'Yemen'
+        Zambia  = 'Zambia '
+        Zimbabwe = 'Zimbabwe'
+        Norway = 'Norway'
 
 
-    def __str__(self):
-        return self.user.username
-
-class StudentImage(models.Model):
-    user = models.OneToOneField(User)
-    profile_pic = models.ImageField(upload_to = 'students', null=True)
 
 
-class AgentMobileNumber(models.Model):
-    user = models.OneToOneField(User)
-    agent_contact_number = models.CharField(max_length=50 , null=True)
-    def __str__(self):
-        return self.user.username
+
+
+        Countries = (
+        (Country, 'Country'),
+        (Australia , 'Australia'),
+    	(USA , 'USA'),
+    	(Canada , 'Canada'),
+    	(UK , 'UK'),
+    	(Ireland , 'Ireland'),
+    	(NewZealand , 'NewZealand'),
+    	(Germany , 'Germany'),
+    	(Sweden , 'Sweden'),
+
+    	(Afghanistan , 'Afghanistan'),
+    	(Albania , 'Albania'),
+    	(Algeria , 'Algeria'),
+    	(Andorra , 'Andorra'),
+    	(Angola , 'Angola'),
+    	(Anguilla , 'Anguilla'),
+    	(AntiguaBarbuda , 'Antigua & Barbuda'),
+    	(Argentina , 'Argentina'),
+    	(Armenia , 'Armenia'),
+    	(Austria , 'Austria'),
+    	(Azerbaijan , 'Azerbaijan'),
+    	(Bahamas , 'Bahamas'),
+    	(Bahrain , 'Bahrain'),
+    	(Bangladesh , 'Bangladesh'),
+    	(Barbados , 'Barbados'),
+    	(Belarus , 'Belarus'),
+    	(Belgium , 'Belgium'),
+    	(Belize , 'Belize'),
+    	(Benin , 'Benin'),
+    	(Bermuda , 'Bermuda'),
+    	(Bhutan , 'Bhutan'),
+    	(Bolivia , 'Bolivia'),
+    	(BosniaHerzegovina , 'Bosnia & Herzegovina'),
+    	(Botswana , 'Botswana'),
+    	(Brazil , 'Brazil'),
+    	(BruneiDarussalam , 'Brunei Darussalam'),
+    	(Bulgaria , 'Bulgaria'),
+    	(BurkinaFaso , 'Burkina Faso'),
+    	(MyanmarBurma , 'Myanmar/Burma'),
+    	(Burundi , 'Burundi'),
+    	(Cambodia , 'Cambodia'),
+    	(Cameroon , 'Cameroon'),
+    	(CapeVerde , 'Cape Verde'),
+    	(CaymanIslands , 'Cayman Islands'),
+    	(CentralAfrican , 'Central African'),
+    	(ChadRepublic , 'Chad Republic'),
+    	(Chile , 'Chile'),
+    	(China , 'China'),
+    	(Colombia , 'Colombia'),
+    	(Comoros , 'Comoros'),
+    	(Congo , 'Congo'),
+    	(CostaRica , 'Costa Rica'),
+    	(Croatia , 'Croatia'),
+    	(Cuba , 'Cuba'),
+    	(Cyprus , 'Cyprus'),
+    	(CzechRepublic , 'Czech Republic'),
+    	(DemocraticRepublicoftheCongo , 'Democratic Republic of the Congo'),
+    	(Denmark , 'Denmark'),
+    	(Djibouti , 'Djibouti'),
+    	(DominicanRepublic , 'Dominican Republic'),
+    	(Dominica , 'Dominica'),
+    	(Ecuador , 'Ecuador'),
+    	(Egypt , 'Egypt'),
+    	(ElSalvador , 'El Salvador'),
+    	(EquatorialGuinea , 'Equatorial Guinea'),
+    	(Eritrea , 'Eritrea'),
+    	(Estonia , 'Estonia'),
+    	(Ethiopia , 'Ethiopia'),
+    	(Fiji , 'Fiji'),
+    	(Finland , 'Finland'),
+    	(France , 'France'),
+    	(FrenchGuiana , 'French Guiana'),
+    	(Gabon , 'Gabon'),
+    	(Gambia , 'Gambia'),
+    	(Georgia , 'Georgia'),
+    	(Ghana , 'Ghana'),
+    	(GreatBritain , 'Great Britain'),
+    	(Greece , 'Greece'),
+    	(Grenada , 'Grenada'),
+    	(Guadeloupe , 'Guadeloupe'),
+    	(Guatemala , 'Guatemala'),
+    	(Guinea , 'Guinea'),
+    	(GuineaBissau , 'Guinea-Bissau'),
+    	(Guyana , 'Guyana'),
+    	(Haiti , 'Haiti'),
+    	(Honduras , 'Honduras'),
+    	(Hungary , 'Hungary'),
+    	(Iceland , 'Iceland'),
+    	(India , 'India'),
+    	(Indonesia , 'Indonesia'),
+    	(Iran , 'Iran'),
+    	(Iraq , 'Iraq'),
+    	(IsraelandtheOccupiedTerritories , 'Israel and the Occupied Territories'),
+    	(Italy , 'Italy'),
+    	(IvoryCoast , 'Ivory Coast (Cote dIvoire)'),
+    	(Jamaica , 'Jamaica'),
+    	(Japan , 'Japan'),
+    	(Jordan , 'Jordan'),
+    	(Kazakhstan , 'Kazakhstan'),
+    	(Kenya , 'Kenya'),
+    	(Kosovo , 'Kosovo'),
+    	(Kuwait , 'Kuwait'),
+    	(Korea , 'Korea'),
+    	(KyrgyzRepublic , 'Kyrgyz Republic (Kyrgyzstan)'),
+    	(Laos , 'Laos'),
+    	(Latvia , 'Latvia'),
+    	(Lebanon , 'Lebanon'),
+    	(Lesotho , 'Lesotho'),
+    	(Liberia , 'Liberia'),
+    	(Libya , 'Libya'),
+    	(Liechtenstein , 'Liechtenstein'),
+    	(Lithuania , 'Lithuania'),
+    	(Luxembourg , 'Luxembourg'),
+    	(RepublicofMacedonia , 'Republic of Macedonia'),
+    	(Madagascar , 'Madagascar'),
+    	(Malawi , 'Malawi'),
+    	(Malaysia , 'Malaysia'),
+    	(Maldives , 'Maldives'),
+    	(Mali , 'Mali'),
+    	(Malta , 'Malta'),
+    	(Martinique , 'Martinique'),
+    	(Mauritania , 'Mauritania'),
+    	(Mauritius , 'Mauritius'),
+    	(Mayotte , 'Mayotte'),
+    	(Mexico , 'Mexico'),
+    	(Moldova , 'Moldova'),
+    	(Mongolia , 'Mongolia'),
+    	(Montenegro , 'Montenegro'),
+    	(Montserrat , 'Montserrat'),
+    	(Morocco , 'Morocco'),
+    	(Mozambique , 'Mozambique'),
+    	(Namibia , 'Namibia'),
+    	(Nepal , 'Nepal'),
+    	(Netherlands , 'Netherlands'),
+    	(NewZealand , 'NewZealand'),
+    	(Nicaragua , 'Nicaragua'),
+    	(Niger , 'Niger'),
+    	(Nigeria , 'Nigeria'),
+    	(Norway , 'Norway'),
+    	(Oman , 'Oman'),
+    	(PacificIslands , 'Pacific Islands'),
+    	(Pakistan , 'Pakistan'),
+    	(Panama , 'Panama'),
+    	(PapuaNewGuinea , 'Papua New Guinea'),
+    	(Paraguay , 'Paraguay'),
+    	(Peru , 'Peru'),
+    	(Philippines , 'Philippines'),
+    	(Poland , 'Poland'),
+    	(Portugal , 'Portugal'),
+    	(PuertoRico , 'Puerto Rico'),
+    	(Qatar , 'Qatar'),
+    	(Reunion , 'Reunion'),
+    	(Romania , 'Romania'),
+    	(RussianFederation , 'Russian Federation'),
+    	(Rwanda , 'Rwanda'),
+    	(SaintKittsandNevis , 'Saint Kitts and Nevis'),
+    	(SaintLucia , 'Saint Lucia'),
+    	(SaintVincentGrenadines , 'Saint Vincents & Grenadines'),
+    	(Samoa , 'Samoa'),
+    	(SaoTomeandPrincipe , 'Sao Tome and Principe'),
+    	(SaudiArabia , 'Saudi Arabia'),
+    	(Senegal , 'Senegal'),
+    	(Serbia , 'Serbia'),
+    	(Seychelles , 'Seychelles'),
+    	(SierraLeone , 'Sierra Leone'),
+    	(Singapore , 'Singapore'),
+    	(SlovakRepublic , 'Slovak Republic'),
+    	(Slovenia , 'Slovenia'),
+    	(SolomonIslands , 'Solomon Islands'),
+    	(Somalia , 'Somalia'),
+    	(SouthAfrica , 'South Africa'),
+
+    	(SouthSudan , 'South Sudan'),
+    	(Spain , 'Spain'),
+    	(SriLanka , 'Sri Lanka'),
+    	(Sudan , 'Sudan'),
+    	(Suriname , 'Suriname'),
+    	(Swaziland , 'Swaziland'),
+    	(Switzerland , 'Switzerland'),
+    	(Syria , 'Syria'),
+    	(Tajikistan , 'Tajikistan'),
+    	(Tanzania , 'Tanzania'),
+    	(Thailand , 'Thailand'),
+    	(TimorLeste , 'Timor Leste'),
+    	(Togo , 'Togo'),
+    	(TrinidadTobago , 'Trinidad & Tobago'),
+    	(Turkey , 'Turkey'),
+    	(Turkmenistan , 'Turkmenistan'),
+    	(TurksCaicos , 'Turks & Caicos'),
+    	(Uganda , 'Uganda'),
+    	(Ukraine , 'Ukraine'),
+    	(UnitedArabEmirates , 'United Arab Emirates'),
+    	(Uruguay , 'Uruguay'),
+    	(Uzbekistan , 'Uzbekistan'),
+    	(Venezuela , 'Venezuela'),
+    	(Vietnam , 'Vietnam'),
+    	(VirginIslandsUS , 'Virgin Islands (US)'),
+        (VirginIslandsUK , 'Virgin Islands (UK)'),
+    	(Yemen , 'Yemen'),
+    	(Zambia , 'Zambia'),
+    	(Zimbabwe , 'Zimbabwe'),
+
+        )
+        title = models.CharField(max_length=500, choices=Countries)
+
+
+        def __str__(self):
+            return self.title
+
+
+    #title= models.CharField(max_length=1000, choices = Country)
+
 
 class AgentCompanyInfo(models.Model):
 
@@ -3323,6 +3632,7 @@ class AgentCompanyInfo(models.Model):
     NewZealand = 'New Zealand'
     Germany = 'Germany'
     Sweden = 'Sweden'
+    a = "------------------------------"
     Afghanistan = 'Afghanistan'
     Algeria = 'Algeria'
     Albania = 'Albania'
@@ -3522,7 +3832,8 @@ class AgentCompanyInfo(models.Model):
 
 
     Country = (
-        (Country, 'Country'),
+    (Country, 'Country'),
+    (Pakistan , 'Pakistan'),
     (Australia , 'Australia'),
 	(USA , 'USA'),
 	(Canada , 'Canada'),
@@ -3531,7 +3842,7 @@ class AgentCompanyInfo(models.Model):
 	(NewZealand , 'NewZealand'),
 	(Germany , 'Germany'),
 	(Sweden , 'Sweden'),
-
+    (a , "------------------------------"),
 	(Afghanistan , 'Afghanistan'),
 	(Albania , 'Albania'),
 	(Algeria , 'Algeria'),
@@ -3728,6 +4039,7 @@ class AgentCompanyInfo(models.Model):
 
     Nationality = (
     (Nationality, 'Nationality'),
+    (Pakistan, 'Pakistan'),
     (Australia , 'Australia'),
 	(USA , 'USA'),
 	(Canada , 'Canada'),
@@ -3736,7 +4048,7 @@ class AgentCompanyInfo(models.Model):
 	(NewZealand , 'NewZealand'),
 	(Germany , 'Germany'),
 	(Sweden , 'Sweden'),
-
+    (a , "---------------------------"),
 	(Afghanistan , 'Afghanistan'),
 	(Albania , 'Albania'),
 	(Algeria , 'Algeria'),
@@ -4502,6 +4814,7 @@ class AgentCompanyInfo(models.Model):
     Multan = 'Multan'
     MurghaKibzai = 'Murgha Kibzai'
     Branches =(
+
             (Abbottabad , 'Abbottabad'),
         	(Adezai , 'Adezai'),
         	(AhmedNagerChatha , 'Ahmed Nager Chatha'),
@@ -4975,7 +5288,7 @@ class AgentCompanyInfo(models.Model):
     Punjab = 'Punjab'
     IslamabadICT = 'Islamabad ICT'
     Sindh = 'Sindh'
-    KPK = 'KPC'
+    KPK = 'KPK'
     Balochistan = 'Balochistan'
     GilgitBaltistan = 'Gilgit Baltistan'
     AzadJamuKashmir = 'Azad Jamui Kashmir'
@@ -4985,7 +5298,7 @@ class AgentCompanyInfo(models.Model):
     (Punjab , 'Punjab'),
     (IslamabadICT , 'Islamabad ICT'),
     (Sindh , 'Sindh'),
-    (KPK , 'KPC'),
+    (KPK , 'KPK'),
     (Balochistan , 'Balochistan'),
     (GilgitBaltistan , 'Gilgit Baltistan'),
     (AzadJamuKashmir , 'Azad Jamui Kashmir'),
@@ -5022,7 +5335,7 @@ class AgentCompanyInfo(models.Model):
     Internatiol_registeration_body6 = models.CharField(max_length=400, blank=True,null=True, default= None)
 
 
-    countries_Dealing = models.CharField(max_length=400)
+    countries_Dealing = models.CharField(max_length=400 , default= None, blank = True, null=True)
     #Services_offered = models.CharField(max_length=250, default= None)
     #service_type =  models.CharField(max_length=400, default= None)
     language_classes =  models.CharField(max_length=400, default= None, blank = True)
@@ -5051,7 +5364,8 @@ class AgentCompanyInfo(models.Model):
 
 
 class AgentCompanyRegisterationInfo(models.Model):
-    user = models.OneToOneField(User)
+    user = models.ForeignKey(User)
+    country = models.ForeignKey(Country_Deal)
     #registered_name = models.CharField(max_length=200)
 
 

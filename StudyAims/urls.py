@@ -30,7 +30,10 @@ urlpatterns = [
     #url(r'^student_search/', views.student_search , name = 'student_search') ,
     url(r'^search_students/', views.search_students, name='search_students'),
     url(r'^search_agents/', views.search_agents, name='search_agents'),
+    url(r'^find_agents/', views.find_agents, name='find_agents'),
     url(r'^user_logout/', views.user_logout, name='user_logout'),
+    url(r'^drop_test/', views.drop_test, name='drop_test'),
+    url(r'^home/', views.home, name='home'),
     #url(r'^UpdateStudent/$', views.update_profile, name='UpdateStudent'),
 
 

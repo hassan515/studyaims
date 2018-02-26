@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 #from crispy_forms.bootstrap import FormActions
 
 #from django.localflavor.us.forms import PhoneNumberField
-from StudyAims.models import  StdPersonalInfo, Countries, CityList, HighestQualification ,StudentLanguage, SubjectList, ProgramDuration, Percentage, PassingYear, StudentFuture, StudentImage, AgentMobileNumber, AgentCompanyInfo, AgentCompanyRegisterationInfo, AgentServicesOffered, AgentExpertise,AgentLogo, Budget, StateList, AgentFees
+from StudyAims.models import StdPersonalInfo,  AgentCompanyInfo, AgentCompanyRegisterationInfo
 from django.utils.safestring import mark_safe
 
 
@@ -29,7 +29,7 @@ class RegisterStudentForm(forms.ModelForm):
     #             widget=forms.forms.RadioSelect(attrs={
     #    'display': 'inline-block'
     #})
-    user_perm = forms.ChoiceField(widget=forms.RadioSelect(),choices=User_CHOICES , label='')
+    #user_perm = forms.ChoiceField(widget=forms.RadioSelect(),choices=User_CHOICES , label='')
     first_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Full Name'}),
                   max_length=50, label='')
 
@@ -44,7 +44,7 @@ class RegisterStudentForm(forms.ModelForm):
 
     class Meta():
         model = User
-        fields = ('user_perm','first_name','username', 'email', 'password')
+        fields = ('first_name','username', 'email', 'password')
 #class EditRegForm(forms.Form):
 #    class Meta():
 #        model = User
@@ -105,40 +105,13 @@ class PersonalInfoForm(forms.ModelForm):
 #        model = StudentQualifications
 #        fields = ()
 
-class StudentLanguageForm(forms.ModelForm):
 
 
-    class Meta():
-        model = StudentLanguage
-        fields= ()
 
-
-class StudentFutureForm(forms.ModelForm):
-
-    #desired_degree = forms.ModelChoiceField(queryset= HighestQualification.objects.all().order_by('qualification'), to_field_name="qualification")
-    #desired_subject = forms.ModelChoiceField(queryset= SubjectList.objects.all().order_by('subject'), to_field_name="subject")
-    #program_duration = forms.ModelChoiceField(queryset= ProgramDuration.objects.all().order_by('duration'), to_field_name="duration")
-    #desired_country = forms.ModelChoiceField(queryset= Countries.objects.all().order_by('country_name'), to_field_name="country_name")
-    #budget = forms.ModelChoiceField(queryset= Budget.objects.all().order_by('aff_budget'), to_field_name="aff_budget")
-    class Meta():
-        model = StudentFuture
-        fields = ()
-
-
-class StudentImageForm():
-
-    class Meta():
-        model = StudentImage
-        fields = ('profile_pic')
-
-class AgentMobileForm():
-    class Meta():
-        model = AgentMobileNumber
-        fields = ('agent_contact_number')
 
 class AgentCompanyInfoForm(forms.ModelForm):
 
-    Country = 'Country'
+    #Country = 'Country'
     Pakistan = 'Pakistan'
     India = 'India'
     Australia = 'Australia'
@@ -343,7 +316,7 @@ class AgentCompanyInfoForm(forms.ModelForm):
 
 
     Country = (
-        (Country, 'Country'),
+
     (Australia , 'Australia'),
 	(USA , 'USA'),
 	(Canada , 'Canada'),
@@ -567,7 +540,7 @@ class AgentCompanyInfoForm(forms.ModelForm):
     MasterYears2 = 'Master(2-Years)'
     MasterYear25 = 'Master(2.5Years)'
     Phd = 'Phd / Doctor(Res)'
-    OtherRes = 'Other(Res)'
+    OtherRes = 'Others'
 
     ProgramSpecialist = (
         (Certificate , 'Certificate'),
@@ -588,7 +561,7 @@ class AgentCompanyInfoForm(forms.ModelForm):
         (MasterYears2 , 'Master(2-Years)'),
         (MasterYear25 , 'Master(2.5Years)'),
         (Phd  , 'Phd / Doctor(Res)'),
-        (OtherRes , 'Other(Res)'),
+        (OtherRes , 'Others'),
     )
 
     LanguageClasses = 'Language Classes'
@@ -628,8 +601,8 @@ class AgentCompanyInfoForm(forms.ModelForm):
     AdmissionsVisaProcessing = 'Admissions & Visa Processing'
 
 
-    LanguageClass = 'Language Classes'
-    ProgramSpecialists = 'Program Specialists'
+    LanguageClas = 'Language Classes'
+    ProgramSpecial = 'Program Specialists'
     RefusalAppeals = 'Refusal Appeals'
     Scholarships = 'Scholarships'
     InterviewPreparation = 'Interview Preparation'
@@ -639,8 +612,8 @@ class AgentCompanyInfoForm(forms.ModelForm):
 
     TypesOfServices = (
     (AdmissionsVisaProcessing , 'Admissions & Visa Processing'),
-    (LanguageClasses , 'Language Classes'),
-    (ProgramSpecialists , 'Program Specialists'),
+    (LanguageClas , 'Language Classes'),
+    (ProgramSpecial , 'Program Specialists'),
     (RefusalAppeals , 'Refusal Appeals'),
     (Scholarships , 'Scholarships'),
     (InterviewPreparation , 'Interview Preparation'),
@@ -756,6 +729,7 @@ class AgentCompanyInfoForm(forms.ModelForm):
     Hunza = 'Hunza'
     Hyderabad = 'Hyderabad'
     Islamkot = 'Islamkot'
+    Islamabad = 'Islamabad'
     Ispikan = 'Ispikan'
     Jacobabad = 'Jacobabad'
     Jahania = 'Jahania'
@@ -873,7 +847,18 @@ class AgentCompanyInfoForm(forms.ModelForm):
     Moro = 'Moro'
     Multan = 'Multan'
     MurghaKibzai = 'Murgha Kibzai'
+    Sialkot = 'Sialkot'
+    Rawalpindi = 'Rawalpindi'
     Branches =(
+            (Lahore, 'Lahore'),
+            (Islamabad, 'Islamabad'),
+            (Karachi, 'Karachi'),
+            (Gujranwala, 'Gujranwala'),
+            (Multan, 'Multan'),
+            (Rawalpindi, 'Rawalpindi'),
+            (Sialkot, 'Sialkot'),
+            (Gujrat, 'Gujrat'),
+
             (Abbottabad , 'Abbottabad'),
         	(Adezai , 'Adezai'),
         	(AhmedNagerChatha , 'Ahmed Nager Chatha'),
@@ -1095,6 +1080,420 @@ class AgentCompanyInfoForm(forms.ModelForm):
         	(MurghaKibzai , 'Murgha Kibzai'),
 
     )
+
+    Country = 'Country'
+    Nationality = 'Nationality'
+    Pakistan = 'Pakistan'
+    India = 'India'
+    Australia = 'Australia'
+    UK = 'UK'
+    Canada = 'Canada'
+    Ireland = 'Ireland'
+    NewZealand = 'New Zealand'
+    Germany = 'Germany'
+    Sweden = 'Sweden'
+    Afghanistan = 'Afghanistan'
+    Algeria = 'Algeria'
+    Albania = 'Albania'
+    Andorra = 'Andorra'
+    Angola = 'Angola'
+    Anguilla = 'Anguilla'
+    AntiguaBarbuda = 'Antigua & Barbuda'
+
+    Argentina = 'Argentina'
+    Armenia = 'Armenia'
+    Austria = 'Austria'
+    Azerbaijan = 'Azerbaijan'
+    Bahamas = 'Bahamas'
+    Bahrain = 'Bahrain'
+    Bangladesh = 'Bangladesh'
+    Barbados = 'Barbados'
+    Belarus = 'Belarus'
+    Belgium = 'Belgium'
+    Belize = 'Belize'
+    Benin = 'Benin'
+    Bermuda = 'Bermuda'
+    Bhutan = 'Bhutan'
+    Bolivia = 'Bolivia'
+    BosniaHerzegovina = 'Bosnia & Herzegovina'
+    Botswana = 'Botswana'
+    Brazil = 'Brazil'
+    BruneiDarussalam = 'Brunei Darussalam'
+    Bulgaria = 'Bulgaria'
+    BurkinaFaso = 'Burkina Faso'
+    MyanmarBurma = 'Myanmar/Burma'
+    Burundi = 'Burundi'
+    Cambodia = 'Cambodia'
+    Cameroon = 'Cameroon'
+    CapeVerde = 'Cape Verde'
+    CaymanIslands = 'Cayman Islands'
+    CentralAfrican = 'Central African'
+    ChadRepublic = 'Chad Republic'
+    Chile = 'Chile'
+    China = 'China'
+    Colombia = 'Colombia'
+    Comoros = 'Comoros'
+    Congo = 'Congo'
+    CostaRica = 'Costa Rica'
+    Croatia = 'Croatia'
+    Cuba = 'Cuba'
+    Cyprus = 'Cyprus'
+    CzechRepublic = 'Czech Republic'
+    DemocraticRepublicoftheCongo = 'Democratic Republic of the Congo'
+    Denmark = 'Denmark'
+    Djibouti = 'Djibouti'
+    DominicanRepublic = 'Dominican Republic'
+    Dominica = 'Dominica'
+    Ecuador = 'Ecuador'
+    Egypt = 'Egypt'
+    ElSalvador = 'El Salvador'
+    EquatorialGuinea = 'Equatorial Guinea'
+    Eritrea ='Eritrea'
+    Estonia = 'Estonia'
+    Ethiopia = 'Ethiopia'
+    Fiji = 'Fiji'
+    Finland = 'Finland'
+    France = 'France'
+    FrenchGuiana = 'French Guiana'
+    Gabon = 'Gabon'
+    Gambia = 'Gambia'
+    Georgia = 'Georgia'
+    Ghana = 'Ghana'
+    GreatBritain = 'Great Britain'
+    Greece = 'Greece'
+    Grenada = 'Grenada'
+    Guadeloupe = 'Guadeloupe'
+    Guatemala = 'Guatemala'
+    Guinea = 'Guinea'
+    GuineaBissau = 'Guinea-Bissau'
+    Guyana = 'Guyana'
+    Haiti = 'Haiti'
+    Honduras = 'Honduras'
+    Hungary = 'Hungary'
+    Iceland = 'Iceland'
+    Indonesia = 'Indonesia'
+    Iran = 'Iran'
+    Iraq = 'Iraq'
+    IsraelandtheOccupiedTerritories = 'Israel and the Occupied Territories'
+    Italy = 'Italy'
+    IvoryCoast = 'Ivory Coast (Cote dIvoire)'
+    Jamaica = 'Jamaica'
+    Japan = 'Japan'
+    Jordan = 'Jordan'
+    Kazakhstan = 'Kazakhstan'
+    Kenya = 'Kenya'
+    Kosovo = 'Kosovo'
+    Kuwait = 'Kuwait'
+    Korea = 'Korea'
+    KyrgyzRepublic ='Kyrgyz Republic (Kyrgyzstan)'
+    Laos = 'Laos'
+    Latvia = 'Latvia'
+    Lebanon = 'Lebanon'
+    Lesotho = 'Lesotho'
+    Liberia = 'Liberia'
+    Libya = 'Libya'
+    Liechtenstein = 'Liechtenstein'
+    Lithuania = 'Lithuania'
+    Luxembourg = 'Luxembourg'
+    RepublicofMacedonia = 'Republic of Macedonia'
+    Madagascar = 'Madagascar'
+    Malawi = 'Malawi'
+    Malaysia = 'Malaysia'
+    Maldives = 'Maldives'
+    Mali = 'Mali'
+    Malta = 'Malta'
+    Martinique = 'Martinique'
+    Mauritania = 'Mauritania'
+    Mauritius = 'Mauritius'
+    Mayotte = 'Mayotte'
+    Mexico = 'Mexico'
+    Moldova = 'Moldova'
+    Mongolia = 'Mongolia'
+    Montenegro = 'Montenegro'
+    Montserrat = 'Montserrat'
+    Morocco = 'Morocco'
+    Mozambique = 'Mozambique'
+    Namibia = 'Namibia'
+    Nepal = 'Nepal'
+    Netherlands = 'Netherlands'
+    NewZealand = 'New Zealand'
+    Nicaragua = 'Nicaragua'
+    Niger = 'Niger'
+    Nigeria = 'Nigeria'
+    Oman = 'Oman'
+    PacificIslands = 'Pacific Islands'
+    Pakistan = 'Pakistan'
+    Panama = 'Panama'
+    PapuaNewGuinea = 'Papua New Guinea'
+    Paraguay = 'Paraguay'
+    Peru = 'Peru'
+    Philippines = 'Philippines'
+    Poland = 'Poland'
+    Portugal = 'Portugal'
+    PuertoRico = 'Puerto Rico'
+    Qatar = 'Qatar'
+    Reunion = 'Reunion'
+    Romania = 'Romania'
+    RussianFederation = 'Russian Federation'
+    Rwanda = 'Rwanda'
+    SaintKittsandNevis = 'Saint Kitts and Nevis'
+    SaintLucia = 'Saint Lucia'
+    SaintVincentGrenadines  ='Saint Vincents & Grenadines'
+    Samoa = 'Samoa'
+    SaoTomeandPrincipe = 'Sao Tome and Principe'
+    SaudiArabia = 'Saudi Arabia'
+    Senegal = 'Senegal'
+    Serbia = 'Serbia'
+    Seychelles = 'Seychelles'
+    SierraLeone = 'Sierra Leone'
+    Singapore = 'Singapore'
+    SlovakRepublic = 'Slovak Republic'
+    Slovenia = 'Slovenia'
+    SolomonIslands = 'Solomon Islands'
+    Somalia = 'Somalia'
+    SouthAfrica = 'South Africa'
+    RepublicofSouthKorea = 'Korea, Republic of (South Korea)'
+    SouthSudan = 'South Sudan'
+    Spain = 'Spain'
+    SriLanka = 'Sri Lanka'
+    Sudan = 'Sudan'
+    Suriname = 'Suriname'
+    Swaziland = 'Swaziland'
+    Switzerland = 'Switzerland'
+    Syria = 'Syria'
+    Tajikistan = 'Tajikistan'
+    Tanzania = 'Tanzania'
+    Thailand = 'Thailand'
+    TimorLeste = 'Timor Leste'
+    Togo = 'Togo'
+    TrinidadTobago = 'Trinidad & Tobago'
+    Turkey = 'Turkey'
+    Turkmenistan = 'Turkmenistan'
+    TurksCaicos = 'Turks & Caicos'
+    Uganda = 'Uganda'
+    Ukraine = 'Ukraine'
+    UnitedArabEmirates = 'United Arab Emirates'
+    Uruguay = 'Uruguay'
+    USA = 'USA'
+    Uzbekistan = 'Uzbekistan'
+    Venezuela = 'Venezuela'
+    Vietnam = 'Vietnam'
+    VirginIslandsUK = 'Virgin Islands (UK)'
+    VirginIslandsUS = 'Virgin Islands (US)'
+    Yemen = 'Yemen'
+    Zambia  = 'Zambia '
+    Zimbabwe = 'Zimbabwe'
+    Norway = 'Norway'
+
+
+
+
+
+
+    Countries = (
+
+        (Australia , 'Australia'),
+    	(USA , 'USA'),
+    	(Canada , 'Canada'),
+    	(UK , 'UK'),
+    	(Ireland , 'Ireland'),
+    	(NewZealand , 'NewZealand'),
+    	(Germany , 'Germany'),
+    	(Sweden , 'Sweden'),
+
+    	(Afghanistan , 'Afghanistan'),
+    	(Albania , 'Albania'),
+    	(Algeria , 'Algeria'),
+    	(Andorra , 'Andorra'),
+    	(Angola , 'Angola'),
+    	(Anguilla , 'Anguilla'),
+    	(AntiguaBarbuda , 'Antigua & Barbuda'),
+    	(Argentina , 'Argentina'),
+    	(Armenia , 'Armenia'),
+    	(Austria , 'Austria'),
+    	(Azerbaijan , 'Azerbaijan'),
+    	(Bahamas , 'Bahamas'),
+    	(Bahrain , 'Bahrain'),
+    	(Bangladesh , 'Bangladesh'),
+    	(Barbados , 'Barbados'),
+    	(Belarus , 'Belarus'),
+    	(Belgium , 'Belgium'),
+    	(Belize , 'Belize'),
+    	(Benin , 'Benin'),
+    	(Bermuda , 'Bermuda'),
+    	(Bhutan , 'Bhutan'),
+    	(Bolivia , 'Bolivia'),
+    	(BosniaHerzegovina , 'Bosnia & Herzegovina'),
+    	(Botswana , 'Botswana'),
+    	(Brazil , 'Brazil'),
+    	(BruneiDarussalam , 'Brunei Darussalam'),
+    	(Bulgaria , 'Bulgaria'),
+    	(BurkinaFaso , 'Burkina Faso'),
+    	(MyanmarBurma , 'Myanmar/Burma'),
+    	(Burundi , 'Burundi'),
+    	(Cambodia , 'Cambodia'),
+    	(Cameroon , 'Cameroon'),
+    	(CapeVerde , 'Cape Verde'),
+    	(CaymanIslands , 'Cayman Islands'),
+    	(CentralAfrican , 'Central African'),
+    	(ChadRepublic , 'Chad Republic'),
+    	(Chile , 'Chile'),
+    	(China , 'China'),
+    	(Colombia , 'Colombia'),
+    	(Comoros , 'Comoros'),
+    	(Congo , 'Congo'),
+    	(CostaRica , 'Costa Rica'),
+    	(Croatia , 'Croatia'),
+    	(Cuba , 'Cuba'),
+    	(Cyprus , 'Cyprus'),
+    	(CzechRepublic , 'Czech Republic'),
+    	(DemocraticRepublicoftheCongo , 'Democratic Republic of the Congo'),
+    	(Denmark , 'Denmark'),
+    	(Djibouti , 'Djibouti'),
+    	(DominicanRepublic , 'Dominican Republic'),
+    	(Dominica , 'Dominica'),
+    	(Ecuador , 'Ecuador'),
+    	(Egypt , 'Egypt'),
+    	(ElSalvador , 'El Salvador'),
+    	(EquatorialGuinea , 'Equatorial Guinea'),
+    	(Eritrea , 'Eritrea'),
+    	(Estonia , 'Estonia'),
+    	(Ethiopia , 'Ethiopia'),
+    	(Fiji , 'Fiji'),
+    	(Finland , 'Finland'),
+    	(France , 'France'),
+    	(FrenchGuiana , 'French Guiana'),
+    	(Gabon , 'Gabon'),
+    	(Gambia , 'Gambia'),
+    	(Georgia , 'Georgia'),
+    	(Ghana , 'Ghana'),
+    	(GreatBritain , 'Great Britain'),
+    	(Greece , 'Greece'),
+    	(Grenada , 'Grenada'),
+    	(Guadeloupe , 'Guadeloupe'),
+    	(Guatemala , 'Guatemala'),
+    	(Guinea , 'Guinea'),
+    	(GuineaBissau , 'Guinea-Bissau'),
+    	(Guyana , 'Guyana'),
+    	(Haiti , 'Haiti'),
+    	(Honduras , 'Honduras'),
+    	(Hungary , 'Hungary'),
+    	(Iceland , 'Iceland'),
+    	(India , 'India'),
+    	(Indonesia , 'Indonesia'),
+    	(Iran , 'Iran'),
+    	(Iraq , 'Iraq'),
+    	(IsraelandtheOccupiedTerritories , 'Israel and the Occupied Territories'),
+    	(Italy , 'Italy'),
+    	(IvoryCoast , 'Ivory Coast (Cote dIvoire)'),
+    	(Jamaica , 'Jamaica'),
+    	(Japan , 'Japan'),
+    	(Jordan , 'Jordan'),
+    	(Kazakhstan , 'Kazakhstan'),
+    	(Kenya , 'Kenya'),
+    	(Kosovo , 'Kosovo'),
+    	(Kuwait , 'Kuwait'),
+    	(Korea , 'Korea'),
+    	(KyrgyzRepublic , 'Kyrgyz Republic (Kyrgyzstan)'),
+    	(Laos , 'Laos'),
+    	(Latvia , 'Latvia'),
+    	(Lebanon , 'Lebanon'),
+    	(Lesotho , 'Lesotho'),
+    	(Liberia , 'Liberia'),
+    	(Libya , 'Libya'),
+    	(Liechtenstein , 'Liechtenstein'),
+    	(Lithuania , 'Lithuania'),
+    	(Luxembourg , 'Luxembourg'),
+    	(RepublicofMacedonia , 'Republic of Macedonia'),
+    	(Madagascar , 'Madagascar'),
+    	(Malawi , 'Malawi'),
+    	(Malaysia , 'Malaysia'),
+    	(Maldives , 'Maldives'),
+    	(Mali , 'Mali'),
+    	(Malta , 'Malta'),
+    	(Martinique , 'Martinique'),
+    	(Mauritania , 'Mauritania'),
+    	(Mauritius , 'Mauritius'),
+    	(Mayotte , 'Mayotte'),
+    	(Mexico , 'Mexico'),
+    	(Moldova , 'Moldova'),
+    	(Mongolia , 'Mongolia'),
+    	(Montenegro , 'Montenegro'),
+    	(Montserrat , 'Montserrat'),
+    	(Morocco , 'Morocco'),
+    	(Mozambique , 'Mozambique'),
+    	(Namibia , 'Namibia'),
+    	(Nepal , 'Nepal'),
+    	(Netherlands , 'Netherlands'),
+    	(NewZealand , 'NewZealand'),
+    	(Nicaragua , 'Nicaragua'),
+    	(Niger , 'Niger'),
+    	(Nigeria , 'Nigeria'),
+    	(Norway , 'Norway'),
+    	(Oman , 'Oman'),
+    	(PacificIslands , 'Pacific Islands'),
+    	(Pakistan , 'Pakistan'),
+    	(Panama , 'Panama'),
+    	(PapuaNewGuinea , 'Papua New Guinea'),
+    	(Paraguay , 'Paraguay'),
+    	(Peru , 'Peru'),
+    	(Philippines , 'Philippines'),
+    	(Poland , 'Poland'),
+    	(Portugal , 'Portugal'),
+    	(PuertoRico , 'Puerto Rico'),
+    	(Qatar , 'Qatar'),
+    	(Reunion , 'Reunion'),
+    	(Romania , 'Romania'),
+    	(RussianFederation , 'Russian Federation'),
+    	(Rwanda , 'Rwanda'),
+    	(SaintKittsandNevis , 'Saint Kitts and Nevis'),
+    	(SaintLucia , 'Saint Lucia'),
+    	(SaintVincentGrenadines , 'Saint Vincents & Grenadines'),
+    	(Samoa , 'Samoa'),
+    	(SaoTomeandPrincipe , 'Sao Tome and Principe'),
+    	(SaudiArabia , 'Saudi Arabia'),
+    	(Senegal , 'Senegal'),
+    	(Serbia , 'Serbia'),
+    	(Seychelles , 'Seychelles'),
+    	(SierraLeone , 'Sierra Leone'),
+    	(Singapore , 'Singapore'),
+    	(SlovakRepublic , 'Slovak Republic'),
+    	(Slovenia , 'Slovenia'),
+    	(SolomonIslands , 'Solomon Islands'),
+    	(Somalia , 'Somalia'),
+    	(SouthAfrica , 'South Africa'),
+
+    	(SouthSudan , 'South Sudan'),
+    	(Spain , 'Spain'),
+    	(SriLanka , 'Sri Lanka'),
+    	(Sudan , 'Sudan'),
+    	(Suriname , 'Suriname'),
+    	(Swaziland , 'Swaziland'),
+    	(Switzerland , 'Switzerland'),
+    	(Syria , 'Syria'),
+    	(Tajikistan , 'Tajikistan'),
+    	(Tanzania , 'Tanzania'),
+    	(Thailand , 'Thailand'),
+    	(TimorLeste , 'Timor Leste'),
+    	(Togo , 'Togo'),
+    	(TrinidadTobago , 'Trinidad & Tobago'),
+    	(Turkey , 'Turkey'),
+    	(Turkmenistan , 'Turkmenistan'),
+    	(TurksCaicos , 'Turks & Caicos'),
+    	(Uganda , 'Uganda'),
+    	(Ukraine , 'Ukraine'),
+    	(UnitedArabEmirates , 'United Arab Emirates'),
+    	(Uruguay , 'Uruguay'),
+    	(Uzbekistan , 'Uzbekistan'),
+    	(Venezuela , 'Venezuela'),
+    	(Vietnam , 'Vietnam'),
+    	(VirginIslandsUS , 'Virgin Islands (US)'),
+        (VirginIslandsUK , 'Virgin Islands (UK)'),
+    	(Yemen , 'Yemen'),
+    	(Zambia , 'Zambia'),
+    	(Zimbabwe , 'Zimbabwe'),
+
+        )
     comp_name= forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Company Name'}),
                  )
     company_owner = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Company Owner Name'}),
@@ -1198,8 +1597,7 @@ class AgentCompanyInfoForm(forms.ModelForm):
         )
 
     countries_Dealing = forms.MultipleChoiceField(
-            choices=Country,
-            initial='Country',
+            choices = Countries,
             widget=forms.CheckboxSelectMultiple,
             required=True,
 
@@ -1227,36 +1625,426 @@ class AgentCompanyInfoForm(forms.ModelForm):
 
 
 class AgentCompanyRegisterationInfoForm(forms.ModelForm):
+    Country = 'Country'
+    Nationality = 'Nationality'
+    Pakistan = 'Pakistan'
+    India = 'India'
+    Australia = 'Australia'
+    UK = 'UK'
+    Canada = 'Canada'
+    Ireland = 'Ireland'
+    NewZealand = 'New Zealand'
+    Germany = 'Germany'
+    Sweden = 'Sweden'
+    Afghanistan = 'Afghanistan'
+    Algeria = 'Algeria'
+    Albania = 'Albania'
+    Andorra = 'Andorra'
+    Angola = 'Angola'
+    Anguilla = 'Anguilla'
+    AntiguaBarbuda = 'Antigua & Barbuda'
 
+    Argentina = 'Argentina'
+    Armenia = 'Armenia'
+    Austria = 'Austria'
+    Azerbaijan = 'Azerbaijan'
+    Bahamas = 'Bahamas'
+    Bahrain = 'Bahrain'
+    Bangladesh = 'Bangladesh'
+    Barbados = 'Barbados'
+    Belarus = 'Belarus'
+    Belgium = 'Belgium'
+    Belize = 'Belize'
+    Benin = 'Benin'
+    Bermuda = 'Bermuda'
+    Bhutan = 'Bhutan'
+    Bolivia = 'Bolivia'
+    BosniaHerzegovina = 'Bosnia & Herzegovina'
+    Botswana = 'Botswana'
+    Brazil = 'Brazil'
+    BruneiDarussalam = 'Brunei Darussalam'
+    Bulgaria = 'Bulgaria'
+    BurkinaFaso = 'Burkina Faso'
+    MyanmarBurma = 'Myanmar/Burma'
+    Burundi = 'Burundi'
+    Cambodia = 'Cambodia'
+    Cameroon = 'Cameroon'
+    CapeVerde = 'Cape Verde'
+    CaymanIslands = 'Cayman Islands'
+    CentralAfrican = 'Central African'
+    ChadRepublic = 'Chad Republic'
+    Chile = 'Chile'
+    China = 'China'
+    Colombia = 'Colombia'
+    Comoros = 'Comoros'
+    Congo = 'Congo'
+    CostaRica = 'Costa Rica'
+    Croatia = 'Croatia'
+    Cuba = 'Cuba'
+    Cyprus = 'Cyprus'
+    CzechRepublic = 'Czech Republic'
+    DemocraticRepublicoftheCongo = 'Democratic Republic of the Congo'
+    Denmark = 'Denmark'
+    Djibouti = 'Djibouti'
+    DominicanRepublic = 'Dominican Republic'
+    Dominica = 'Dominica'
+    Ecuador = 'Ecuador'
+    Egypt = 'Egypt'
+    ElSalvador = 'El Salvador'
+    EquatorialGuinea = 'Equatorial Guinea'
+    Eritrea ='Eritrea'
+    Estonia = 'Estonia'
+    Ethiopia = 'Ethiopia'
+    Fiji = 'Fiji'
+    Finland = 'Finland'
+    France = 'France'
+    FrenchGuiana = 'French Guiana'
+    Gabon = 'Gabon'
+    Gambia = 'Gambia'
+    Georgia = 'Georgia'
+    Ghana = 'Ghana'
+    GreatBritain = 'Great Britain'
+    Greece = 'Greece'
+    Grenada = 'Grenada'
+    Guadeloupe = 'Guadeloupe'
+    Guatemala = 'Guatemala'
+    Guinea = 'Guinea'
+    GuineaBissau = 'Guinea-Bissau'
+    Guyana = 'Guyana'
+    Haiti = 'Haiti'
+    Honduras = 'Honduras'
+    Hungary = 'Hungary'
+    Iceland = 'Iceland'
+    Indonesia = 'Indonesia'
+    Iran = 'Iran'
+    Iraq = 'Iraq'
+    IsraelandtheOccupiedTerritories = 'Israel and the Occupied Territories'
+    Italy = 'Italy'
+    IvoryCoast = 'Ivory Coast (Cote dIvoire)'
+    Jamaica = 'Jamaica'
+    Japan = 'Japan'
+    Jordan = 'Jordan'
+    Kazakhstan = 'Kazakhstan'
+    Kenya = 'Kenya'
+    Kosovo = 'Kosovo'
+    Kuwait = 'Kuwait'
+    Korea = 'Korea'
+    KyrgyzRepublic ='Kyrgyz Republic (Kyrgyzstan)'
+    Laos = 'Laos'
+    Latvia = 'Latvia'
+    Lebanon = 'Lebanon'
+    Lesotho = 'Lesotho'
+    Liberia = 'Liberia'
+    Libya = 'Libya'
+    Liechtenstein = 'Liechtenstein'
+    Lithuania = 'Lithuania'
+    Luxembourg = 'Luxembourg'
+    RepublicofMacedonia = 'Republic of Macedonia'
+    Madagascar = 'Madagascar'
+    Malawi = 'Malawi'
+    Malaysia = 'Malaysia'
+    Maldives = 'Maldives'
+    Mali = 'Mali'
+    Malta = 'Malta'
+    Martinique = 'Martinique'
+    Mauritania = 'Mauritania'
+    Mauritius = 'Mauritius'
+    Mayotte = 'Mayotte'
+    Mexico = 'Mexico'
+    Moldova = 'Moldova'
+    Mongolia = 'Mongolia'
+    Montenegro = 'Montenegro'
+    Montserrat = 'Montserrat'
+    Morocco = 'Morocco'
+    Mozambique = 'Mozambique'
+    Namibia = 'Namibia'
+    Nepal = 'Nepal'
+    Netherlands = 'Netherlands'
+    NewZealand = 'New Zealand'
+    Nicaragua = 'Nicaragua'
+    Niger = 'Niger'
+    Nigeria = 'Nigeria'
+    Oman = 'Oman'
+    PacificIslands = 'Pacific Islands'
+    Pakistan = 'Pakistan'
+    Panama = 'Panama'
+    PapuaNewGuinea = 'Papua New Guinea'
+    Paraguay = 'Paraguay'
+    Peru = 'Peru'
+    Philippines = 'Philippines'
+    Poland = 'Poland'
+    Portugal = 'Portugal'
+    PuertoRico = 'Puerto Rico'
+    Qatar = 'Qatar'
+    Reunion = 'Reunion'
+    Romania = 'Romania'
+    RussianFederation = 'Russian Federation'
+    Rwanda = 'Rwanda'
+    SaintKittsandNevis = 'Saint Kitts and Nevis'
+    SaintLucia = 'Saint Lucia'
+    SaintVincentGrenadines  ='Saint Vincents & Grenadines'
+    Samoa = 'Samoa'
+    SaoTomeandPrincipe = 'Sao Tome and Principe'
+    SaudiArabia = 'Saudi Arabia'
+    Senegal = 'Senegal'
+    Serbia = 'Serbia'
+    Seychelles = 'Seychelles'
+    SierraLeone = 'Sierra Leone'
+    Singapore = 'Singapore'
+    SlovakRepublic = 'Slovak Republic'
+    Slovenia = 'Slovenia'
+    SolomonIslands = 'Solomon Islands'
+    Somalia = 'Somalia'
+    SouthAfrica = 'South Africa'
+    RepublicofSouthKorea = 'Korea, Republic of (South Korea)'
+    SouthSudan = 'South Sudan'
+    Spain = 'Spain'
+    SriLanka = 'Sri Lanka'
+    Sudan = 'Sudan'
+    Suriname = 'Suriname'
+    Swaziland = 'Swaziland'
+    Switzerland = 'Switzerland'
+    Syria = 'Syria'
+    Tajikistan = 'Tajikistan'
+    Tanzania = 'Tanzania'
+    Thailand = 'Thailand'
+    TimorLeste = 'Timor Leste'
+    Togo = 'Togo'
+    TrinidadTobago = 'Trinidad & Tobago'
+    Turkey = 'Turkey'
+    Turkmenistan = 'Turkmenistan'
+    TurksCaicos = 'Turks & Caicos'
+    Uganda = 'Uganda'
+    Ukraine = 'Ukraine'
+    UnitedArabEmirates = 'United Arab Emirates'
+    Uruguay = 'Uruguay'
+    USA = 'USA'
+    Uzbekistan = 'Uzbekistan'
+    Venezuela = 'Venezuela'
+    Vietnam = 'Vietnam'
+    VirginIslandsUK = 'Virgin Islands (UK)'
+    VirginIslandsUS = 'Virgin Islands (US)'
+    Yemen = 'Yemen'
+    Zambia  = 'Zambia '
+    Zimbabwe = 'Zimbabwe'
+    Norway = 'Norway'
+
+
+
+
+
+
+    Countries = (
+
+        (Australia , 'Australia'),
+    	(USA , 'USA'),
+    	(Canada , 'Canada'),
+    	(UK , 'UK'),
+    	(Ireland , 'Ireland'),
+    	(NewZealand , 'NewZealand'),
+    	(Germany , 'Germany'),
+    	(Sweden , 'Sweden'),
+
+    	(Afghanistan , 'Afghanistan'),
+    	(Albania , 'Albania'),
+    	(Algeria , 'Algeria'),
+    	(Andorra , 'Andorra'),
+    	(Angola , 'Angola'),
+    	(Anguilla , 'Anguilla'),
+    	(AntiguaBarbuda , 'Antigua & Barbuda'),
+    	(Argentina , 'Argentina'),
+    	(Armenia , 'Armenia'),
+    	(Austria , 'Austria'),
+    	(Azerbaijan , 'Azerbaijan'),
+    	(Bahamas , 'Bahamas'),
+    	(Bahrain , 'Bahrain'),
+    	(Bangladesh , 'Bangladesh'),
+    	(Barbados , 'Barbados'),
+    	(Belarus , 'Belarus'),
+    	(Belgium , 'Belgium'),
+    	(Belize , 'Belize'),
+    	(Benin , 'Benin'),
+    	(Bermuda , 'Bermuda'),
+    	(Bhutan , 'Bhutan'),
+    	(Bolivia , 'Bolivia'),
+    	(BosniaHerzegovina , 'Bosnia & Herzegovina'),
+    	(Botswana , 'Botswana'),
+    	(Brazil , 'Brazil'),
+    	(BruneiDarussalam , 'Brunei Darussalam'),
+    	(Bulgaria , 'Bulgaria'),
+    	(BurkinaFaso , 'Burkina Faso'),
+    	(MyanmarBurma , 'Myanmar/Burma'),
+    	(Burundi , 'Burundi'),
+    	(Cambodia , 'Cambodia'),
+    	(Cameroon , 'Cameroon'),
+    	(CapeVerde , 'Cape Verde'),
+    	(CaymanIslands , 'Cayman Islands'),
+    	(CentralAfrican , 'Central African'),
+    	(ChadRepublic , 'Chad Republic'),
+    	(Chile , 'Chile'),
+    	(China , 'China'),
+    	(Colombia , 'Colombia'),
+    	(Comoros , 'Comoros'),
+    	(Congo , 'Congo'),
+    	(CostaRica , 'Costa Rica'),
+    	(Croatia , 'Croatia'),
+    	(Cuba , 'Cuba'),
+    	(Cyprus , 'Cyprus'),
+    	(CzechRepublic , 'Czech Republic'),
+    	(DemocraticRepublicoftheCongo , 'Democratic Republic of the Congo'),
+    	(Denmark , 'Denmark'),
+    	(Djibouti , 'Djibouti'),
+    	(DominicanRepublic , 'Dominican Republic'),
+    	(Dominica , 'Dominica'),
+    	(Ecuador , 'Ecuador'),
+    	(Egypt , 'Egypt'),
+    	(ElSalvador , 'El Salvador'),
+    	(EquatorialGuinea , 'Equatorial Guinea'),
+    	(Eritrea , 'Eritrea'),
+    	(Estonia , 'Estonia'),
+    	(Ethiopia , 'Ethiopia'),
+    	(Fiji , 'Fiji'),
+    	(Finland , 'Finland'),
+    	(France , 'France'),
+    	(FrenchGuiana , 'French Guiana'),
+    	(Gabon , 'Gabon'),
+    	(Gambia , 'Gambia'),
+    	(Georgia , 'Georgia'),
+    	(Ghana , 'Ghana'),
+    	(GreatBritain , 'Great Britain'),
+    	(Greece , 'Greece'),
+    	(Grenada , 'Grenada'),
+    	(Guadeloupe , 'Guadeloupe'),
+    	(Guatemala , 'Guatemala'),
+    	(Guinea , 'Guinea'),
+    	(GuineaBissau , 'Guinea-Bissau'),
+    	(Guyana , 'Guyana'),
+    	(Haiti , 'Haiti'),
+    	(Honduras , 'Honduras'),
+    	(Hungary , 'Hungary'),
+    	(Iceland , 'Iceland'),
+    	(India , 'India'),
+    	(Indonesia , 'Indonesia'),
+    	(Iran , 'Iran'),
+    	(Iraq , 'Iraq'),
+    	(IsraelandtheOccupiedTerritories , 'Israel and the Occupied Territories'),
+    	(Italy , 'Italy'),
+    	(IvoryCoast , 'Ivory Coast (Cote dIvoire)'),
+    	(Jamaica , 'Jamaica'),
+    	(Japan , 'Japan'),
+    	(Jordan , 'Jordan'),
+    	(Kazakhstan , 'Kazakhstan'),
+    	(Kenya , 'Kenya'),
+    	(Kosovo , 'Kosovo'),
+    	(Kuwait , 'Kuwait'),
+    	(Korea , 'Korea'),
+    	(KyrgyzRepublic , 'Kyrgyz Republic (Kyrgyzstan)'),
+    	(Laos , 'Laos'),
+    	(Latvia , 'Latvia'),
+    	(Lebanon , 'Lebanon'),
+    	(Lesotho , 'Lesotho'),
+    	(Liberia , 'Liberia'),
+    	(Libya , 'Libya'),
+    	(Liechtenstein , 'Liechtenstein'),
+    	(Lithuania , 'Lithuania'),
+    	(Luxembourg , 'Luxembourg'),
+    	(RepublicofMacedonia , 'Republic of Macedonia'),
+    	(Madagascar , 'Madagascar'),
+    	(Malawi , 'Malawi'),
+    	(Malaysia , 'Malaysia'),
+    	(Maldives , 'Maldives'),
+    	(Mali , 'Mali'),
+    	(Malta , 'Malta'),
+    	(Martinique , 'Martinique'),
+    	(Mauritania , 'Mauritania'),
+    	(Mauritius , 'Mauritius'),
+    	(Mayotte , 'Mayotte'),
+    	(Mexico , 'Mexico'),
+    	(Moldova , 'Moldova'),
+    	(Mongolia , 'Mongolia'),
+    	(Montenegro , 'Montenegro'),
+    	(Montserrat , 'Montserrat'),
+    	(Morocco , 'Morocco'),
+    	(Mozambique , 'Mozambique'),
+    	(Namibia , 'Namibia'),
+    	(Nepal , 'Nepal'),
+    	(Netherlands , 'Netherlands'),
+    	(NewZealand , 'NewZealand'),
+    	(Nicaragua , 'Nicaragua'),
+    	(Niger , 'Niger'),
+    	(Nigeria , 'Nigeria'),
+    	(Norway , 'Norway'),
+    	(Oman , 'Oman'),
+    	(PacificIslands , 'Pacific Islands'),
+    	(Pakistan , 'Pakistan'),
+    	(Panama , 'Panama'),
+    	(PapuaNewGuinea , 'Papua New Guinea'),
+    	(Paraguay , 'Paraguay'),
+    	(Peru , 'Peru'),
+    	(Philippines , 'Philippines'),
+    	(Poland , 'Poland'),
+    	(Portugal , 'Portugal'),
+    	(PuertoRico , 'Puerto Rico'),
+    	(Qatar , 'Qatar'),
+    	(Reunion , 'Reunion'),
+    	(Romania , 'Romania'),
+    	(RussianFederation , 'Russian Federation'),
+    	(Rwanda , 'Rwanda'),
+    	(SaintKittsandNevis , 'Saint Kitts and Nevis'),
+    	(SaintLucia , 'Saint Lucia'),
+    	(SaintVincentGrenadines , 'Saint Vincents & Grenadines'),
+    	(Samoa , 'Samoa'),
+    	(SaoTomeandPrincipe , 'Sao Tome and Principe'),
+    	(SaudiArabia , 'Saudi Arabia'),
+    	(Senegal , 'Senegal'),
+    	(Serbia , 'Serbia'),
+    	(Seychelles , 'Seychelles'),
+    	(SierraLeone , 'Sierra Leone'),
+    	(Singapore , 'Singapore'),
+    	(SlovakRepublic , 'Slovak Republic'),
+    	(Slovenia , 'Slovenia'),
+    	(SolomonIslands , 'Solomon Islands'),
+    	(Somalia , 'Somalia'),
+    	(SouthAfrica , 'South Africa'),
+
+    	(SouthSudan , 'South Sudan'),
+    	(Spain , 'Spain'),
+    	(SriLanka , 'Sri Lanka'),
+    	(Sudan , 'Sudan'),
+    	(Suriname , 'Suriname'),
+    	(Swaziland , 'Swaziland'),
+    	(Switzerland , 'Switzerland'),
+    	(Syria , 'Syria'),
+    	(Tajikistan , 'Tajikistan'),
+    	(Tanzania , 'Tanzania'),
+    	(Thailand , 'Thailand'),
+    	(TimorLeste , 'Timor Leste'),
+    	(Togo , 'Togo'),
+    	(TrinidadTobago , 'Trinidad & Tobago'),
+    	(Turkey , 'Turkey'),
+    	(Turkmenistan , 'Turkmenistan'),
+    	(TurksCaicos , 'Turks & Caicos'),
+    	(Uganda , 'Uganda'),
+    	(Ukraine , 'Ukraine'),
+    	(UnitedArabEmirates , 'United Arab Emirates'),
+    	(Uruguay , 'Uruguay'),
+    	(Uzbekistan , 'Uzbekistan'),
+    	(Venezuela , 'Venezuela'),
+    	(Vietnam , 'Vietnam'),
+    	(VirginIslandsUS , 'Virgin Islands (US)'),
+        (VirginIslandsUK , 'Virgin Islands (UK)'),
+    	(Yemen , 'Yemen'),
+    	(Zambia , 'Zambia'),
+    	(Zimbabwe , 'Zimbabwe'),
+
+        )
+    #country = forms.MultipleChoiceField(
+    #        choices=Countries,
+    #        initial='Countries',
+    #        widget=forms.CheckboxSelectMultiple,
+    #        required=True,
+    #             )
     class Meta():
         model = AgentCompanyRegisterationInfo
-        fields=()
 
-class AgentServicesOfferedForm(forms.ModelForm):
-
-    class Meta():
-        model = AgentServicesOffered
-        fields = ()
-
-
-class AgentExpertiseForm(forms.ModelForm):
-
-
-
-    class Meta():
-        model = AgentExpertise
-        fields = ()
-
-
-class AgentFeesForm(forms.ModelForm):
-
-    class Meta():
-        model = AgentFees
-        fields = ()
-
-
-class AgentLogoForm(forms.ModelForm):
-
-    class Meta():
-        model = AgentLogo
-        fields = ('__all__')
+        fields = ('country',)

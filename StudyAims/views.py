@@ -10,8 +10,8 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.template.context_processors import csrf
 from django.contrib.auth.models import User, Group
 from django.db.models import Q
-from StudyAims.models import StdPersonalInfo,  StudentLanguage, UserType , StudentFuture, AgentCompanyInfo
-from StudyAims.forms import   PersonalInfoForm, RegisterStudentForm, StudentLanguageForm, StudentFutureForm, StudentImageForm,  AgentCompanyInfoForm, AgentCompanyRegisterationInfoForm, AgentExpertiseForm, AgentLogoForm , AgentServicesOfferedForm
+from StudyAims.models import (StdPersonalInfo,AgentCompanyInfo, Country_Deal)
+from StudyAims.forms import   PersonalInfoForm, RegisterStudentForm,  AgentCompanyInfoForm
 from StudyAims.filters import UserFilter, FilterAgents
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -62,6 +62,12 @@ def agent_profile_edit(request, pk):
     return render(request, 'StudyAims/agent-profile-edit.html', {'form': form, 'pk':pk, 'user':user })
 
 @login_required
+def home(request):
+    return render(request, 'StudyAims/home.html')
+
+
+
+@login_required
 def change_password(request):
     if request.method == 'POST':
         form = PasswordChangeForm(request.user, request.POST)
@@ -74,30 +80,39 @@ def change_password(request):
             messages.error(request, 'Please correct the error below.')
     else:
         form = PasswordChangeForm(request.user)
-    return render(request, 'StudyAims/change-password.html', {
+    return render(request, 'StudyAims/change-pass.html', {
         'form': form
     })
 
 @login_required
 def search_students(request):
-    users = User.objects.all()
+    students = User.objects.all()
     f = UserFilter(request.GET, queryset=StdPersonalInfo.objects.all())
 
     #p = PersonalFilter(request.GET, queryset=StdPersonalInfo.objects.all())
     #p = PersonalFilter(request.GET, queryset=StdPersonalInfo.objects.all())
     #f = User.objects.all().select_related('stdpersonalinfo_set', 'studentqualifications_set')
-    return render(request, 'StudyAims/search-students.html', {'filter': f, 'user': users })
+    return render(request, 'StudyAims/search-students.html', {'filter': f, 'student': students })
 
 @login_required
 def search_agents(request):
     users = User.objects.all()
-    f = FilterAgents(request.GET, queryset=AgentCompanyInfo.objects.all())
-
+    filters = FilterAgents(request.GET, queryset=AgentCompanyInfo.objects.all())
+    countries = AgentCompanyInfo.objects.all()
     #p = PersonalFilter(request.GET, queryset=StdPersonalInfo.objects.all())
     #p = PersonalFilter(request.GET, queryset=StdPersonalInfo.objects.all())
     #f = User.objects.all().select_related('stdpersonalinfo_set', 'studentqualifications_set')
-    return render(request, 'StudyAims/search-agents.html', {'filter': f, 'user': users })
+    return render(request, 'StudyAims/search-agents.html', {'filter':filters,'user':users, 'countries': countries})
 
+
+@login_required
+def find_agents(request):
+    agent = User.objects.all()
+    current = request.user
+    country = Country_Deal.objects.all()
+    f = FilterAgents(request.GET, queryset=AgentCompanyInfo.objects.all())
+
+    return render(request, 'StudyAims/search-agents.html', {'filter':f, 'country': country})
 # Create your views here.
 def register(request):
     registered = False
@@ -106,9 +121,16 @@ def register(request):
     #profile_form = PersonalInfoForm(data = request.POST)
     #qualify_form = StdQualificationForm(data = request.POST)
     #user_form = RegisterStudentForm(data = request.POST)
+    student_type =  bool(request.POST.get('selector')=='student_type')
+
+    agent_type =  bool(request.POST.get('selector')=='agent_type')
     if request.method == 'POST':
+        if student_type:
         #user_type = UserTypeForm(data = request.POST)
-        user_form = RegisterStudentForm(data = request.POST)
+            user_form = RegisterStudentForm(data = request.POST)
+
+        #student_type =  request.POST.get('student_type')
+        #agent_type =  request.POST.get('agent_type')
         #profile_form = PersonalInfoForm(data = request.POST)
         #qualify_form = StdQualificationForm(data = request.POST)
 
@@ -116,51 +138,36 @@ def register(request):
         #g = Group.objects.get(name='Students')
         #a = Group.objects.get(name='Agents')
 
-        if user_form.is_valid():
-            user = user_form.save()
-            user.set_password(user.password)
-            #user.save(commit = False)
-            #user_type.user = user
-            #user.save()
-            #u_type = user_type.save(commit = False)
-            #u_type.user = user
-            #u_type.save()
+            if user_form.is_valid():
 
-            user_perm = request.POST.get("user_perm", None)
-            if user_perm in ["Student"]:
-
-                #g = Group.objects.get_or_create(name="Student")
-                ##std = Group.objects.get(name='Students')
-                #
-            #    user.save()
-
-            #    t = UserType.objects.filter(student_type)
-
-            #    t.student_type = "Yes"
-            #    t.save(commit = False)
-            #    t.user = user  # change field
-            #    T.save()
-                user.save()
+                user = user_form.save()
+                user.set_password(user.password)
                 return redirect(reverse('index'))
 
-                #request.user.groups.add(g)
-
-                #user.groups.add("g")
-
+                user.save()
             else:
-                #a = Group.objects.get_or_create(name="Agent")
-                #agnt = Group.objects.get(name='Agents')
-
-                #user.groups.add(agnt)
+                #print(user_type.errors)
+                user_form = RegisterStudentForm()
+        elif agent_type:
+            user_form = RegisterStudentForm(data = request.POST)
+            if user_form.is_valid():
+                user = user_form.save()
+                user.set_password(user.password)
                 user.save()
-
                 return redirect(reverse('index'))
-
-
-
+            else:
+                #print(user_type.errors)
+                user_form = RegisterStudentForm()
         else:
-            #print(user_type.errors)
-            print(user_form.errors)
+            err = "Please Select a User Type"
+            user_form = RegisterStudentForm()
+            return render(request,'StudyAims/register.html',{'user_form':user_form, 'err':err})
+
+
+
+
+
+
 
 
 
@@ -179,8 +186,10 @@ def user_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        student_type =  request.POST.get('student_type')
-        agent_type =  request.POST.get('agent_type')
+
+        student_type =  bool(request.POST.get('selector')=='student_type')
+
+        agent_type =  bool(request.POST.get('selector')=='agent_type')
         user = authenticate(username=username,password=password)
 
         if user:
@@ -227,9 +236,10 @@ def user_login(request):
                 return HttpResponse("Account Not active!")
 
         else:
+            err = "Invalid Username / Email or Password"
             print("Someone tried to login!")
             print("Username: {} and Password: {}".format(username,password))
-            return HttpResponse("Invalid login details supplied!")
+            return render(request,'StudyAims/login.html',{'err':err})
     else:
         return render(request,'StudyAims/login.html',{'err':err})
 
@@ -490,26 +500,17 @@ def agent_dashboard(request):
 
 
 @login_required
-def student_search(request):
-    current_user = request.user
-
-    all_users = User.objects.all()
-    degree = request.POST.get('Degree')
-    print(degree)
-    Subject = request.POST.getlist('Subject')
-    Passing_Year = request.POST.getlist('Passing_Year')
-    percentage = request.POST.getlist('percentage')
-    eng_lang = request.POST.getlist('eng_lang')
-    language = request.POST.getlist('language')
-    Study_Gap = request.POST.getlist('Study_Gap')
-    Job_Experience = request.POST.getlist('Job_Experience')
-    desired_degree = request.POST.getlist('desired_degree')
-    desired_subject = request.POST.getlist('desired_subject')
-    desired_country = request.POST.getlist('desired_country')
-    desired_budget = request.POST.getlist('desired_budget')
-    desired_sch = request.POST.getlist('desired_sch')
-    qualification_filter = StudentQualifications.objects.filter(Q(highest_qualification=degree) & Q(subject=Subject) & Q(passing_year= Passing_Year) & Q(percentage=percentage) & Q(study_gap1=Study_Gap) & Q(experience1 = Job_Experience))
-    future_plan_filter = StudentFuture.objects.filter(Q(desired_degree=desired_degree) & Q(desired_subject=desired_subject ) & Q(desired_country=desired_country) & Q(scholarships=desired_sch) & Q(budget=desired_budget))
-    language_filter = StudentLanguage.objects.filter(Q(english_language= eng_lang) & Q(other_Language=language))
-
-    return render(request, "StudyAims/search-students.html", {'current_user': current_user, 'all_users':all_users, 'qualification_filter':qualification_filter, 'future_plan_filter':future_plan_filter,'language_filter':language_filter})
+def drop_test(request):
+    user = request.user
+    form = AgentCompanyRegisterationInfoForm(data = request.POST)
+#    reg_form = RegisterStudentForm(data = request.POST)
+    if request.method == 'POST':
+        form = AgentCompanyRegisterationInfoForm(request.POST)
+        #reg_form = RegisterStudentForm(request.POST)
+        if form.is_valid():
+            #reg_form.save()
+            future = form.save(commit=False)
+            future.user = user
+            future.save()
+            return HttpResponseRedirect(reverse_lazy('StudyAims:agent_dashboard'))
+    return render(request, "StudyAims/drop.html", {'form': form})

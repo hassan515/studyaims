@@ -1,7 +1,10 @@
 from django.contrib.auth.models import User
-from StudyAims.models import StdPersonalInfo,  StudentLanguage, UserType , StudentFuture, AgentCompanyInfo
+from StudyAims.models import StdPersonalInfo,AgentCompanyInfo
 import django_filters
 from django import forms
+from django_filters import Filter
+from django_filters.fields import Lookup
+
 
 class UserFilter(django_filters.FilterSet):
     #user__username = django_filters.CharFilter(lookup_expr='icontains')
@@ -2737,8 +2740,8 @@ class UserFilter(django_filters.FilterSet):
     scholarships = django_filters.ChoiceFilter(choices = Scholarships,lookup_expr='icontains')
     budget = django_filters.MultipleChoiceFilter(widget=forms.CheckboxSelectMultiple,choices = Budget, lookup_expr='exact')
     gender = django_filters.ChoiceFilter(choices = Gender,  lookup_expr='exact')
-    city = django_filters.MultipleChoiceFilter(choices = City,widget=forms.CheckboxSelectMultiple,lookup_expr='icontains')
-    state = django_filters.MultipleChoiceFilter(choices = State,widget=forms.CheckboxSelectMultiple, lookup_expr='exact')
+    city = django_filters.ChoiceFilter(choices = City,lookup_expr='icontains')
+    state = django_filters.ChoiceFilter(choices = State, lookup_expr='exact')
 
     #gender = django_filters.CharFilter(lookup_expr='icontains')
     #year_joined = django_filters.NumberFilter(name='date_joined', lookup_expr='year')
@@ -2762,6 +2765,13 @@ class UserFilter(django_filters.FilterSet):
 #    class Meta:
 #        model = StdPersonalInfo
 #        fields = ['gender']
+
+
+
+
+class ListFilter( Filter ):
+  def filter( self, qs, value ):
+    return super( ListFilter, self ).filter( qs, Lookup( value.split( u"," ), "in") )
 
 class FilterAgents(django_filters.FilterSet):
     #user__username = django_filters.CharFilter(lookup_expr='icontains')
@@ -4552,8 +4562,6 @@ class FilterAgents(django_filters.FilterSet):
 
     TypesOfServices = 'Types of Services'
     AdmissionsVisaProcessing = 'Admissions & Visa Processing'
-
-
     LanguageClass = 'Language Classes'
     ProgramSpecialists = 'Program Specialists'
     RefusalAppeals = 'Refusal Appeals'
@@ -5021,36 +5029,36 @@ class FilterAgents(django_filters.FilterSet):
         	(MurghaKibzai , 'Murgha Kibzai'),
 
     )
-
-
-
-
-
-    agent_state = django_filters.MultipleChoiceFilter(choices=Province, lookup_expr='icontains', widget=forms.CheckboxSelectMultiple)
-    agent_city = django_filters.MultipleChoiceFilter(choices=City, lookup_expr='icontains', widget=forms.CheckboxSelectMultiple)
+    agent_state = django_filters.ChoiceFilter(choices=Province, lookup_expr='exact')
+    agent_city = django_filters.ChoiceFilter(choices=City, lookup_expr='exact')
     processing = django_filters.MultipleChoiceFilter(choices=TypesOfServices ,lookup_expr='exact',widget=forms.CheckboxSelectMultiple )
-    countries_Dealing = django_filters.MultipleChoiceFilter(choices =Country ,lookup_expr='icontains', widget=forms.CheckboxSelectMultiple)
-    language_classes = django_filters.MultipleChoiceFilter(choices=LanguageClasses, lookup_expr='icontains', widget=forms.CheckboxSelectMultiple)
+    countries_Dealing = django_filters.MultipleChoiceFilter(choices=Country, lookup_expr='in', widget=forms.CheckboxSelectMultiple)
+
+    language_classes = django_filters.MultipleChoiceFilter(choices=LanguageClasses,widget=forms.CheckboxSelectMultiple, lookup_expr='icontains')
     program_specialist = django_filters.MultipleChoiceFilter(choices=ProgramSpecialist ,lookup_expr='icontains', widget=forms.CheckboxSelectMultiple)
-    refusal_appeals = django_filters.ChoiceFilter(choices= RefusalAppeal,lookup_expr='exact')
-    scholarships_offered = django_filters.ChoiceFilter(choices= Scholarship,lookup_expr='icontains')
-    interview_preparation = django_filters.ChoiceFilter(choices= InterviewPreparation,lookup_expr='exact')
-    travel_and_health = django_filters.ChoiceFilter(choices=TravelAndHealthInsurance ,lookup_expr='exact')
-    travel_arrangements = django_filters.ChoiceFilter(choices=TravelArrangements ,lookup_expr='exact')
-    visa_ratio = django_filters.ChoiceFilter(choices=VisaSuccessRatio ,lookup_expr='exact')
-    experience = django_filters.ChoiceFilter(choices= Experience ,lookup_expr='exact')
+    refusal_appeals = django_filters.MultipleChoiceFilter(choices= RefusalAppeal,lookup_expr='exact', widget=forms.CheckboxSelectMultiple)
+    scholarships_offered = django_filters.MultipleChoiceFilter(choices= Scholarship,lookup_expr='icontains', widget=forms.CheckboxSelectMultiple)
+    #interview_preparation = django_filters.ChoiceFilter(choices= InterviewPreparation,lookup_expr='exact')
+    travel_and_health = django_filters.MultipleChoiceFilter(choices=TravelAndHealthInsurance ,lookup_expr='exact', widget=forms.CheckboxSelectMultiple)
+    #travel_arrangements = django_filters.ChoiceFilter(choices=TravelArrangements ,lookup_expr='exact')
+    visa_ratio = django_filters.MultipleChoiceFilter(choices=VisaSuccessRatio ,lookup_expr='exact', widget=forms.CheckboxSelectMultiple)
+    experience = django_filters.MultipleChoiceFilter(choices= Experience ,lookup_expr='exact', widget=forms.CheckboxSelectMultiple)
     regional_office = django_filters.MultipleChoiceFilter(choices = RegionalOffice,lookup_expr='exact', widget=forms.CheckboxSelectMultiple)
-    branches = django_filters.MultipleChoiceFilter(choices=City ,lookup_expr='icontains', widget=forms.CheckboxSelectMultiple)
-    number_of_counselors = django_filters.ChoiceFilter(choices=NumberOfCounselors  , lookup_expr='exact')
+    branches = django_filters.MultipleChoiceFilter(choices=Branches ,lookup_expr='icontains', widget=forms.CheckboxSelectMultiple)
+    number_of_counselors = django_filters.ChoiceFilter(choices=NumberOfCounselors  , lookup_expr='exact', widget=forms.CheckboxSelectMultiple)
     processing_fee = django_filters.MultipleChoiceFilter(choices= ProcessingFee, lookup_expr='exact', widget=forms.CheckboxSelectMultiple)
-    language_fee = django_filters.MultipleChoiceFilter(choices= LanguageFee,lookup_expr='exact', widget=forms.CheckboxSelectMultiple)
+    language_fee = django_filters.MultipleChoiceFilter(choices= LanguageFee,lookup_expr='exact', widget=forms.CheckboxSelectMultiple )
     refusal_fee = django_filters.MultipleChoiceFilter(choices= RefusalFee,lookup_expr='exact', widget=forms.CheckboxSelectMultiple)
     Interview_fee = django_filters.MultipleChoiceFilter(choices =InterviewFee,widget=forms.CheckboxSelectMultiple ,lookup_expr='exact')
-    scholarshipfee = django_filters.MultipleChoiceFilter(choices =ScholarshipFee, widget=forms.CheckboxSelectMultiple ,lookup_expr='exact')
+    #scholarshipfee = django_filters.MultipleChoiceFilter(choices =ScholarshipFee, widget=forms.CheckboxSelectMultiple ,lookup_expr='exact')
 
 
     class Meta:
         model = AgentCompanyInfo
-        fields = ['agent_state', 'agent_city', 'processing', 'countries_Dealing', 'language_classes', 'program_specialist', 'refusal_appeals', 'scholarships_offered', 'interview_preparation',
-        'travel_and_health', 'travel_arrangements', 'visa_ratio', 'experience', 'regional_office', 'branches', 'number_of_counselors', 'processing_fee', 'language_fee', 'refusal_fee',
-        'Interview_fee', 'scholarshipfee' ]
+        fields = ['agent_state', 'agent_city', 'processing',
+         'countries_Dealing', 'language_classes',
+         'program_specialist', 'refusal_appeals', 'scholarships_offered', #'interview_preparation',
+        'travel_and_health', #'travel_arrangements',
+        'visa_ratio', 'experience', 'regional_office', 'branches', 'number_of_counselors', 'processing_fee', 'language_fee', 'refusal_fee',
+        'Interview_fee',# 'scholarshipfee'
+        ]

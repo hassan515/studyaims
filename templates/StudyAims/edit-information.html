@@ -9,6 +9,24 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+<style media="screen">
+  .fill-bg{
+    font-family: 'Open Sans', sans-serif;
+  }
+  #lab{
+    text-align: left;
+    margin-left: 5px;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #506d69;
+  }
+  .form-outer input{
+    color: #8a9c9c;
+  }
+
+
+</style>
 <title>Educational Template</title>
 <!-- Reset CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
@@ -65,7 +83,7 @@
       <script src="js/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="fill-bg">
+<body class="fill-bg" style="background:#f6f9c1;">
 <!-- Start Preloader -->
 <!--<div id="loading">
   <div class="element">
@@ -85,18 +103,11 @@
     <div class="regiter-inner">
 
       <div class="login-logo"> <a href="index.html"><img src="images/login-logo.png" class="img-responsive" alt=""></a> </div>
-      <ul id="progressbar">
-    <li class="active">Personal Information</li>
-    <li>Qaulifications</li>
-    <li>Language Skills</li>
-    <li>Future Plans</li>
-    <li>Profile Picture</li>
-  </ul>
 
-      <div class="head-block">
+      <div class="head-block" style="background:rgba(218, 239, 236, 0.8);">
         <h1> Update Infomration</h1>
       </div>
-      <div class="cnt-block">
+      <div class="cnt-block" style="border:1px solid rgba(218, 239, 236, 0.8);">
       <form action="#" method="post" class="form-outer"> {% csrf_token %}
 <!---------------Personal Information --------->
 
@@ -110,16 +121,16 @@
 </ul>
 
 <div class="" id="personal_information">
-<h1>Personal Information</h1>
+<h1 style="margin-bottom:20px;">Personal Information</h1>
 
 <div class="row">
-  <div class="col-sm-2">
+  <div class="col-sm-6">
+    <p id="lab" >Gender:</p>
 {{ profile_form.gender }}
 </div>
-<div class="col-sm-6">
 
-</div>
-<div class="col-sm-4">
+<div class="col-sm-6">
+  <p id="lab">Age:</p>
   {{ profile_form.age }}
 </div>
 
@@ -128,9 +139,11 @@
 <div class="row">
 
 <div class="col-sm-6">
+  <p id="lab">Contact Number:</p>
   {{ profile_form.contact_number }}
 </div>
 <div class="col-sm-6">
+  <p id="lab">WhatsApp Number:</p>
   {{ profile_form.whatsapp }}
 </div>
 
@@ -139,6 +152,7 @@
 <div class="row">
 
 <div class="col-sm-6">
+  <p id="lab">Any Other Number:</p>
   {{ profile_form.any_other_number }}
 </div>
 <div class="col-sm-6">
@@ -151,15 +165,18 @@
 <div class="row">
 
 <div class="col-sm-12">
+  <p id="lab">Address:</p>
   {{ profile_form.address}}
 </div>
 </div>
 <div class="row">
 
 <div class="col-sm-6">
+  <p id="lab">Province:</p>
   {{ profile_form.state }}
 </div>
 <div class="col-sm-6">
+  <p id="lab">City:</p>
   {{ profile_form.city }}
 </div>
 
@@ -169,9 +186,11 @@
 <div class="row">
 
 <div class="col-sm-6">
+  <p id="lab">Nationality:</p>
   {{ profile_form.nationality }}
 </div>
 <div class="col-sm-6">
+  <p id="lab">Country Of Residence:</p>
   {{ profile_form.country_of_residence }}
 </div>
 
@@ -191,9 +210,11 @@
   <br><br>
   <div class="row">
     <div class="col-sm-6">
+      <p id="lab">Degree:</p>
       {{ profile_form.highest_qualification }}
               </div>
               <div class="col-sm-6">
+                <p id="lab">Subject:</p>
                 {{ profile_form.subject }}
 </div>
 </div>
@@ -203,18 +224,22 @@
 
  <div class="row">
    <div class="col-sm-6">
+     <p id="lab">Percentage:</p>
     {{ profile_form.percentage }}
    </div>
    <div class="col-sm-6">
+     <p id="lab">From Insitute:</p>
      {{ profile_form.Insititution }}
    </div>
  </div>
  <div class="row">
 
    <div class="col-sm-6">
+     <p id="lab">Passing Year:</p>
      {{ profile_form.passing_year}}
    </div>
    <div class="col-sm-6">
+     <p id="lab">From Country:</p>
      {{ profile_form.from_country }}
    </div>
  </div>
@@ -284,17 +309,21 @@
   <br><br>
   <div class="row">
     <div class="col-sm-6">
+      <p id="lab">English Language:</p>
       {{ profile_form.english_language }}
     </div>
     <div class="col-sm-6">
+      <p id="lab">Score:</p>
       {{ profile_form.english_language_score }}
     </div>
   </div>
   <div class="row">
     <div class="col-sm-6">
+      <p id="lab">Other Language:</p>
       {{ profile_form.other_Language }}
     </div>
     <div class="col-sm-6">
+      <p id="lab">Score:</p>
       {{ profile_form.Other_Language_score }}
     </div>
   </div>
@@ -310,9 +339,11 @@
   <br>
   <div class="row">
     <div class="col-sm-6">
+      <p id="lab">Desired Degree:</p>
 {{ profile_form.desired_degree }}
     </div>
     <div class="col-sm-6">
+      <p id="lab">Desired Subject:</p>
 {{ profile_form.desired_subject }}
     </div>
 
@@ -321,18 +352,21 @@
 
   <div class="row">
     <div class="col-sm-4">
+      <p id="lab">Desired Country:</p>
 {{ profile_form.desired_country }}
     </div>
     <div class="col-sm-4">
+      <p id="lab">Scholarships:</p>
 {{ profile_form.scholarships }}
     </div>
     <div class="col-sm-4">
+      <p id="lab">Budget Available:</p>
 {{ profile_form.budget }}
     </div>
   </div>
 
 
-  {{ profile_form.errors }}
+
 
   <div class="button-outer">
 

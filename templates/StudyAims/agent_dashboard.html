@@ -8,13 +8,31 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+<style media="screen">
+  .agent_dash{
+    font-family: 'Open Sans', sans-serif;
+  }
+.info_labels{
+    padding-left: 10px;
+    padding-right:10px;
+    margin-left: 10px;
+    margin-right: 20px;
+
+    padding-bottom:8px;
+    background: #eee;
+    margin-bottom: 10px;
+  }
+</style>
+
 <title>Educational Template</title>
 <!-- Reset CSS -->
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <link href="{% static 'css/fonts.css' %}" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
 <!-- Bootstrap
+
 <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"> -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 <!-- Font Awesome -->
@@ -50,7 +68,7 @@
       <script src="js/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
+<body class="agent_dash">
 <!-- Start Preloader -->
 <!--<div id="loading">
   <div class="element">
@@ -82,7 +100,7 @@
           <li><a href="blog.html">University Portal</a></li> -->
           {% if user.is_authenticated %}
           <li> Welcome {{ user.first_name }}</li>
-           <a href="{% url "StudyAims:user_login" %}" class="indexLogin" >Logout<span class="icon-more-icon"></span></a>
+        <li>  <a href="{% url "StudyAims:user_logout" %}" class="indexLogin" >Logout</a></li>
 
 
 
@@ -90,7 +108,7 @@
           <li><a href="{% url "StudyAims:register_student" %}">Register</a></li>
 
 
-         <a href="{% url "StudyAims:user_login" %}" class="indexLogin" >Login <span class="icon-more-icon"></span></a>
+      <li> <a href="{% url "StudyAims:user_login" %}" class="indexLogin" >Login </a></li>
 </ul>
 {% endif %}
 
@@ -143,8 +161,8 @@
           <button class="search-btn"><span class="icon-search-icon"></span></button>
         </form>
         <ul class="nav navbar-nav">
-          <li> <a href="index.html">Home</a></li>
-          <li> <a href="{ url 'StudyAims:search_students'}">Search Students</a></li>
+          <li> <a href="{% url 'StudyAims:home' %}">Home</a></li>
+          <li> <a href="{% url 'StudyAims:search_students' %}">Search Students</a></li>
           <li class="dropdown"> <a data-toggle="dropdown" href="#">Services <i class="fa fa-angle-down" aria-hidden="true"></i></a>
             <ul class="dropdown-menu">
               <li><a href="course-listing.html">course Listing</a></li>
@@ -175,29 +193,29 @@
   <!-- End Navigation -->
 </header>
 <div class="container">
-<div class="dashboard">
-  <div class="left-bl">
+<div class="dashboard" style="font-family:'Open Sans', sans-serif;">
+  <div class="left-bl" style="font-family:'Open Sans', sans-serif;">
   <div class="head-block">
     <h1>Profile</h1>
   </div>
   <div class="cnt-block">
     <ul>
 
-<li>
-  <a href="#"> <b> <label for="" id="account_info_label">Account Information</label></b></a></li>
-  <li>
-  <a href="#">  <label for="" id="company_info_label">Company Information</label><br></a></li>
-<li>
-  <a href="#">  <label for="" id="regisration_info_label">Company Registration Information</label><br></a>
+<li class="info_labels" style="margin-top:10px;">
+  <a href="#"> <b> <label for="" id="account_info_label"  >Account Information</label></b></a></li>
+  <li class="info_labels">
+  <a href="#">  <label for="" id="company_info_label" >Company Information</label><br></a></li>
+<li class="info_labels">
+  <a href="#">  <label for="" id="regisration_info_label" >Company Registration Information</label><br></a>
   </li>
-<li>
-  <a href="#">  <label for="" id="service_skill_label">Services Information</label><br></a></li>
-  <li>
-    <a href="#">  <label for="" id="expertise_info_label">Your Expertise</label><br></a></li>
-    <li>
-      <a href="#">  <label for="" id="fee_info_label">Fee Information</label><br></a></li>
-    <a href="{% url 'StudyAims:agent_profile_edit' pk=user.pk %}">  <label for="" id="edit_Infomration">Edit Information</label><br></a></li>
-        <a href="{% url 'StudyAims:change_password' %}">  <label for="" id="change_password">Change Password</label><br></a></li>
+<li class="info_labels">
+  <a href="#">  <label for="" id="service_skill_label" >Services Information</label><br></a></li>
+  <li class="info_labels">
+    <a href="#">  <label for="" id="expertise_info_label" >Your Expertise</label><br></a></li>
+    <li class="info_labels">
+      <a href="#">  <label for="" id="fee_info_label" >Fee Information</label><br></a></li>
+  <li class="info_labels">  <a href="{% url 'StudyAims:agent_profile_edit' pk=user.pk %}">  <label for="" id="edit_Infomration" >Edit Information</label><br></a></li>
+      <li class="info_labels">  <a href="{% url 'StudyAims:change_password' %}">  <label for="" id="change_password" class="info_labels">Change Password</label><br></a></li>
   </ul>
   </div>
 
@@ -510,7 +528,7 @@
 
     <div class="right-bl" style="display:none" id="service_info">
       <div class="head-block">
-        <h1>Service Information   <span class="glyphicon glyphicon-pencil"  ></span></h1>
+        <h1>Service Information   </h1>
       </div>
       <div class="db">
         <div class="row">
@@ -616,7 +634,7 @@
 
       <div class="right-bl" style="display:none" id="fee_info">
         <div class="head-block">
-          <h1>Fee Information<span class="glyphicon glyphicon-pencil"  ></span></h1>
+          <h1>Fee Information</h1>
         </div>
         <div class="db">
 
@@ -688,7 +706,7 @@
 
       <div class="right-bl" style="display:None"  id="expertise_info">
         <div class="head-block">
-          <h1>Your Expertise   <span class="glyphicon glyphicon-pencil"  ></span></h1>
+          <h1>Your Expertise   </h1>
         </div>
         <div class="db">
 
@@ -772,6 +790,7 @@ $(document).ready(
   function(){
       $("#account_info_label").click(function () {
           $("#account_info").show("slow");
+          $("#fee_info").hide("slow");
           $("#company_info").hide("slow");
           $("#registeration_info").hide("slow");
           $("#service_info").hide("slow");
@@ -785,7 +804,7 @@ $(document).ready(
         $("#company_info_label").click(function () {
             $("#company_info").show("slow");
             $("#account_info").hide("slow");
-
+            $("#fee_info").hide("slow");
             $("#registeration_info").hide("slow");
             $("#service_info").hide("slow");
             $("#expertise_info").hide("slow");
@@ -799,7 +818,7 @@ $(document).ready(
           $("#regisration_info_label").click(function () {
             $("#company_info").hide("slow");
             $("#account_info").hide("slow");
-
+            $("#fee_info").hide("slow");
             $("#registeration_info").show("slow");
             $("#service_info").hide("slow");
             $("#expertise_info").hide("slow");
@@ -812,7 +831,7 @@ $(document).ready(
             $("#service_skill_label ").click(function () {
               $("#company_info").hide("slow");
               $("#account_info").hide("slow");
-
+              $("#fee_info").hide("slow");
               $("#registeration_info").hide("slow");
               $("#service_info").show("slow");
               $("#expertise_info").hide("slow");
@@ -826,7 +845,7 @@ $(document).ready(
       $("#expertise_info_label ").click(function () {
         $("#company_info").hide("slow");
         $("#account_info").hide("slow");
-
+        $("#fee_info").hide("slow");
         $("#registeration_info").hide("slow");
         $("#service_info").hide("slow");
         $("#expertise_info").show("slow");

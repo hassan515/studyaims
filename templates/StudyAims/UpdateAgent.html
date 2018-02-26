@@ -51,7 +51,7 @@
       <script src="js/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="fill-bg">
+<body class="fill-bg" style="background:#f6f9c1;">
 <!-- Start Preloader -->
 <div id="loading">
   <div class="element">
@@ -70,16 +70,11 @@
   <div class="inner">
     <div class="regiter-inner">
       <div class="login-logo"> <a href="index.html"><img src="images/login-logo.png" class="img-responsive" alt=""></a> </div>
-      <ul id="progressbar1">
-    <li class="active">Comapany Information</li>
-    <li>Registratoin Details</li>
-    <li>Specialities</li>
-    <li>Profile Picture</li>
-  </ul>
-      <div class="head-block">
+
+      <div class="head-block" style="background:rgba(218, 239, 236, 0.8);">
         <h1>Update Profile</h1>
       </div>
-      <div class="cnt-block">
+      <div class="cnt-block" style="border:1px solid rgba(218, 239, 236, 0.8);">
         <form action="#" method="post" class="form-outer">{% csrf_token %}
           <div id="companyInfo">
 
@@ -1412,18 +1407,6 @@ function offered_Serv() {
     expanded = false;
   }
 }
-$(document).mouseup(function (e) {
-           var container = new Array();
-           container.push($('#msel'));
-           $.each(container, function (key, value) {
-               if (!$(value).is(e.target) && $(value).has(e.target).length === 0) {
-                   ///--need to have better code from yourside..
-                   var checkboxes = document.getElementById("services");
-                   checkboxes.style.display = "none";
-                   ///--need to have better code from yourside..
-               }
-           });
-       });
 
 </script>
 <!-- Match Height JS -->

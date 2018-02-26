@@ -11,7 +11,21 @@
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <title>Educational Template</title>
     <!-- Reset CSS -->
+<style media="screen">
+  .featuredAds{
+    font-family: 'Open Sans', sans-serif;
+  }
+  .left-filters-div select{
+    font-size: 14px;
+    padding-left: 6px;
 
+  }
+  .fixed {
+    position: fixed;
+    top: 0;
+    width: 100%
+  }
+</style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <link href="{% static 'css/fonts.css' %}" rel="stylesheet" type="text/css">
@@ -32,7 +46,7 @@
       <link href="http://cdn-na.infragistics.com/igniteui/2017.1/latest/css/themes/infragistics/infragistics.theme.css" rel="stylesheet" />
         <link href="http://cdn-na.infragistics.com/igniteui/2017.1/latest/css/structure/infragistics.css" rel="stylesheet" />
 
-
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -69,23 +83,23 @@
           </ul>
           <div class="right-block clearfix">
             <ul class="top-nav hidden-xs">
-            <!--  <li><a href="register.html">Student Portal</a></li>
+            <!--  <li><a href="register.html">user Portal</a></li>
               <li><a href="apply-online.html">Agent Portal</a></li>
 
 
 
               <li><a href="blog.html">University Portal</a></li> -->
               {% if user.is_authenticated %}
-              <li> Welcome {{ current_user.first_name }}</li>
-               <a href="{% url 'user_logout' %}" class="indexLogin" >Logout</a>
+              <li> Welcome {{ user.first_name }}</li>
+              <li> <a href="{% url 'StudyAims:user_logout' %}" class="indexLogin" >Logout</a></li>
 
 
 
                {% else %}
-              <li><a href="{% url "StudyAims:register_student" %}">Register</a></li>
+              <li><a href="{% url "StudyAims:register_user" %}">Register</a></li>
 
 
-             <a href="{% url "StudyAims:user_login" %}" class="indexLogin" >Login </a>
+          <li>   <a href="{% url "StudyAims:user_login" %}" class="indexLogin" >Login </a></li>
     </ul>
     {% endif %}
           </div>
@@ -101,7 +115,7 @@
             <div class="contact clearfix">
               <ul class="hidden-xs">
                 <li>
-                  <div class="icon"><span class="icon-student-icon"></span></div>
+                  <div class="icon"><span class="icon-user-icon"></span></div>
                   <span class="counter">258,658</span>
 
                 </li>
@@ -114,27 +128,30 @@
       </div> </div>
       <!-- End Header Middle -->
       <!-- Start Navigation -->
-      <nav class="navbar navbar-inverse">
+      <div class="sticky">
+
+
+      <nav class="navbar navbar-inverse" id="sticky">
         <div class="container">
-          <div class="navbar-header">
+          <div class="navbar-header" >
             <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
           </div>
-          <div class="navbar-collapse collapse" id="navbar">
+          <div class="navbar-collapse collapse">
             <form class="navbar-form navbar-right">
               <input type="text" placeholder="Search Now" class="form-control">
               <button class="search-btn"><span class="icon-search-icon"></span></button>
             </form>
-            <ul class="nav navbar-nav">
-              <li> <a href="index.html">Home</a></li>
-              <li> <a href="about.html">About</a></li>
-              <li class="dropdown"> <a data-toggle="dropdown" href="#">Services <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <ul class="nav navbar-nav" >
+              <li> <a href="{% url 'index' %}">Home</a></li>
+              <li> <a href="{% url 'StudyAims:agent_dashboard' %}">Dashboard</a></li>
+            <!--  <li class="dropdown"> <a data-toggle="dropdown" href="#">Services <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                 <ul class="dropdown-menu">
                   <li><a href="course-listing.html">course Listing</a></li>
                   <li><a href="mba-marketing.html">MBA Marketing</a></li>
                   <li><a href="mba-general.html">MBA General</a></li>
                   <li><a href="mba-operations.html">MBA Operations</a></li>
                 </ul>
-              </li>
+              </li> -->
               <li> <a href="gallery.html">Classified Ads</a></li>
               <li class="dropdown"> <a data-toggle="dropdown" href="#">Events<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                 <ul class="dropdown-menu">
@@ -150,50 +167,17 @@
                 </ul>
               </li>
               <li> <a href="contact.html">Contact</a></li>
-            </ul>
+            </ul>   </div>
           </div>
-        </div>
-      </nav>
+
+      </nav>  </div>
       <!-- End Navigation -->
     </header>
 
-  <!--  <div class="banner-outer">
-      <div class="banner-slider">
-        <div class="slide1">
-          <div class="container">
-            <div class="content animated fadeInRight">
-              <div class="fl-right">
-                <h1 class="animated fadeInRight">Explore the World of <span class="animated fadeInRight">Our Graduates</span> </h1>
-                <p class="animated fadeInRight">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-
-                <a href="about.html" class="btn animated fadeInRight">Know More <span class="icon-more-icon"></span></a> </div>
-            </div>
-          </div>
-        </div>
-        <div class="slide2">
-          <div class="container">
-            <div class="content">
-              <h1 class="animated fadeInUp">MBA Marketing</h1>
-              <p class="animated fadeInUp">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-              <a href="about.html" class="btn animated fadeInUp">Know More <span class="icon-more-icon"></span></a> <a href="gallery.html" class="btn white animated fadeInUp hidden-xs">Take a Tour <span class="icon-more-icon"></span></a> </div>
-          </div>
-        </div>
-        <div class="slide3">
-          <div class="container">
-            <div class="content animated fadeInLeft">
-              <h1 class="animated fadeInLeft">Online MBA</h1>
-              <p class="animated fadeInLeft">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-              <a href="about.html" class="btn animated fadeInLeft">Know More <span class="icon-more-icon"></span></a> </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
 
- -->
 
-<div class="featured_ads">
-<div class="container small_ads">
+<div class="container small_ads" style="background:#eee;" ><div class="featured_ads" style="width:100%; ">
   <div class="row">
     <div class="col-sm-4 sm_ads">
 
@@ -244,11 +228,11 @@
   </div>
   <div class="filter_heads" id="featured_stds">
 
-    <h2 class="headings" >Featured Student</h2>
+    <h2 class="headings" >Featured user</h2>
   </div>
   <div class="row">
     <select class="scholar" name="">
-      <option selected disabled style="display:none">Featured Students</option>
+      <option selected disabled style="display:none">Featured users</option>
 
       <option value="1">Yes</option>
       <option value="2">No</option>
@@ -1306,12 +1290,7 @@
       <div id="des_count">
   {% render_field filter.form.desired_country onChange="form.submit();" %}
 </div></div></div>
-<div class="row">
 
-<b>
-<label for=""> Scholarships ?</label></b>
-  {% render_field filter.form.scholarships onChange="form.submit();" %}
-</div>
 <div class="row">
   <div class="multiselect">
       <div class="selectBox" onclick="aff_bud()">
@@ -2442,7 +2421,7 @@
 
 
 
-    </form>
+
 </div>
 
 
@@ -2458,18 +2437,19 @@
     <div class="featured1">
 
       <div class="row feat">
-        <h2 class="headings "> Student Profiles</h2>
+        <h2 class="headings "> user Profiles</h2>
       </div>
       <div class="std_filters">
 
 
       <div class="row select_filter">
-        <div class="col-sm-2 filter_div">
+        <div class="col-sm-4 filter_div">
+          <p style="margin-bottom:5px;">Gender</p>
             {% render_field filter.form.gender onChange="form.submit();" %}
 
         </div>
-        <div class="col-sm-5 filter_div">
-          <div class="multiselect">
+        <div class="col-sm-4 filter_div">
+        <!--  <div class="multiselect">
               <div class="selectBox" onclick="state()">
                 <select>
                   <option class="hida">State / Province</option>
@@ -2477,12 +2457,12 @@
                 </select>
                 <div class="overSelect"></div>
               </div>
-              <div id="state" style="display:none">
+              <div id="state" style="display:none">-->
+              <p style="margin-bottom:5px;">Province</p>
             {% render_field filter.form.state onChange="form.submit();" %}
-
-        </div></div></div>
-        <div class="col-sm-5 filter_div">
-          <div class="multiselect">
+</div>
+        <div class="col-sm-4 filter_div">
+        <!--  <div class="multiselect">
               <div class="selectBox" onclick="city()">
                 <select>
                   <option class="hida">City</option>
@@ -2490,13 +2470,13 @@
                 </select>
                 <div class="overSelect"></div>
               </div>
-              <div id="city" style="display:none">
+              <div id="city" style="display:none"> -->
+              <p style="margin-bottom:5px;">City</p>
                 {% render_field filter.form.city onChange="form.submit();" %}
-        </div>
-      </div></div>
+      </div>
 
 
-    </div>
+    </div></div></form>
 {% for filter in filter.qs  %}
       <div class="big-ads">
 
@@ -2712,623 +2692,7 @@
 </div>
 
 {% endfor %}
-<!--      <div class="big-ads">
 
-        <div class="st_name">
-          <div class="row">
-            <div class="col-sm-9">
-
-            </div>
-            <div class="col-sm-3">
-              <p id="st-na">Contact Detail</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-3 pro_img">
-              <img src="images/profile.png" alt="" height="60" width="60">
-        </div>
-          <div class="col-sm-8">
-    <h2 class="headings">Student Name </h2><br>
-    <fieldset class="rating">
-    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-    <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-    <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-    <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-    <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-    <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-    </fieldset>
-    </div>
-
-        </div>
-
-
-
-        </div>
-        <div id="contact-info" style="display:none" >
-
-
-        <div class="back">
-          <h2 class="adds_heads">Contact details</h2>
-        </div>
-        <div class="white-div">
-
-
-        <div class="row">
-          <div class="col-sm-4">
-            <p>Cell Number:</p><p class="info">03347584587</p>
-          </div>
-
-          <div class="col-sm-4">
-            <p>WhatsApp</p><p class="info">03347584587</p>
-          </div>
-          <div class="col-sm-4">
-            <p>Contact #</p><p class="info">042-3509984</p>
-          </div>
-
-        </div>
-        <div class="row">
-
-          <div class="col-sm-7">
-            <p>Email:</p>  <p class="info">hassan@accuretech.com</p>
-          </div>
-
-          <div class="col-sm-2">
-
-          </div>
-          <div class="col-sm-3">
-
-              <p><br></p><p class="profile"><a href="profile-form.html">View Profile</a></p>
-
-          </div>
-        </div>  </div>
-
-          </div>
-        <div class="back">
-          <h2 class="adds_heads" >About</h2>
-        </div>
-      <div class="row">
-
-        <div class="col-sm-3">
-          <p>Gender </p> <p class="info">Male</p>
-        </div>
-          <div class="col-sm-2">
-            <p>Age </p><p class="info">25</p>
-          </div>
-          <div class="col-sm-4">
-            <p>Province </p><p class="info">Punjab</p>
-
-          </div>
-
-          <div class="col-sm-3">
-            <p>City </p><p class="info">Lahore</p>
-
-          </div>
-      </div>
-      <div class="back">
-        <h2 class="adds_heads" >Qualification</h2>
-      </div>
-
-        <div class="row">
-          <div class="col-sm-3">
-            <p>Qualification  </p>
-          </div>
-          <div class="col-sm-3">
-            <p class="info">Bachelors</p>
-          </div>
-            <div class="col-sm-3">
-              <p>Major Subject  </p>
-            </div>
-            <div class="col-sm-3" >
-              <p class="info">Sciences</p>
-            </div>
-          </div>
-            <div class="row">
-            <div class="col-sm-3">
-              <p>Percentage </p>
-
-            </div>
-            <div class="col-sm-3">
-              <p class="info">65%</p>
-            </div>
-            <div class="col-sm-3">
-              <p>Passing Year</p>
-            </div>
-            <div class="col-sm-3">
-              <p class="info">2017</p>
-            </div>
-           </div>
-            <div class="row">
-
-
-            <div class="col-sm-3">
-              <p>Experience</p>
-
-            </div>
-            <div class="col-sm-3">
-              <p class="info">2 years</p>
-            </div>
-            <div class="col-sm-3">
-              <p>Gap</p>
-
-            </div>
-            <div class="col-sm-3">
-              <p class="info">3 years </p>
-            </div>
-
-        </div>
-        <div class="row">
-
-
-            <div class="col-sm-3">
-              <p>English Lang </p>
-            </div>
-            <div class="col-sm-3">
-              <p class="info">IELTS-6.5</p>
-            </div>
-            <div class="col-sm-3">
-              <p>Other Lang</p></div>
-
-
-              <div class="col-sm-3">
-                <p class="info">German-B</p>
-              </div> </div>
-    <div class="back">
-    <h2 class="adds_heads">Future plan</h2>
-    </div>
-
-
-        <div class="row">
-
-          <div class="col-sm-3">
-            <p>Qualification </p>
-          </div>
-          <div class="col-sm-3">
-            <p class="info">Masters</p>
-          </div>
-            <div class="col-sm-3">
-              <p>Subject</p>
-            </div>
-            <div class="col-sm-3">
-              <p class="info">Software Eng</p>
-            </div>
-          </div>
-            <div class="row">
-            <div class="col-sm-3">
-              <p>Country</p>
-
-            </div>
-            <div class="col-sm-3">
-              <p class="info">Australia</p>
-            </div>
-            <div class="col-sm-3">
-              <p>Budget
-                </p>
-
-            </div>
-            <div class="col-sm-3">
-              <p class="info">9 lacs</p>
-            </div>
-        </div>
-
-
-      </div> -->
-
-
-      <!--     <div class="big-ads1">
-        <p>Post Your Ads</p>
-        </div>
-        <div class="big-ads">
-
-          <div class="st_name">
-            <div class="row">
-              <div class="col-sm-9">
-
-              </div>
-              <div class="col-sm-3">
-                <p id="st-na">Contact Detail</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-3 pro_img">
-                <img src="images/profile.png" alt="" height="60" width="60">
-          </div>
-            <div class="col-sm-8">
-    <h2 class="headings">Student Name </h2><br>
-    <fieldset class="rating">
-  <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-  <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-  <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-  <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-  <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-  <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-  <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-  <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-  <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-  <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-  </fieldset>
-      </div>
-
-          </div>
-
-
-
-          </div>
-          <div id="contact-info" style="display:none" >
-
-
-          <div class="back">
-            <h2 class="adds_heads">Contact details</h2>
-          </div>
-          <div class="white-div">
-
-
-          <div class="row">
-            <div class="col-sm-4">
-              <p>Cell Number:</p><p class="info">03347584587</p>
-            </div>
-
-            <div class="col-sm-4">
-              <p>WhatsApp</p><p class="info">03347584587</p>
-            </div>
-            <div class="col-sm-4">
-              <p>Contact #</p><p class="info">042-3509984</p>
-            </div>
-
-          </div>
-          <div class="row">
-
-            <div class="col-sm-7">
-              <p>Email:</p>  <p class="info">hassan@accuretech.com</p>
-            </div>
-
-            <div class="col-sm-2">
-
-            </div>
-            <div class="col-sm-3">
-
-                <p><br></p><p class="profile"><a href="profile-form.html">View Profile</a></p>
-
-            </div>
-          </div>  </div>
-
-            </div>
-          <div class="back">
-            <h2 class="adds_heads" >About</h2>
-          </div>
-        <div class="row">
-
-          <div class="col-sm-3">
-            <p>Gender </p> <p class="info">Male</p>
-          </div>
-            <div class="col-sm-2">
-              <p>Age </p><p class="info">25</p>
-            </div>
-            <div class="col-sm-4">
-              <p>Province </p><p class="info">Punjab</p>
-
-            </div>
-
-            <div class="col-sm-3">
-              <p>City </p><p class="info">Lahore</p>
-
-            </div>
-        </div>
-        <div class="back">
-          <h2 class="adds_heads" >Qualification</h2>
-        </div>
-
-          <div class="row">
-            <div class="col-sm-3">
-              <p>Qualification  </p>
-            </div>
-            <div class="col-sm-3">
-              <p class="info">Bachelors</p>
-            </div>
-              <div class="col-sm-3">
-                <p>Major Subject  </p>
-              </div>
-              <div class="col-sm-3" >
-                <p class="info">Sciences&MicroBiology</p>
-              </div>
-            </div>
-              <div class="row">
-              <div class="col-sm-3">
-                <p>Percentage </p>
-
-              </div>
-              <div class="col-sm-3">
-                <p class="info">65%</p>
-              </div>
-              <div class="col-sm-3">
-                <p>Passing Year</p>
-              </div>
-              <div class="col-sm-3">
-                <p class="info">2017</p>
-              </div>
-             </div>
-              <div class="row">
-
-
-              <div class="col-sm-3">
-                <p>Experience</p>
-
-              </div>
-              <div class="col-sm-3">
-                <p class="info">2 years</p>
-              </div>
-              <div class="col-sm-3">
-                <p>Gap</p>
-
-              </div>
-              <div class="col-sm-3">
-                <p class="info">3 years </p>
-              </div>
-
-          </div>
-          <div class="row">
-
-
-              <div class="col-sm-3">
-                <p>English Lang </p>
-              </div>
-              <div class="col-sm-3">
-                <p class="info">IELTS-6.5</p>
-              </div>
-              <div class="col-sm-3">
-                <p>Other Lang</p></div>
-
-
-                <div class="col-sm-3">
-                  <p class="info">German-B</p>
-                </div> </div>
-  <div class="back">
-    <h2 class="adds_heads">Future plan</h2>
-  </div>
-
-
-          <div class="row">
-
-            <div class="col-sm-3">
-              <p>Qualification </p>
-            </div>
-            <div class="col-sm-3">
-              <p class="info">Masters</p>
-            </div>
-              <div class="col-sm-3">
-                <p>Subject</p>
-              </div>
-              <div class="col-sm-3">
-                <p class="info">Software Eng</p>
-              </div>
-            </div>
-              <div class="row">
-              <div class="col-sm-3">
-                <p>Country</p>
-
-              </div>
-              <div class="col-sm-3">
-                <p class="info">Australia</p>
-              </div>
-              <div class="col-sm-3">
-                <p>Budget
-                  </p>
-
-              </div>
-              <div class="col-sm-3">
-                <p class="info">9 lacs</p>
-              </div>
-          </div>
-
-
-        </div> -->
-
-  <!--      <div class="big-ads">
-
-          <div class="st_name">
-            <div class="row">
-              <div class="col-sm-9">
-
-              </div>
-              <div class="col-sm-3">
-                <p id="st-na">Contact Detail</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-3 pro_img">
-                <img src="images/profile.png" alt="" height="60" width="60">
-          </div>
-            <div class="col-sm-8">
-      <h2 class="headings">Student Name </h2><br>
-      <fieldset class="rating">
-      <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-      <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-      <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-      <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-      <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-      <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-      <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-      <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-      <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-      <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-      </fieldset>
-      </div>
-
-          </div>
-
-
-
-          </div>
-          <div id="contact-info" style="display:none" >
-
-
-          <div class="back">
-            <h2 class="adds_heads">Contact details</h2>
-          </div>
-          <div class="white-div">
-
-
-          <div class="row">
-            <div class="col-sm-4">
-              <p>Cell Number:</p><p class="info">03347584587</p>
-            </div>
-
-            <div class="col-sm-4">
-              <p>WhatsApp</p><p class="info">03347584587</p>
-            </div>
-            <div class="col-sm-4">
-              <p>Contact #</p><p class="info">042-3509984</p>
-            </div>
-
-          </div>
-          <div class="row">
-
-            <div class="col-sm-7">
-              <p>Email:</p>  <p class="info">hassan@accuretech.com</p>
-            </div>
-
-            <div class="col-sm-2">
-
-            </div>
-            <div class="col-sm-3">
-
-                <p><br></p><p class="profile">View Profile</p>
-
-            </div>
-          </div>  </div>
-
-            </div>
-          <div class="back">
-            <h2 class="adds_heads" >About</h2>
-          </div>
-        <div class="row">
-
-          <div class="col-sm-3">
-            <p>Gender </p> <p class="info">Male</p>
-          </div>
-            <div class="col-sm-2">
-              <p>Age </p><p class="info">25</p>
-            </div>
-            <div class="col-sm-4">
-              <p>Province </p><p class="info">Punjab</p>
-
-            </div>
-
-            <div class="col-sm-3">
-              <p>City </p><p class="info">Lahore</p>
-
-            </div>
-        </div>
-        <div class="back">
-          <h2 class="adds_heads" >Qualification</h2>
-        </div>
-
-          <div class="row">
-            <div class="col-sm-3">
-              <p>Qualification  </p>
-            </div>
-            <div class="col-sm-3">
-              <p class="info">Bachelors</p>
-            </div>
-              <div class="col-sm-3">
-                <p>Major Subject  </p>
-              </div>
-              <div class="col-sm-3" >
-                <p class="info">Sciences&MicroBiology</p>
-              </div>
-            </div>
-              <div class="row">
-              <div class="col-sm-3">
-                <p>Percentage </p>
-
-              </div>
-              <div class="col-sm-3">
-                <p class="info">65%</p>
-              </div>
-              <div class="col-sm-3">
-                <p>Passing Year</p>
-              </div>
-              <div class="col-sm-3">
-                <p class="info">2017</p>
-              </div>
-             </div>
-              <div class="row">
-
-
-              <div class="col-sm-3">
-                <p>Experience</p>
-
-              </div>
-              <div class="col-sm-3">
-                <p class="info">2 years</p>
-              </div>
-              <div class="col-sm-3">
-                <p>Gap</p>
-
-              </div>
-              <div class="col-sm-3">
-                <p class="info">3 years </p>
-              </div>
-
-          </div>
-          <div class="row">
-
-
-              <div class="col-sm-3">
-                <p>English Lang </p>
-              </div>
-              <div class="col-sm-3">
-                <p class="info">IELTS-6.5</p>
-              </div>
-              <div class="col-sm-3">
-                <p>Other Lang</p></div>
-
-
-                <div class="col-sm-3">
-                  <p class="info">German-B</p>
-                </div> </div>
-      <div class="back">
-      <h2 class="adds_heads">Future plan</h2>
-      </div>
-
-
-          <div class="row">
-
-            <div class="col-sm-3">
-              <p>Qualification </p>
-            </div>
-            <div class="col-sm-3">
-              <p class="info">Masters</p>
-            </div>
-              <div class="col-sm-3">
-                <p>Subject</p>
-              </div>
-              <div class="col-sm-3">
-                <p class="info">Software Eng</p>
-              </div>
-            </div>
-              <div class="row">
-              <div class="col-sm-3">
-                <p>Country</p>
-
-              </div>
-              <div class="col-sm-3">
-                <p class="info">Australia</p>
-              </div>
-              <div class="col-sm-3">
-                <p>Budget
-                  </p>
-
-              </div>
-              <div class="col-sm-3">
-                <p class="info">9 lacs</p>
-              </div>
-          </div>
-
-</div> -->
 
      <div class="big-ads1">
         <p>Post Your Ads</p>
@@ -3719,6 +3083,18 @@
         }
       });
     });
+
+
+
+
+    $(window).scroll(function(){
+    var sticky = $('.sticky'),
+        scroll = $(window).scrollTop();
+
+    if (scroll >= 100) sticky.addClass('fixed');
+    else sticky.removeClass('fixed');
+  });
+
     </script>
     <script type="text/javascript" src="{% static "js/jquery.min.js" %}"></script>
 
@@ -3728,29 +3104,7 @@
 
     <!-- Select2 JS -->
     <script type="text/javascript" src="{% static "assets/select2/js/select2.min.js" %}"></script>
-    <script>
 
-
-        $( "#filter_records" ).click(function(event) {
-            event.preventDefault();
-            var highestQualification = $('#id_highest_qualification').find(":selected").val();
-
-            $.ajax({
-         url: "{% url 'StudyAims:search_students' %}",
-         method: 'GET',
-         data : {
-                 filter: parseInt(highestQualification)
-         }
-         success: function(data){
-             console.log(data)
-         },
-         error: function(xhr, errmsg, err){
-             console.log("error")
-             console.log(error_data)
-         }
-        });
-        });
-    </script>
     <!-- Match Height JS -->
     <script type="text/javascript" src="{% static "assets/matchHeight/js/matchHeight-min.js" %}"></script>
     <!-- Bxslider JS -->

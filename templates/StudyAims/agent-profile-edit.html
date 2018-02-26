@@ -4,6 +4,12 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<style media="screen">
+#lab{
+  font-size: 14px;
+  color: #333;
+}
+</style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0; maximum-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -51,7 +57,7 @@
       <script src="js/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="fill-bg">
+<body class="fill-bg" style="background:#f6f9c1;">
 <!-- Start Preloader -->
 <div id="loading">
   <div class="element">
@@ -70,16 +76,11 @@
   <div class="inner">
     <div class="regiter-inner">
       <div class="login-logo"> <a href="index.html"><img src="images/login-logo.png" class="img-responsive" alt=""></a> </div>
-      <ul id="progressbar1">
-    <li class="active">Comapany Information</li>
-    <li>Registratoin Details</li>
-    <li>Specialities</li>
-    <li>Profile Picture</li>
-  </ul>
-      <div class="head-block">
+
+      <div class="head-block" style="background:rgba(218, 239, 236, 0.8);">
         <h1>Update Profile</h1>
       </div>
-      <div class="cnt-block">
+      <div class="cnt-block" style="border:1px solid rgba(218, 239, 236, 0.8);">
         <form action="#" method="post" class="form-outer">{% csrf_token %}
           <div id="companyInfo">
 
@@ -97,10 +98,13 @@
 </div>
 
           <div class="row">
+
             <div class="col-sm-6">
+              <p id="lab">Company Name</p>
               {{ form.comp_name }}
             </div>
             <div class="col-sm-6">
+                <p id="lab">Types Of Services</p>
               <div class="serv_select">
               <div class="serv_box" onclick="serv_types()">
                 <select class="mySelect">
@@ -116,52 +120,64 @@
 
           <div class="row">
             <div class="col-sm-6">
+              <p id="lab">Company Owner Name</p>
               {{ form.company_owner }}
             </div>
             <div class="col-sm-6">
+              <p id="lab">WhatsApp Number</p>
               {{ form.agent_whatsapp }}
             </div>
           </div>
           <div class="row">
             <div class="col-sm-12">
+              <p id="lab">Address</p>
               {{ form.address }}
             </div>
 
           </div>
           <div class="row">
             <div class="col-sm-6">
+              <p id="lab">Alternative Email</p>
               {{ form.alternative_email }}
             </div>
             <div class="col-sm-6">
+              <p id="lab">Office Contact Number</p>
               {{ form.office_contact }}
             </div>
           </div>
           <div class="row">
             <div class="col-sm-6">
+              <p id="lab">Website</p>
               {{ form.agent_website }}
             </div>
             <div class="col-sm-6">
+              <p id="lab">Facebook Link</p>
               {{ form.facebook_link }}
             </div>
 
           </div>
           <div class="row">
             <div class="col-sm-6">
+              <p id="lab">LinkedIn Link</p>
               {{ form.linked_In }}
             </div>
             <div class="col-sm-6">
+              <p id="lab">City</p>
               {{ form.agent_city }}
             </div>
           </div>
 
           <div class="row">
             <div class="col-sm-4">
+              <p id="lab">Province</p>
               {{ form.agent_state }}
             </div>
             <div class="col-sm-4">
+              <p id="lab">Country of Residence</p>
               {{ form.agent_country }}
             </div>
             <div class="col-sm-4">
+              <p id="lab">Nationality</p>
               {{ form.nationality }}
             </div>
           </div>
@@ -202,50 +218,62 @@
                   <h2>Pakistan Registration Bodies</h2>
                   <div class="row">
                     <div class="col-sm-6">
+                      <p id="lab">1. Registration Body</p>
                       {{ form.pak_registeration_body1 }}
                     </div>
                     <div class="col-sm-6">
+                      <p id="lab">2. Registration Body</p>
                       {{ form.pak_registeration_body2 }}
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-sm-6">
+                      <p id="lab">3. Registration Body</p>
                       {{ form.pak_registeration_body3 }}
                     </div>
                     <div class="col-sm-6">
+                      <p id="lab">4. Registration Body</p>
                       {{ form.pak_registeration_body4 }}
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-sm-6">
+                      <p id="lab">5. Registration Body</p>
                       {{ form.pak_registeration_body5 }}
                     </div>
                     <div class="col-sm-6">
+                      <p id="lab">6. Registration Body</p>
                       {{ form.pak_registeration_body6 }}
                     </div>
                   </div>
                   <h2>International Registration Bodies</h2>
                   <div class="row">
                     <div class="col-sm-6">
+                      <p id="lab">1. Registration Body</p>
                       {{ form.Internatiol_registeration_body1 }}
                     </div>
                     <div class="col-sm-6">
+                      <p id="lab">2. Registration Body</p>
                       {{ form.Internatiol_registeration_body2 }}
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-sm-6">
+                      <p id="lab">3. Registration Body</p>
                       {{ form.Internatiol_registeration_body3 }}
                     </div>
                     <div class="col-sm-6">
+                      <p id="lab">4. Registration Body</p>
                       {{ form.Internatiol_registeration_body4 }}
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-sm-6">
+                      <p id="lab">5. Registration Body</p>
                       {{ form.Internatiol_registeration_body5 }}
                     </div>
                     <div class="col-sm-6">
+                      <p id="lab">6. Registration Body</p>
                       {{ form.Internatiol_registeration_body6 }}
                     </div>
                   </div>
@@ -266,6 +294,7 @@
     <div class="row">
 
       <div class="col-sm-6">
+        <p id="lab">Countries Dealing</p>
         <div class="serv_select">
               <div class="serv_box" onclick="offered_Serv()">
                 <select class="mySelect">
@@ -279,6 +308,7 @@
        </div></div>
 
       <div class="col-sm-6">
+        <p id="lab">Language Classes</p>
         <div class="serv_select">
                   <div class="serv_box" onclick="lang_class_serv()">
                     <select class="mySelect">
@@ -294,6 +324,7 @@
     </div>
     <div class="row">
       <div class="col-sm-4">
+        <p id="lab">Program Specialist</p>
         <div class="serv_select">
                     <div class="serv_box" onclick="prg_spc()">
                       <select class="mySelect">
@@ -306,9 +337,11 @@
         {{ form.program_specialist }}
       </div></div></div>
       <div class="col-sm-4">
+        <p id="lab">Refusal Appeal</p>
         {{ form.refusal_appeals }}
       </div>
       <div class="col-sm-4">
+        <p id="lab">Scholarships Offered</p>
         {{ form.scholarships_offered }}
       </div>
 
@@ -316,12 +349,15 @@
 
     <div class="row">
       <div class="col-sm-4">
+        <p id="lab">Interview Preparation</p>
         {{ form.interview_preparation }}
       </div>
       <div class="col-sm-4">
+        <p id="lab">Travel & Health Insurance</p>
         {{ form.travel_and_health }}
       </div>
       <div class="col-sm-4">
+        <p id="lab">Travel Arrangements</p>
         {{ form.travel_arrangements }}
       </div>
 
@@ -340,21 +376,26 @@
     <br>
     <div class="row">
       <div class="col-sm-4">
+        <p id="lab">Processing Fee</p>
         {{ form.processing_fee }}
       </div>
       <div class="col-sm-4">
+        <p id="lab">Language Fee</p>
         {{ form.language_fee }}
       </div>
       <div class="col-sm-4">
+        <p id="lab">Refusal Appeal Fee</p>
         {{ form.refusal_fee }}
       </div>
 
     </div>
     <div class="row">
       <div class="col-sm-6">
+        <p id="lab">Interview Fee</p>
         {{ form.Interview_fee }}
       </div>
       <div class="col-sm-6">
+        <p id="lab">Scholarship Fee</p>
         {{ form.scholarshipfee }}
       </div>
 
@@ -376,18 +417,22 @@
   <br>
   <div class="row">
     <div class="col-sm-6">
+      <p id="lab">Visa Ratio</p>
       {{form.visa_ratio}}
     </div>
     <div class="col-sm-6">
+      <p id="lab">Experience</p>
       {{form.experience}}
     </div>
   </div>
 
   <div class="row">
     <div class="col-sm-4">
+      <p id="lab">Regional Office</p>
       {{form.regional_office}}
     </div>
     <div class="col-sm-4">
+      <p id="lab">Branches</p>
       <div class="serv_select">
       <div class="serv_box" onclick="branches()">
         <select class="mySelect">
@@ -400,6 +445,7 @@
       {{form.branches}}
     </div></div></div>
     <div class="col-sm-4">
+      <p id="lab">Number of Counselors</p>
       {{form.number_of_counselors}}
     </div>
   </div>
@@ -1387,18 +1433,6 @@ function branches() {
     expanded = false;
   }
 }
-$(document).mouseup(function (e) {
-           var container = new Array();
-           container.push($('#msel'));
-           $.each(container, function (key, value) {
-               if (!$(value).is(e.target) && $(value).has(e.target).length === 0) {
-                   ///--need to have better code from yourside..
-                   var checkboxes = document.getElementById("branch_div");
-                   checkboxes.style.display = "none";
-                   ///--need to have better code from yourside..
-               }
-           });
-       });
 
 var expanded = false;
 
@@ -1412,18 +1446,6 @@ function offered_Serv() {
     expanded = false;
   }
 }
-$(document).mouseup(function (e) {
-           var container = new Array();
-           container.push($('#msel'));
-           $.each(container, function (key, value) {
-               if (!$(value).is(e.target) && $(value).has(e.target).length === 0) {
-                   ///--need to have better code from yourside..
-                   var checkboxes = document.getElementById("services");
-                   checkboxes.style.display = "none";
-                   ///--need to have better code from yourside..
-               }
-           });
-       });
 
 </script>
 <!-- Match Height JS -->

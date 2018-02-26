@@ -3,7 +3,12 @@
 <html lang="en">
 <head>
 <!-- JavaScript for Text fields -->
+<style media="screen">
+body{
+  font-family: 'Open Sans', sans-serif;
+}
 
+</style>
 
 <!-- End -->
 
@@ -12,6 +17,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0; maximum-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+<style media="screen">
+  .fill-bg{
+    font-family: 'Open Sans', sans-serif;
+  }
+
+
+
+</style>
 <!--
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"> -->
 <title>Educational Template</title>
@@ -61,7 +75,7 @@
       <script src="js/respond.min.js"></script>
     <![endif]-->
 </head>
- <body class="fill-bg">
+ <body class="fill-bg" style="background:#f6f9c1;">
 
 
 
@@ -83,22 +97,40 @@
   <div class="inner">
     <div class="login">
       <div class="login-logo"> <a href="index.html"><img src="logo2.jpg" class="img-responsive" alt=""></a> </div>
-      <div class="head-block">
+      <div class="head-block" style="background:rgba(218, 239, 236, 0.8);">
         <h1>Register Now</h1>
       </div>
-      <div class="cnt-block">
+      <div class="cnt-block" style="border:1px solid rgba(218, 239, 236, 0.8);">
         <form action="#" method="post" class="form-outer" enctype="multipart/form-data">
           {% csrf_token %}
 
+
+          {{ err }} <br>
 <div class="row">
   <div class="col-sm-3">
-  <h1>I Am</h1>
+  <h1 style="margin-top:5px;">I Am</h1>
   </div>
 
-  <div class="col-sm-6">
-    {{ user_form.user_perm }}
+  <div class="col-sm-3">
+    <ul class="select-opt clearfix">
+      <li>
+        <input type="radio"  id="s-option" name="selector" value="student_type">
+        <label id="users" for="s-option" style="font-size:16px; margin-top:5px;">Student</label>
+        <div class="check"></div>
+      </li> </ul>
 
-    </div>
+  </div>
+
+  <div class="col-sm-3">
+    <ul class="select-opt clearfix">
+      <li>
+        <input type="radio"  id="f-option" name="selector" value="agent_type">
+        <label id="users" for="f-option" style="font-size:16px; margin-top:5px;">Agent</label>
+        <div class="check"></div>
+      </li> </ul>
+
+  </div>
+
 
 </div>
 <div class="row">
@@ -118,18 +150,18 @@
 </div>
 
 
+{{ user_form.errors }}
 
-
-<div class= "button-outer">
+<div class= "button-outer" >
           <!--btn-block btn-social btn-lg-->
 	  <!-- 1 btn-block btn-social btn-lg btn-facebook -->
-            <button class="btn register">Register now<span class="icon-more-icon"></span></button>
+            <button class="btn register" >Register now<span class="icon-more-icon"></span></button>
 
           </div>
 
         </form>
       </div>
-      <div class="login-footer">
+      <div class="login-footer" style="background:rgba(218, 239, 236, 0.8);">
         <ul class="follow-us clearfix">
           <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
           <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
